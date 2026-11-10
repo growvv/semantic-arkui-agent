@@ -1,0 +1,55 @@
+{
+  "app": "SemanticTasks",
+  "bundle": "org.anapp.research.prototype",
+  "serial": "<device-serial>",
+  "tasks": [
+    {
+      "id": "favorite-t1",
+      "goal": "收藏“整理季度材料”，项目是北区门店",
+      "check": { "type": "task_field", "taskId": "t1", "field": "favorite", "value": true },
+      "allowedChanges": [{ "taskId": "t1", "field": "favorite" }]
+    },
+    {
+      "id": "unfavorite-t3",
+      "goal": "取消收藏“更新采购台账”",
+      "check": { "type": "task_field", "taskId": "t3", "field": "favorite", "value": false },
+      "allowedChanges": [{ "taskId": "t3", "field": "favorite" }]
+    },
+    {
+      "id": "complete-t1",
+      "goal": "把“整理季度材料”（北区门店）标记为已完成",
+      "check": { "type": "task_field", "taskId": "t1", "field": "completed", "value": true },
+      "allowedChanges": [{ "taskId": "t1", "field": "completed" }]
+    },
+    {
+      "id": "reopen-t4",
+      "goal": "把“核对活动预算”重新打开",
+      "check": { "type": "task_field", "taskId": "t4", "field": "completed", "value": false },
+      "allowedChanges": [{ "taskId": "t4", "field": "completed" }]
+    },
+    {
+      "id": "search-purchase",
+      "goal": "在搜索框输入“采购”",
+      "check": { "type": "app_field", "field": "query", "contains": "采购" },
+      "allowedChanges": []
+    },
+    {
+      "id": "filter-favorite",
+      "goal": "打开“只看收藏”筛选",
+      "check": { "type": "app_field", "field": "onlyFavorite", "value": true },
+      "allowedChanges": []
+    },
+    {
+      "id": "change-due-t3",
+      "goal": "把“更新采购台账”的截止日期改为 2026-11-20",
+      "check": { "type": "task_field", "taskId": "t3", "field": "dueDate", "value": "2026-11-20" },
+      "allowedChanges": [{ "taskId": "t3", "field": "dueDate" }]
+    },
+    {
+      "id": "priority-t1",
+      "goal": "把“整理季度材料”（北区门店）的优先级调整为高",
+      "check": { "type": "task_field", "taskId": "t1", "field": "priority", "value": "高" },
+      "allowedChanges": [{ "taskId": "t1", "field": "priority" }]
+    }
+  ]
+}

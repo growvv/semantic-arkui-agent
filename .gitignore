@@ -1,0 +1,19 @@
+.vscode/
+dist/
+lib/
+node_modules/
+package-lock.json
+*.log
+*.log.*
+*.tgz
+out/
+out[0-9]*/
+haps/
+# Local git worktrees (never commit their contents)
+.worktrees/
+
+node_modules
+
+/evaluation/runs/
+
+.DS_Store

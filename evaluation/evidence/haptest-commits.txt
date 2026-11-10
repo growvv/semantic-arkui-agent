@@ -1,0 +1,14 @@
+7c58c5e feat(semantic): validate Rental tab semantics and update acceptance report
+3ae5819 chore(semantic): add annotated screenshot renderer
+53d542c docs(semantic): add acceptance report and evidence
+238741d feat(semantic): add annotator prototype, STUFFS validation, and visibility/input fixes
+c87f363 feat(semantic): select the app window by bundle and re-observe before text input
+14f3f74 feat(semantic): add annotated SemanticTasks app with search, filters, favorites, and due-date editing
+b05672e feat(semantic): add bridge client, projection, action validation, text-only agent, and CLI
+d6fe529 chore: ignore local node_modules symlink
+d7807d6 feat(semantic): add Sem helper, customProperty bridge, and passing device probe
+4fb3257 test(e2e): wait for foreground after app launch
+46ee01f docs(semantic): add design and fix E2E re-observe before key action
+bb3325e chore: ignore local worktrees
+d32437e docs(harmonyos): design the perf observability pipeline (A route)
+8745879 docs(harmonyos): link the jank design to the interface manual

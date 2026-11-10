@@ -1,0 +1,43 @@
+{
+  "app": "STUFFS_NEXT",
+  "bundle": "org.anapp.research.prototype",
+  "serial": "<device-serial>",
+  "source": "https://github.com/awaLiny2333/STUFFS_NEXT",
+  "license": "MIT",
+  "tasks": [
+    {
+      "id": "settings-open",
+      "goal": "打开设置面板",
+      "check": { "type": "node_visible", "id": "sem.stuffs.settings.blur" }
+    },
+    {
+      "id": "blur-increase",
+      "goal": "打开设置面板，把毛玻璃半径调大",
+      "check": {
+        "type": "node_state",
+        "id": "sem.stuffs.settings.blur",
+        "field": "value",
+        "op": ">",
+        "value": 25,
+        "alsoVisible": true
+      }
+    },
+    {
+      "id": "add-open",
+      "goal": "打开添加面板",
+      "check": { "type": "node_visible", "id": "sem.stuffs.add.name" }
+    },
+    {
+      "id": "add-card-reading",
+      "goal": "打开添加面板，在名称输入框输入“阅读”，向下滚动页面，点击添加目标卡片",
+      "check": {
+        "type": "node_state",
+        "id": "sem.stuffs.cards.summary",
+        "field": "value",
+        "op": ">=",
+        "value": 1,
+        "alsoContains": { "field": "extra", "value": "阅读" }
+      }
+    }
+  ]
+}

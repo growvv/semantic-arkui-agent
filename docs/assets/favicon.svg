@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#121816"/>
+  <path d="M16 20h32M16 44h32" stroke="#d6482d" stroke-width="3"/>
+  <text x="32" y="40" text-anchor="middle" font-family="monospace" font-size="19" font-weight="700" fill="#f2f4f1">sem</text>
+</svg>

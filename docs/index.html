@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>语义化 ArkUI Agent</title>
+  <meta name="description" content="在 ArkUI 源码中声明界面语义，让纯文本模型通过 HapTest 直接操作 HarmonyOS 应用。13 项任务、0 张截图、13/13 独立验证。">
+  <meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1311" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="语义化 ArkUI Agent">
+  <meta property="og:description" content="在 ArkUI 源码中声明界面语义，让纯文本模型通过 HapTest 直接操作 HarmonyOS 应用。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://growvv.github.io/semantic-arkui-agent/assets/self-annotated.jpeg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('semantic-theme');
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.dataset.theme = theme;
+        }
+      } catch (error) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="语义化 ArkUI Agent 首页">
+        <span class="brand-mark" aria-hidden="true">sem</span>
+        <span class="brand-text">语义化 ArkUI Agent</span>
+      </a>
+      <nav class="site-nav" aria-label="页面目录">
+        <a href="#problem">问题</a>
+        <a href="#mechanism">机制</a>
+        <a href="#tasks">任务</a>
+        <a href="#changes">改动</a>
+        <a href="#results">结果</a>
+        <a href="#evidence">证据</a>
+        <a href="#limits">限制</a>
+      </nav>
+      <div class="header-tools">
+        <a class="github-link" href="https://github.com/growvv/semantic-arkui-agent" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" aria-label="切换到深色主题" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-square" aria-hidden="true"></span> HARMONYOS · ARKUI · TEXT-ONLY AGENT</p>
+          <h1>语义化<br><span class="accent">ArkUI Agent</span></h1>
+          <p class="lede">让纯文本模型直接读懂鸿蒙界面：不截图，不猜坐标，不靠图标猜测。</p>
+          <p class="abstract">项目把开发者已经知道的控件含义、实体、状态和可用动作写进 ArkUI 源码的 <code>customProperty</code>，由应用内的调试桥在运行时读出，与 HapTest 的实时控件树按 <code>id</code> 合并。模型只接收语义节点和少量运行时事实，动作仍由原生 UI 框架执行。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/growvv/semantic-arkui-agent" target="_blank" rel="noreferrer">查看 GitHub 仓库 <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="https://github.com/growvv/semantic-arkui-agent/blob/main/docs/acceptance/2026-11-11-semantic-arkui-agent-acceptance.md" target="_blank" rel="noreferrer">阅读验收报告 <span aria-hidden="true">↗</span></a>
+          </div>
+          <dl class="hero-metrics" aria-label="验收结果">
+            <div>
+              <dt>独立验证</dt>
+              <dd>13<small>/13</small></dd>
+            </div>
+            <div>
+              <dt>Agent 自行结束</dt>
+              <dd>12<small>/13</small></dd>
+            </div>
+            <div>
+              <dt>模型输入截图</dt>
+              <dd>0</dd>
+            </div>
+            <div>
+              <dt>Prompt tokens</dt>
+              <dd>105,144<small>· 13 项</small></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual">
+          <figure class="phone phone-hero">
+            <div class="phone-bezel">
+              <img src="assets/self-annotated.jpeg" alt="SemanticTasks 任务列表，红色标注框标出每个语义节点及其 id 和含义" width="1080" height="2406" fetchpriority="high">
+            </div>
+            <figcaption>SemanticTasks · 任务列表的语义节点覆盖</figcaption>
+          </figure>
+          <aside class="node-card" aria-label="语义节点示例">
+            <div class="node-card-head">
+              <span class="node-kicker">SEMANTIC NODE</span>
+              <span class="node-live">READ-ONLY BRIDGE</span>
+            </div>
+            <p class="node-id">sem.task.favorite.t1</p>
+            <div class="node-role"><span>action</span><span>Button</span></div>
+            <p class="node-meaning">收藏：整理季度材料（北区门店）</p>
+            <dl class="node-state">
+              <div><dt>state.favorite</dt><dd>false</dd></div>
+              <div><dt>actions</dt><dd>toggle_favorite · tap</dd></div>
+              <div><dt>live</dt><dd>clickable · visible</dd></div>
+            </dl>
+            <p class="node-note">模型看到的是这份声明，不是截图。</p>
+          </aside>
+        </div>
+      </div>
+      <div class="wrap hero-strip" aria-label="处理流程">
+        <span>SOURCE</span><span class="strip-arrow" aria-hidden="true">→</span>
+        <span>BRIDGE</span><span class="strip-arrow" aria-hidden="true">→</span>
+        <span>PROJECT</span><span class="strip-arrow" aria-hidden="true">→</span>
+        <span>DECIDE</span><span class="strip-arrow" aria-hidden="true">→</span>
+        <span>ACT</span><span class="strip-arrow" aria-hidden="true">→</span>
+        <span>RE-OBSERVE</span>
+      </div>
+    </section>
+
+    <section class="section" id="problem">
+      <div class="wrap section-grid">
+        <div class="section-rail">
+          <p class="section-label">问题</p>
+          <p class="rail-note">为什么不让模型看截图</p>
+        </div>
+        <div class="section-main">
+          <header class="section-head">
+            <h2>界面已经知道答案，模型却在猜</h2>
+            <p class="section-lede">截图和原始无障碍树把“看见界面”变成了一次推理。控件是什么、当前是什么状态、能做什么，原本都由应用代码决定，却要模型从像素和层级里重新推断。</p>
+          </header>
+
+          <div class="compare-grid">
+            <article class="compare-card">
+              <p class="card-kicker">SCREENSHOT / RAW TREE</p>
+              <h3>像素与层级</h3>
+              <ul class="plain-list">
+                <li>图标、重复标题和动态列表需要模型从画面里逐一消歧。</li>
+                <li>坐标定位；一次误判就会点错。</li>
+                <li>控件是否可点、可输入、可滚动，只能猜。</li>
+              </ul>
+              <div class="raw-visual" aria-hidden="true">
+                <div class="raw-screen">
+                  <span class="raw-line w-72"></span>
+                  <span class="raw-line w-94"></span>
+                  <span class="raw-line w-56"></span>
+                  <span class="raw-block"></span>
+                  <span class="raw-line w-64"></span>
+                </div>
+                <div class="raw-tree">
+                  <span class="raw-line w-80"></span>
+                  <span class="raw-line w-60 indent"></span>
+                  <span class="raw-line w-72 indent"></span>
+                  <span class="raw-line w-48 indent"></span>
+                </div>
+                <span class="raw-caption">pixels + nodes</span>
+              </div>
+            </article>
+
+            <article class="compare-card compare-card-accent">
+              <p class="card-kicker">SEMANTIC NODE</p>
+              <h3>声明与事实</h3>
+              <ul class="plain-list">
+                <li>稳定 id 把源码声明和实时控件一一对应。</li>
+                <li>meaning、entity、state、actions 直接进入模型上下文。</li>
+                <li>执行前用实时树校验可见、启用和原生能力。</li>
+              </ul>
+              <div class="mini-node" aria-hidden="true">
+                <span class="mini-node-id">sem.task.favorite.t1</span>
+                <span><b>state.favorite</b> false</span>
+                <span><b>actions</b> tap · Button</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="table-wrap compare-table-wrap">
+            <table class="compare-table">
+              <caption class="visually-hidden">截图 / 原始树与语义节点的输入、定位、状态和动作对比</caption>
+              <thead>
+                <tr>
+                  <th scope="col">维度</th>
+                  <th scope="col">截图 / 原始树</th>
+                  <th scope="col">语义节点</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">模型输入</th><td>像素或完整层级</td><td>meaning + state + actions + 少量 live facts</td></tr>
+                <tr><th scope="row">目标定位</th><td>坐标或节点索引</td><td>稳定 id，按 id 合并</td></tr>
+                <tr><th scope="row">状态读取</th><td>从画面推断</td><td>源码声明的状态</td></tr>
+                <tr><th scope="row">动作能力</th><td>猜测</td><td>声明动作 + 原生能力双重校验</td></tr>
+                <tr><th scope="row">失败恢复</th><td>重新截图</td><td>prepare 过期检查 + 动作后重观察</td></tr>
+                <tr><th scope="row">截图进入上下文</th><td>是</td><td>否</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mechanism">
+      <div class="wrap section-grid">
+        <div class="section-rail">
+          <p class="section-label">机制</p>
+          <p class="rail-note">源码 → 语义树 → 动作</p>
+        </div>
+        <div class="section-main">
+          <header class="section-head">
+            <h2>一条从源码到动作的语义通路</h2>
+            <p class="section-lede">四个边界：源码声明、运行时读取、宿主投影、原生执行。语义桥只读；动作不经过桥，仍由 HapTest 走原生 UI 框架。</p>
+          </header>
+
+          <figure class="pipeline-figure">
+            <div class="pipeline-scroll">
+              <svg viewBox="0 0 1120 470" role="img" aria-label="ArkUI 源码通过 customProperty 声明语义，应用内桥读取 FrameNode 树并输出 JSON，HapTest 按 id 合并实时树，文本模型选择动作，HapTest 执行原生动作并重新观察的流程图">
+                <defs>
+                  <marker id="arrow-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--ink-2)"></path>
+                  </marker>
+                  <marker id="arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"></path>
+                  </marker>
+                  <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--teal)"></path>
+                  </marker>
+                </defs>
+
+                <rect x="16" y="24" width="528" height="330" rx="14" fill="none" stroke="var(--line-strong)" stroke-dasharray="6 6"></rect>
+                <text x="38" y="50" class="svg-label">设备内 · 应用进程</text>
+                <rect x="440" y="36" width="82" height="20" rx="10" fill="var(--paper)" stroke="var(--line)"></rect>
+                <text x="481" y="50" class="svg-micro" text-anchor="middle">DEBUG BUILD</text>
+
+                <rect x="40" y="78" width="196" height="92" rx="10" fill="var(--paper)" stroke="var(--line-strong)"></rect>
+                <text x="60" y="104" class="svg-step">01 · SOURCE</text>
+                <text x="60" y="130" class="svg-title">ArkTS 源码</text>
+                <text x="60" y="152" class="svg-mono">customProperty('sem', …)</text>
+
+                <line x1="236" y1="124" x2="282" y2="124" stroke="var(--ink-2)" stroke-width="1.6" marker-end="url(#arrow-ink)"></line>
+                <text x="259" y="114" class="svg-micro" text-anchor="middle">构建</text>
+
+                <rect x="284" y="78" width="236" height="92" rx="10" fill="var(--paper)" stroke="var(--line-strong)"></rect>
+                <text x="304" y="104" class="svg-step">02 · RUNTIME</text>
+                <text x="304" y="130" class="svg-title">FrameNode 树</text>
+                <text x="304" y="152" class="svg-mono">getCustomProperty / getChild</text>
+
+                <line x1="402" y1="170" x2="402" y2="218" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#arrow-accent)"></line>
+                <text x="414" y="198" class="svg-micro">遍历</text>
+
+                <rect x="284" y="220" width="236" height="82" rx="10" fill="var(--accent-soft)" stroke="var(--accent)"></rect>
+                <text x="304" y="246" class="svg-step svg-step-accent">03 · BRIDGE · 只读</text>
+                <text x="304" y="272" class="svg-title">SemanticBridge</text>
+                <text x="304" y="292" class="svg-mono">snapshot · prepare · 127.0.0.1:18765</text>
+
+                <line x1="520" y1="262" x2="606" y2="262" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#arrow-accent)"></line>
+                <text x="563" y="252" class="svg-micro" text-anchor="middle">JSON-lines</text>
+
+                <rect x="612" y="24" width="492" height="330" rx="14" fill="none" stroke="var(--line-strong)" stroke-dasharray="6 6"></rect>
+                <text x="634" y="50" class="svg-label">宿主进程 · HapTest</text>
+                <rect x="1000" y="36" width="82" height="20" rx="10" fill="var(--paper)" stroke="var(--line)"></rect>
+                <text x="1041" y="50" class="svg-micro" text-anchor="middle">TEXT ONLY</text>
+
+                <rect x="634" y="78" width="196" height="92" rx="10" fill="var(--paper)" stroke="var(--line-strong)"></rect>
+                <text x="654" y="104" class="svg-step">04 · PROJECT</text>
+                <text x="654" y="130" class="svg-title">BridgeClient</text>
+                <text x="654" y="152" class="svg-mono">fport · timeout · stale</text>
+
+                <line x1="830" y1="124" x2="870" y2="124" stroke="var(--ink-2)" stroke-width="1.6" marker-end="url(#arrow-ink)"></line>
+                <text x="850" y="114" class="svg-micro" text-anchor="middle">join by id</text>
+
+                <rect x="872" y="78" width="210" height="92" rx="10" fill="var(--paper)" stroke="var(--line-strong)"></rect>
+                <text x="892" y="104" class="svg-step">05 · VIEW</text>
+                <text x="892" y="130" class="svg-title">Semantic view</text>
+                <text x="892" y="152" class="svg-mono">meaning · state · live</text>
+
+                <line x1="977" y1="170" x2="977" y2="218" stroke="var(--teal)" stroke-width="1.6" marker-end="url(#arrow-teal)"></line>
+                <text x="989" y="198" class="svg-micro">prompt</text>
+
+                <rect x="872" y="220" width="210" height="82" rx="10" fill="var(--teal-soft)" stroke="var(--teal)"></rect>
+                <text x="892" y="246" class="svg-step svg-step-teal">06 · DECIDE</text>
+                <text x="892" y="272" class="svg-title">Text-only model</text>
+                <text x="892" y="292" class="svg-mono">one JSON action per step</text>
+
+                <line x1="872" y1="261" x2="838" y2="261" stroke="var(--teal)" stroke-width="1.6" marker-end="url(#arrow-teal)"></line>
+                <rect x="634" y="220" width="196" height="82" rx="10" fill="var(--teal-soft)" stroke="var(--teal)"></rect>
+                <text x="654" y="246" class="svg-step svg-step-teal">07 · ACT</text>
+                <text x="654" y="272" class="svg-title">Validate + native</text>
+                <text x="654" y="292" class="svg-mono">tap / input / scroll / key</text>
+
+                <path d="M 732 302 L 732 398 L 402 398 L 402 306" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#arrow-teal)"></path>
+                <text x="560" y="418" class="svg-micro" text-anchor="middle">重新观察：动作后读取新的语义快照，不经过桥执行动作</text>
+
+                <line x1="466" y1="446" x2="502" y2="446" stroke="var(--accent)" stroke-width="2"></line>
+                <text x="512" y="450" class="svg-legend">语义快照</text>
+                <line x1="602" y1="446" x2="638" y2="446" stroke="var(--teal)" stroke-width="2" stroke-dasharray="5 5"></line>
+                <text x="648" y="450" class="svg-legend">原生动作 / 重观察</text>
+              </svg>
+            </div>
+            <figcaption>图 1 · 语义快照与原生动作是两条独立的通路。模型只读语义视图；HapTest 执行动作，然后重新观察。</figcaption>
+          </figure>
+
+          <div class="mechanism-grid">
+            <article class="mechanism-card">
+              <p class="card-kicker">SOURCE</p>
+              <h3>源码声明</h3>
+              <p>组件在普通属性之外声明 <code>SemanticSpec</code>。稳定 <code>id</code> 是宿主合并实时控件的键；<code>meaning</code>、<code>entity</code>、<code>state</code>、<code>actions</code> 进入模型视图；<code>accessibilityText</code> 和 <code>accessibilityDescription</code> 保留给读屏与降级。</p>
+              <div class="code-block"><code>.id(`sem.task.favorite.${task.id}`)
+.customProperty('sem', Sem.safe(() => Sem.node({
+  schema: 1,
+  id: `sem.task.favorite.${task.id}`,
+  role: 'action',
+  meaning: `收藏：${task.title}`,
+  state: { favorite: task.favorite },
+  actions: [{ name: 'toggle_favorite', input: 'tap' }]
+}), Sem.fallback(`sem.task.favorite.${task.id}`)))</code></div>
+            </article>
+
+            <article class="mechanism-card">
+              <p class="card-kicker">BRIDGE</p>
+              <h3>运行时桥</h3>
+              <p>桥在 debug 构建的应用进程内启动，遍历当前挂载的 <code>FrameNode</code>，用 <code>getCustomProperty('sem')</code> 读取声明，用 <code>getNodeType</code>、<code>isVisible</code>、<code>getChild</code> 补充运行时事实。快照按 JSON-lines 返回；<code>revision</code> 只在内容变化时推进；<code>prepare</code> 在动作前确认目标仍然存在。</p>
+              <div class="code-block"><code>const raw = node.getCustomProperty('sem');
+if (raw !== undefined) {
+  nodes.push({ ref: spec.id, id: spec.id,
+    type: node.getNodeType(), visible: node.isVisible(), ... });
+}
+for (let i = 0; i &lt; node.getChildrenCount(); i++) {
+  visit(node.getChild(i), currentParent, nodes);
+}</code></div>
+            </article>
+
+            <article class="mechanism-card">
+              <p class="card-kicker">PROJECT</p>
+              <h3>宿主投影</h3>
+              <p>HapTest 把快照和实时树按 <code>id</code> 合并，保留唯一命中的 live facts。执行前检查目标数量、可见、启用、声明动作与原生能力。输入框包在自定义组件里时，允许 <code>__Common__</code> 包装节点，由 HapTest 的唯一焦点检查兜底。</p>
+              <div class="code-block"><code>const view = projectSemanticSnapshot(snapshot, observation.tree);
+const check = validateSemanticAction(node, decision);
+if (!check.ok) throw new SemanticError(check.errorCode, check.message);
+await bridge.prepare(node.ref);
+await device.tap({ selector: { id: node.id } });</code></div>
+            </article>
+
+            <article class="mechanism-card">
+              <p class="card-kicker">DECIDE</p>
+              <h3>文本决策</h3>
+              <p>模型每步只返回一个 JSON 动作，只使用当前视图里的 ref，不接收坐标、截图或原始树全文。动作后重新观察；同一 revision 的同一动作被重复保护。</p>
+              <div class="code-block"><code>{"action":"tap","ref":"sem.task.favorite.t1"}
+{"action":"input","ref":"sem.stuffs.add.name","text":"阅读"}
+{"action":"finish","summary":"已添加目标卡片“阅读”。"}</code></div>
+            </article>
+          </div>
+
+          <div class="code-pair">
+            <article class="code-panel">
+              <div class="code-panel-head"><span>ArkTS · 源码声明</span><span class="code-tag">SOURCE</span></div>
+              <pre><code>Button(task.favorite ? '取消收藏' : '收藏')
+  .id(`sem.task.favorite.${task.id}`)
+  .accessibilityText(`收藏：${task.title}`)
+  .accessibilityDescription('点击切换收藏状态')
+  .customProperty('sem', Sem.safe(() =&gt; Sem.node({
+    schema: 1,
+    id: `sem.task.favorite.${task.id}`,
+    role: 'action',
+    meaning: `收藏：${task.title}`,
+    entityKind: 'task',
+    entityKey: task.id,
+    state: { favorite: task.favorite },
+    actions: [{ name: 'toggle_favorite', input: 'tap' }],
+    risk: 'changes_data'
+  }), Sem.fallback(`sem.task.favorite.${task.id}`)))</code></pre>
+            </article>
+            <article class="code-panel">
+              <div class="code-panel-head"><span>模型视图 · 投影后</span><span class="code-tag">JSON</span></div>
+              <pre><code>{
+  "ref": "sem.task.favorite.t1",
+  "role": "action",
+  "meaning": "收藏：整理季度材料（项目：北区门店，到期：2026-10-15）",
+  "state": { "favorite": false, "completed": false },
+  "actions": [
+    { "name": "toggle_favorite", "input": "tap", "label": "收藏" }
+  ],
+  "risk": "changes_data",
+  "live": {
+    "type": "Button",
+    "clickable": true,
+    "visible": true
+  },
+  "liveCount": 1
+}</code></pre>
+            </article>
+          </div>
+
+          <div class="rules">
+            <p class="card-kicker">SYSTEM RULES</p>
+            <div class="rules-grid">
+              <p>只使用当前视图里的 ref；不发明坐标、隐藏页面或新的 id。</p>
+              <p>目标缺失、歧义或任务已完成时结束，并给出简短摘要。</p>
+              <p>视图 revision 未变化时不重复同一动作；滑块类控件一次点击后检查新值。</p>
+              <p>动作改变了视图且目标条件已满足时立即结束。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tasks">
+      <div class="wrap section-grid">
+        <div class="section-rail">
+          <p class="section-label">任务</p>
+          <p class="rail-note">三项任务的真实轨迹</p>
+        </div>
+        <div class="section-main">
+          <header class="section-head">
+            <h2>三项任务的真实执行轨迹</h2>
+            <p class="section-lede">轨迹取自 <code>evaluation/evidence</code> 的 JSONL。下面是两步完成的收藏、六步完成的卡片添加，以及两步完成的标签切换。状态验证来自应用侧日志或桥快照，不读取 Agent 自述。</p>
+          </header>
+
+          <div class="task-tabs" role="tablist" aria-label="任务轨迹">
+            <button class="task-tab is-active" id="tab-favorite" role="tab" aria-selected="true" aria-controls="panel-favorite" tabindex="0">
+              <span class="tab-index">01</span>
+              <span class="tab-title">收藏任务</span>
+              <span class="tab-app">SemanticTasks</span>
+            </button>
+            <button class="task-tab" id="tab-add-card" role="tab" aria-selected="false" aria-controls="panel-add-card" tabindex="-1">
+              <span class="tab-index">02</span>
+              <span class="tab-title">添加卡片</span>
+              <span class="tab-app">STUFFS_NEXT</span>
+            </button>
+            <button class="task-tab" id="tab-rental" role="tab" aria-selected="false" aria-controls="panel-rental" tabindex="-1">
+              <span class="tab-index">03</span>
+              <span class="tab-title">切换标签</span>
+              <span class="tab-app">Rental</span>
+            </button>
+          </div>
+
+          <article class="task-panel is-active" id="panel-favorite" role="tabpanel" aria-labelledby="tab-favorite">
+            <div class="task-head">
+              <div class="task-title">
+                <p class="card-kicker">TASK 01 · SEMANTICTASKS</p>
+                <h3>收藏“整理季度材料”（北区门店）</h3>
+                <p class="task-sub">自建应用 · 应用侧 SEM_EVAL 验证</p>
+              </div>
+              <div class="task-kpis">
+                <span class="pill pill-success">独立验证通过</span>
+                <span class="kpi"><b>2</b> 步</span>
+                <span class="kpi"><b>7,513</b> / 95 tok</span>
+                <span class="kpi"><b>13.66</b> s</span>
+              </div>
+            </div>
+
+            <div class="task-body">
+              <div class="trace-column">
+              <ol class="trace">
+                <li class="trace-step">
+                  <div class="trace-marker"><span>1</span></div>
+                  <div class="trace-content">
+                    <div class="trace-top">
+                      <span class="action-badge action-tap">tap</span>
+                      <code>sem.task.favorite.t1</code>
+                      <span class="trace-meta">3,750 / 34 tok · t+7.6s</span>
+                    </div>
+                    <p>模型在 rev 1 看到 <code>state.favorite=false</code> 和 <code>actions[0].input=tap</code>，选择收藏按钮。HapTest 按 id 唯一命中实时 Button，执行原生点击。</p>
+                    <p class="trace-result"><span>结果</span><code>tapped sem.task.favorite.t1</code></p>
+                  </div>
+                </li>
+                <li class="trace-step">
+                  <div class="trace-marker"><span>2</span></div>
+                  <div class="trace-content">
+                    <div class="trace-top">
+                      <span class="action-badge action-finish">finish</span>
+                      <code>summary</code>
+                      <span class="trace-meta">3,763 / 61 tok · t+11.1s</span>
+                    </div>
+                    <p>rev 2 中 <code>state.favorite=true</code>。模型结束并给出摘要；应用写入 <code>SEM_EVAL</code>，宿主独立读取并核对目标字段与非目标字段。</p>
+                    <p class="trace-result"><span>结果</span><code>“整理季度材料”（项目：北区门店）已收藏。</code></p>
+                  </div>
+                </li>
+              </ol>
+
+              <details class="node-details trace-node-details" open>
+                <summary>模型看到的节点</summary>
+                <pre><code>{
+  "ref": "sem.task.favorite.t1",
+  "type": "Button",
+  "meaning": "收藏：整理季度材料（项目：北区门店，到期：2026-10-15）",
+  "state": { "favorite": false, "completed": false },
+  "actions": [{ "name": "toggle_favorite", "input": "tap" }],
+  "live": { "clickable": true, "visible": true },
+  "liveCount": 1
+}</code></pre>
+              </details>
+              </div>
+
+              <div class="task-side">
+                <div class="state-card">
+                  <p class="card-kicker">STATE CHANGE</p>
+                  <div class="state-line"><span>favorite</span><code>false</code><span class="state-arrow">→</span><code class="state-on">true</code></div>
+                  <p class="verify-line"><span class="check" aria-hidden="true">✓</span> <code>SEM_EVAL t1.favorite=true</code>；非目标字段未变化。</p>
+                </div>
+                <figure class="phone phone-task">
+                  <div class="phone-bezel">
+                    <img src="assets/self-favorite-after.jpeg" alt="收藏任务执行后的 SemanticTasks 界面，整理季度材料的星标已点亮" width="1080" height="2406">
+                  </div>
+                  <figcaption>执行后：星标点亮；SEM_EVAL 记录 t1.favorite=true。</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+
+          <article class="task-panel" id="panel-add-card" role="tabpanel" aria-labelledby="tab-add-card">
+            <div class="task-head">
+              <div class="task-title">
+                <p class="card-kicker">TASK 02 · STUFFS_NEXT</p>
+                <h3>打开添加面板，输入“阅读”，滚动并添加卡片</h3>
+                <p class="task-sub">开源应用 · MIT · 应用侧桥快照验证</p>
+              </div>
+              <div class="task-kpis">
+                <span class="pill pill-success">独立验证通过</span>
+                <span class="kpi"><b>6</b> 步</span>
+                <span class="kpi"><b>8,170</b> / 326 tok</span>
+                <span class="kpi"><b>27.67</b> s</span>
+              </div>
+            </div>
+
+            <div class="task-body">
+              <div class="trace-column">
+              <ol class="trace">
+                <li class="trace-step">
+                  <div class="trace-marker"><span>1</span></div>
+                  <div class="trace-content">
+                    <div class="trace-top">
+                      <span class="action-badge action-tap">tap</span>
+                      <code>sem.stuffs.add</code>
+                      <span class="trace-meta">1,288 / 34 tok · t+3.0s</span>
+                    </div>
+                    <p>添加按钮是自定义组件，语义节点类型为 <code>__Common__</code>；宿主用实时树确认它可点击后执行点击，添加面板出现。</p>
+                    <p class="trace-result"><span>结果</span><code>tapped sem.stuffs.add</code></p>
+                  </div>
+                </li>
+                <li class="trace-step">
+                  <div class="trace-marker"><span>2</span></div>
+                  <div class="trace-content">
+                    <div class="trace-top">
+                      <span class="action-badge action-input">input</span>
+                      <code>sem.stuffs.add.name</code>
+                      <span class="trace-meta">1,373 / 53 tok · t+5.9s</span>
+                    </div>
+                    <p>目标名称输入框同样包在自定义组件里。宿主重新观察、点击输入框、确认焦点、输入中文，然后按 BACK 收起键盘。</p>
+                    <p class="trace-result"><span>结果</span><code>entered "阅读" into sem.stuffs.add.name</code></p>
+                  </div>
+                </li>
+                <li class="trace-step trace-step-error">
+                  <div class="trace-marker"><span>3</span></div>
+                  <div class="trace-content">
+                    <div class="trace-top">
+                      <span class="action-badge action-scroll">scroll</span>
+                      <span class="result-badge">拒绝</span>
+                      <code>sem.stuffs.scroll</code>
+                      <span class="trace-meta">1,356 / 35 tok · t+10.0s</span>
+                    </div>
+                    <p>第一次滚动被宿主拒绝：键盘收起后前台页面已经变化，旧坐标不能再用于滑动。模型没有选错目标，这是观察保护在动作前生效。</p>
+                    <p class="trace-result"><span>结果</span><code>ERROR The foreground page changed after the coordinate observation.</code></p>
+                  </div>
+                </li>
+                <li class="trace-step">
+                  <div class="trace-marker"><span>4</span></div>
+                  <div class="trace-content">
+                    <div class="trace-top">
+                      <span class="action-badge action-scroll">scroll</span>
+                      <code>sem.stuffs.scroll</code>
+                      <span class="trace-meta">1,410 / 90 tok · t+15.8s</span>
+                    </div>
+                    <p>重新观察后第二次滚动成功，被键盘和折叠遮挡的“添加”按钮进入可见区域。</p>
+                    <p class="trace-result"><span>结果</span><code>scrolled sem.stuffs.scroll forward</code></p>
+                  </div>
+                </li>
+                <li class="trace-step">
+                  <div class="trace-marker"><span>5</span></div>
+                  <div class="trace-content">
+                    <div class="trace-top">
+                      <span class="action-badge action-tap">tap</span>
+                      <code>sem.stuffs.add.ok</code>
+                      <span class="trace-meta">1,383 / 48 tok · t+21.1s</span>
+                    </div>
+                    <p>宿主校验实时 Button 可见、可点击，执行原生点击；应用把卡片写入本地 KVStore。</p>
+                    <p class="trace-result"><span>结果</span><code>tapped sem.stuffs.add.ok</code></p>
+                  </div>
+                </li>
+                <li class="trace-step">
+                  <div class="trace-marker"><span>6</span></div>
+                  <div class="trace-content">
+                    <div class="trace-top">
+                      <span class="action-badge action-finish">finish</span>
+                      <code>summary</code>
+                      <span class="trace-meta">1,360 / 66 tok · t+25.0s</span>
+                    </div>
+                    <p>新的快照里 <code>cards.summary</code> 显示数量为 1，<code>extra</code> 包含“阅读”。模型结束；宿主用快照而不是 Agent 摘要做最终判定。</p>
+                    <p class="trace-result"><span>结果</span><code>已添加目标卡片“阅读”。</code></p>
+                  </div>
+                </li>
+              </ol>
+
+              <details class="node-details trace-node-details" open>
+                <summary>模型看到的节点</summary>
+                <pre><code>{
+  "ref": "sem.stuffs.add.name",
+  "type": "__Common__",
+  "role": "input",
+  "meaning": "目标名称输入框",
+  "actions": [{ "name": "set_card_name", "input": "set_text" }],
+  "live": { "inputable": true, "visible": true }
+}
+
+{
+  "ref": "sem.stuffs.cards.summary",
+  "role": "content",
+  "meaning": "目标卡片数量：1",
+  "state": { "value": 1, "extra": "阅读" }
+}</code></pre>
+              </details>
+              </div>
+
+              <div class="task-side">
+                <div class="state-card">
+                  <p class="card-kicker">STATE CHANGE</p>
+                  <div class="state-line"><span>cards.summary.value</span><code>0</code><span class="state-arrow">→</span><code class="state-on">1</code></div>
+                  <p class="verify-line"><span class="check" aria-hidden="true">✓</span> <code>extra</code> 包含“阅读”；前后截图与桥快照一致。</p>
+                </div>
+                <figure class="phone phone-task">
+                  <div class="phone-bezel">
+                    <img src="assets/stuffs-add-card-after.jpeg" alt="添加卡片任务执行后的 STUFFS_NEXT 界面，新增了名为“阅读”的卡片" width="1080" height="2406">
+                  </div>
+                  <figcaption>执行后：卡片列表中新增“阅读”；隐藏汇总节点给出 value=1。</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+
+          <article class="task-panel" id="panel-rental" role="tabpanel" aria-labelledby="tab-rental">
+            <div class="task-head">
+              <div class="task-title">
+                <p class="card-kicker">TASK 03 · RENTAL</p>
+                <h3>切换到服务页</h3>
+                <p class="task-sub">开源应用 · MIT · 底部标签状态验证</p>
+              </div>
+              <div class="task-kpis">
+                <span class="pill pill-success">独立验证通过</span>
+                <span class="kpi"><b>2</b> 步</span>
+                <span class="kpi"><b>2,247</b> / 51 tok</span>
+                <span class="kpi"><b>8.15</b> s</span>
+              </div>
+            </div>
+
+            <div class="task-body">
+              <div class="trace-column">
+              <ol class="trace">
+                <li class="trace-step">
+                  <div class="trace-marker"><span>1</span></div>
+                  <div class="trace-content">
+                    <div class="trace-top">
+                      <span class="action-badge action-tap">tap</span>
+                      <code>sem.rental.tab.2</code>
+                      <span class="trace-meta">1,117 / 21 tok · t+2.9s</span>
+                    </div>
+                    <p>底部五个标签各有稳定 id、meaning 与 selected 状态。模型选择“服务”，HapTest 按 id 命中标签 Column 并点击。</p>
+                    <p class="trace-result"><span>结果</span><code>tapped sem.rental.tab.2</code></p>
+                  </div>
+                </li>
+                <li class="trace-step">
+                  <div class="trace-marker"><span>2</span></div>
+                  <div class="trace-content">
+                    <div class="trace-top">
+                      <span class="action-badge action-finish">finish</span>
+                      <code>summary</code>
+                      <span class="trace-meta">1,130 / 30 tok · t+5.5s</span>
+                    </div>
+                    <p>新的快照里 <code>sem.rental.tab.2.selected=true</code>，服务页同时渲染。模型结束；截图与快照一致。</p>
+                    <p class="trace-result"><span>结果</span><code>已切换到服务页，服务标签处于选中状态。</code></p>
+                  </div>
+                </li>
+              </ol>
+
+              <details class="node-details trace-node-details" open>
+                <summary>模型看到的节点</summary>
+                <pre><code>{
+  "ref": "sem.rental.tab.2",
+  "type": "Column",
+  "meaning": "底部标签：服务",
+  "state": { "selected": true },
+  "actions": [{ "name": "switch_tab", "input": "tap" }],
+  "live": { "clickable": true, "visible": true },
+  "liveCount": 1
+}</code></pre>
+              </details>
+              </div>
+
+              <div class="task-side">
+                <div class="state-card">
+                  <p class="card-kicker">STATE CHANGE</p>
+                  <div class="state-line"><span>tab.2.selected</span><code>false</code><span class="state-arrow">→</span><code class="state-on">true</code></div>
+                  <p class="verify-line"><span class="check" aria-hidden="true">✓</span> 服务页渲染；其余四个标签 selected=false。</p>
+                </div>
+                <figure class="phone phone-task">
+                  <div class="phone-bezel">
+                    <img src="assets/rental-tab-after.jpeg" alt="切换到服务页后的 Rental 界面，底部“服务”标签处于选中状态" width="1080" height="2406">
+                  </div>
+                  <figcaption>执行后：服务页渲染；tab.2.selected=true。</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+
+          <p class="section-note">STUFFS_NEXT 的毛玻璃任务在目标值已达到后多点了一次，被重复动作保护停止；独立快照仍判定通过，Agent 没有自行 finish。这项结果保留在限制中。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="changes">
+      <div class="wrap section-grid">
+        <div class="section-rail">
+          <p class="section-label">改动</p>
+          <p class="rail-note">改动集中在四个边界</p>
+        </div>
+        <div class="section-main">
+          <header class="section-head">
+            <h2>改动集中在四个边界</h2>
+            <p class="section-lede">没有改 ArkUI 框架，也没有训练模型。改动落在应用声明、宿主语义层、观察与输入路径、标注与评测工具四处。</p>
+          </header>
+
+          <div class="change-list">
+            <article class="change-row">
+              <div class="change-meta"><span class="change-index">A</span><p>应用侧</p></div>
+              <div class="change-body">
+                <h3>把语义写进组件</h3>
+                <p><code>Sem.ets</code> 定义 <code>SemanticSpec</code>、<code>Sem.node</code>、<code>Sem.safe</code> 和 <code>Sem.fallback</code>；<code>SemanticBridge.ets</code> 在 debug 构建中启动本机 TCP 服务；自建应用和两个开源应用给任务相关组件补上稳定 id、语义声明与无障碍文本。桥只读，不提供点击、输入或业务回调。</p>
+                <div class="code-block"><code>.id(`sem.task.complete.${task.id}`)
+.customProperty('sem', Sem.node({
+  schema: 1,
+  id: `sem.task.complete.${task.id}`,
+  role: 'action',
+  meaning: `切换任务完成状态：${task.title}`,
+  state: { completed: task.completed, priority: task.priority },
+  actions: [{ name: 'toggle_completion', input: 'tap' }],
+  risk: 'changes_data'
+}))</code></div>
+                <p class="file-list"><code>examples/semantic-tasks-app/entry/src/main/ets/semantics/</code> · <code>Sem.ets</code> · <code>SemanticBridge.ets</code> · <code>pages/Index.ets</code></p>
+              </div>
+            </article>
+
+            <article class="change-row">
+              <div class="change-meta"><span class="change-index">B</span><p>宿主</p></div>
+              <div class="change-body">
+                <h3>增加文本 Agent 的宿主语义层</h3>
+                <p><code>src/semantic/</code> 包含类型、桥客户端、投影与动作校验、模型客户端、Agent 循环和 CLI。循环是“快照 → 实时观察 → 投影 → 决策 → 校验 → prepare → 执行 → 重观察”，每一步写入 JSONL 轨迹；同一 revision 的同一动作触发重复保护。CLI 提供 <code>haptest semantic tree</code> 与 <code>haptest semantic run</code>。</p>
+                <div class="code-block"><code>const view = projectSemanticSnapshot(snapshot, observation.tree);
+const llmResult = await llm.decide({ task, view, history });
+const validation = validateSemanticAction(node, decision);
+if (!validation.ok) throw new SemanticError(validation.errorCode, validation.message);
+await bridge.prepare(node.ref);
+await execute(decision, node, observation);</code></div>
+                <p class="file-list"><code>src/semantic/types.ts</code> · <code>bridge_client.ts</code> · <code>project.ts</code> · <code>llm.ts</code> · <code>agent.ts</code> · <code>cli.ts</code></p>
+              </div>
+            </article>
+
+            <article class="change-row">
+              <div class="change-meta"><span class="change-index">C</span><p>观察与输入</p></div>
+              <div class="change-body">
+                <h3>让实时树只选择应用窗口</h3>
+                <p>输入法窗口曾比应用窗口更高，被误当成前台树。现在 <code>dumpViewTree</code> 先按 bundle 过滤页面再选择；<code>observe</code>、<code>typeText</code> 和坐标校验使用同一个 bundle。文本输入在点击后重新观察、确认焦点、输入、再观察并按 BACK 收起键盘。自定义组件包装的输入框允许 <code>__Common__</code> 通过前置校验，由 HapTest 的唯一焦点输入框检查兜底。</p>
+                <div class="code-block"><code>const observation = await device.observe({ bundleName });
+...
+await device.tap({ selector: { id: node.id } });
+await device.observe({ bundleName });
+await device.typeText(text);
+await device.observe({ bundleName });
+await device.pressKey('BACK');</code></div>
+                <p class="file-list"><code>src/device/device.ts</code> · <code>src/device/harmony/session.ts</code> · <code>test/e2e/run.js</code></p>
+              </div>
+            </article>
+
+            <article class="change-row">
+              <div class="change-meta"><span class="change-index">D</span><p>工具与评测</p></div>
+              <div class="change-body">
+                <h3>AST 扫描、提案和独立判分</h3>
+                <p><code>tools/annotator/</code> 用 SDK 自带 TypeScript 4.9.5 的 <code>ScriptKind.ETS</code> 解析组件调用、修饰符链和源码位置；规则生成候选提案，前 8 个候选交给模型生成结构化提案；<code>apply</code> 在组件调用后插入 <code>.id</code> 与 <code>.customProperty</code>，并补 <code>Sem</code> import。评测脚本重置应用、采集前后截图、运行 Agent，再用 <code>SEM_EVAL</code> 或桥快照独立判分。</p>
+                <div class="code-block"><code>ANNOTATOR_SELFTEST_OK candidates=6
+components=Column,Text,Button,TextInput,Slider,Image
+
+Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</code></div>
+                <p class="file-list"><code>tools/annotator/cli.js</code> · <code>tools/annotator/selftest.js</code> · <code>evaluation/run_self_eval.py</code> · <code>evaluation/run_stuffs_eval.py</code> · <code>evaluation/run_rental_eval.py</code></p>
+              </div>
+            </article>
+          </div>
+
+          <div class="milestones" aria-label="开发里程碑">
+            <span class="milestone"><i aria-hidden="true"></i>语义桥探针</span>
+            <span class="milestone"><i aria-hidden="true"></i>SemanticSpec + customProperty</span>
+            <span class="milestone"><i aria-hidden="true"></i>HapTest 语义层</span>
+            <span class="milestone"><i aria-hidden="true"></i>SemanticTasks 标注</span>
+            <span class="milestone"><i aria-hidden="true"></i>观察与输入修正</span>
+            <span class="milestone"><i aria-hidden="true"></i>STUFFS + annotator</span>
+            <span class="milestone"><i aria-hidden="true"></i>Rental + 验收</span>
+          </div>
+          <p class="diff-note">相对 HapTest <code>bb3325e</code>：87 个文件，+15,790 / −13。开发分支为 <code>feat/semantic-arkui-agent</code>；公开仓库是清理签名材料、设备标识与本机路径后的快照。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="wrap section-grid">
+        <div class="section-rail">
+          <p class="section-label">结果</p>
+          <p class="rail-note">13 项任务，13 项验证</p>
+        </div>
+        <div class="section-main">
+          <header class="section-head">
+            <h2>结果</h2>
+            <p class="section-lede">13 项任务，13 项独立验证通过。12 项 Agent 自行结束；STUFFS 的毛玻璃任务由重复动作保护停止。所有任务都没有把截图送进模型上下文。</p>
+          </header>
+
+          <dl class="results-metrics">
+            <div><dt>任务</dt><dd>13</dd></div>
+            <div><dt>独立验证通过</dt><dd>13<small>/13</small></dd></div>
+            <div><dt>Agent 自行结束</dt><dd>12<small>/13</small></dd></div>
+            <div><dt>总步数</dt><dd>35<small>· 2.69 平均</small></dd></div>
+            <div><dt>模型输入截图</dt><dd>0</dd></div>
+            <div><dt>Prompt / completion</dt><dd>105,144<small> / 1,434</small></dd></div>
+          </dl>
+
+          <div class="table-wrap results-table-wrap">
+            <table class="results-table">
+              <caption class="visually-hidden">三个应用的验收结果</caption>
+              <thead>
+                <tr>
+                  <th scope="col">应用</th>
+                  <th scope="col">类型</th>
+                  <th scope="col" class="num">任务</th>
+                  <th scope="col" class="num">验证通过</th>
+                  <th scope="col" class="num">自行结束</th>
+                  <th scope="col" class="num">Prompt</th>
+                  <th scope="col" class="num">Completion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">SemanticTasks</th><td>自建 ArkTS 应用</td><td class="num">8</td><td class="num">8/8</td><td class="num">8/8</td><td class="num">82,847</td><td class="num">736</td></tr>
+                <tr><th scope="row">STUFFS_NEXT</th><td>开源应用 · MIT</td><td class="num">4</td><td class="num">4/4</td><td class="num">3/4</td><td class="num">20,050</td><td class="num">647</td></tr>
+                <tr><th scope="row">Rental</th><td>开源应用 · MIT</td><td class="num">1</td><td class="num">1/1</td><td class="num">1/1</td><td class="num">2,247</td><td class="num">51</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><th scope="row">合计</th><td></td><td class="num">13</td><td class="num">13/13</td><td class="num">12/13</td><td class="num">105,144</td><td class="num">1,434</td></tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <figure class="chart-panel">
+            <div class="chart-head">
+              <div>
+                <p class="card-kicker">PROMPT TOKENS BY TASK</p>
+                <h3>单任务上下文成本</h3>
+              </div>
+              <p class="chart-note">按 token 降序；数值包含系统提示、语义树和历史，不含截图。</p>
+            </div>
+            <div class="chart-axis" aria-hidden="true">
+              <span></span>
+              <div class="axis-track"><span>0</span><span>10k</span><span>20k</span><span>30k</span></div>
+              <span></span>
+            </div>
+            <div class="chart-rows">
+              <div class="chart-row"><div class="chart-label"><strong>截止日期</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 93.9%"></span></div><span class="chart-value">28,173</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>优先级</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 46.4%"></span></div><span class="chart-value">13,907</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>添加卡片</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 27.2%"></span></div><span class="chart-value">8,170</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>标记完成</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 25.1%"></span></div><span class="chart-value">7,518</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>收藏</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 25.0%"></span></div><span class="chart-value">7,513</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>重新打开</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 25.0%"></span></div><span class="chart-value">7,510</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>取消收藏</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 25.0%"></span></div><span class="chart-value">7,501</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>毛玻璃</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 22.2%"></span></div><span class="chart-value">6,669</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>只看收藏</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 17.9%"></span></div><span class="chart-value">5,363</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>搜索</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 17.9%"></span></div><span class="chart-value">5,362</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>打开添加</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 8.7%"></span></div><span class="chart-value">2,623</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>打开设置</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 8.6%"></span></div><span class="chart-value">2,588</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>切换标签</strong><span>Rental</span></div><div class="chart-track"><span class="chart-bar" style="width: 7.5%"></span></div><span class="chart-value">2,247</span></div>
+            </div>
+            <figcaption>截止日期与优先级任务包含重复尝试，prompt token 明显高于其余任务；这是整条任务的累计上下文，不是单步成本。</figcaption>
+            <details class="chart-table">
+              <summary>查看逐任务数据</summary>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">任务</th><th scope="col">应用</th><th scope="col" class="num">Prompt tokens</th></tr></thead>
+                  <tbody>
+                    <tr><td>截止日期</td><td>SemanticTasks</td><td class="num">28,173</td></tr>
+                    <tr><td>优先级</td><td>SemanticTasks</td><td class="num">13,907</td></tr>
+                    <tr><td>添加卡片</td><td>STUFFS_NEXT</td><td class="num">8,170</td></tr>
+                    <tr><td>标记完成</td><td>SemanticTasks</td><td class="num">7,518</td></tr>
+                    <tr><td>收藏</td><td>SemanticTasks</td><td class="num">7,513</td></tr>
+                    <tr><td>重新打开</td><td>SemanticTasks</td><td class="num">7,510</td></tr>
+                    <tr><td>取消收藏</td><td>SemanticTasks</td><td class="num">7,501</td></tr>
+                    <tr><td>毛玻璃</td><td>STUFFS_NEXT</td><td class="num">6,669</td></tr>
+                    <tr><td>只看收藏</td><td>SemanticTasks</td><td class="num">5,363</td></tr>
+                    <tr><td>搜索</td><td>SemanticTasks</td><td class="num">5,362</td></tr>
+                    <tr><td>打开添加</td><td>STUFFS_NEXT</td><td class="num">2,623</td></tr>
+                    <tr><td>打开设置</td><td>STUFFS_NEXT</td><td class="num">2,588</td></tr>
+                    <tr><td>切换标签</td><td>Rental</td><td class="num">2,247</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </figure>
+
+          <div class="annotator-grid">
+            <div class="annotator-card"><p class="card-kicker">SEMANTICTASKS</p><p class="annotator-number">7<span> / 30 / 4</span></p><p>文件 / AST 候选 / LLM 提案</p></div>
+            <div class="annotator-card"><p class="card-kicker">STUFFS_NEXT</p><p class="annotator-number">7<span> / 165 / 3</span></p><p>文件 / AST 候选 / LLM 提案</p></div>
+            <div class="annotator-card"><p class="card-kicker">SELFTEST</p><p class="annotator-number">6<span> 组件</span></p><p><code>ANNOTATOR_SELFTEST_OK</code></p></div>
+          </div>
+
+          <div class="verification-note">
+            <p class="card-kicker">HOW IT WAS VERIFIED</p>
+            <p><strong>SemanticTasks</strong> 的应用自己写入 <code>SEM_EVAL</code>；评测器在 Agent 通道之外读取日志，检查目标字段与非目标字段。<strong>STUFFS_NEXT</strong> 使用应用侧桥快照与前后截图，没有独立数据库 oracle。<strong>Rental</strong> 使用标签 <code>selected</code> 状态与截图。Agent 的自述不是验收依据。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence">
+      <div class="wrap section-grid">
+        <div class="section-rail">
+          <p class="section-label">证据</p>
+          <p class="rail-note">截图、轨迹与快照</p>
+        </div>
+        <div class="section-main">
+          <header class="section-head">
+            <h2>证据</h2>
+            <p class="section-lede">标注截图、任务轨迹、桥快照与评测汇总都在仓库的 <code>evaluation/</code> 下。标注框由脚本从 uitest 布局和桥快照生成，不是手工绘制。</p>
+          </header>
+
+          <div class="evidence-grid">
+            <figure class="evidence-card">
+              <div class="phone-bezel"><img src="assets/self-annotated.jpeg" alt="SemanticTasks 的语义标注截图" width="1080" height="2406"></div>
+              <figcaption><strong>SemanticTasks</strong><span>搜索、筛选、列表、收藏、完成、优先级、详情与截止日期输入都有稳定 id 和语义节点。</span></figcaption>
+            </figure>
+            <figure class="evidence-card">
+              <div class="phone-bezel"><img src="assets/stuffs-annotated.jpeg" alt="STUFFS_NEXT 设置面板的语义标注截图" width="1080" height="2406"></div>
+              <figcaption><strong>STUFFS_NEXT</strong><span>添加/设置入口、毛玻璃滑块与滚动区域；毛玻璃任务的验证值是 51 &gt; 25。</span></figcaption>
+            </figure>
+            <figure class="evidence-card">
+              <div class="phone-bezel"><img src="assets/rental-annotated.jpeg" alt="Rental 服务页与底部标签的语义标注截图" width="1080" height="2406"></div>
+              <figcaption><strong>Rental</strong><span>底部五个标签各有 id 与 selected 状态；切换服务页后 tab.2.selected=true。</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="evidence-links">
+            <a href="https://github.com/growvv/semantic-arkui-agent/blob/main/docs/acceptance/2026-11-11-semantic-arkui-agent-acceptance.md" target="_blank" rel="noreferrer">完整验收报告 <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/growvv/semantic-arkui-agent/tree/main/evaluation/evidence" target="_blank" rel="noreferrer">运行证据目录 <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/growvv/semantic-arkui-agent/tree/main/evaluation/annotations" target="_blank" rel="noreferrer">标注扫描与提案 <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/growvv/semantic-arkui-agent/blob/main/evaluation/evidence/haptest-commits.txt" target="_blank" rel="noreferrer">开发提交记录 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="limits">
+      <div class="wrap section-grid">
+        <div class="section-rail">
+          <p class="section-label">限制</p>
+          <p class="rail-note">结果能说明什么</p>
+        </div>
+        <div class="section-main">
+          <header class="section-head">
+            <h2>限制</h2>
+            <p class="section-lede">这些限制决定结果能说明什么，也决定下一轮该补什么。</p>
+          </header>
+
+          <ol class="limits-list">
+            <li>
+              <span class="limit-number">01</span>
+              <div><strong>Rental 只完成了本地标签切换。</strong><p>首页房源依赖远端接口，离线时为空；搜索、预订等业务流没有验证。</p></div>
+            </li>
+            <li>
+              <span class="limit-number">02</span>
+              <div><strong>桥只在 debug 构建中启用。</strong><p>release 包的隔离、签名发布和桥代码裁剪没有验证。</p></div>
+            </li>
+            <li>
+              <span class="limit-number">03</span>
+              <div><strong>STUFFS 的验证强度低于自建应用。</strong><p>自建应用有 <code>SEM_EVAL</code> 日志；STUFFS 使用应用侧桥快照和截图，没有独立数据库 oracle。</p></div>
+            </li>
+            <li>
+              <span class="limit-number">04</span>
+              <div><strong>语义覆盖是局部的。</strong><p>只覆盖任务相关页面和常见组件；自定义组件、设置面板剩余控件、卡片列表行没有全部标注；带尾随子组件块的容器需要人工确认。</p></div>
+            </li>
+            <li>
+              <span class="limit-number">05</span>
+              <div><strong>Agent 的结束策略仍需改进。</strong><p>毛玻璃任务在目标值已达到后多点了一次，被重复动作保护停止；状态验证通过，但 Agent 没有自行 finish。</p></div>
+            </li>
+            <li>
+              <span class="limit-number">06</span>
+              <div><strong>每个任务只运行一次。</strong><p>没有多种子、重复运行或对照条件；结果不构成统计显著的效能结论。</p></div>
+            </li>
+            <li>
+              <span class="limit-number">07</span>
+              <div><strong>模型摘要可能与实际动作不一致。</strong><p>个别摘要把动作后的最终状态说成“无需操作”；实际动作和状态变化以轨迹、快照和日志为准。</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <span class="brand-mark brand-mark-footer" aria-hidden="true">sem</span>
+        <p class="footer-title">语义化 ArkUI Agent</p>
+        <p class="footer-copy">在源码里声明界面语义，让纯文本模型通过 HapTest 操作 HarmonyOS 应用。</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <p class="footer-label">项目</p>
+          <a href="https://github.com/growvv/semantic-arkui-agent" target="_blank" rel="noreferrer">GitHub 仓库</a>
+          <a href="https://github.com/growvv/semantic-arkui-agent/blob/main/docs/acceptance/2026-11-11-semantic-arkui-agent-acceptance.md" target="_blank" rel="noreferrer">验收报告</a>
+          <a href="https://github.com/growvv/semantic-arkui-agent/tree/main/evaluation/evidence" target="_blank" rel="noreferrer">运行证据</a>
+        </div>
+        <div>
+          <p class="footer-label">底座与来源</p>
+          <a href="https://github.com/SMAT-Lab/HapTest" target="_blank" rel="noreferrer">HapTest</a>
+          <a href="https://github.com/awaLiny2333/STUFFS_NEXT" target="_blank" rel="noreferrer">STUFFS_NEXT</a>
+          <a href="https://github.com/yongoe1024/Rental" target="_blank" rel="noreferrer">Rental</a>
+        </div>
+        <div>
+          <p class="footer-label">版式参考</p>
+          <a href="https://appagent-official.github.io/" target="_blank" rel="noreferrer">AppAgent</a>
+          <a href="https://x-plug.github.io/MobileAgent/" target="_blank" rel="noreferrer">Mobile-Agent</a>
+          <a href="https://github.com/HKUDS/PhoneCLI" target="_blank" rel="noreferrer">PhoneCLI</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>HapTest 以 Apache-2.0 许可发布；STUFFS_NEXT 与 Rental 为 MIT 许可的第三方应用。截图与数据来自 2026-11-11 的验收运行。</p>
+      <a href="#top">回到顶部 ↑</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

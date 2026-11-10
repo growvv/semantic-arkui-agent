@@ -1,0 +1,2659 @@
+{
+  "project": "<third-party-apps>/stuffs-next",
+  "root": "<third-party-apps>/stuffs-next/entry/src/main/ets",
+  "files": 7,
+  "candidates": [
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 224,
+      "column": 5,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 10353,
+      "end": 10372,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 225,
+      "column": 7,
+      "component": "Image",
+      "args": [
+        "$r(\"app.media.bg1\")"
+      ],
+      "modifiers": [
+        "width",
+        "height",
+        "animation",
+        "alignRules"
+      ],
+      "start": 10381,
+      "end": 10407,
+      "container": false,
+      "snippet": "Image($r(\"app.media.bg1\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 236,
+      "column": 7,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 10905,
+      "end": 10910,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 246,
+      "column": 7,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 11250,
+      "end": 11269,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 248,
+      "column": 9,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 11281,
+      "end": 11286,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 249,
+      "column": 11,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Entry_Title\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "position",
+        "opacity",
+        "animation",
+        "onAreaChange",
+        "fontColor",
+        "animation"
+      ],
+      "start": 11299,
+      "end": 11333,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Entry_Title\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 262,
+      "column": 11,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Entry_Subtitle\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "margin",
+        "position",
+        "opacity",
+        "animation",
+        "onAreaChange",
+        "fontColor",
+        "animation"
+      ],
+      "start": 11822,
+      "end": 11859,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Entry_Subtitle\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 283,
+      "column": 9,
+      "component": "WaterFlow",
+      "args": [
+        "{ scroller: this.scroller_main }"
+      ],
+      "modifiers": [],
+      "start": 12616,
+      "end": 12659,
+      "container": true,
+      "snippet": "WaterFlow({ scroller: this.scroller_main }) {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 285,
+      "column": 11,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 12673,
+      "end": 12683,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 290,
+      "column": 11,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 12752,
+      "end": 12762,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 291,
+      "column": 13,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 12777,
+      "end": 12796,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 292,
+      "column": 15,
+      "component": "Text",
+      "args": [
+        "this.UI_is_first_open ? $r('app.string.Welcome') : $r(this.UI_top_card_greetings_address)"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "position",
+        "fontColor"
+      ],
+      "start": 12813,
+      "end": 12908,
+      "container": false,
+      "snippet": "Text(this.UI_is_first_open ? $r('app.string.Welcome') : $r(this.UI_top_card_greetings_address))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 298,
+      "column": 15,
+      "component": "Text",
+      "args": [
+        "''"
+      ],
+      "modifiers": [
+        "id",
+        "visibility",
+        "customProperty"
+      ],
+      "start": 13115,
+      "end": 13123,
+      "container": false,
+      "snippet": "Text('')"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 314,
+      "column": 15,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 13713,
+      "end": 13718,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 315,
+      "column": 17,
+      "component": "LinysSymbolButton",
+      "args": [
+        "{\n                  UI_image: $r('sys.symbol.plus'),\n                  UI_text: $r(\"app.string.Settings_block_Add\"),\n                  DESIGN_font_color: this.D"
+      ],
+      "modifiers": [
+        "id",
+        "customProperty",
+        "onClick"
+      ],
+      "start": 13737,
+      "end": 14095,
+      "container": false,
+      "snippet": "LinysSymbolButton({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 346,
+      "column": 17,
+      "component": "LinysSymbolButton",
+      "args": [
+        "{\n                  UI_image: $r('sys.symbol.gearshape'),\n                  UI_text: $r(\"app.string.Settings_block_Settings\"),\n                  DESIGN_font_col"
+      ],
+      "modifiers": [
+        "id",
+        "customProperty",
+        "onClick"
+      ],
+      "start": 15224,
+      "end": 15602,
+      "container": false,
+      "snippet": "LinysSymbolButton({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 378,
+      "column": 15,
+      "component": "Column",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 16795,
+      "end": 16816,
+      "container": true,
+      "snippet": "Column({ space: 10 }) { // Settings"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 379,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Settings_block_Settings\")"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation",
+        "fontColor",
+        "fontSize",
+        "fontWeight"
+      ],
+      "start": 16847,
+      "end": 16893,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Settings_block_Settings\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 387,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Background\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n               "
+      ],
+      "modifiers": [],
+      "start": 17337,
+      "end": 17609,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 394,
+      "column": 17,
+      "component": "SegmentButton",
+      "args": [
+        "{\n                  options: this.UI_backdrop_segment_button_options, selectedIndexes: $UI_backdrop_choose\n                }"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation"
+      ],
+      "start": 17627,
+      "end": 17766,
+      "container": false,
+      "snippet": "SegmentButton({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 401,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Blur_Radius\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n              "
+      ],
+      "modifiers": [],
+      "start": 18079,
+      "end": 18352,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 408,
+      "column": 17,
+      "component": "Slider",
+      "args": [
+        "{\n                  style: SliderStyle.InSet,\n                  min: 1,\n                  max: 100,\n                  value: this.DESIGN_cards_blur_radius\n     "
+      ],
+      "modifiers": [
+        "id",
+        "customProperty",
+        "onChange",
+        "offset",
+        "visibility",
+        "animation",
+        "blockColor",
+        "selectedColor"
+      ],
+      "start": 18370,
+      "end": 18550,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 436,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Min_Block_Size\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n           "
+      ],
+      "modifiers": [],
+      "start": 19871,
+      "end": 20147,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 443,
+      "column": 17,
+      "component": "Slider",
+      "args": [
+        "{\n                  style: SliderStyle.InSet,\n                  min: 300,\n                  max: 1000,\n                  value: this.DESIGN_min_card_size\n      "
+      ],
+      "modifiers": [
+        "onChange",
+        "offset",
+        "visibility",
+        "animation",
+        "blockColor",
+        "selectedColor"
+      ],
+      "start": 20165,
+      "end": 20344,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 462,
+      "column": 17,
+      "component": "LinysRightExplanation",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Star\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n        "
+      ],
+      "modifiers": [],
+      "start": 21202,
+      "end": 21523,
+      "container": false,
+      "snippet": "LinysRightExplanation({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 470,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Light\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n       "
+      ],
+      "modifiers": [],
+      "start": 21541,
+      "end": 21821,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 477,
+      "column": 17,
+      "component": "TextArea",
+      "args": [
+        "{\n                  placeholder: this.DESIGN_color_scheme_light.toString(),\n                  text: this.DESIGN_color_scheme_light.toString()\n                }"
+      ],
+      "modifiers": [
+        "onChange",
+        "height",
+        "textOverflow",
+        "offset",
+        "visibility",
+        "animation",
+        "fontColor"
+      ],
+      "start": 21839,
+      "end": 22008,
+      "container": false,
+      "snippet": "TextArea({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 491,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Dark\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n        "
+      ],
+      "modifiers": [],
+      "start": 22587,
+      "end": 22866,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 498,
+      "column": 17,
+      "component": "TextArea",
+      "args": [
+        "{\n                  placeholder: this.DESIGN_color_scheme_dark.toString(), text: this.DESIGN_color_scheme_dark.toString()\n                }"
+      ],
+      "modifiers": [
+        "onChange",
+        "height",
+        "textOverflow",
+        "offset",
+        "visibility",
+        "animation",
+        "fontColor"
+      ],
+      "start": 22884,
+      "end": 23033,
+      "container": false,
+      "snippet": "TextArea({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 511,
+      "column": 17,
+      "component": "LinysRightExplanation",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Description\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n "
+      ],
+      "modifiers": [],
+      "start": 23611,
+      "end": 23939,
+      "container": false,
+      "snippet": "LinysRightExplanation({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 519,
+      "column": 17,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 23957,
+      "end": 23965,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 520,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.General_OK\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 23986,
+      "end": 24019,
+      "container": false,
+      "snippet": "Text($r(\"app.string.General_OK\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 559,
+      "column": 17,
+      "component": "LinysRightExplanation",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Got_Messy\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n   "
+      ],
+      "modifiers": [],
+      "start": 25862,
+      "end": 26188,
+      "container": false,
+      "snippet": "LinysRightExplanation({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 567,
+      "column": 17,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 26206,
+      "end": 26214,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 568,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "this.SETTINGS_reset_design_confirm == 0 ? $r(\"app.string.General_RESET\") :\n                  $r('app.string.General_One_More_Confirm')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 26235,
+      "end": 26375,
+      "container": false,
+      "snippet": "Text(this.SETTINGS_reset_design_confirm == 0 ? $r(\"app.string.General_RESET\") :"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 608,
+      "column": 15,
+      "component": "Column",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 28423,
+      "end": 28444,
+      "container": true,
+      "snippet": "Column({ space: 10 }) {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 609,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Settings_block_Add\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "offset",
+        "visibility",
+        "animation"
+      ],
+      "start": 28463,
+      "end": 28504,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Settings_block_Add\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 617,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Add_Name_Title\"),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_col"
+      ],
+      "modifiers": [],
+      "start": 28933,
+      "end": 29187,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 624,
+      "column": 17,
+      "component": "LinysTextArea",
+      "args": [
+        "{\n                  UI_placeholder: \"=￣ω￣=\",\n                  UI_text: this.ADD_name,\n                  DESIGN_font_color: this.DESIGN_font_color,\n            "
+      ],
+      "modifiers": [
+        "id",
+        "customProperty"
+      ],
+      "start": 29205,
+      "end": 29520,
+      "container": false,
+      "snippet": "LinysTextArea({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 643,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Add_Description\"),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_co"
+      ],
+      "modifiers": [],
+      "start": 30019,
+      "end": 30274,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 650,
+      "column": 17,
+      "component": "LinysTextArea",
+      "args": [
+        "{\n                  UI_placeholder: \"(〃￣︶￣)人(￣︶￣〃)\",\n                  UI_text: this.ADD_description,\n                  DESIGN_font_color: this.DESIGN_font_colo"
+      ],
+      "modifiers": [
+        "id",
+        "customProperty"
+      ],
+      "start": 30292,
+      "end": 30622,
+      "container": false,
+      "snippet": "LinysTextArea({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 669,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Add_Length\"),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_color: "
+      ],
+      "modifiers": [],
+      "start": 31156,
+      "end": 31406,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 676,
+      "column": 17,
+      "component": "Slider",
+      "args": [
+        "{\n                  style: SliderStyle.InSet,\n                  min: 200,\n                  max: 400,\n                  value: this.ADD_length\n                }"
+      ],
+      "modifiers": [
+        "blockColor",
+        "selectedColor",
+        "offset",
+        "visibility",
+        "animation",
+        "onChange"
+      ],
+      "start": 31424,
+      "end": 31592,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 698,
+      "column": 17,
+      "component": "LinysRightExplanation",
+      "args": [
+        "{\n                  UI_text: $r(this.ADD_length_description),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_col"
+      ],
+      "modifiers": [],
+      "start": 32555,
+      "end": 32851,
+      "container": false,
+      "snippet": "LinysRightExplanation({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 706,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Add_Time_Limit\"),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_col"
+      ],
+      "modifiers": [],
+      "start": 32869,
+      "end": 33123,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 713,
+      "column": 17,
+      "component": "Slider",
+      "args": [
+        "{\n                  style: SliderStyle.InSet,\n                  min: 1,\n                  max: 367,\n                  value: this.ADD_time_limit\n               "
+      ],
+      "modifiers": [
+        "blockColor",
+        "selectedColor",
+        "offset",
+        "visibility",
+        "animation",
+        "onChange"
+      ],
+      "start": 33141,
+      "end": 33311,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 732,
+      "column": 17,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 34127,
+      "end": 34132,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 733,
+      "column": 19,
+      "component": "TextInput",
+      "args": [
+        "{ text: String(this.ADD_time_limit) }"
+      ],
+      "modifiers": [
+        "type",
+        "onChange",
+        "offset",
+        "animation",
+        "visibility",
+        "layoutWeight",
+        "fontSize",
+        "fontWeight",
+        "fontColor"
+      ],
+      "start": 34153,
+      "end": 34201,
+      "container": false,
+      "snippet": "TextInput({ text: String(this.ADD_time_limit) })"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 755,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(this.ADD_time_limit_unit_or_description)"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation",
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "textAlign",
+        "maxLines",
+        "textOverflow"
+      ],
+      "start": 35290,
+      "end": 35339,
+      "container": false,
+      "snippet": "Text($r(this.ADD_time_limit_unit_or_description))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 769,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Add_Target_Value\"),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_c"
+      ],
+      "modifiers": [],
+      "start": 35962,
+      "end": 36218,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 776,
+      "column": 17,
+      "component": "Slider",
+      "args": [
+        "{\n                  style: SliderStyle.InSet,\n                  min: 1,\n                  max: 1001,\n                  value: this.ADD_value_target\n            "
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation",
+        "onChange",
+        "blockColor",
+        "selectedColor"
+      ],
+      "start": 36236,
+      "end": 36409,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 795,
+      "column": 17,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 37246,
+      "end": 37251,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 796,
+      "column": 19,
+      "component": "TextInput",
+      "args": [
+        "{ text: String(this.ADD_value_target) }"
+      ],
+      "modifiers": [
+        "type",
+        "onChange",
+        "offset",
+        "animation",
+        "visibility",
+        "fontSize",
+        "fontWeight",
+        "fontColor",
+        "layoutWeight"
+      ],
+      "start": 37272,
+      "end": 37322,
+      "container": false,
+      "snippet": "TextInput({ text: String(this.ADD_value_target) })"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 818,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(this.ADD_value_target_unit_or_description)"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation",
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "textAlign",
+        "maxLines",
+        "textOverflow"
+      ],
+      "start": 38438,
+      "end": 38489,
+      "container": false,
+      "snippet": "Text($r(this.ADD_value_target_unit_or_description))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 832,
+      "column": 17,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 39106,
+      "end": 39114,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 833,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.General_OK\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "animation"
+      ],
+      "start": 39135,
+      "end": 39168,
+      "container": false,
+      "snippet": "Text($r(\"app.string.General_OK\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 887,
+      "column": 11,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 41350,
+      "end": 41360,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 888,
+      "column": 13,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 41375,
+      "end": 41394,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 889,
+      "column": 15,
+      "component": "Column",
+      "args": [
+        "{ space: 5 }"
+      ],
+      "modifiers": [],
+      "start": 41411,
+      "end": 41431,
+      "container": true,
+      "snippet": "Column({ space: 5 }) {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 890,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Title_Work_Idle\") :\n                this.DATA_work_working_card_name"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "fontColor",
+        "width"
+      ],
+      "start": 41450,
+      "end": 41574,
+      "container": false,
+      "snippet": "Text(this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Title_Work_Idle\") :"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 896,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Work_Title_Work_Ongoing\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "fontColor",
+        "width"
+      ],
+      "start": 41756,
+      "end": 41802,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Work_Title_Work_Ongoing\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 901,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "this.WORK_is_work_on_idle() ?\n                ((this.ENVIRONMENT_current_timestamp - this.DATA_work_last_end) / 1000 / 3600).toFixed(2).toString() :\n           "
+      ],
+      "modifiers": [
+        "maxLines",
+        "fontSize",
+        "fontWeight",
+        "fontColor",
+        "width"
+      ],
+      "start": 41984,
+      "end": 42252,
+      "container": false,
+      "snippet": "Text(this.WORK_is_work_on_idle() ?"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 909,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Add_Value_Unit_Hour')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "fontColor",
+        "width"
+      ],
+      "start": 42465,
+      "end": 42507,
+      "container": false,
+      "snippet": "Text($r('app.string.Add_Value_Unit_Hour'))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 916,
+      "column": 15,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 42755,
+      "end": 42763,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 917,
+      "column": 17,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 42782,
+      "end": 42790,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 918,
+      "column": 19,
+      "component": "SymbolGlyph",
+      "args": [
+        "this.WORK_is_work_on_idle() ? $r(\"sys.symbol.battery_75percent\") :\n                  $r(\"sys.symbol.checkmark\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "symbolEffect"
+      ],
+      "start": 42811,
+      "end": 42935,
+      "container": false,
+      "snippet": "SymbolGlyph(this.WORK_is_work_on_idle() ? $r(\"sys.symbol.battery_75percent\") :"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 923,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Title_Not_Working\") :\n                  $r('app.string.Work_Title_OK')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 43152,
+      "end": 43278,
+      "container": false,
+      "snippet": "Text(this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Title_Not_Working\") :"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 958,
+      "column": 13,
+      "component": "LinysBlock",
+      "args": [
+        "{\n              ENVIRONMENT_waterFlow_column_count: this.UI_waterFlow_Columns,\n              ENVIRONMENT_current_timestamp: this.ENVIRONMENT_current_timestamp,\n"
+      ],
+      "modifiers": [],
+      "start": 44637,
+      "end": 46216,
+      "container": false,
+      "snippet": "LinysBlock({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 991,
+      "column": 11,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 46267,
+      "end": 46277,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 992,
+      "column": 13,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 46292,
+      "end": 46311,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 993,
+      "column": 15,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Encouragement\")"
+      ],
+      "modifiers": [
+        "textAlign",
+        "fontColor",
+        "fontSize",
+        "fontWeight",
+        "alignRules",
+        "offset"
+      ],
+      "start": 46328,
+      "end": 46364,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Encouragement\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1062,
+      "column": 9,
+      "component": "Scroll",
+      "args": [
+        "this.scroller_card_expand"
+      ],
+      "modifiers": [],
+      "start": 48533,
+      "end": 48566,
+      "container": true,
+      "snippet": "Scroll(this.scroller_card_expand) {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1063,
+      "column": 11,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 48579,
+      "end": 48587,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1064,
+      "column": 13,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 48602,
+      "end": 48607,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1080,
+      "column": 13,
+      "component": "WaterFlow",
+      "args": [],
+      "modifiers": [],
+      "start": 49152,
+      "end": 49163,
+      "container": true,
+      "snippet": "WaterFlow() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1081,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 49180,
+      "end": 49190,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1082,
+      "column": 17,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 49209,
+      "end": 49217,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1083,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "this.DATA_cards_name[this.STATUS_card_index_of_last_expanded]"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "margin",
+        "maxLines",
+        "textAlign",
+        "textOverflow",
+        "offset",
+        "visibility",
+        "animation",
+        "width"
+      ],
+      "start": 49238,
+      "end": 49305,
+      "container": false,
+      "snippet": "Text(this.DATA_cards_name[this.STATUS_card_index_of_last_expanded])"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1096,
+      "column": 19,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 50001,
+      "end": 50006,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1097,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "this.DATA_cards_done[this.STATUS_card_index_of_last_expanded] != undefined ?\n                    this.DATA_cards_done[this.STATUS_card_index_of_last_expanded].t"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 50029,
+      "end": 50209,
+      "container": false,
+      "snippet": "Text(this.DATA_cards_done[this.STATUS_card_index_of_last_expanded] != undefined ?"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1102,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "\"／\" + (this.DATA_cards_target[this.STATUS_card_expanding] == 1001 ? \" ∞ \" :\n                    String(this.DATA_cards_target[this.STATUS_card_expanding]))"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 50374,
+      "end": 50535,
+      "container": false,
+      "snippet": "Text(\"／\" + (this.DATA_cards_target[this.STATUS_card_expanding] == 1001 ? \" ∞ \" :"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1107,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Add_Value_Unit_Hour')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 50702,
+      "end": 50744,
+      "container": false,
+      "snippet": "Text($r('app.string.Add_Value_Unit_Hour'))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1121,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "\"“\" + this.DATA_cards_desc[this.STATUS_card_index_of_last_expanded] + \"”\""
+      ],
+      "modifiers": [
+        "fontWeight",
+        "fontSize",
+        "maxLines",
+        "textOverflow",
+        "fontColor",
+        "offset",
+        "visibility",
+        "animation",
+        "width"
+      ],
+      "start": 51387,
+      "end": 51466,
+      "container": false,
+      "snippet": "Text(\"“\" + this.DATA_cards_desc[this.STATUS_card_index_of_last_expanded] + \"”\")"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1136,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 52139,
+      "end": 52149,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1137,
+      "column": 17,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 52168,
+      "end": 52176,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1138,
+      "column": 19,
+      "component": "Gauge",
+      "args": [
+        "{\n                    value: this.CARD_get_done_value(),\n                    min: 0,\n                    max: this.DATA_cards_target[this.STATUS_card_index_of_l"
+      ],
+      "modifiers": [],
+      "start": 52197,
+      "end": 52497,
+      "container": true,
+      "snippet": "Gauge({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1144,
+      "column": 21,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 52520,
+      "end": 52528,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1145,
+      "column": 23,
+      "component": "Text",
+      "args": [
+        "this.CARD_get_done_percentage()"
+      ],
+      "modifiers": [
+        "fontWeight",
+        "fontSize",
+        "fontColor",
+        "textAlign",
+        "textOverflow",
+        "maxLines",
+        "margin"
+      ],
+      "start": 52553,
+      "end": 52590,
+      "container": false,
+      "snippet": "Text(this.CARD_get_done_percentage())"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1153,
+      "column": 23,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Progress_Done')"
+      ],
+      "modifiers": [
+        "fontWeight",
+        "fontSize",
+        "fontColor",
+        "textAlign",
+        "textOverflow",
+        "maxLines"
+      ],
+      "start": 52978,
+      "end": 53019,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Progress_Done'))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1180,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 54375,
+      "end": 54385,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1181,
+      "column": 17,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 54404,
+      "end": 54412,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1182,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(this.UI_card_expanded_slogan_of_time)"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation",
+        "fontSize",
+        "maxLines",
+        "fontColor",
+        "fontWeight",
+        "margin"
+      ],
+      "start": 54433,
+      "end": 54479,
+      "container": false,
+      "snippet": "Text($r(this.UI_card_expanded_slogan_of_time))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1192,
+      "column": 19,
+      "component": "Gauge",
+      "args": [
+        "{\n                    value: this.DATA_cards_time_limit[this.STATUS_card_index_of_last_expanded] == 367 ?\n                      0.5 * this.DATA_cards_time_limit"
+      ],
+      "modifiers": [],
+      "start": 55017,
+      "end": 55430,
+      "container": true,
+      "snippet": "Gauge({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1199,
+      "column": 21,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 55453,
+      "end": 55461,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1200,
+      "column": 23,
+      "component": "Text",
+      "args": [
+        "this.CARD_get_time_left_percentage()"
+      ],
+      "modifiers": [
+        "fontWeight",
+        "fontSize",
+        "fontColor",
+        "textAlign",
+        "textOverflow",
+        "maxLines",
+        "margin"
+      ],
+      "start": 55486,
+      "end": 55528,
+      "container": false,
+      "snippet": "Text(this.CARD_get_time_left_percentage())"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1208,
+      "column": 23,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Progress_Remaining_Time')"
+      ],
+      "modifiers": [
+        "fontWeight",
+        "fontSize",
+        "fontColor",
+        "textAlign",
+        "textOverflow",
+        "maxLines"
+      ],
+      "start": 55916,
+      "end": 55967,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Progress_Remaining_Time'))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1232,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 57125,
+      "end": 57135,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1233,
+      "column": 17,
+      "component": "Column",
+      "args": [
+        "{ space: 5 }"
+      ],
+      "modifiers": [],
+      "start": 57154,
+      "end": 57174,
+      "container": true,
+      "snippet": "Column({ space: 5 }) {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1234,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Card_Progress_Desc_Estimating\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 57195,
+      "end": 57247,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Card_Progress_Desc_Estimating\")).fontSize(16).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1236,
+      "column": 19,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 57314,
+      "end": 57319,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1237,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "this.CARD_get_average_daily_work_left_processed_for_display()"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 57342,
+      "end": 57409,
+      "container": false,
+      "snippet": "Text(this.CARD_get_average_daily_work_left_processed_for_display())"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1241,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Add_Value_Unit_Hour')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "margin"
+      ],
+      "start": 57574,
+      "end": 57616,
+      "container": false,
+      "snippet": "Text($r('app.string.Add_Value_Unit_Hour'))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1247,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Progress_Desc_Estimating_Hours')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "textAlign"
+      ],
+      "start": 57827,
+      "end": 57885,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Progress_Desc_Estimating_Hours'))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1252,
+      "column": 19,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 58043,
+      "end": 58051,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1253,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Start\") :\n                    $r(\"app.string.Work_Start_Other_Ongoing\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 58074,
+      "end": 58201,
+      "container": false,
+      "snippet": "Text(this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Start\") :"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1288,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 59621,
+      "end": 59631,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1289,
+      "column": 17,
+      "component": "LinysDataBoard",
+      "args": [
+        "{\n                  DATA_list_of_data: this.DATA_cards_punch_card[this.STATUS_card_index_of_last_expanded],\n                  DATA_reference_value: this.CARD_ge"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation"
+      ],
+      "start": 59650,
+      "end": 60580,
+      "container": false,
+      "snippet": "LinysDataBoard({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1308,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 60935,
+      "end": 60945,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1309,
+      "column": 17,
+      "component": "Column",
+      "args": [
+        "{ space: 5 }"
+      ],
+      "modifiers": [],
+      "start": 60964,
+      "end": 60984,
+      "container": true,
+      "snippet": "Column({ space: 5 }) {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1310,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Data_Board_Submitted\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 61005,
+      "end": 61048,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Data_Board_Submitted\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1313,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "this.STATUS_card_index_of_last_expanded == -1 ? \"0\" :\n                  this.DATA_cards_punch_card[this.STATUS_card_index_of_last_expanded][this.UI_card_expande"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 61156,
+      "end": 61365,
+      "container": false,
+      "snippet": "Text(this.STATUS_card_index_of_last_expanded == -1 ? \"0\" :"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1318,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Data_Board_Submitted_Hours_Of_Work\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 61522,
+      "end": 61579,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Data_Board_Submitted_Hours_Of_Work\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1321,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "this.CARD_get_date_of_chosen()[0]"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "opacity",
+        "margin"
+      ],
+      "start": 61687,
+      "end": 61726,
+      "container": false,
+      "snippet": "Text(this.CARD_get_date_of_chosen()[0])"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1338,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 62398,
+      "end": 62408,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1339,
+      "column": 17,
+      "component": "Column",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 62427,
+      "end": 62448,
+      "container": true,
+      "snippet": "Column({ space: 10 }) {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1340,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Settings_block_Settings\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "maxLines",
+        "fontColor",
+        "fontWeight",
+        "margin"
+      ],
+      "start": 62469,
+      "end": 62515,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Settings_block_Settings\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1347,
+      "column": 19,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                    UI_text: $r(\"app.string.Add_Name_Title\"),\n                    STATUS_show: this.STATUS_card_expanding != -1,\n                    DESIGN_fo"
+      ],
+      "modifiers": [],
+      "start": 62750,
+      "end": 63014,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1354,
+      "column": 19,
+      "component": "TextArea",
+      "args": [
+        "{\n                    placeholder: \"=￣ω￣=\", text: this.DATA_cards_name[this.STATUS_card_index_of_last_expanded]\n                  }"
+      ],
+      "modifiers": [
+        "fontColor",
+        "onChange",
+        "height",
+        "textOverflow"
+      ],
+      "start": 63034,
+      "end": 63175,
+      "container": false,
+      "snippet": "TextArea({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1362,
+      "column": 19,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                    UI_text: $r(\"app.string.Add_Description\"),\n                    STATUS_show: this.STATUS_card_expanding != -1,\n                    DESIGN_f"
+      ],
+      "modifiers": [],
+      "start": 63394,
+      "end": 63657,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1369,
+      "column": 19,
+      "component": "TextArea",
+      "args": [
+        "{\n                    placeholder: \"(〃￣︶￣)人(￣︶￣〃)\", text: this.DATA_cards_desc[this.STATUS_card_index_of_last_expanded]\n                  }"
+      ],
+      "modifiers": [
+        "fontColor",
+        "onChange",
+        "height",
+        "textOverflow"
+      ],
+      "start": 63677,
+      "end": 63826,
+      "container": false,
+      "snippet": "TextArea({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1377,
+      "column": 19,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                    UI_text: $r(\"app.string.Add_Length\"),\n                    STATUS_show: this.STATUS_card_expanding != -1,\n                    DESIGN_font_c"
+      ],
+      "modifiers": [],
+      "start": 64059,
+      "end": 64317,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1384,
+      "column": 19,
+      "component": "Slider",
+      "args": [
+        "{\n                    style: SliderStyle.InSet,\n                    min: 200,\n                    max: 400,\n                    value: this.DATA_cards_length[th"
+      ],
+      "modifiers": [
+        "blockColor",
+        "selectedColor",
+        "onChange"
+      ],
+      "start": 64337,
+      "end": 64563,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1403,
+      "column": 19,
+      "component": "LinysRightExplanation",
+      "args": [
+        "{\n                    UI_text: $r(this.EDIT_length_description),\n                    STATUS_show: this.STATUS_card_expanding != -1,\n                    DESIGN_f"
+      ],
+      "modifiers": [],
+      "start": 65276,
+      "end": 65585,
+      "container": false,
+      "snippet": "LinysRightExplanation({"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1413,
+      "column": 19,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 65639,
+      "end": 65647,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1414,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.General_OK\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "animation"
+      ],
+      "start": 65670,
+      "end": 65703,
+      "container": false,
+      "snippet": "Text($r(\"app.string.General_OK\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1447,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 67324,
+      "end": 67334,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1448,
+      "column": 17,
+      "component": "Column",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 67353,
+      "end": 67374,
+      "container": true,
+      "snippet": "Column({ space: 10 }) {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1450,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Card_Progress_Title_Manage\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "maxLines",
+        "fontColor",
+        "fontWeight",
+        "margin"
+      ],
+      "start": 67396,
+      "end": 67445,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Card_Progress_Title_Manage\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1457,
+      "column": 19,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 67680,
+      "end": 67688,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1458,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Card_Progress_Manage_Move_To_Top\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "animation"
+      ],
+      "start": 67711,
+      "end": 67766,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Card_Progress_Manage_Move_To_Top\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1478,
+      "column": 19,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 68636,
+      "end": 68644,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1479,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "this.DATA_cards_name[this.STATUS_card_expanding] == this.DATA_work_working_card_name ?\n                    $r('app.string.Card_Progress_Manage_Delete_Cannot_Ong"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 68667,
+      "end": 69015,
+      "container": false,
+      "snippet": "Text(this.DATA_cards_name[this.STATUS_card_expanding] == this.DATA_work_working_card_name ?"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1603,
+      "column": 7,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 74673,
+      "end": 74678,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2125,
+      "column": 5,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 93610,
+      "end": 93620,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2126,
+      "column": 7,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 93629,
+      "end": 93648,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2127,
+      "column": 9,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 93659,
+      "end": 93667,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2128,
+      "column": 11,
+      "component": "Text",
+      "args": [
+        "this.name"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "margin",
+        "maxLines",
+        "textOverflow"
+      ],
+      "start": 93680,
+      "end": 93695,
+      "container": false,
+      "snippet": "Text(this.name)"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2136,
+      "column": 11,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 93957,
+      "end": 93962,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2137,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "this.done == undefined ? \"\" : this.done.toFixed(2)"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 93977,
+      "end": 94033,
+      "container": false,
+      "snippet": "Text(this.done == undefined ? \"\" : this.done.toFixed(2))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2141,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "\"／\" + (this.target == 1001 ? \" ∞ \" : String(this.target))"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 94166,
+      "end": 94229,
+      "container": false,
+      "snippet": "Text(\"／\" + (this.target == 1001 ? \" ∞ \" : String(this.target)))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2144,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Add_Value_Unit_Hour')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 94319,
+      "end": 94361,
+      "container": false,
+      "snippet": "Text($r('app.string.Add_Value_Unit_Hour')).fontSize(16).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2149,
+      "column": 11,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 94527,
+      "end": 94532,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2150,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Days_Total')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 94547,
+      "end": 94585,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Days_Total')).fontSize(14).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2151,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "(this.time_limit == 367 ? \" ∞ \" : String(this.time_limit))"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 94645,
+      "end": 94709,
+      "container": false,
+      "snippet": "Text((this.time_limit == 367 ? \" ∞ \" : String(this.time_limit)))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2155,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Days_Unit_Day')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 94842,
+      "end": 94883,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Days_Unit_Day')).fontSize(14).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2160,
+      "column": 11,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 94993,
+      "end": 94998,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2161,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Card_Days_Remaining\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 95013,
+      "end": 95055,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Card_Days_Remaining\")).fontSize(14).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2162,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "this.time_limit == 367 ? \" ∞ \" : this.getRemainingDays().toFixed(1)"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 95115,
+      "end": 95188,
+      "container": false,
+      "snippet": "Text(this.time_limit == 367 ? \" ∞ \" : this.getRemainingDays().toFixed(1))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2166,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Days_Unit_Day')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 95321,
+      "end": 95362,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Days_Unit_Day')).fontSize(14).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2275,
+      "column": 5,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 99493,
+      "end": 99501,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2276,
+      "column": 7,
+      "component": "SymbolGlyph",
+      "args": [
+        "this.STATUS_switch_to_arrow ? $r(\"sys.symbol.chevron_down\") : this.UI_image"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "symbolEffect"
+      ],
+      "start": 99510,
+      "end": 99598,
+      "container": false,
+      "snippet": "SymbolGlyph(this.STATUS_switch_to_arrow ? $r(\"sys.symbol.chevron_down\") : this.UI_image)"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2282,
+      "column": 7,
+      "component": "Text",
+      "args": [
+        "this.UI_text"
+      ],
+      "modifiers": [
+        "margin",
+        "fontColor"
+      ],
+      "start": 99914,
+      "end": 99932,
+      "container": false,
+      "snippet": "Text(this.UI_text).margin({ top: 10 }).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2296,
+      "column": 5,
+      "component": "Text",
+      "args": [
+        "this.UI_text"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "offset",
+        "visibility",
+        "maxLines",
+        "textOverflow",
+        "animation",
+        "fontColor",
+        "animation"
+      ],
+      "start": 100303,
+      "end": 100321,
+      "container": false,
+      "snippet": "Text(this.UI_text)"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2318,
+      "column": 5,
+      "component": "Text",
+      "args": [
+        "this.UI_text"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "textAlign",
+        "width",
+        "maxLines",
+        "textOverflow",
+        "offset",
+        "visibility",
+        "animation",
+        "fontColor",
+        "animation"
+      ],
+      "start": 101053,
+      "end": 101071,
+      "container": false,
+      "snippet": "Text(this.UI_text)"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2343,
+      "column": 5,
+      "component": "TextArea",
+      "args": [
+        "{ placeholder: this.UI_placeholder, text: this.UI_text }"
+      ],
+      "modifiers": [
+        "fontColor",
+        "onChange",
+        "height",
+        "textOverflow",
+        "offset",
+        "visibility",
+        "animation"
+      ],
+      "start": 101876,
+      "end": 101942,
+      "container": false,
+      "snippet": "TextArea({ placeholder: this.UI_placeholder, text: this.UI_text })"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2375,
+      "column": 5,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 102951,
+      "end": 102959,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2376,
+      "column": 7,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 102968,
+      "end": 102973,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2377,
+      "column": 9,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.UI_Days_In_A_Week\")"
+      ],
+      "modifiers": [
+        "height",
+        "lineHeight",
+        "margin",
+        "textAlign",
+        "fontWeight",
+        "fontColor"
+      ],
+      "start": 102984,
+      "end": 103024,
+      "container": false,
+      "snippet": "Text($r(\"app.string.UI_Days_In_A_Week\"))"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2385,
+      "column": 9,
+      "component": "Grid",
+      "args": [
+        "this.grid_scroller"
+      ],
+      "modifiers": [],
+      "start": 103242,
+      "end": 103266,
+      "container": true,
+      "snippet": "Grid(this.grid_scroller) {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2387,
+      "column": 13,
+      "component": "GridItem",
+      "args": [],
+      "modifiers": [],
+      "start": 103365,
+      "end": 103375,
+      "container": true,
+      "snippet": "GridItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2388,
+      "column": 15,
+      "component": "Text",
+      "args": [],
+      "modifiers": [
+        "width",
+        "height",
+        "opacity"
+      ],
+      "start": 103392,
+      "end": 103398,
+      "container": false,
+      "snippet": "Text()"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2401,
+      "column": 13,
+      "component": "GridItem",
+      "args": [],
+      "modifiers": [],
+      "start": 103794,
+      "end": 103804,
+      "container": true,
+      "snippet": "GridItem() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2402,
+      "column": 15,
+      "component": "Text",
+      "args": [],
+      "modifiers": [
+        "width",
+        "height",
+        "textAlign",
+        "backgroundColor",
+        "opacity",
+        "borderRadius"
+      ],
+      "start": 103821,
+      "end": 103827,
+      "container": false,
+      "snippet": "Text()// key.toString()"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2438,
+      "column": 7,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 104988,
+      "end": 104996,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2439,
+      "column": 9,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Data_Board_Jump_To_Today\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 105007,
+      "end": 105054,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Data_Board_Jump_To_Today\"))"
+    }
+  ]
+}

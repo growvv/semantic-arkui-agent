@@ -1,0 +1,1052 @@
+{
+  "project": "examples/semantic-tasks-app",
+  "sourceRoot": "examples/semantic-tasks-app/entry/src/main/ets",
+  "files": 7,
+  "candidateCount": 30,
+  "llmError": "",
+  "llmProposed": 4,
+  "proposals": [
+    {
+      "candidateIndex": 0,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 122,
+      "component": "Column",
+      "id": "sem.auto.column-122",
+      "idSuffix": "column-122",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 1,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 123,
+      "component": "Row",
+      "id": "sem.auto.row-123",
+      "idSuffix": "row-123",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 2,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 124,
+      "component": "Text",
+      "id": "sem.auto.task-title",
+      "idSuffix": "task-title",
+      "source": "llm",
+      "confidence": 0.94,
+      "annotate": true,
+      "role": "content",
+      "meaning": "任务标题",
+      "actions": []
+    },
+    {
+      "candidateIndex": 3,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 144,
+      "component": "Button",
+      "id": "sem.auto.task-favorite",
+      "idSuffix": "task-favorite",
+      "source": "llm",
+      "confidence": 0.98,
+      "annotate": true,
+      "role": "toggle",
+      "meaning": "切换任务收藏状态",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "切换收藏"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 4,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 172,
+      "component": "Row",
+      "id": "sem.auto.row-172",
+      "idSuffix": "row-172",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 5,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 173,
+      "component": "Text",
+      "id": "sem.auto.task-details",
+      "idSuffix": "task-details",
+      "source": "llm",
+      "confidence": 0.96,
+      "annotate": true,
+      "role": "content",
+      "meaning": "任务所属项目、到期日期和优先级",
+      "actions": []
+    },
+    {
+      "candidateIndex": 6,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 180,
+      "component": "Row",
+      "id": "sem.auto.row-180",
+      "idSuffix": "row-180",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 7,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 181,
+      "component": "Button",
+      "id": "sem.auto.task-completion",
+      "idSuffix": "task-completion",
+      "source": "llm",
+      "confidence": 0.98,
+      "annotate": true,
+      "role": "action",
+      "meaning": "切换任务完成状态",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "标记完成或重新打开"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 8,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 203,
+      "component": "Button",
+      "id": "sem.auto.button-203",
+      "idSuffix": "button-203",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "调整优先级",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 9,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 226,
+      "component": "Button",
+      "id": "sem.auto.button-226",
+      "idSuffix": "button-226",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "编辑截止日期",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 10,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 259,
+      "component": "Row",
+      "id": "sem.auto.row-259",
+      "idSuffix": "row-259",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 11,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 260,
+      "component": "Text",
+      "id": "sem.auto.text-260",
+      "idSuffix": "text-260",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "只看未完成",
+      "actions": []
+    },
+    {
+      "candidateIndex": 12,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 262,
+      "component": "Toggle",
+      "id": "sem.auto.toggle-262",
+      "idSuffix": "toggle-262",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "toggle",
+      "meaning": "{ type: ToggleType.Switch, isOn: this.onlyOpen }",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "切换状态"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 13,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 284,
+      "component": "Text",
+      "id": "sem.auto.text-284",
+      "idSuffix": "text-284",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "只看收藏",
+      "actions": []
+    },
+    {
+      "candidateIndex": 14,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 286,
+      "component": "Toggle",
+      "id": "sem.auto.toggle-286",
+      "idSuffix": "toggle-286",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "toggle",
+      "meaning": "{ type: ToggleType.Switch, isOn: this.onlyFavorite }",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "切换状态"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 15,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 308,
+      "component": "Button",
+      "id": "sem.auto.button-308",
+      "idSuffix": "button-308",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "清除筛选",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 16,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 334,
+      "component": "Column",
+      "id": "sem.auto.column-334",
+      "idSuffix": "column-334",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 17,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 335,
+      "component": "Text",
+      "id": "sem.auto.text-335",
+      "idSuffix": "text-335",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "编辑截止日期",
+      "actions": []
+    },
+    {
+      "candidateIndex": 18,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 339,
+      "component": "Text",
+      "id": "sem.auto.text-339",
+      "idSuffix": "text-339",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "`任务：${this.selectedTitle()}；当前截止日期：${this.selectedDue()}`",
+      "actions": []
+    },
+    {
+      "candidateIndex": 19,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 343,
+      "component": "TextInput",
+      "id": "sem.auto.textinput-343",
+      "idSuffix": "textinput-343",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "input",
+      "meaning": "{ placeholder: 'YYYY-MM-DD', text: this.editDueDate }",
+      "actions": [
+        {
+          "name": "set_text",
+          "input": "set_text",
+          "label": "输入文本"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 20,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 367,
+      "component": "Row",
+      "id": "sem.auto.row-367",
+      "idSuffix": "row-367",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 21,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 368,
+      "component": "Button",
+      "id": "sem.auto.button-368",
+      "idSuffix": "button-368",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "保存",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 22,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 387,
+      "component": "Button",
+      "id": "sem.auto.button-387",
+      "idSuffix": "button-387",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "取消",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 23,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 414,
+      "component": "Stack",
+      "id": "sem.auto.stack-414",
+      "idSuffix": "stack-414",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Stack 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 24,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 415,
+      "component": "Column",
+      "id": "sem.auto.column-415",
+      "idSuffix": "column-415",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 25,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 416,
+      "component": "Text",
+      "id": "sem.auto.text-416",
+      "idSuffix": "text-416",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Semantic Tasks",
+      "actions": []
+    },
+    {
+      "candidateIndex": 26,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 420,
+      "component": "Text",
+      "id": "sem.auto.text-420",
+      "idSuffix": "text-420",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "任务、筛选、收藏与截止日期",
+      "actions": []
+    },
+    {
+      "candidateIndex": 27,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 425,
+      "component": "TextInput",
+      "id": "sem.auto.textinput-425",
+      "idSuffix": "textinput-425",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "input",
+      "meaning": "{ placeholder: '搜索任务或项目', text: this.query }",
+      "actions": [
+        {
+          "name": "set_text",
+          "input": "set_text",
+          "label": "输入文本"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 28,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 452,
+      "component": "List",
+      "id": "sem.auto.list-452",
+      "idSuffix": "list-452",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "List 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 29,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 454,
+      "component": "ListItem",
+      "id": "sem.auto.listitem-454",
+      "idSuffix": "listitem-454",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "ListItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    }
+  ],
+  "candidates": [
+    {
+      "index": 0,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 122,
+      "column": 5,
+      "component": "Column",
+      "args": [
+        "{ space: 8 }"
+      ],
+      "modifiers": [],
+      "start": 3299,
+      "end": 3319,
+      "container": true,
+      "snippet": "Column({ space: 8 }) {"
+    },
+    {
+      "index": 1,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 123,
+      "column": 7,
+      "component": "Row",
+      "args": [
+        "{ space: 8 }"
+      ],
+      "modifiers": [],
+      "start": 3328,
+      "end": 3345,
+      "container": true,
+      "snippet": "Row({ space: 8 }) {"
+    },
+    {
+      "index": 2,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 124,
+      "column": 9,
+      "component": "Text",
+      "args": [
+        "task.title"
+      ],
+      "modifiers": [
+        "id",
+        "fontSize",
+        "fontWeight",
+        "layoutWeight",
+        "accessibilityText",
+        "customProperty"
+      ],
+      "start": 3356,
+      "end": 3372,
+      "container": false,
+      "snippet": "Text(task.title)"
+    },
+    {
+      "index": 3,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 144,
+      "column": 9,
+      "component": "Button",
+      "args": [
+        "task.favorite ? '★' : '☆'"
+      ],
+      "modifiers": [
+        "id",
+        "fontSize",
+        "backgroundColor",
+        "fontColor",
+        "accessibilityText",
+        "customProperty",
+        "onClick"
+      ],
+      "start": 4286,
+      "end": 4319,
+      "container": false,
+      "snippet": "Button(task.favorite ? '★' : '☆')"
+    },
+    {
+      "index": 4,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 172,
+      "column": 7,
+      "component": "Row",
+      "args": [
+        "{ space: 8 }"
+      ],
+      "modifiers": [],
+      "start": 5356,
+      "end": 5373,
+      "container": true,
+      "snippet": "Row({ space: 8 }) {"
+    },
+    {
+      "index": 5,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 173,
+      "column": 9,
+      "component": "Text",
+      "args": [
+        "`${task.project} · 到期 ${task.dueDate} · 优先级 ${task.priority}`"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "layoutWeight"
+      ],
+      "start": 5384,
+      "end": 5451,
+      "container": false,
+      "snippet": "Text(`${task.project} · 到期 ${task.dueDate} · 优先级 ${task.priority}`)"
+    },
+    {
+      "index": 6,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 180,
+      "column": 7,
+      "component": "Row",
+      "args": [
+        "{ space: 8 }"
+      ],
+      "modifiers": [],
+      "start": 5571,
+      "end": 5588,
+      "container": true,
+      "snippet": "Row({ space: 8 }) {"
+    },
+    {
+      "index": 7,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 181,
+      "column": 9,
+      "component": "Button",
+      "args": [
+        "task.completed ? '重新打开' : '标记完成'"
+      ],
+      "modifiers": [
+        "id",
+        "fontSize",
+        "accessibilityText",
+        "customProperty",
+        "onClick"
+      ],
+      "start": 5599,
+      "end": 5639,
+      "container": false,
+      "snippet": "Button(task.completed ? '重新打开' : '标记完成')"
+    },
+    {
+      "index": 8,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 203,
+      "column": 9,
+      "component": "Button",
+      "args": [
+        "'调整优先级'"
+      ],
+      "modifiers": [
+        "id",
+        "fontSize",
+        "accessibilityText",
+        "customProperty",
+        "onClick"
+      ],
+      "start": 6502,
+      "end": 6517,
+      "container": false,
+      "snippet": "Button('调整优先级')"
+    },
+    {
+      "index": 9,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 226,
+      "column": 9,
+      "component": "Button",
+      "args": [
+        "'编辑截止日期'"
+      ],
+      "modifiers": [
+        "id",
+        "fontSize",
+        "accessibilityText",
+        "customProperty",
+        "onClick"
+      ],
+      "start": 7359,
+      "end": 7375,
+      "container": false,
+      "snippet": "Button('编辑截止日期')"
+    },
+    {
+      "index": 10,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 259,
+      "column": 5,
+      "component": "Row",
+      "args": [
+        "{ space: 8 }"
+      ],
+      "modifiers": [],
+      "start": 8314,
+      "end": 8331,
+      "container": true,
+      "snippet": "Row({ space: 8 }) {"
+    },
+    {
+      "index": 11,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 260,
+      "column": 7,
+      "component": "Text",
+      "args": [
+        "'只看未完成'"
+      ],
+      "modifiers": [
+        "fontSize"
+      ],
+      "start": 8340,
+      "end": 8353,
+      "container": false,
+      "snippet": "Text('只看未完成')"
+    },
+    {
+      "index": 12,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 262,
+      "column": 7,
+      "component": "Toggle",
+      "args": [
+        "{ type: ToggleType.Switch, isOn: this.onlyOpen }"
+      ],
+      "modifiers": [
+        "id",
+        "accessibilityText",
+        "customProperty",
+        "onChange"
+      ],
+      "start": 8382,
+      "end": 8438,
+      "container": false,
+      "snippet": "Toggle({ type: ToggleType.Switch, isOn: this.onlyOpen })"
+    },
+    {
+      "index": 13,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 284,
+      "column": 7,
+      "component": "Text",
+      "args": [
+        "'只看收藏'"
+      ],
+      "modifiers": [
+        "fontSize"
+      ],
+      "start": 9071,
+      "end": 9083,
+      "container": false,
+      "snippet": "Text('只看收藏')"
+    },
+    {
+      "index": 14,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 286,
+      "column": 7,
+      "component": "Toggle",
+      "args": [
+        "{ type: ToggleType.Switch, isOn: this.onlyFavorite }"
+      ],
+      "modifiers": [
+        "id",
+        "accessibilityText",
+        "customProperty",
+        "onChange"
+      ],
+      "start": 9112,
+      "end": 9172,
+      "container": false,
+      "snippet": "Toggle({ type: ToggleType.Switch, isOn: this.onlyFavorite })"
+    },
+    {
+      "index": 15,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 308,
+      "column": 7,
+      "component": "Button",
+      "args": [
+        "'清除筛选'"
+      ],
+      "modifiers": [
+        "id",
+        "fontSize",
+        "accessibilityText",
+        "customProperty",
+        "onClick"
+      ],
+      "start": 9830,
+      "end": 9844,
+      "container": false,
+      "snippet": "Button('清除筛选')"
+    },
+    {
+      "index": 16,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 334,
+      "column": 5,
+      "component": "Column",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 10425,
+      "end": 10446,
+      "container": true,
+      "snippet": "Column({ space: 10 }) {"
+    },
+    {
+      "index": 17,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 335,
+      "column": 7,
+      "component": "Text",
+      "args": [
+        "'编辑截止日期'"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "width"
+      ],
+      "start": 10455,
+      "end": 10469,
+      "container": false,
+      "snippet": "Text('编辑截止日期')"
+    },
+    {
+      "index": 18,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 339,
+      "column": 7,
+      "component": "Text",
+      "args": [
+        "`任务：${this.selectedTitle()}；当前截止日期：${this.selectedDue()}`"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "width"
+      ],
+      "start": 10558,
+      "end": 10621,
+      "container": false,
+      "snippet": "Text(`任务：${this.selectedTitle()}；当前截止日期：${this.selectedDue()}`)"
+    },
+    {
+      "index": 19,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 343,
+      "column": 7,
+      "component": "TextInput",
+      "args": [
+        "{ placeholder: 'YYYY-MM-DD', text: this.editDueDate }"
+      ],
+      "modifiers": [
+        "id",
+        "height",
+        "accessibilityText",
+        "customProperty",
+        "onChange"
+      ],
+      "start": 10703,
+      "end": 10767,
+      "container": false,
+      "snippet": "TextInput({ placeholder: 'YYYY-MM-DD', text: this.editDueDate })"
+    },
+    {
+      "index": 20,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 367,
+      "column": 7,
+      "component": "Row",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 11504,
+      "end": 11522,
+      "container": true,
+      "snippet": "Row({ space: 10 }) {"
+    },
+    {
+      "index": 21,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 368,
+      "column": 9,
+      "component": "Button",
+      "args": [
+        "'保存'"
+      ],
+      "modifiers": [
+        "id",
+        "accessibilityText",
+        "customProperty",
+        "onClick"
+      ],
+      "start": 11533,
+      "end": 11545,
+      "container": false,
+      "snippet": "Button('保存')"
+    },
+    {
+      "index": 22,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 387,
+      "column": 9,
+      "component": "Button",
+      "args": [
+        "'取消'"
+      ],
+      "modifiers": [
+        "id",
+        "accessibilityText",
+        "customProperty",
+        "onClick"
+      ],
+      "start": 12162,
+      "end": 12174,
+      "container": false,
+      "snippet": "Button('取消')"
+    },
+    {
+      "index": 23,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 414,
+      "column": 5,
+      "component": "Stack",
+      "args": [
+        "{ alignContent: Alignment.Bottom }"
+      ],
+      "modifiers": [],
+      "start": 12813,
+      "end": 12854,
+      "container": true,
+      "snippet": "Stack({ alignContent: Alignment.Bottom }) {"
+    },
+    {
+      "index": 24,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 415,
+      "column": 7,
+      "component": "Column",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 12863,
+      "end": 12884,
+      "container": true,
+      "snippet": "Column({ space: 10 }) {"
+    },
+    {
+      "index": 25,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 416,
+      "column": 9,
+      "component": "Text",
+      "args": [
+        "'Semantic Tasks'"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "width"
+      ],
+      "start": 12895,
+      "end": 12917,
+      "container": false,
+      "snippet": "Text('Semantic Tasks')"
+    },
+    {
+      "index": 26,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 420,
+      "column": 9,
+      "component": "Text",
+      "args": [
+        "'任务、筛选、收藏与截止日期'"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "width"
+      ],
+      "start": 13014,
+      "end": 13035,
+      "container": false,
+      "snippet": "Text('任务、筛选、收藏与截止日期')"
+    },
+    {
+      "index": 27,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 425,
+      "column": 9,
+      "component": "TextInput",
+      "args": [
+        "{ placeholder: '搜索任务或项目', text: this.query }"
+      ],
+      "modifiers": [
+        "id",
+        "height",
+        "accessibilityText",
+        "customProperty",
+        "onChange"
+      ],
+      "start": 13126,
+      "end": 13181,
+      "container": false,
+      "snippet": "TextInput({ placeholder: '搜索任务或项目', text: this.query })"
+    },
+    {
+      "index": 28,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 452,
+      "column": 9,
+      "component": "List",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 13899,
+      "end": 13918,
+      "container": true,
+      "snippet": "List({ space: 10 }) {"
+    },
+    {
+      "index": 29,
+      "file": "examples/semantic-tasks-app/entry/src/main/ets/pages/Index.ets",
+      "line": 454,
+      "column": 13,
+      "component": "ListItem",
+      "args": [],
+      "modifiers": [],
+      "start": 13994,
+      "end": 14004,
+      "container": true,
+      "snippet": "ListItem() {"
+    }
+  ]
+}

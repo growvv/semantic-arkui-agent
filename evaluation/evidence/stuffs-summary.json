@@ -1,0 +1,108 @@
+{
+  "app": "STUFFS_NEXT",
+  "bundle": "org.anapp.research.prototype",
+  "source": "https://github.com/awaLiny2333/STUFFS_NEXT",
+  "total": 4,
+  "verified": 4,
+  "agentFinished": 3,
+  "promptTokens": 20050,
+  "completionTokens": 647,
+  "results": [
+    {
+      "id": "settings-open",
+      "goal": "打开设置面板",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 2,
+          "reason": "设置面板已打开。",
+          "promptTokens": 2588,
+          "completionTokens": 40,
+          "elapsedMs": 6797
+        }
+      },
+      "agentExitCode": 0,
+      "elapsedSeconds": 9.39,
+      "verified": true,
+      "checkDetail": "visible=True",
+      "beforeSnapshot": "/evaluation/runs/stuffs/settings-open/before.json",
+      "afterSnapshot": "/evaluation/runs/stuffs/settings-open/after.json",
+      "trajectory": "/evaluation/runs/stuffs/settings-open/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/stuffs/settings-open/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/stuffs/settings-open/after.jpeg"
+    },
+    {
+      "id": "blur-increase",
+      "goal": "打开设置面板，把毛玻璃半径调大",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": false,
+          "steps": 5,
+          "reason": "REPEATED_ACTION",
+          "promptTokens": 6669,
+          "completionTokens": 213,
+          "elapsedMs": 14775
+        }
+      },
+      "agentExitCode": 1,
+      "elapsedSeconds": 17.37,
+      "verified": true,
+      "checkDetail": "value=51 > 25",
+      "beforeSnapshot": "/evaluation/runs/stuffs/blur-increase/before.json",
+      "afterSnapshot": "/evaluation/runs/stuffs/blur-increase/after.json",
+      "trajectory": "/evaluation/runs/stuffs/blur-increase/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/stuffs/blur-increase/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/stuffs/blur-increase/after.jpeg"
+    },
+    {
+      "id": "add-open",
+      "goal": "打开添加面板",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 2,
+          "reason": "添加面板已打开",
+          "promptTokens": 2623,
+          "completionTokens": 68,
+          "elapsedMs": 5674
+        }
+      },
+      "agentExitCode": 0,
+      "elapsedSeconds": 8.28,
+      "verified": true,
+      "checkDetail": "visible=True",
+      "beforeSnapshot": "/evaluation/runs/stuffs/add-open/before.json",
+      "afterSnapshot": "/evaluation/runs/stuffs/add-open/after.json",
+      "trajectory": "/evaluation/runs/stuffs/add-open/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/stuffs/add-open/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/stuffs/add-open/after.jpeg"
+    },
+    {
+      "id": "add-card-reading",
+      "goal": "打开添加面板，在名称输入框输入“阅读”，向下滚动页面，点击添加目标卡片",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 6,
+          "reason": "已添加目标卡片“阅读”。",
+          "promptTokens": 8170,
+          "completionTokens": 326,
+          "elapsedMs": 25033
+        }
+      },
+      "agentExitCode": 0,
+      "elapsedSeconds": 27.67,
+      "verified": true,
+      "checkDetail": "value=1 >= 1",
+      "beforeSnapshot": "/evaluation/runs/stuffs/add-card-reading/before.json",
+      "afterSnapshot": "/evaluation/runs/stuffs/add-card-reading/after.json",
+      "trajectory": "/evaluation/runs/stuffs/add-card-reading/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/stuffs/add-card-reading/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/stuffs/add-card-reading/after.jpeg"
+    }
+  ]
+}

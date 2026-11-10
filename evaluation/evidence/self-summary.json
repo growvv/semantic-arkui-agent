@@ -1,0 +1,1113 @@
+{
+  "app": "SemanticTasks",
+  "bundle": "org.anapp.research.prototype",
+  "total": 8,
+  "verified": 8,
+  "agentFinished": 8,
+  "promptTokens": 82847,
+  "completionTokens": 736,
+  "results": [
+    {
+      "id": "favorite-t1",
+      "goal": "收藏“整理季度材料”，项目是北区门店",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 2,
+          "reason": "“整理季度材料”（项目：北区门店）已收藏。",
+          "promptTokens": 7513,
+          "completionTokens": 95,
+          "elapsedMs": 11090
+        }
+      },
+      "agentExitCode": 0,
+      "elapsedSeconds": 13.66,
+      "verified": true,
+      "checkOk": true,
+      "changes": [
+        {
+          "scope": "task",
+          "taskId": "t1",
+          "field": "favorite",
+          "before": false,
+          "after": true
+        }
+      ],
+      "unallowedChanges": [],
+      "initialState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "finalState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "trajectory": "/evaluation/runs/self/favorite-t1/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/self/favorite-t1/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/self/favorite-t1/after.jpeg"
+    },
+    {
+      "id": "unfavorite-t3",
+      "goal": "取消收藏“更新采购台账”",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 2,
+          "reason": "“更新采购台账”当前已取消收藏（收藏：否）。",
+          "promptTokens": 7501,
+          "completionTokens": 149,
+          "elapsedMs": 12984
+        }
+      },
+      "agentExitCode": 0,
+      "elapsedSeconds": 15.23,
+      "verified": true,
+      "checkOk": true,
+      "changes": [
+        {
+          "scope": "task",
+          "taskId": "t3",
+          "field": "favorite",
+          "before": true,
+          "after": false
+        }
+      ],
+      "unallowedChanges": [],
+      "initialState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "finalState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "trajectory": "/evaluation/runs/self/unfavorite-t3/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/self/unfavorite-t3/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/self/unfavorite-t3/after.jpeg"
+    },
+    {
+      "id": "complete-t1",
+      "goal": "把“整理季度材料”（北区门店）标记为已完成",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 2,
+          "reason": "“整理季度材料”（北区门店）已标记为已完成。",
+          "promptTokens": 7518,
+          "completionTokens": 76,
+          "elapsedMs": 8732
+        }
+      },
+      "agentExitCode": 0,
+      "elapsedSeconds": 11.23,
+      "verified": true,
+      "checkOk": true,
+      "changes": [
+        {
+          "scope": "task",
+          "taskId": "t1",
+          "field": "completed",
+          "before": false,
+          "after": true
+        }
+      ],
+      "unallowedChanges": [],
+      "initialState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "finalState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "trajectory": "/evaluation/runs/self/complete-t1/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/self/complete-t1/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/self/complete-t1/after.jpeg"
+    },
+    {
+      "id": "reopen-t4",
+      "goal": "把“核对活动预算”重新打开",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 2,
+          "reason": "“核对活动预算”当前状态为进行中（未完成），已重新打开。",
+          "promptTokens": 7510,
+          "completionTokens": 67,
+          "elapsedMs": 9844
+        }
+      },
+      "agentExitCode": 0,
+      "elapsedSeconds": 12.03,
+      "verified": true,
+      "checkOk": true,
+      "changes": [
+        {
+          "scope": "task",
+          "taskId": "t4",
+          "field": "completed",
+          "before": true,
+          "after": false
+        }
+      ],
+      "unallowedChanges": [],
+      "initialState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "finalState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "trajectory": "/evaluation/runs/self/reopen-t4/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/self/reopen-t4/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/self/reopen-t4/after.jpeg"
+    },
+    {
+      "id": "search-purchase",
+      "goal": "在搜索框输入“采购”",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 2,
+          "reason": "已在搜索框输入“采购”。",
+          "promptTokens": 5362,
+          "completionTokens": 59,
+          "elapsedMs": 15022
+        }
+      },
+      "agentExitCode": 0,
+      "elapsedSeconds": 17.3,
+      "verified": true,
+      "checkOk": true,
+      "changes": [
+        {
+          "scope": "app",
+          "field": "query",
+          "before": "",
+          "after": "采购"
+        }
+      ],
+      "unallowedChanges": [],
+      "initialState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "finalState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "采购",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "trajectory": "/evaluation/runs/self/search-purchase/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/self/search-purchase/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/self/search-purchase/after.jpeg"
+    },
+    {
+      "id": "filter-favorite",
+      "goal": "打开“只看收藏”筛选",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 2,
+          "reason": "“只看收藏”筛选已开启。",
+          "promptTokens": 5363,
+          "completionTokens": 43,
+          "elapsedMs": 10265
+        }
+      },
+      "agentExitCode": 0,
+      "elapsedSeconds": 12.54,
+      "verified": true,
+      "checkOk": true,
+      "changes": [
+        {
+          "scope": "app",
+          "field": "onlyFavorite",
+          "before": false,
+          "after": true
+        }
+      ],
+      "unallowedChanges": [],
+      "initialState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "finalState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": true,
+        "selectedId": ""
+      },
+      "trajectory": "/evaluation/runs/self/filter-favorite/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/self/filter-favorite/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/self/filter-favorite/after.jpeg"
+    },
+    {
+      "id": "change-due-t3",
+      "goal": "把“更新采购台账”的截止日期改为 2026-11-20",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 4,
+          "reason": "“更新采购台账”的截止日期已更新为 2026-11-20。",
+          "promptTokens": 28173,
+          "completionTokens": 136,
+          "elapsedMs": 33706
+        }
+      },
+      "agentExitCode": 0,
+      "elapsedSeconds": 35.88,
+      "verified": true,
+      "checkOk": true,
+      "changes": [
+        {
+          "scope": "task",
+          "taskId": "t3",
+          "field": "dueDate",
+          "before": "2026-10-18",
+          "after": "2026-11-20"
+        }
+      ],
+      "unallowedChanges": [],
+      "initialState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "finalState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-11-20",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": "t3"
+      },
+      "trajectory": "/evaluation/runs/self/change-due-t3/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/self/change-due-t3/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/self/change-due-t3/after.jpeg"
+    },
+    {
+      "id": "priority-t1",
+      "goal": "把“整理季度材料”（北区门店）的优先级调整为高",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 2,
+          "reason": "“整理季度材料”（北区门店）的优先级已是高，无需调整。",
+          "promptTokens": 13907,
+          "completionTokens": 111,
+          "elapsedMs": 18411
+        }
+      },
+      "agentExitCode": 0,
+      "elapsedSeconds": 20.7,
+      "verified": true,
+      "checkOk": true,
+      "changes": [
+        {
+          "scope": "task",
+          "taskId": "t1",
+          "field": "priority",
+          "before": "普通",
+          "after": "高"
+        }
+      ],
+      "unallowedChanges": [],
+      "initialState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "finalState": {
+        "tasks": [
+          {
+            "id": "t1",
+            "title": "整理季度材料",
+            "project": "北区门店",
+            "dueDate": "2026-10-15",
+            "priority": "高",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t2",
+            "title": "整理季度材料",
+            "project": "线上商城",
+            "dueDate": "2026-10-20",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          },
+          {
+            "id": "t3",
+            "title": "更新采购台账",
+            "project": "北区门店",
+            "dueDate": "2026-10-18",
+            "priority": "低",
+            "completed": false,
+            "favorite": true
+          },
+          {
+            "id": "t4",
+            "title": "核对活动预算",
+            "project": "线上商城",
+            "dueDate": "2026-10-22",
+            "priority": "高",
+            "completed": true,
+            "favorite": false
+          },
+          {
+            "id": "t5",
+            "title": "预订客户出差",
+            "project": "市场",
+            "dueDate": "2026-11-03",
+            "priority": "普通",
+            "completed": false,
+            "favorite": false
+          }
+        ],
+        "query": "",
+        "onlyOpen": false,
+        "onlyFavorite": false,
+        "selectedId": ""
+      },
+      "trajectory": "/evaluation/runs/self/priority-t1/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/self/priority-t1/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/self/priority-t1/after.jpeg"
+    }
+  ]
+}

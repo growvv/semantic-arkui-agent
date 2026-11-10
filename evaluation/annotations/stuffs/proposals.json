@@ -1,0 +1,5494 @@
+{
+  "project": "<third-party-apps>/stuffs-next",
+  "sourceRoot": "<third-party-apps>/stuffs-next/entry/src/main/ets",
+  "files": 7,
+  "candidateCount": 165,
+  "llmError": "",
+  "llmProposed": 3,
+  "proposals": [
+    {
+      "candidateIndex": 0,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 224,
+      "component": "RelativeContainer",
+      "id": "sem.auto.relativecontainer-224",
+      "idSuffix": "relativecontainer-224",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "RelativeContainer 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 1,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 225,
+      "component": "Image",
+      "id": "sem.auto.image-225",
+      "idSuffix": "image-225",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "app.media.bg1",
+      "actions": []
+    },
+    {
+      "candidateIndex": 2,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 236,
+      "component": "Row",
+      "id": "sem.auto.row-236",
+      "idSuffix": "row-236",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 3,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 246,
+      "component": "RelativeContainer",
+      "id": "sem.auto.relativecontainer-246",
+      "idSuffix": "relativecontainer-246",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "RelativeContainer 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 4,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 248,
+      "component": "Row",
+      "id": "sem.auto.row-248",
+      "idSuffix": "row-248",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 5,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 249,
+      "component": "Text",
+      "id": "sem.auto.entry-title",
+      "idSuffix": "entry-title",
+      "source": "llm",
+      "confidence": 0.87,
+      "annotate": true,
+      "role": "content",
+      "meaning": "页面入口标题",
+      "actions": []
+    },
+    {
+      "candidateIndex": 6,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 262,
+      "component": "Text",
+      "id": "sem.auto.entry-subtitle",
+      "idSuffix": "entry-subtitle",
+      "source": "llm",
+      "confidence": 0.84,
+      "annotate": true,
+      "role": "content",
+      "meaning": "页面入口副标题",
+      "actions": []
+    },
+    {
+      "candidateIndex": 7,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 283,
+      "component": "WaterFlow",
+      "id": "sem.auto.main-waterflow",
+      "idSuffix": "main-waterflow",
+      "source": "llm",
+      "confidence": 0.75,
+      "annotate": true,
+      "role": "list",
+      "meaning": "主内容瀑布流列表",
+      "actions": [
+        {
+          "name": "scroll",
+          "input": "scroll",
+          "label": "滚动内容列表"
+        }
+      ],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 8,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 285,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-285",
+      "idSuffix": "flowitem-285",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 9,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 290,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-290",
+      "idSuffix": "flowitem-290",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 10,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 291,
+      "component": "RelativeContainer",
+      "id": "sem.auto.relativecontainer-291",
+      "idSuffix": "relativecontainer-291",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "RelativeContainer 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 11,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 292,
+      "component": "Text",
+      "id": "sem.auto.text-292",
+      "idSuffix": "text-292",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.UI_is_first_open ? $r('app.string.Welcome') : $r(this.UI_top_card_greetings",
+      "actions": []
+    },
+    {
+      "candidateIndex": 12,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 298,
+      "component": "Text",
+      "id": "sem.auto.text-298",
+      "idSuffix": "text-298",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Text 控件",
+      "actions": []
+    },
+    {
+      "candidateIndex": 13,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 314,
+      "component": "Row",
+      "id": "sem.auto.row-314",
+      "idSuffix": "row-314",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 14,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 315,
+      "component": "LinysSymbolButton",
+      "id": "sem.auto.linyssymbolbutton-315",
+      "idSuffix": "linyssymbolbutton-315",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_image: $r('sys.symbol.plus'),\n                  UI_text: ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 15,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 346,
+      "component": "LinysSymbolButton",
+      "id": "sem.auto.linyssymbolbutton-346",
+      "idSuffix": "linyssymbolbutton-346",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_image: $r('sys.symbol.gearshape'),\n                  UI_t",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 16,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 378,
+      "component": "Column",
+      "id": "sem.auto.column-378",
+      "idSuffix": "column-378",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 17,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 379,
+      "component": "Text",
+      "id": "sem.auto.text-379",
+      "idSuffix": "text-379",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "block Settings",
+      "actions": []
+    },
+    {
+      "candidateIndex": 18,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 387,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-387",
+      "idSuffix": "linyslefttitle-387",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Settings_Content_Background\"),\n     ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 19,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 394,
+      "component": "SegmentButton",
+      "id": "sem.auto.segmentbutton-394",
+      "idSuffix": "segmentbutton-394",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  options: this.UI_backdrop_segment_button_options, selectedIn",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 20,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 401,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-401",
+      "idSuffix": "linyslefttitle-401",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Settings_Content_Blur_Radius\"),\n    ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 21,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 408,
+      "component": "Slider",
+      "id": "sem.auto.slider-408",
+      "idSuffix": "slider-408",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "control",
+      "meaning": "{\n                  style: SliderStyle.InSet,\n                  min: 1,\n        ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "调整滑块"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 22,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 436,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-436",
+      "idSuffix": "linyslefttitle-436",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Settings_Content_Min_Block_Size\"),\n ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 23,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 443,
+      "component": "Slider",
+      "id": "sem.auto.slider-443",
+      "idSuffix": "slider-443",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "control",
+      "meaning": "{\n                  style: SliderStyle.InSet,\n                  min: 300,\n      ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "调整滑块"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 24,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 462,
+      "component": "LinysRightExplanation",
+      "id": "sem.auto.linysrightexplanation-462",
+      "idSuffix": "linysrightexplanation-462",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Star\")",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 25,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 470,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-470",
+      "idSuffix": "linyslefttitle-470",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Light\"",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 26,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 477,
+      "component": "TextArea",
+      "id": "sem.auto.textarea-477",
+      "idSuffix": "textarea-477",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "input",
+      "meaning": "{\n                  placeholder: this.DESIGN_color_scheme_light.toString(),\n    ",
+      "actions": [
+        {
+          "name": "set_text",
+          "input": "set_text",
+          "label": "输入文本"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 27,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 491,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-491",
+      "idSuffix": "linyslefttitle-491",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Dark\")",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 28,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 498,
+      "component": "TextArea",
+      "id": "sem.auto.textarea-498",
+      "idSuffix": "textarea-498",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "input",
+      "meaning": "{\n                  placeholder: this.DESIGN_color_scheme_dark.toString(), text:",
+      "actions": [
+        {
+          "name": "set_text",
+          "input": "set_text",
+          "label": "输入文本"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 29,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 511,
+      "component": "LinysRightExplanation",
+      "id": "sem.auto.linysrightexplanation-511",
+      "idSuffix": "linysrightexplanation-511",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Descri",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 30,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 519,
+      "component": "Button",
+      "id": "sem.auto.button-519",
+      "idSuffix": "button-519",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "Button 操作",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 31,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 520,
+      "component": "Text",
+      "id": "sem.auto.text-520",
+      "idSuffix": "text-520",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "OK",
+      "actions": []
+    },
+    {
+      "candidateIndex": 32,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 559,
+      "component": "LinysRightExplanation",
+      "id": "sem.auto.linysrightexplanation-559",
+      "idSuffix": "linysrightexplanation-559",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Got_Me",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 33,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 567,
+      "component": "Button",
+      "id": "sem.auto.button-567",
+      "idSuffix": "button-567",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "Button 操作",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 34,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 568,
+      "component": "Text",
+      "id": "sem.auto.text-568",
+      "idSuffix": "text-568",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.SETTINGS_reset_design_confirm == 0 ? $r(\"app.string.General_RESET\") :\n     ",
+      "actions": []
+    },
+    {
+      "candidateIndex": 35,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 608,
+      "component": "Column",
+      "id": "sem.auto.column-608",
+      "idSuffix": "column-608",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 36,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 609,
+      "component": "Text",
+      "id": "sem.auto.text-609",
+      "idSuffix": "text-609",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "block Add",
+      "actions": []
+    },
+    {
+      "candidateIndex": 37,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 617,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-617",
+      "idSuffix": "linyslefttitle-617",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Add_Name_Title\"),\n                  ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 38,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 624,
+      "component": "LinysTextArea",
+      "id": "sem.auto.linystextarea-624",
+      "idSuffix": "linystextarea-624",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_placeholder: \"=￣ω￣=\",\n                  UI_text: this.ADD",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 39,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 643,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-643",
+      "idSuffix": "linyslefttitle-643",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Add_Description\"),\n                 ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 40,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 650,
+      "component": "LinysTextArea",
+      "id": "sem.auto.linystextarea-650",
+      "idSuffix": "linystextarea-650",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_placeholder: \"(〃￣︶￣)人(￣︶￣〃)\",\n                  UI_text: ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 41,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 669,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-669",
+      "idSuffix": "linyslefttitle-669",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Add_Length\"),\n                  STAT",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 42,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 676,
+      "component": "Slider",
+      "id": "sem.auto.slider-676",
+      "idSuffix": "slider-676",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "control",
+      "meaning": "{\n                  style: SliderStyle.InSet,\n                  min: 200,\n      ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "调整滑块"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 43,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 698,
+      "component": "LinysRightExplanation",
+      "id": "sem.auto.linysrightexplanation-698",
+      "idSuffix": "linysrightexplanation-698",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(this.ADD_length_description),\n                  ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 44,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 706,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-706",
+      "idSuffix": "linyslefttitle-706",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Add_Time_Limit\"),\n                  ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 45,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 713,
+      "component": "Slider",
+      "id": "sem.auto.slider-713",
+      "idSuffix": "slider-713",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "control",
+      "meaning": "{\n                  style: SliderStyle.InSet,\n                  min: 1,\n        ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "调整滑块"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 46,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 732,
+      "component": "Row",
+      "id": "sem.auto.row-732",
+      "idSuffix": "row-732",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 47,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 733,
+      "component": "TextInput",
+      "id": "sem.auto.textinput-733",
+      "idSuffix": "textinput-733",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "input",
+      "meaning": "{ text: String(this.ADD_time_limit) }",
+      "actions": [
+        {
+          "name": "set_text",
+          "input": "set_text",
+          "label": "输入文本"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 48,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 755,
+      "component": "Text",
+      "id": "sem.auto.text-755",
+      "idSuffix": "text-755",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "$r(this.ADD_time_limit_unit_or_description)",
+      "actions": []
+    },
+    {
+      "candidateIndex": 49,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 769,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-769",
+      "idSuffix": "linyslefttitle-769",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  UI_text: $r(\"app.string.Add_Target_Value\"),\n                ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 50,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 776,
+      "component": "Slider",
+      "id": "sem.auto.slider-776",
+      "idSuffix": "slider-776",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "control",
+      "meaning": "{\n                  style: SliderStyle.InSet,\n                  min: 1,\n        ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "调整滑块"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 51,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 795,
+      "component": "Row",
+      "id": "sem.auto.row-795",
+      "idSuffix": "row-795",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 52,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 796,
+      "component": "TextInput",
+      "id": "sem.auto.textinput-796",
+      "idSuffix": "textinput-796",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "input",
+      "meaning": "{ text: String(this.ADD_value_target) }",
+      "actions": [
+        {
+          "name": "set_text",
+          "input": "set_text",
+          "label": "输入文本"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 53,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 818,
+      "component": "Text",
+      "id": "sem.auto.text-818",
+      "idSuffix": "text-818",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "$r(this.ADD_value_target_unit_or_description)",
+      "actions": []
+    },
+    {
+      "candidateIndex": 54,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 832,
+      "component": "Button",
+      "id": "sem.auto.button-832",
+      "idSuffix": "button-832",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "Button 操作",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 55,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 833,
+      "component": "Text",
+      "id": "sem.auto.text-833",
+      "idSuffix": "text-833",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "OK",
+      "actions": []
+    },
+    {
+      "candidateIndex": 56,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 887,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-887",
+      "idSuffix": "flowitem-887",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 57,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 888,
+      "component": "RelativeContainer",
+      "id": "sem.auto.relativecontainer-888",
+      "idSuffix": "relativecontainer-888",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "RelativeContainer 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 58,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 889,
+      "component": "Column",
+      "id": "sem.auto.column-889",
+      "idSuffix": "column-889",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 59,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 890,
+      "component": "Text",
+      "id": "sem.auto.text-890",
+      "idSuffix": "text-890",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Title_Work_Idle\") :\n          ",
+      "actions": []
+    },
+    {
+      "candidateIndex": 60,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 896,
+      "component": "Text",
+      "id": "sem.auto.text-896",
+      "idSuffix": "text-896",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Title Work Ongoing",
+      "actions": []
+    },
+    {
+      "candidateIndex": 61,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 901,
+      "component": "Text",
+      "id": "sem.auto.text-901",
+      "idSuffix": "text-901",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.WORK_is_work_on_idle() ?\n                ((this.ENVIRONMENT_current_timesta",
+      "actions": []
+    },
+    {
+      "candidateIndex": 62,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 909,
+      "component": "Text",
+      "id": "sem.auto.text-909",
+      "idSuffix": "text-909",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Value Unit Hour",
+      "actions": []
+    },
+    {
+      "candidateIndex": 63,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 916,
+      "component": "Button",
+      "id": "sem.auto.button-916",
+      "idSuffix": "button-916",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "Button 操作",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 64,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 917,
+      "component": "Column",
+      "id": "sem.auto.column-917",
+      "idSuffix": "column-917",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 65,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 918,
+      "component": "SymbolGlyph",
+      "id": "sem.auto.symbolglyph-918",
+      "idSuffix": "symbolglyph-918",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.WORK_is_work_on_idle() ? $r(\"sys.symbol.battery_75percent\") :\n             ",
+      "actions": []
+    },
+    {
+      "candidateIndex": 66,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 923,
+      "component": "Text",
+      "id": "sem.auto.text-923",
+      "idSuffix": "text-923",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Title_Not_Working\") :\n        ",
+      "actions": []
+    },
+    {
+      "candidateIndex": 67,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 958,
+      "component": "LinysBlock",
+      "id": "sem.auto.linysblock-958",
+      "idSuffix": "linysblock-958",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n              ENVIRONMENT_waterFlow_column_count: this.UI_waterFlow_Columns,\n ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 68,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 991,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-991",
+      "idSuffix": "flowitem-991",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 69,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 992,
+      "component": "RelativeContainer",
+      "id": "sem.auto.relativecontainer-992",
+      "idSuffix": "relativecontainer-992",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "RelativeContainer 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 70,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 993,
+      "component": "Text",
+      "id": "sem.auto.text-993",
+      "idSuffix": "text-993",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Encouragement",
+      "actions": []
+    },
+    {
+      "candidateIndex": 71,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1062,
+      "component": "Scroll",
+      "id": "sem.auto.scroll-1062",
+      "idSuffix": "scroll-1062",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Scroll 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 72,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1063,
+      "component": "Column",
+      "id": "sem.auto.column-1063",
+      "idSuffix": "column-1063",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 73,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1064,
+      "component": "Row",
+      "id": "sem.auto.row-1064",
+      "idSuffix": "row-1064",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 74,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1080,
+      "component": "WaterFlow",
+      "id": "sem.auto.waterflow-1080",
+      "idSuffix": "waterflow-1080",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "WaterFlow 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 75,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1081,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-1081",
+      "idSuffix": "flowitem-1081",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 76,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1082,
+      "component": "Column",
+      "id": "sem.auto.column-1082",
+      "idSuffix": "column-1082",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 77,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1083,
+      "component": "Text",
+      "id": "sem.auto.text-1083",
+      "idSuffix": "text-1083",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.DATA_cards_name[this.STATUS_card_index_of_last_expanded]",
+      "actions": []
+    },
+    {
+      "candidateIndex": 78,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1096,
+      "component": "Row",
+      "id": "sem.auto.row-1096",
+      "idSuffix": "row-1096",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 79,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1097,
+      "component": "Text",
+      "id": "sem.auto.text-1097",
+      "idSuffix": "text-1097",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.DATA_cards_done[this.STATUS_card_index_of_last_expanded] != undefined ?\n   ",
+      "actions": []
+    },
+    {
+      "candidateIndex": 80,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1102,
+      "component": "Text",
+      "id": "sem.auto.text-1102",
+      "idSuffix": "text-1102",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "\"／\" + (this.DATA_cards_target[this.STATUS_card_expanding] == 1001 ? \" ∞ \" :\n    ",
+      "actions": []
+    },
+    {
+      "candidateIndex": 81,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1107,
+      "component": "Text",
+      "id": "sem.auto.text-1107",
+      "idSuffix": "text-1107",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Value Unit Hour",
+      "actions": []
+    },
+    {
+      "candidateIndex": 82,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1121,
+      "component": "Text",
+      "id": "sem.auto.text-1121",
+      "idSuffix": "text-1121",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "“\" + this.DATA_cards_desc[this.STATUS_card_index_of_last_expanded] + \"”",
+      "actions": []
+    },
+    {
+      "candidateIndex": 83,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1136,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-1136",
+      "idSuffix": "flowitem-1136",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 84,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1137,
+      "component": "Column",
+      "id": "sem.auto.column-1137",
+      "idSuffix": "column-1137",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 85,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1138,
+      "component": "Gauge",
+      "id": "sem.auto.gauge-1138",
+      "idSuffix": "gauge-1138",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                    value: this.CARD_get_done_value(),\n                    min",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 86,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1144,
+      "component": "Column",
+      "id": "sem.auto.column-1144",
+      "idSuffix": "column-1144",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 87,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1145,
+      "component": "Text",
+      "id": "sem.auto.text-1145",
+      "idSuffix": "text-1145",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.CARD_get_done_percentage()",
+      "actions": []
+    },
+    {
+      "candidateIndex": 88,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1153,
+      "component": "Text",
+      "id": "sem.auto.text-1153",
+      "idSuffix": "text-1153",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Progress Done",
+      "actions": []
+    },
+    {
+      "candidateIndex": 89,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1180,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-1180",
+      "idSuffix": "flowitem-1180",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 90,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1181,
+      "component": "Column",
+      "id": "sem.auto.column-1181",
+      "idSuffix": "column-1181",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 91,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1182,
+      "component": "Text",
+      "id": "sem.auto.text-1182",
+      "idSuffix": "text-1182",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "$r(this.UI_card_expanded_slogan_of_time)",
+      "actions": []
+    },
+    {
+      "candidateIndex": 92,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1192,
+      "component": "Gauge",
+      "id": "sem.auto.gauge-1192",
+      "idSuffix": "gauge-1192",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                    value: this.DATA_cards_time_limit[this.STATUS_card_index_o",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 93,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1199,
+      "component": "Column",
+      "id": "sem.auto.column-1199",
+      "idSuffix": "column-1199",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 94,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1200,
+      "component": "Text",
+      "id": "sem.auto.text-1200",
+      "idSuffix": "text-1200",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.CARD_get_time_left_percentage()",
+      "actions": []
+    },
+    {
+      "candidateIndex": 95,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1208,
+      "component": "Text",
+      "id": "sem.auto.text-1208",
+      "idSuffix": "text-1208",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Progress Remaining Time",
+      "actions": []
+    },
+    {
+      "candidateIndex": 96,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1232,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-1232",
+      "idSuffix": "flowitem-1232",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 97,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1233,
+      "component": "Column",
+      "id": "sem.auto.column-1233",
+      "idSuffix": "column-1233",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 98,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1234,
+      "component": "Text",
+      "id": "sem.auto.text-1234",
+      "idSuffix": "text-1234",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Progress Desc Estimating",
+      "actions": []
+    },
+    {
+      "candidateIndex": 99,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1236,
+      "component": "Row",
+      "id": "sem.auto.row-1236",
+      "idSuffix": "row-1236",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 100,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1237,
+      "component": "Text",
+      "id": "sem.auto.text-1237",
+      "idSuffix": "text-1237",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.CARD_get_average_daily_work_left_processed_for_display()",
+      "actions": []
+    },
+    {
+      "candidateIndex": 101,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1241,
+      "component": "Text",
+      "id": "sem.auto.text-1241",
+      "idSuffix": "text-1241",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Value Unit Hour",
+      "actions": []
+    },
+    {
+      "candidateIndex": 102,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1247,
+      "component": "Text",
+      "id": "sem.auto.text-1247",
+      "idSuffix": "text-1247",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Progress Desc Estimating Hours",
+      "actions": []
+    },
+    {
+      "candidateIndex": 103,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1252,
+      "component": "Button",
+      "id": "sem.auto.button-1252",
+      "idSuffix": "button-1252",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "Button 操作",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 104,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1253,
+      "component": "Text",
+      "id": "sem.auto.text-1253",
+      "idSuffix": "text-1253",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Start\") :\n                    ",
+      "actions": []
+    },
+    {
+      "candidateIndex": 105,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1288,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-1288",
+      "idSuffix": "flowitem-1288",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 106,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1289,
+      "component": "LinysDataBoard",
+      "id": "sem.auto.linysdataboard-1289",
+      "idSuffix": "linysdataboard-1289",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                  DATA_list_of_data: this.DATA_cards_punch_card[this.STATUS_ca",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 107,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1308,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-1308",
+      "idSuffix": "flowitem-1308",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 108,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1309,
+      "component": "Column",
+      "id": "sem.auto.column-1309",
+      "idSuffix": "column-1309",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 109,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1310,
+      "component": "Text",
+      "id": "sem.auto.text-1310",
+      "idSuffix": "text-1310",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Board Submitted",
+      "actions": []
+    },
+    {
+      "candidateIndex": 110,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1313,
+      "component": "Text",
+      "id": "sem.auto.text-1313",
+      "idSuffix": "text-1313",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.STATUS_card_index_of_last_expanded == -1 ? \"0\" :\n                  this.DAT",
+      "actions": []
+    },
+    {
+      "candidateIndex": 111,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1318,
+      "component": "Text",
+      "id": "sem.auto.text-1318",
+      "idSuffix": "text-1318",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Board Submitted Hours Of Work",
+      "actions": []
+    },
+    {
+      "candidateIndex": 112,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1321,
+      "component": "Text",
+      "id": "sem.auto.text-1321",
+      "idSuffix": "text-1321",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.CARD_get_date_of_chosen()[0]",
+      "actions": []
+    },
+    {
+      "candidateIndex": 113,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1338,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-1338",
+      "idSuffix": "flowitem-1338",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 114,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1339,
+      "component": "Column",
+      "id": "sem.auto.column-1339",
+      "idSuffix": "column-1339",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 115,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1340,
+      "component": "Text",
+      "id": "sem.auto.text-1340",
+      "idSuffix": "text-1340",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "block Settings",
+      "actions": []
+    },
+    {
+      "candidateIndex": 116,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1347,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-1347",
+      "idSuffix": "linyslefttitle-1347",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                    UI_text: $r(\"app.string.Add_Name_Title\"),\n                ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 117,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1354,
+      "component": "TextArea",
+      "id": "sem.auto.textarea-1354",
+      "idSuffix": "textarea-1354",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "input",
+      "meaning": "{\n                    placeholder: \"=￣ω￣=\", text: this.DATA_cards_name[this.STAT",
+      "actions": [
+        {
+          "name": "set_text",
+          "input": "set_text",
+          "label": "输入文本"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 118,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1362,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-1362",
+      "idSuffix": "linyslefttitle-1362",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                    UI_text: $r(\"app.string.Add_Description\"),\n               ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 119,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1369,
+      "component": "TextArea",
+      "id": "sem.auto.textarea-1369",
+      "idSuffix": "textarea-1369",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "input",
+      "meaning": "{\n                    placeholder: \"(〃￣︶￣)人(￣︶￣〃)\", text: this.DATA_cards_desc[t",
+      "actions": [
+        {
+          "name": "set_text",
+          "input": "set_text",
+          "label": "输入文本"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 120,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1377,
+      "component": "LinysLeftTitle",
+      "id": "sem.auto.linyslefttitle-1377",
+      "idSuffix": "linyslefttitle-1377",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                    UI_text: $r(\"app.string.Add_Length\"),\n                    ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 121,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1384,
+      "component": "Slider",
+      "id": "sem.auto.slider-1384",
+      "idSuffix": "slider-1384",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "control",
+      "meaning": "{\n                    style: SliderStyle.InSet,\n                    min: 200,\n  ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "调整滑块"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 122,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1403,
+      "component": "LinysRightExplanation",
+      "id": "sem.auto.linysrightexplanation-1403",
+      "idSuffix": "linysrightexplanation-1403",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "{\n                    UI_text: $r(this.EDIT_length_description),\n               ",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 123,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1413,
+      "component": "Button",
+      "id": "sem.auto.button-1413",
+      "idSuffix": "button-1413",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "Button 操作",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 124,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1414,
+      "component": "Text",
+      "id": "sem.auto.text-1414",
+      "idSuffix": "text-1414",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "OK",
+      "actions": []
+    },
+    {
+      "candidateIndex": 125,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1447,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-1447",
+      "idSuffix": "flowitem-1447",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 126,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1448,
+      "component": "Column",
+      "id": "sem.auto.column-1448",
+      "idSuffix": "column-1448",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 127,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1450,
+      "component": "Text",
+      "id": "sem.auto.text-1450",
+      "idSuffix": "text-1450",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Progress Title Manage",
+      "actions": []
+    },
+    {
+      "candidateIndex": 128,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1457,
+      "component": "Button",
+      "id": "sem.auto.button-1457",
+      "idSuffix": "button-1457",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "Button 操作",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 129,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1458,
+      "component": "Text",
+      "id": "sem.auto.text-1458",
+      "idSuffix": "text-1458",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Progress Manage Move To Top",
+      "actions": []
+    },
+    {
+      "candidateIndex": 130,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1478,
+      "component": "Button",
+      "id": "sem.auto.button-1478",
+      "idSuffix": "button-1478",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "Button 操作",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 131,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1479,
+      "component": "Text",
+      "id": "sem.auto.text-1479",
+      "idSuffix": "text-1479",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.DATA_cards_name[this.STATUS_card_expanding] == this.DATA_work_working_card_",
+      "actions": []
+    },
+    {
+      "candidateIndex": 132,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1603,
+      "component": "Row",
+      "id": "sem.auto.row-1603",
+      "idSuffix": "row-1603",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 133,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2125,
+      "component": "FlowItem",
+      "id": "sem.auto.flowitem-2125",
+      "idSuffix": "flowitem-2125",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "FlowItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 134,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2126,
+      "component": "RelativeContainer",
+      "id": "sem.auto.relativecontainer-2126",
+      "idSuffix": "relativecontainer-2126",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "RelativeContainer 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 135,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2127,
+      "component": "Column",
+      "id": "sem.auto.column-2127",
+      "idSuffix": "column-2127",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 136,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2128,
+      "component": "Text",
+      "id": "sem.auto.text-2128",
+      "idSuffix": "text-2128",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.name",
+      "actions": []
+    },
+    {
+      "candidateIndex": 137,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2136,
+      "component": "Row",
+      "id": "sem.auto.row-2136",
+      "idSuffix": "row-2136",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 138,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2137,
+      "component": "Text",
+      "id": "sem.auto.text-2137",
+      "idSuffix": "text-2137",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.done == undefined ? \"\" : this.done.toFixed(2)",
+      "actions": []
+    },
+    {
+      "candidateIndex": 139,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2141,
+      "component": "Text",
+      "id": "sem.auto.text-2141",
+      "idSuffix": "text-2141",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "\"／\" + (this.target == 1001 ? \" ∞ \" : String(this.target))",
+      "actions": []
+    },
+    {
+      "candidateIndex": 140,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2144,
+      "component": "Text",
+      "id": "sem.auto.text-2144",
+      "idSuffix": "text-2144",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Value Unit Hour",
+      "actions": []
+    },
+    {
+      "candidateIndex": 141,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2149,
+      "component": "Row",
+      "id": "sem.auto.row-2149",
+      "idSuffix": "row-2149",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 142,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2150,
+      "component": "Text",
+      "id": "sem.auto.text-2150",
+      "idSuffix": "text-2150",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Days Total",
+      "actions": []
+    },
+    {
+      "candidateIndex": 143,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2151,
+      "component": "Text",
+      "id": "sem.auto.text-2151",
+      "idSuffix": "text-2151",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "(this.time_limit == 367 ? \" ∞ \" : String(this.time_limit))",
+      "actions": []
+    },
+    {
+      "candidateIndex": 144,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2155,
+      "component": "Text",
+      "id": "sem.auto.text-2155",
+      "idSuffix": "text-2155",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Days Unit Day",
+      "actions": []
+    },
+    {
+      "candidateIndex": 145,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2160,
+      "component": "Row",
+      "id": "sem.auto.row-2160",
+      "idSuffix": "row-2160",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 146,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2161,
+      "component": "Text",
+      "id": "sem.auto.text-2161",
+      "idSuffix": "text-2161",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Days Remaining",
+      "actions": []
+    },
+    {
+      "candidateIndex": 147,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2162,
+      "component": "Text",
+      "id": "sem.auto.text-2162",
+      "idSuffix": "text-2162",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.time_limit == 367 ? \" ∞ \" : this.getRemainingDays().toFixed(1)",
+      "actions": []
+    },
+    {
+      "candidateIndex": 148,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2166,
+      "component": "Text",
+      "id": "sem.auto.text-2166",
+      "idSuffix": "text-2166",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Days Unit Day",
+      "actions": []
+    },
+    {
+      "candidateIndex": 149,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2275,
+      "component": "Column",
+      "id": "sem.auto.column-2275",
+      "idSuffix": "column-2275",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 150,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2276,
+      "component": "SymbolGlyph",
+      "id": "sem.auto.symbolglyph-2276",
+      "idSuffix": "symbolglyph-2276",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.STATUS_switch_to_arrow ? $r(\"sys.symbol.chevron_down\") : this.UI_image",
+      "actions": []
+    },
+    {
+      "candidateIndex": 151,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2282,
+      "component": "Text",
+      "id": "sem.auto.text-2282",
+      "idSuffix": "text-2282",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.UI_text",
+      "actions": []
+    },
+    {
+      "candidateIndex": 152,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2296,
+      "component": "Text",
+      "id": "sem.auto.text-2296",
+      "idSuffix": "text-2296",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.UI_text",
+      "actions": []
+    },
+    {
+      "candidateIndex": 153,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2318,
+      "component": "Text",
+      "id": "sem.auto.text-2318",
+      "idSuffix": "text-2318",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "this.UI_text",
+      "actions": []
+    },
+    {
+      "candidateIndex": 154,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2343,
+      "component": "TextArea",
+      "id": "sem.auto.textarea-2343",
+      "idSuffix": "textarea-2343",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "input",
+      "meaning": "{ placeholder: this.UI_placeholder, text: this.UI_text }",
+      "actions": [
+        {
+          "name": "set_text",
+          "input": "set_text",
+          "label": "输入文本"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 155,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2375,
+      "component": "Column",
+      "id": "sem.auto.column-2375",
+      "idSuffix": "column-2375",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Column 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 156,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2376,
+      "component": "Row",
+      "id": "sem.auto.row-2376",
+      "idSuffix": "row-2376",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Row 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 157,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2377,
+      "component": "Text",
+      "id": "sem.auto.text-2377",
+      "idSuffix": "text-2377",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Days In A Week",
+      "actions": []
+    },
+    {
+      "candidateIndex": 158,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2385,
+      "component": "Grid",
+      "id": "sem.auto.grid-2385",
+      "idSuffix": "grid-2385",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "Grid 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 159,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2387,
+      "component": "GridItem",
+      "id": "sem.auto.griditem-2387",
+      "idSuffix": "griditem-2387",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "GridItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 160,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2388,
+      "component": "Text",
+      "id": "sem.auto.text-2388",
+      "idSuffix": "text-2388",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Text 控件",
+      "actions": []
+    },
+    {
+      "candidateIndex": 161,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2401,
+      "component": "GridItem",
+      "id": "sem.auto.griditem-2401",
+      "idSuffix": "griditem-2401",
+      "source": "rule",
+      "confidence": 0.4,
+      "annotate": false,
+      "role": "group",
+      "meaning": "GridItem 布局容器",
+      "actions": [],
+      "reason": "layout container without an explicit interaction"
+    },
+    {
+      "candidateIndex": 162,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2402,
+      "component": "Text",
+      "id": "sem.auto.text-2402",
+      "idSuffix": "text-2402",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Text 控件",
+      "actions": []
+    },
+    {
+      "candidateIndex": 163,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2438,
+      "component": "Button",
+      "id": "sem.auto.button-2438",
+      "idSuffix": "button-2438",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "action",
+      "meaning": "Button 操作",
+      "actions": [
+        {
+          "name": "tap",
+          "input": "tap",
+          "label": "点击"
+        }
+      ]
+    },
+    {
+      "candidateIndex": 164,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2439,
+      "component": "Text",
+      "id": "sem.auto.text-2439",
+      "idSuffix": "text-2439",
+      "source": "rule",
+      "confidence": 0.62,
+      "annotate": true,
+      "role": "content",
+      "meaning": "Board Jump To Today",
+      "actions": []
+    }
+  ],
+  "candidates": [
+    {
+      "index": 0,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 224,
+      "column": 5,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 10353,
+      "end": 10372,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "index": 1,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 225,
+      "column": 7,
+      "component": "Image",
+      "args": [
+        "$r(\"app.media.bg1\")"
+      ],
+      "modifiers": [
+        "width",
+        "height",
+        "animation",
+        "alignRules"
+      ],
+      "start": 10381,
+      "end": 10407,
+      "container": false,
+      "snippet": "Image($r(\"app.media.bg1\"))"
+    },
+    {
+      "index": 2,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 236,
+      "column": 7,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 10905,
+      "end": 10910,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 3,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 246,
+      "column": 7,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 11250,
+      "end": 11269,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "index": 4,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 248,
+      "column": 9,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 11281,
+      "end": 11286,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 5,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 249,
+      "column": 11,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Entry_Title\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "position",
+        "opacity",
+        "animation",
+        "onAreaChange",
+        "fontColor",
+        "animation"
+      ],
+      "start": 11299,
+      "end": 11333,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Entry_Title\"))"
+    },
+    {
+      "index": 6,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 262,
+      "column": 11,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Entry_Subtitle\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "margin",
+        "position",
+        "opacity",
+        "animation",
+        "onAreaChange",
+        "fontColor",
+        "animation"
+      ],
+      "start": 11822,
+      "end": 11859,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Entry_Subtitle\"))"
+    },
+    {
+      "index": 7,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 283,
+      "column": 9,
+      "component": "WaterFlow",
+      "args": [
+        "{ scroller: this.scroller_main }"
+      ],
+      "modifiers": [],
+      "start": 12616,
+      "end": 12659,
+      "container": true,
+      "snippet": "WaterFlow({ scroller: this.scroller_main }) {"
+    },
+    {
+      "index": 8,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 285,
+      "column": 11,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 12673,
+      "end": 12683,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 9,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 290,
+      "column": 11,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 12752,
+      "end": 12762,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 10,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 291,
+      "column": 13,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 12777,
+      "end": 12796,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "index": 11,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 292,
+      "column": 15,
+      "component": "Text",
+      "args": [
+        "this.UI_is_first_open ? $r('app.string.Welcome') : $r(this.UI_top_card_greetings_address)"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "position",
+        "fontColor"
+      ],
+      "start": 12813,
+      "end": 12908,
+      "container": false,
+      "snippet": "Text(this.UI_is_first_open ? $r('app.string.Welcome') : $r(this.UI_top_card_greetings_address))"
+    },
+    {
+      "index": 12,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 298,
+      "column": 15,
+      "component": "Text",
+      "args": [
+        "''"
+      ],
+      "modifiers": [
+        "id",
+        "visibility",
+        "customProperty"
+      ],
+      "start": 13115,
+      "end": 13123,
+      "container": false,
+      "snippet": "Text('')"
+    },
+    {
+      "index": 13,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 314,
+      "column": 15,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 13713,
+      "end": 13718,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 14,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 315,
+      "column": 17,
+      "component": "LinysSymbolButton",
+      "args": [
+        "{\n                  UI_image: $r('sys.symbol.plus'),\n                  UI_text: $r(\"app.string.Settings_block_Add\"),\n                  DESIGN_font_color: this.D"
+      ],
+      "modifiers": [
+        "id",
+        "customProperty",
+        "onClick"
+      ],
+      "start": 13737,
+      "end": 14095,
+      "container": false,
+      "snippet": "LinysSymbolButton({"
+    },
+    {
+      "index": 15,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 346,
+      "column": 17,
+      "component": "LinysSymbolButton",
+      "args": [
+        "{\n                  UI_image: $r('sys.symbol.gearshape'),\n                  UI_text: $r(\"app.string.Settings_block_Settings\"),\n                  DESIGN_font_col"
+      ],
+      "modifiers": [
+        "id",
+        "customProperty",
+        "onClick"
+      ],
+      "start": 15224,
+      "end": 15602,
+      "container": false,
+      "snippet": "LinysSymbolButton({"
+    },
+    {
+      "index": 16,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 378,
+      "column": 15,
+      "component": "Column",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 16795,
+      "end": 16816,
+      "container": true,
+      "snippet": "Column({ space: 10 }) { // Settings"
+    },
+    {
+      "index": 17,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 379,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Settings_block_Settings\")"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation",
+        "fontColor",
+        "fontSize",
+        "fontWeight"
+      ],
+      "start": 16847,
+      "end": 16893,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Settings_block_Settings\"))"
+    },
+    {
+      "index": 18,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 387,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Background\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n               "
+      ],
+      "modifiers": [],
+      "start": 17337,
+      "end": 17609,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 19,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 394,
+      "column": 17,
+      "component": "SegmentButton",
+      "args": [
+        "{\n                  options: this.UI_backdrop_segment_button_options, selectedIndexes: $UI_backdrop_choose\n                }"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation"
+      ],
+      "start": 17627,
+      "end": 17766,
+      "container": false,
+      "snippet": "SegmentButton({"
+    },
+    {
+      "index": 20,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 401,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Blur_Radius\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n              "
+      ],
+      "modifiers": [],
+      "start": 18079,
+      "end": 18352,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 21,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 408,
+      "column": 17,
+      "component": "Slider",
+      "args": [
+        "{\n                  style: SliderStyle.InSet,\n                  min: 1,\n                  max: 100,\n                  value: this.DESIGN_cards_blur_radius\n     "
+      ],
+      "modifiers": [
+        "id",
+        "customProperty",
+        "onChange",
+        "offset",
+        "visibility",
+        "animation",
+        "blockColor",
+        "selectedColor"
+      ],
+      "start": 18370,
+      "end": 18550,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "index": 22,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 436,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Min_Block_Size\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n           "
+      ],
+      "modifiers": [],
+      "start": 19871,
+      "end": 20147,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 23,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 443,
+      "column": 17,
+      "component": "Slider",
+      "args": [
+        "{\n                  style: SliderStyle.InSet,\n                  min: 300,\n                  max: 1000,\n                  value: this.DESIGN_min_card_size\n      "
+      ],
+      "modifiers": [
+        "onChange",
+        "offset",
+        "visibility",
+        "animation",
+        "blockColor",
+        "selectedColor"
+      ],
+      "start": 20165,
+      "end": 20344,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "index": 24,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 462,
+      "column": 17,
+      "component": "LinysRightExplanation",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Star\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n        "
+      ],
+      "modifiers": [],
+      "start": 21202,
+      "end": 21523,
+      "container": false,
+      "snippet": "LinysRightExplanation({"
+    },
+    {
+      "index": 25,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 470,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Light\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n       "
+      ],
+      "modifiers": [],
+      "start": 21541,
+      "end": 21821,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 26,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 477,
+      "column": 17,
+      "component": "TextArea",
+      "args": [
+        "{\n                  placeholder: this.DESIGN_color_scheme_light.toString(),\n                  text: this.DESIGN_color_scheme_light.toString()\n                }"
+      ],
+      "modifiers": [
+        "onChange",
+        "height",
+        "textOverflow",
+        "offset",
+        "visibility",
+        "animation",
+        "fontColor"
+      ],
+      "start": 21839,
+      "end": 22008,
+      "container": false,
+      "snippet": "TextArea({"
+    },
+    {
+      "index": 27,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 491,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Dark\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n        "
+      ],
+      "modifiers": [],
+      "start": 22587,
+      "end": 22866,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 28,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 498,
+      "column": 17,
+      "component": "TextArea",
+      "args": [
+        "{\n                  placeholder: this.DESIGN_color_scheme_dark.toString(), text: this.DESIGN_color_scheme_dark.toString()\n                }"
+      ],
+      "modifiers": [
+        "onChange",
+        "height",
+        "textOverflow",
+        "offset",
+        "visibility",
+        "animation",
+        "fontColor"
+      ],
+      "start": 22884,
+      "end": 23033,
+      "container": false,
+      "snippet": "TextArea({"
+    },
+    {
+      "index": 29,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 511,
+      "column": 17,
+      "component": "LinysRightExplanation",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Description\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n "
+      ],
+      "modifiers": [],
+      "start": 23611,
+      "end": 23939,
+      "container": false,
+      "snippet": "LinysRightExplanation({"
+    },
+    {
+      "index": 30,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 519,
+      "column": 17,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 23957,
+      "end": 23965,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "index": 31,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 520,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.General_OK\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 23986,
+      "end": 24019,
+      "container": false,
+      "snippet": "Text($r(\"app.string.General_OK\"))"
+    },
+    {
+      "index": 32,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 559,
+      "column": 17,
+      "component": "LinysRightExplanation",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Settings_Content_Color_Scheme_Got_Messy\"),\n                  STATUS_show: this.STATUS_top_card_settings_is_open,\n   "
+      ],
+      "modifiers": [],
+      "start": 25862,
+      "end": 26188,
+      "container": false,
+      "snippet": "LinysRightExplanation({"
+    },
+    {
+      "index": 33,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 567,
+      "column": 17,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 26206,
+      "end": 26214,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "index": 34,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 568,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "this.SETTINGS_reset_design_confirm == 0 ? $r(\"app.string.General_RESET\") :\n                  $r('app.string.General_One_More_Confirm')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 26235,
+      "end": 26375,
+      "container": false,
+      "snippet": "Text(this.SETTINGS_reset_design_confirm == 0 ? $r(\"app.string.General_RESET\") :"
+    },
+    {
+      "index": 35,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 608,
+      "column": 15,
+      "component": "Column",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 28423,
+      "end": 28444,
+      "container": true,
+      "snippet": "Column({ space: 10 }) {"
+    },
+    {
+      "index": 36,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 609,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Settings_block_Add\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "offset",
+        "visibility",
+        "animation"
+      ],
+      "start": 28463,
+      "end": 28504,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Settings_block_Add\"))"
+    },
+    {
+      "index": 37,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 617,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Add_Name_Title\"),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_col"
+      ],
+      "modifiers": [],
+      "start": 28933,
+      "end": 29187,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 38,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 624,
+      "column": 17,
+      "component": "LinysTextArea",
+      "args": [
+        "{\n                  UI_placeholder: \"=￣ω￣=\",\n                  UI_text: this.ADD_name,\n                  DESIGN_font_color: this.DESIGN_font_color,\n            "
+      ],
+      "modifiers": [
+        "id",
+        "customProperty"
+      ],
+      "start": 29205,
+      "end": 29520,
+      "container": false,
+      "snippet": "LinysTextArea({"
+    },
+    {
+      "index": 39,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 643,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Add_Description\"),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_co"
+      ],
+      "modifiers": [],
+      "start": 30019,
+      "end": 30274,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 40,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 650,
+      "column": 17,
+      "component": "LinysTextArea",
+      "args": [
+        "{\n                  UI_placeholder: \"(〃￣︶￣)人(￣︶￣〃)\",\n                  UI_text: this.ADD_description,\n                  DESIGN_font_color: this.DESIGN_font_colo"
+      ],
+      "modifiers": [
+        "id",
+        "customProperty"
+      ],
+      "start": 30292,
+      "end": 30622,
+      "container": false,
+      "snippet": "LinysTextArea({"
+    },
+    {
+      "index": 41,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 669,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Add_Length\"),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_color: "
+      ],
+      "modifiers": [],
+      "start": 31156,
+      "end": 31406,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 42,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 676,
+      "column": 17,
+      "component": "Slider",
+      "args": [
+        "{\n                  style: SliderStyle.InSet,\n                  min: 200,\n                  max: 400,\n                  value: this.ADD_length\n                }"
+      ],
+      "modifiers": [
+        "blockColor",
+        "selectedColor",
+        "offset",
+        "visibility",
+        "animation",
+        "onChange"
+      ],
+      "start": 31424,
+      "end": 31592,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "index": 43,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 698,
+      "column": 17,
+      "component": "LinysRightExplanation",
+      "args": [
+        "{\n                  UI_text: $r(this.ADD_length_description),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_col"
+      ],
+      "modifiers": [],
+      "start": 32555,
+      "end": 32851,
+      "container": false,
+      "snippet": "LinysRightExplanation({"
+    },
+    {
+      "index": 44,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 706,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Add_Time_Limit\"),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_col"
+      ],
+      "modifiers": [],
+      "start": 32869,
+      "end": 33123,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 45,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 713,
+      "column": 17,
+      "component": "Slider",
+      "args": [
+        "{\n                  style: SliderStyle.InSet,\n                  min: 1,\n                  max: 367,\n                  value: this.ADD_time_limit\n               "
+      ],
+      "modifiers": [
+        "blockColor",
+        "selectedColor",
+        "offset",
+        "visibility",
+        "animation",
+        "onChange"
+      ],
+      "start": 33141,
+      "end": 33311,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "index": 46,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 732,
+      "column": 17,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 34127,
+      "end": 34132,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 47,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 733,
+      "column": 19,
+      "component": "TextInput",
+      "args": [
+        "{ text: String(this.ADD_time_limit) }"
+      ],
+      "modifiers": [
+        "type",
+        "onChange",
+        "offset",
+        "animation",
+        "visibility",
+        "layoutWeight",
+        "fontSize",
+        "fontWeight",
+        "fontColor"
+      ],
+      "start": 34153,
+      "end": 34201,
+      "container": false,
+      "snippet": "TextInput({ text: String(this.ADD_time_limit) })"
+    },
+    {
+      "index": 48,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 755,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(this.ADD_time_limit_unit_or_description)"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation",
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "textAlign",
+        "maxLines",
+        "textOverflow"
+      ],
+      "start": 35290,
+      "end": 35339,
+      "container": false,
+      "snippet": "Text($r(this.ADD_time_limit_unit_or_description))"
+    },
+    {
+      "index": 49,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 769,
+      "column": 17,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                  UI_text: $r(\"app.string.Add_Target_Value\"),\n                  STATUS_show: this.STATUS_top_card_add_is_open,\n                  DESIGN_font_c"
+      ],
+      "modifiers": [],
+      "start": 35962,
+      "end": 36218,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 50,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 776,
+      "column": 17,
+      "component": "Slider",
+      "args": [
+        "{\n                  style: SliderStyle.InSet,\n                  min: 1,\n                  max: 1001,\n                  value: this.ADD_value_target\n            "
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation",
+        "onChange",
+        "blockColor",
+        "selectedColor"
+      ],
+      "start": 36236,
+      "end": 36409,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "index": 51,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 795,
+      "column": 17,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 37246,
+      "end": 37251,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 52,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 796,
+      "column": 19,
+      "component": "TextInput",
+      "args": [
+        "{ text: String(this.ADD_value_target) }"
+      ],
+      "modifiers": [
+        "type",
+        "onChange",
+        "offset",
+        "animation",
+        "visibility",
+        "fontSize",
+        "fontWeight",
+        "fontColor",
+        "layoutWeight"
+      ],
+      "start": 37272,
+      "end": 37322,
+      "container": false,
+      "snippet": "TextInput({ text: String(this.ADD_value_target) })"
+    },
+    {
+      "index": 53,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 818,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(this.ADD_value_target_unit_or_description)"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation",
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "textAlign",
+        "maxLines",
+        "textOverflow"
+      ],
+      "start": 38438,
+      "end": 38489,
+      "container": false,
+      "snippet": "Text($r(this.ADD_value_target_unit_or_description))"
+    },
+    {
+      "index": 54,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 832,
+      "column": 17,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 39106,
+      "end": 39114,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "index": 55,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 833,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.General_OK\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "animation"
+      ],
+      "start": 39135,
+      "end": 39168,
+      "container": false,
+      "snippet": "Text($r(\"app.string.General_OK\"))"
+    },
+    {
+      "index": 56,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 887,
+      "column": 11,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 41350,
+      "end": 41360,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 57,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 888,
+      "column": 13,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 41375,
+      "end": 41394,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "index": 58,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 889,
+      "column": 15,
+      "component": "Column",
+      "args": [
+        "{ space: 5 }"
+      ],
+      "modifiers": [],
+      "start": 41411,
+      "end": 41431,
+      "container": true,
+      "snippet": "Column({ space: 5 }) {"
+    },
+    {
+      "index": 59,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 890,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Title_Work_Idle\") :\n                this.DATA_work_working_card_name"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "fontColor",
+        "width"
+      ],
+      "start": 41450,
+      "end": 41574,
+      "container": false,
+      "snippet": "Text(this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Title_Work_Idle\") :"
+    },
+    {
+      "index": 60,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 896,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Work_Title_Work_Ongoing\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "fontColor",
+        "width"
+      ],
+      "start": 41756,
+      "end": 41802,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Work_Title_Work_Ongoing\"))"
+    },
+    {
+      "index": 61,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 901,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "this.WORK_is_work_on_idle() ?\n                ((this.ENVIRONMENT_current_timestamp - this.DATA_work_last_end) / 1000 / 3600).toFixed(2).toString() :\n           "
+      ],
+      "modifiers": [
+        "maxLines",
+        "fontSize",
+        "fontWeight",
+        "fontColor",
+        "width"
+      ],
+      "start": 41984,
+      "end": 42252,
+      "container": false,
+      "snippet": "Text(this.WORK_is_work_on_idle() ?"
+    },
+    {
+      "index": 62,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 909,
+      "column": 17,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Add_Value_Unit_Hour')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "fontColor",
+        "width"
+      ],
+      "start": 42465,
+      "end": 42507,
+      "container": false,
+      "snippet": "Text($r('app.string.Add_Value_Unit_Hour'))"
+    },
+    {
+      "index": 63,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 916,
+      "column": 15,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 42755,
+      "end": 42763,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "index": 64,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 917,
+      "column": 17,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 42782,
+      "end": 42790,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "index": 65,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 918,
+      "column": 19,
+      "component": "SymbolGlyph",
+      "args": [
+        "this.WORK_is_work_on_idle() ? $r(\"sys.symbol.battery_75percent\") :\n                  $r(\"sys.symbol.checkmark\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "symbolEffect"
+      ],
+      "start": 42811,
+      "end": 42935,
+      "container": false,
+      "snippet": "SymbolGlyph(this.WORK_is_work_on_idle() ? $r(\"sys.symbol.battery_75percent\") :"
+    },
+    {
+      "index": 66,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 923,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Title_Not_Working\") :\n                  $r('app.string.Work_Title_OK')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 43152,
+      "end": 43278,
+      "container": false,
+      "snippet": "Text(this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Title_Not_Working\") :"
+    },
+    {
+      "index": 67,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 958,
+      "column": 13,
+      "component": "LinysBlock",
+      "args": [
+        "{\n              ENVIRONMENT_waterFlow_column_count: this.UI_waterFlow_Columns,\n              ENVIRONMENT_current_timestamp: this.ENVIRONMENT_current_timestamp,\n"
+      ],
+      "modifiers": [],
+      "start": 44637,
+      "end": 46216,
+      "container": false,
+      "snippet": "LinysBlock({"
+    },
+    {
+      "index": 68,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 991,
+      "column": 11,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 46267,
+      "end": 46277,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 69,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 992,
+      "column": 13,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 46292,
+      "end": 46311,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "index": 70,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 993,
+      "column": 15,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Encouragement\")"
+      ],
+      "modifiers": [
+        "textAlign",
+        "fontColor",
+        "fontSize",
+        "fontWeight",
+        "alignRules",
+        "offset"
+      ],
+      "start": 46328,
+      "end": 46364,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Encouragement\"))"
+    },
+    {
+      "index": 71,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1062,
+      "column": 9,
+      "component": "Scroll",
+      "args": [
+        "this.scroller_card_expand"
+      ],
+      "modifiers": [],
+      "start": 48533,
+      "end": 48566,
+      "container": true,
+      "snippet": "Scroll(this.scroller_card_expand) {"
+    },
+    {
+      "index": 72,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1063,
+      "column": 11,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 48579,
+      "end": 48587,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "index": 73,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1064,
+      "column": 13,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 48602,
+      "end": 48607,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 74,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1080,
+      "column": 13,
+      "component": "WaterFlow",
+      "args": [],
+      "modifiers": [],
+      "start": 49152,
+      "end": 49163,
+      "container": true,
+      "snippet": "WaterFlow() {"
+    },
+    {
+      "index": 75,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1081,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 49180,
+      "end": 49190,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 76,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1082,
+      "column": 17,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 49209,
+      "end": 49217,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "index": 77,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1083,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "this.DATA_cards_name[this.STATUS_card_index_of_last_expanded]"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "margin",
+        "maxLines",
+        "textAlign",
+        "textOverflow",
+        "offset",
+        "visibility",
+        "animation",
+        "width"
+      ],
+      "start": 49238,
+      "end": 49305,
+      "container": false,
+      "snippet": "Text(this.DATA_cards_name[this.STATUS_card_index_of_last_expanded])"
+    },
+    {
+      "index": 78,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1096,
+      "column": 19,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 50001,
+      "end": 50006,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 79,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1097,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "this.DATA_cards_done[this.STATUS_card_index_of_last_expanded] != undefined ?\n                    this.DATA_cards_done[this.STATUS_card_index_of_last_expanded].t"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 50029,
+      "end": 50209,
+      "container": false,
+      "snippet": "Text(this.DATA_cards_done[this.STATUS_card_index_of_last_expanded] != undefined ?"
+    },
+    {
+      "index": 80,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1102,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "\"／\" + (this.DATA_cards_target[this.STATUS_card_expanding] == 1001 ? \" ∞ \" :\n                    String(this.DATA_cards_target[this.STATUS_card_expanding]))"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 50374,
+      "end": 50535,
+      "container": false,
+      "snippet": "Text(\"／\" + (this.DATA_cards_target[this.STATUS_card_expanding] == 1001 ? \" ∞ \" :"
+    },
+    {
+      "index": 81,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1107,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Add_Value_Unit_Hour')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 50702,
+      "end": 50744,
+      "container": false,
+      "snippet": "Text($r('app.string.Add_Value_Unit_Hour'))"
+    },
+    {
+      "index": 82,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1121,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "\"“\" + this.DATA_cards_desc[this.STATUS_card_index_of_last_expanded] + \"”\""
+      ],
+      "modifiers": [
+        "fontWeight",
+        "fontSize",
+        "maxLines",
+        "textOverflow",
+        "fontColor",
+        "offset",
+        "visibility",
+        "animation",
+        "width"
+      ],
+      "start": 51387,
+      "end": 51466,
+      "container": false,
+      "snippet": "Text(\"“\" + this.DATA_cards_desc[this.STATUS_card_index_of_last_expanded] + \"”\")"
+    },
+    {
+      "index": 83,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1136,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 52139,
+      "end": 52149,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 84,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1137,
+      "column": 17,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 52168,
+      "end": 52176,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "index": 85,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1138,
+      "column": 19,
+      "component": "Gauge",
+      "args": [
+        "{\n                    value: this.CARD_get_done_value(),\n                    min: 0,\n                    max: this.DATA_cards_target[this.STATUS_card_index_of_l"
+      ],
+      "modifiers": [],
+      "start": 52197,
+      "end": 52497,
+      "container": true,
+      "snippet": "Gauge({"
+    },
+    {
+      "index": 86,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1144,
+      "column": 21,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 52520,
+      "end": 52528,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "index": 87,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1145,
+      "column": 23,
+      "component": "Text",
+      "args": [
+        "this.CARD_get_done_percentage()"
+      ],
+      "modifiers": [
+        "fontWeight",
+        "fontSize",
+        "fontColor",
+        "textAlign",
+        "textOverflow",
+        "maxLines",
+        "margin"
+      ],
+      "start": 52553,
+      "end": 52590,
+      "container": false,
+      "snippet": "Text(this.CARD_get_done_percentage())"
+    },
+    {
+      "index": 88,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1153,
+      "column": 23,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Progress_Done')"
+      ],
+      "modifiers": [
+        "fontWeight",
+        "fontSize",
+        "fontColor",
+        "textAlign",
+        "textOverflow",
+        "maxLines"
+      ],
+      "start": 52978,
+      "end": 53019,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Progress_Done'))"
+    },
+    {
+      "index": 89,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1180,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 54375,
+      "end": 54385,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 90,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1181,
+      "column": 17,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 54404,
+      "end": 54412,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "index": 91,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1182,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(this.UI_card_expanded_slogan_of_time)"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation",
+        "fontSize",
+        "maxLines",
+        "fontColor",
+        "fontWeight",
+        "margin"
+      ],
+      "start": 54433,
+      "end": 54479,
+      "container": false,
+      "snippet": "Text($r(this.UI_card_expanded_slogan_of_time))"
+    },
+    {
+      "index": 92,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1192,
+      "column": 19,
+      "component": "Gauge",
+      "args": [
+        "{\n                    value: this.DATA_cards_time_limit[this.STATUS_card_index_of_last_expanded] == 367 ?\n                      0.5 * this.DATA_cards_time_limit"
+      ],
+      "modifiers": [],
+      "start": 55017,
+      "end": 55430,
+      "container": true,
+      "snippet": "Gauge({"
+    },
+    {
+      "index": 93,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1199,
+      "column": 21,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 55453,
+      "end": 55461,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "index": 94,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1200,
+      "column": 23,
+      "component": "Text",
+      "args": [
+        "this.CARD_get_time_left_percentage()"
+      ],
+      "modifiers": [
+        "fontWeight",
+        "fontSize",
+        "fontColor",
+        "textAlign",
+        "textOverflow",
+        "maxLines",
+        "margin"
+      ],
+      "start": 55486,
+      "end": 55528,
+      "container": false,
+      "snippet": "Text(this.CARD_get_time_left_percentage())"
+    },
+    {
+      "index": 95,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1208,
+      "column": 23,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Progress_Remaining_Time')"
+      ],
+      "modifiers": [
+        "fontWeight",
+        "fontSize",
+        "fontColor",
+        "textAlign",
+        "textOverflow",
+        "maxLines"
+      ],
+      "start": 55916,
+      "end": 55967,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Progress_Remaining_Time'))"
+    },
+    {
+      "index": 96,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1232,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 57125,
+      "end": 57135,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 97,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1233,
+      "column": 17,
+      "component": "Column",
+      "args": [
+        "{ space: 5 }"
+      ],
+      "modifiers": [],
+      "start": 57154,
+      "end": 57174,
+      "container": true,
+      "snippet": "Column({ space: 5 }) {"
+    },
+    {
+      "index": 98,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1234,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Card_Progress_Desc_Estimating\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 57195,
+      "end": 57247,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Card_Progress_Desc_Estimating\")).fontSize(16).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "index": 99,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1236,
+      "column": 19,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 57314,
+      "end": 57319,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 100,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1237,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "this.CARD_get_average_daily_work_left_processed_for_display()"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 57342,
+      "end": 57409,
+      "container": false,
+      "snippet": "Text(this.CARD_get_average_daily_work_left_processed_for_display())"
+    },
+    {
+      "index": 101,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1241,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Add_Value_Unit_Hour')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "margin"
+      ],
+      "start": 57574,
+      "end": 57616,
+      "container": false,
+      "snippet": "Text($r('app.string.Add_Value_Unit_Hour'))"
+    },
+    {
+      "index": 102,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1247,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Progress_Desc_Estimating_Hours')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "textAlign"
+      ],
+      "start": 57827,
+      "end": 57885,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Progress_Desc_Estimating_Hours'))"
+    },
+    {
+      "index": 103,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1252,
+      "column": 19,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 58043,
+      "end": 58051,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "index": 104,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1253,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Start\") :\n                    $r(\"app.string.Work_Start_Other_Ongoing\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 58074,
+      "end": 58201,
+      "container": false,
+      "snippet": "Text(this.WORK_is_work_on_idle() ? $r(\"app.string.Work_Start\") :"
+    },
+    {
+      "index": 105,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1288,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 59621,
+      "end": 59631,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 106,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1289,
+      "column": 17,
+      "component": "LinysDataBoard",
+      "args": [
+        "{\n                  DATA_list_of_data: this.DATA_cards_punch_card[this.STATUS_card_index_of_last_expanded],\n                  DATA_reference_value: this.CARD_ge"
+      ],
+      "modifiers": [
+        "offset",
+        "visibility",
+        "animation"
+      ],
+      "start": 59650,
+      "end": 60580,
+      "container": false,
+      "snippet": "LinysDataBoard({"
+    },
+    {
+      "index": 107,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1308,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 60935,
+      "end": 60945,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 108,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1309,
+      "column": 17,
+      "component": "Column",
+      "args": [
+        "{ space: 5 }"
+      ],
+      "modifiers": [],
+      "start": 60964,
+      "end": 60984,
+      "container": true,
+      "snippet": "Column({ space: 5 }) {"
+    },
+    {
+      "index": 109,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1310,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Data_Board_Submitted\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 61005,
+      "end": 61048,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Data_Board_Submitted\"))"
+    },
+    {
+      "index": 110,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1313,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "this.STATUS_card_index_of_last_expanded == -1 ? \"0\" :\n                  this.DATA_cards_punch_card[this.STATUS_card_index_of_last_expanded][this.UI_card_expande"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 61156,
+      "end": 61365,
+      "container": false,
+      "snippet": "Text(this.STATUS_card_index_of_last_expanded == -1 ? \"0\" :"
+    },
+    {
+      "index": 111,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1318,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Data_Board_Submitted_Hours_Of_Work\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 61522,
+      "end": 61579,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Data_Board_Submitted_Hours_Of_Work\"))"
+    },
+    {
+      "index": 112,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1321,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "this.CARD_get_date_of_chosen()[0]"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "opacity",
+        "margin"
+      ],
+      "start": 61687,
+      "end": 61726,
+      "container": false,
+      "snippet": "Text(this.CARD_get_date_of_chosen()[0])"
+    },
+    {
+      "index": 113,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1338,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 62398,
+      "end": 62408,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 114,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1339,
+      "column": 17,
+      "component": "Column",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 62427,
+      "end": 62448,
+      "container": true,
+      "snippet": "Column({ space: 10 }) {"
+    },
+    {
+      "index": 115,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1340,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Settings_block_Settings\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "maxLines",
+        "fontColor",
+        "fontWeight",
+        "margin"
+      ],
+      "start": 62469,
+      "end": 62515,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Settings_block_Settings\"))"
+    },
+    {
+      "index": 116,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1347,
+      "column": 19,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                    UI_text: $r(\"app.string.Add_Name_Title\"),\n                    STATUS_show: this.STATUS_card_expanding != -1,\n                    DESIGN_fo"
+      ],
+      "modifiers": [],
+      "start": 62750,
+      "end": 63014,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 117,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1354,
+      "column": 19,
+      "component": "TextArea",
+      "args": [
+        "{\n                    placeholder: \"=￣ω￣=\", text: this.DATA_cards_name[this.STATUS_card_index_of_last_expanded]\n                  }"
+      ],
+      "modifiers": [
+        "fontColor",
+        "onChange",
+        "height",
+        "textOverflow"
+      ],
+      "start": 63034,
+      "end": 63175,
+      "container": false,
+      "snippet": "TextArea({"
+    },
+    {
+      "index": 118,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1362,
+      "column": 19,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                    UI_text: $r(\"app.string.Add_Description\"),\n                    STATUS_show: this.STATUS_card_expanding != -1,\n                    DESIGN_f"
+      ],
+      "modifiers": [],
+      "start": 63394,
+      "end": 63657,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 119,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1369,
+      "column": 19,
+      "component": "TextArea",
+      "args": [
+        "{\n                    placeholder: \"(〃￣︶￣)人(￣︶￣〃)\", text: this.DATA_cards_desc[this.STATUS_card_index_of_last_expanded]\n                  }"
+      ],
+      "modifiers": [
+        "fontColor",
+        "onChange",
+        "height",
+        "textOverflow"
+      ],
+      "start": 63677,
+      "end": 63826,
+      "container": false,
+      "snippet": "TextArea({"
+    },
+    {
+      "index": 120,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1377,
+      "column": 19,
+      "component": "LinysLeftTitle",
+      "args": [
+        "{\n                    UI_text: $r(\"app.string.Add_Length\"),\n                    STATUS_show: this.STATUS_card_expanding != -1,\n                    DESIGN_font_c"
+      ],
+      "modifiers": [],
+      "start": 64059,
+      "end": 64317,
+      "container": false,
+      "snippet": "LinysLeftTitle({"
+    },
+    {
+      "index": 121,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1384,
+      "column": 19,
+      "component": "Slider",
+      "args": [
+        "{\n                    style: SliderStyle.InSet,\n                    min: 200,\n                    max: 400,\n                    value: this.DATA_cards_length[th"
+      ],
+      "modifiers": [
+        "blockColor",
+        "selectedColor",
+        "onChange"
+      ],
+      "start": 64337,
+      "end": 64563,
+      "container": false,
+      "snippet": "Slider({"
+    },
+    {
+      "index": 122,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1403,
+      "column": 19,
+      "component": "LinysRightExplanation",
+      "args": [
+        "{\n                    UI_text: $r(this.EDIT_length_description),\n                    STATUS_show: this.STATUS_card_expanding != -1,\n                    DESIGN_f"
+      ],
+      "modifiers": [],
+      "start": 65276,
+      "end": 65585,
+      "container": false,
+      "snippet": "LinysRightExplanation({"
+    },
+    {
+      "index": 123,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1413,
+      "column": 19,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 65639,
+      "end": 65647,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "index": 124,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1414,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.General_OK\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "animation"
+      ],
+      "start": 65670,
+      "end": 65703,
+      "container": false,
+      "snippet": "Text($r(\"app.string.General_OK\"))"
+    },
+    {
+      "index": 125,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1447,
+      "column": 15,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 67324,
+      "end": 67334,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 126,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1448,
+      "column": 17,
+      "component": "Column",
+      "args": [
+        "{ space: 10 }"
+      ],
+      "modifiers": [],
+      "start": 67353,
+      "end": 67374,
+      "container": true,
+      "snippet": "Column({ space: 10 }) {"
+    },
+    {
+      "index": 127,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1450,
+      "column": 19,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Card_Progress_Title_Manage\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "maxLines",
+        "fontColor",
+        "fontWeight",
+        "margin"
+      ],
+      "start": 67396,
+      "end": 67445,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Card_Progress_Title_Manage\"))"
+    },
+    {
+      "index": 128,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1457,
+      "column": 19,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 67680,
+      "end": 67688,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "index": 129,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1458,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Card_Progress_Manage_Move_To_Top\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "animation"
+      ],
+      "start": 67711,
+      "end": 67766,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Card_Progress_Manage_Move_To_Top\"))"
+    },
+    {
+      "index": 130,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1478,
+      "column": 19,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 68636,
+      "end": 68644,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "index": 131,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1479,
+      "column": 21,
+      "component": "Text",
+      "args": [
+        "this.DATA_cards_name[this.STATUS_card_expanding] == this.DATA_work_working_card_name ?\n                    $r('app.string.Card_Progress_Manage_Delete_Cannot_Ong"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 68667,
+      "end": 69015,
+      "container": false,
+      "snippet": "Text(this.DATA_cards_name[this.STATUS_card_expanding] == this.DATA_work_working_card_name ?"
+    },
+    {
+      "index": 132,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 1603,
+      "column": 7,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 74673,
+      "end": 74678,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 133,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2125,
+      "column": 5,
+      "component": "FlowItem",
+      "args": [],
+      "modifiers": [],
+      "start": 93610,
+      "end": 93620,
+      "container": true,
+      "snippet": "FlowItem() {"
+    },
+    {
+      "index": 134,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2126,
+      "column": 7,
+      "component": "RelativeContainer",
+      "args": [],
+      "modifiers": [],
+      "start": 93629,
+      "end": 93648,
+      "container": true,
+      "snippet": "RelativeContainer() {"
+    },
+    {
+      "index": 135,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2127,
+      "column": 9,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 93659,
+      "end": 93667,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "index": 136,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2128,
+      "column": 11,
+      "component": "Text",
+      "args": [
+        "this.name"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight",
+        "margin",
+        "maxLines",
+        "textOverflow"
+      ],
+      "start": 93680,
+      "end": 93695,
+      "container": false,
+      "snippet": "Text(this.name)"
+    },
+    {
+      "index": 137,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2136,
+      "column": 11,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 93957,
+      "end": 93962,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 138,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2137,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "this.done == undefined ? \"\" : this.done.toFixed(2)"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 93977,
+      "end": 94033,
+      "container": false,
+      "snippet": "Text(this.done == undefined ? \"\" : this.done.toFixed(2))"
+    },
+    {
+      "index": 139,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2141,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "\"／\" + (this.target == 1001 ? \" ∞ \" : String(this.target))"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 94166,
+      "end": 94229,
+      "container": false,
+      "snippet": "Text(\"／\" + (this.target == 1001 ? \" ∞ \" : String(this.target)))"
+    },
+    {
+      "index": 140,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2144,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Add_Value_Unit_Hour')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 94319,
+      "end": 94361,
+      "container": false,
+      "snippet": "Text($r('app.string.Add_Value_Unit_Hour')).fontSize(16).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "index": 141,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2149,
+      "column": 11,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 94527,
+      "end": 94532,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 142,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2150,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Days_Total')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 94547,
+      "end": 94585,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Days_Total')).fontSize(14).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "index": 143,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2151,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "(this.time_limit == 367 ? \" ∞ \" : String(this.time_limit))"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 94645,
+      "end": 94709,
+      "container": false,
+      "snippet": "Text((this.time_limit == 367 ? \" ∞ \" : String(this.time_limit)))"
+    },
+    {
+      "index": 144,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2155,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Days_Unit_Day')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 94842,
+      "end": 94883,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Days_Unit_Day')).fontSize(14).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "index": 145,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2160,
+      "column": 11,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 94993,
+      "end": 94998,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 146,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2161,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Card_Days_Remaining\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 95013,
+      "end": 95055,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Card_Days_Remaining\")).fontSize(14).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "index": 147,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2162,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "this.time_limit == 367 ? \" ∞ \" : this.getRemainingDays().toFixed(1)"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 95115,
+      "end": 95188,
+      "container": false,
+      "snippet": "Text(this.time_limit == 367 ? \" ∞ \" : this.getRemainingDays().toFixed(1))"
+    },
+    {
+      "index": 148,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2166,
+      "column": 13,
+      "component": "Text",
+      "args": [
+        "$r('app.string.Card_Days_Unit_Day')"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor"
+      ],
+      "start": 95321,
+      "end": 95362,
+      "container": false,
+      "snippet": "Text($r('app.string.Card_Days_Unit_Day')).fontSize(14).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "index": 149,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2275,
+      "column": 5,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 99493,
+      "end": 99501,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "index": 150,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2276,
+      "column": 7,
+      "component": "SymbolGlyph",
+      "args": [
+        "this.STATUS_switch_to_arrow ? $r(\"sys.symbol.chevron_down\") : this.UI_image"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "symbolEffect"
+      ],
+      "start": 99510,
+      "end": 99598,
+      "container": false,
+      "snippet": "SymbolGlyph(this.STATUS_switch_to_arrow ? $r(\"sys.symbol.chevron_down\") : this.UI_image)"
+    },
+    {
+      "index": 151,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2282,
+      "column": 7,
+      "component": "Text",
+      "args": [
+        "this.UI_text"
+      ],
+      "modifiers": [
+        "margin",
+        "fontColor"
+      ],
+      "start": 99914,
+      "end": 99932,
+      "container": false,
+      "snippet": "Text(this.UI_text).margin({ top: 10 }).fontColor(this.DESIGN_font_color)"
+    },
+    {
+      "index": 152,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2296,
+      "column": 5,
+      "component": "Text",
+      "args": [
+        "this.UI_text"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "offset",
+        "visibility",
+        "maxLines",
+        "textOverflow",
+        "animation",
+        "fontColor",
+        "animation"
+      ],
+      "start": 100303,
+      "end": 100321,
+      "container": false,
+      "snippet": "Text(this.UI_text)"
+    },
+    {
+      "index": 153,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2318,
+      "column": 5,
+      "component": "Text",
+      "args": [
+        "this.UI_text"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontWeight",
+        "textAlign",
+        "width",
+        "maxLines",
+        "textOverflow",
+        "offset",
+        "visibility",
+        "animation",
+        "fontColor",
+        "animation"
+      ],
+      "start": 101053,
+      "end": 101071,
+      "container": false,
+      "snippet": "Text(this.UI_text)"
+    },
+    {
+      "index": 154,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2343,
+      "column": 5,
+      "component": "TextArea",
+      "args": [
+        "{ placeholder: this.UI_placeholder, text: this.UI_text }"
+      ],
+      "modifiers": [
+        "fontColor",
+        "onChange",
+        "height",
+        "textOverflow",
+        "offset",
+        "visibility",
+        "animation"
+      ],
+      "start": 101876,
+      "end": 101942,
+      "container": false,
+      "snippet": "TextArea({ placeholder: this.UI_placeholder, text: this.UI_text })"
+    },
+    {
+      "index": 155,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2375,
+      "column": 5,
+      "component": "Column",
+      "args": [],
+      "modifiers": [],
+      "start": 102951,
+      "end": 102959,
+      "container": true,
+      "snippet": "Column() {"
+    },
+    {
+      "index": 156,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2376,
+      "column": 7,
+      "component": "Row",
+      "args": [],
+      "modifiers": [],
+      "start": 102968,
+      "end": 102973,
+      "container": true,
+      "snippet": "Row() {"
+    },
+    {
+      "index": 157,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2377,
+      "column": 9,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.UI_Days_In_A_Week\")"
+      ],
+      "modifiers": [
+        "height",
+        "lineHeight",
+        "margin",
+        "textAlign",
+        "fontWeight",
+        "fontColor"
+      ],
+      "start": 102984,
+      "end": 103024,
+      "container": false,
+      "snippet": "Text($r(\"app.string.UI_Days_In_A_Week\"))"
+    },
+    {
+      "index": 158,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2385,
+      "column": 9,
+      "component": "Grid",
+      "args": [
+        "this.grid_scroller"
+      ],
+      "modifiers": [],
+      "start": 103242,
+      "end": 103266,
+      "container": true,
+      "snippet": "Grid(this.grid_scroller) {"
+    },
+    {
+      "index": 159,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2387,
+      "column": 13,
+      "component": "GridItem",
+      "args": [],
+      "modifiers": [],
+      "start": 103365,
+      "end": 103375,
+      "container": true,
+      "snippet": "GridItem() {"
+    },
+    {
+      "index": 160,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2388,
+      "column": 15,
+      "component": "Text",
+      "args": [],
+      "modifiers": [
+        "width",
+        "height",
+        "opacity"
+      ],
+      "start": 103392,
+      "end": 103398,
+      "container": false,
+      "snippet": "Text()"
+    },
+    {
+      "index": 161,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2401,
+      "column": 13,
+      "component": "GridItem",
+      "args": [],
+      "modifiers": [],
+      "start": 103794,
+      "end": 103804,
+      "container": true,
+      "snippet": "GridItem() {"
+    },
+    {
+      "index": 162,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2402,
+      "column": 15,
+      "component": "Text",
+      "args": [],
+      "modifiers": [
+        "width",
+        "height",
+        "textAlign",
+        "backgroundColor",
+        "opacity",
+        "borderRadius"
+      ],
+      "start": 103821,
+      "end": 103827,
+      "container": false,
+      "snippet": "Text()// key.toString()"
+    },
+    {
+      "index": 163,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2438,
+      "column": 7,
+      "component": "Button",
+      "args": [],
+      "modifiers": [],
+      "start": 104988,
+      "end": 104996,
+      "container": true,
+      "snippet": "Button() {"
+    },
+    {
+      "index": 164,
+      "file": "<third-party-apps>/stuffs-next/entry/src/main/ets/pages/Index.ets",
+      "line": 2439,
+      "column": 9,
+      "component": "Text",
+      "args": [
+        "$r(\"app.string.Data_Board_Jump_To_Today\")"
+      ],
+      "modifiers": [
+        "fontSize",
+        "fontColor",
+        "fontWeight"
+      ],
+      "start": 105007,
+      "end": 105054,
+      "container": false,
+      "snippet": "Text($r(\"app.string.Data_Board_Jump_To_Today\"))"
+    }
+  ]
+}

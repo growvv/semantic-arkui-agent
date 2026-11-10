@@ -1,0 +1,21 @@
+{
+  "app": "Rental",
+  "bundle": "org.anapp.research.prototype",
+  "serial": "<device-serial>",
+  "source": "https://github.com/yongoe1024/Rental",
+  "license": "MIT",
+  "tasks": [
+    {
+      "id": "switch-service-tab",
+      "goal": "切换到服务页",
+      "check": {
+        "type": "node_state",
+        "id": "sem.rental.tab.2",
+        "field": "selected",
+        "op": "==",
+        "value": true,
+        "alsoVisible": true
+      }
+    }
+  ]
+}

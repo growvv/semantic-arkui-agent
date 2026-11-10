@@ -1,0 +1,2 @@
+{"step":1,"snapshotRevision":1,"observationId":"mwazkobp-ov0jxeol","action":{"action":"tap","ref":"sem.rental.tab.2"},"result":"tapped sem.rental.tab.2","promptTokens":1117,"completionTokens":21,"elapsedMs":2894}
+{"step":2,"snapshotRevision":2,"observationId":"mwazkqwb-rm5f93gf","action":{"action":"finish","summary":"已切换到服务页，服务标签处于选中状态。"},"result":"已切换到服务页，服务标签处于选中状态。","promptTokens":1130,"completionTokens":30,"elapsedMs":5483}

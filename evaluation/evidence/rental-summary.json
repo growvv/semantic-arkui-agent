@@ -1,0 +1,35 @@
+{
+  "app": "Rental",
+  "bundle": "org.anapp.research.prototype",
+  "source": "https://github.com/yongoe1024/Rental",
+  "total": 1,
+  "verified": 1,
+  "agentFinished": 1,
+  "promptTokens": 2247,
+  "completionTokens": 51,
+  "results": [
+    {
+      "id": "switch-service-tab",
+      "goal": "切换到服务页",
+      "agent": {
+        "ok": true,
+        "result": {
+          "success": true,
+          "steps": 2,
+          "reason": "已切换到服务页，服务标签处于选中状态。",
+          "promptTokens": 2247,
+          "completionTokens": 51,
+          "elapsedMs": 5485
+        }
+      },
+      "elapsedSeconds": 8.15,
+      "verified": true,
+      "checkDetail": "selected=True",
+      "beforeSnapshot": "/evaluation/runs/rental/switch-service-tab/before.json",
+      "afterSnapshot": "/evaluation/runs/rental/switch-service-tab/after.json",
+      "trajectory": "/evaluation/runs/rental/switch-service-tab/trajectory.jsonl",
+      "beforeScreenshot": "/evaluation/runs/rental/switch-service-tab/before.jpeg",
+      "afterScreenshot": "/evaluation/runs/rental/switch-service-tab/after.jpeg"
+    }
+  ]
+}

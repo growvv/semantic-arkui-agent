@@ -28,6 +28,7 @@
   </script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
   <a class="skip-link" href="#main">跳到正文</a>
 
   <header class="site-header">
@@ -62,6 +63,13 @@
 
   <main id="main">
     <section class="hero" id="top">
+      <div class="hero-atmosphere" aria-hidden="true">
+        <span class="hero-beam hero-beam-a"></span>
+        <span class="hero-beam hero-beam-b"></span>
+        <span class="hero-beam hero-beam-c"></span>
+        <span class="hero-grid-lines"></span>
+        <span class="hero-pointer"></span>
+      </div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-square" aria-hidden="true"></span> HARMONYOS · ARKUI · TEXT-ONLY AGENT</p>
@@ -75,19 +83,19 @@
           <dl class="hero-metrics" aria-label="验收结果">
             <div>
               <dt>独立验证</dt>
-              <dd>13<small>/13</small></dd>
+              <dd><span class="count" data-count="13">13</span><small>/13</small></dd>
             </div>
             <div>
               <dt>Agent 自行结束</dt>
-              <dd>12<small>/13</small></dd>
+              <dd><span class="count" data-count="12">12</span><small>/13</small></dd>
             </div>
             <div>
               <dt>模型输入截图</dt>
-              <dd>0</dd>
+              <dd><span class="count" data-count="0">0</span></dd>
             </div>
             <div>
               <dt>Prompt tokens</dt>
-              <dd>105,144<small>· 13 项</small></dd>
+              <dd><span class="count" data-count="105144" data-format="comma">105,144</span><small>· 13 项</small></dd>
             </div>
           </dl>
         </div>
@@ -95,7 +103,7 @@
         <div class="hero-visual">
           <figure class="phone phone-hero">
             <div class="phone-bezel">
-              <img src="assets/self-annotated.jpeg" alt="SemanticTasks 任务列表，红色标注框标出每个语义节点及其 id 和含义" width="1080" height="2406" fetchpriority="high">
+              <img data-lightbox src="assets/self-annotated.jpeg" alt="SemanticTasks 任务列表，红色标注框标出每个语义节点及其 id 和含义" width="1080" height="2406" fetchpriority="high">
             </div>
             <figcaption>SemanticTasks · 任务列表的语义节点覆盖</figcaption>
           </figure>
@@ -116,13 +124,24 @@
           </aside>
         </div>
       </div>
-      <div class="wrap hero-strip" aria-label="处理流程">
-        <span>SOURCE</span><span class="strip-arrow" aria-hidden="true">→</span>
-        <span>BRIDGE</span><span class="strip-arrow" aria-hidden="true">→</span>
-        <span>PROJECT</span><span class="strip-arrow" aria-hidden="true">→</span>
-        <span>DECIDE</span><span class="strip-arrow" aria-hidden="true">→</span>
-        <span>ACT</span><span class="strip-arrow" aria-hidden="true">→</span>
-        <span>RE-OBSERVE</span>
+      <div class="wrap hero-live" data-live-trace aria-label="实时语义轨迹示例">
+        <div class="live-head">
+          <span class="live-kicker"><span class="live-dot" aria-hidden="true"></span> LIVE TRACE</span>
+          <span class="live-task">收藏“整理季度材料”</span>
+          <span class="live-status" data-live-status>运行中</span>
+          <button class="live-toggle" type="button" data-live-toggle aria-label="暂停实时轨迹">暂停</button>
+        </div>
+        <div class="live-track">
+          <span class="live-progress" aria-hidden="true"><i></i></span>
+          <ol class="live-steps">
+            <li data-live-step="0"><span>01</span>observe<strong>rev 1</strong></li>
+            <li data-live-step="1"><span>02</span>decide<strong>tap</strong></li>
+            <li data-live-step="2"><span>03</span>prepare<strong>ok</strong></li>
+            <li data-live-step="3"><span>04</span>native<strong>tapped</strong></li>
+            <li data-live-step="4"><span>05</span>observe<strong>rev 2</strong></li>
+            <li data-live-step="5"><span>06</span>finish<strong>已收藏</strong></li>
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -139,7 +158,7 @@
           </header>
 
           <div class="compare-grid">
-            <article class="compare-card">
+            <article class="compare-card reveal">
               <p class="card-kicker">SCREENSHOT / RAW TREE</p>
               <h3>像素与层级</h3>
               <ul class="plain-list">
@@ -165,7 +184,7 @@
               </div>
             </article>
 
-            <article class="compare-card compare-card-accent">
+            <article class="compare-card compare-card-accent reveal">
               <p class="card-kicker">SEMANTIC NODE</p>
               <h3>声明与事实</h3>
               <ul class="plain-list">
@@ -181,7 +200,7 @@
             </article>
           </div>
 
-          <div class="table-wrap compare-table-wrap">
+          <div class="table-wrap compare-table-wrap reveal">
             <table class="compare-table">
               <caption class="visually-hidden">截图 / 原始树与语义节点的输入、定位、状态和动作对比</caption>
               <thead>
@@ -217,7 +236,7 @@
             <p class="section-lede">四个边界：源码声明、运行时读取、宿主投影、原生执行。语义桥只读；动作不经过桥，仍由 HapTest 走原生 UI 框架。</p>
           </header>
 
-          <figure class="pipeline-figure">
+          <figure class="pipeline-figure reveal">
             <div class="pipeline-scroll">
               <svg viewBox="0 0 1120 470" role="img" aria-label="ArkUI 源码通过 customProperty 声明语义，应用内桥读取 FrameNode 树并输出 JSON，HapTest 按 id 合并实时树，文本模型选择动作，HapTest 执行原生动作并重新观察的流程图">
                 <defs>
@@ -260,6 +279,9 @@
 
                 <line x1="520" y1="262" x2="606" y2="262" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#arrow-accent)"></line>
                 <text x="563" y="252" class="svg-micro" text-anchor="middle">JSON-lines</text>
+                <circle class="flow-dot" r="4" fill="var(--accent)">
+                  <animateMotion dur="3.2s" repeatCount="indefinite" path="M 520 262 L 606 262"></animateMotion>
+                </circle>
 
                 <rect x="612" y="24" width="492" height="330" rx="14" fill="none" stroke="var(--line-strong)" stroke-dasharray="6 6"></rect>
                 <text x="634" y="50" class="svg-label">宿主进程 · HapTest</text>
@@ -294,6 +316,9 @@
                 <text x="654" y="292" class="svg-mono">tap / input / scroll / key</text>
 
                 <path d="M 732 302 L 732 398 L 402 398 L 402 306" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#arrow-teal)"></path>
+                <circle class="flow-dot flow-dot-teal" r="3.5" fill="var(--teal)">
+                  <animateMotion dur="4.6s" repeatCount="indefinite" path="M 732 302 L 732 398 L 402 398 L 402 306"></animateMotion>
+                </circle>
                 <text x="560" y="418" class="svg-micro" text-anchor="middle">重新观察：动作后读取新的语义快照，不经过桥执行动作</text>
 
                 <line x1="466" y1="446" x2="502" y2="446" stroke="var(--accent)" stroke-width="2"></line>
@@ -306,7 +331,7 @@
           </figure>
 
           <div class="mechanism-grid">
-            <article class="mechanism-card">
+            <article class="mechanism-card reveal">
               <p class="card-kicker">SOURCE</p>
               <h3>源码声明</h3>
               <p>组件在普通属性之外声明 <code>SemanticSpec</code>。稳定 <code>id</code> 是宿主合并实时控件的键；<code>meaning</code>、<code>entity</code>、<code>state</code>、<code>actions</code> 进入模型视图；<code>accessibilityText</code> 和 <code>accessibilityDescription</code> 保留给读屏与降级。</p>
@@ -321,7 +346,7 @@
 }), Sem.fallback(`sem.task.favorite.${task.id}`)))</code></div>
             </article>
 
-            <article class="mechanism-card">
+            <article class="mechanism-card reveal">
               <p class="card-kicker">BRIDGE</p>
               <h3>运行时桥</h3>
               <p>桥在 debug 构建的应用进程内启动，遍历当前挂载的 <code>FrameNode</code>，用 <code>getCustomProperty('sem')</code> 读取声明，用 <code>getNodeType</code>、<code>isVisible</code>、<code>getChild</code> 补充运行时事实。快照按 JSON-lines 返回；<code>revision</code> 只在内容变化时推进；<code>prepare</code> 在动作前确认目标仍然存在。</p>
@@ -335,7 +360,7 @@ for (let i = 0; i &lt; node.getChildrenCount(); i++) {
 }</code></div>
             </article>
 
-            <article class="mechanism-card">
+            <article class="mechanism-card reveal">
               <p class="card-kicker">PROJECT</p>
               <h3>宿主投影</h3>
               <p>HapTest 把快照和实时树按 <code>id</code> 合并，保留唯一命中的 live facts。执行前检查目标数量、可见、启用、声明动作与原生能力。输入框包在自定义组件里时，允许 <code>__Common__</code> 包装节点，由 HapTest 的唯一焦点检查兜底。</p>
@@ -346,7 +371,7 @@ await bridge.prepare(node.ref);
 await device.tap({ selector: { id: node.id } });</code></div>
             </article>
 
-            <article class="mechanism-card">
+            <article class="mechanism-card reveal">
               <p class="card-kicker">DECIDE</p>
               <h3>文本决策</h3>
               <p>模型每步只返回一个 JSON 动作，只使用当前视图里的 ref，不接收坐标、截图或原始树全文。动作后重新观察；同一 revision 的同一动作被重复保护。</p>
@@ -356,7 +381,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
             </article>
           </div>
 
-          <div class="code-pair">
+          <div class="code-pair reveal">
             <article class="code-panel">
               <div class="code-panel-head"><span>ArkTS · 源码声明</span><span class="code-tag">SOURCE</span></div>
               <pre><code>Button(task.favorite ? '取消收藏' : '收藏')
@@ -396,7 +421,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
             </article>
           </div>
 
-          <div class="rules">
+          <div class="rules reveal">
             <p class="card-kicker">SYSTEM RULES</p>
             <div class="rules-grid">
               <p>只使用当前视图里的 ref；不发明坐标、隐藏页面或新的 id。</p>
@@ -456,6 +481,14 @@ await device.tap({ selector: { id: node.id } });</code></div>
 
             <div class="task-body">
               <div class="trace-column">
+                <div class="trace-toolbar">
+                  <button class="trace-play" type="button" data-trace-play>
+                    <span class="trace-play-icon" aria-hidden="true"></span>
+                    <span data-trace-play-label>播放轨迹</span>
+                  </button>
+                  <span class="trace-progress" aria-hidden="true"><i></i></span>
+                  <span class="trace-status" data-trace-status></span>
+                </div>
               <ol class="trace">
                 <li class="trace-step">
                   <div class="trace-marker"><span>1</span></div>
@@ -505,7 +538,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
                 </div>
                 <figure class="phone phone-task">
                   <div class="phone-bezel">
-                    <img src="assets/self-favorite-after.jpeg" alt="收藏任务执行后的 SemanticTasks 界面，整理季度材料的星标已点亮" width="1080" height="2406">
+                    <img data-lightbox src="assets/self-favorite-after.jpeg" alt="收藏任务执行后的 SemanticTasks 界面，整理季度材料的星标已点亮" width="1080" height="2406">
                   </div>
                   <figcaption>执行后：星标点亮；SEM_EVAL 记录 t1.favorite=true。</figcaption>
                 </figure>
@@ -530,6 +563,14 @@ await device.tap({ selector: { id: node.id } });</code></div>
 
             <div class="task-body">
               <div class="trace-column">
+                <div class="trace-toolbar">
+                  <button class="trace-play" type="button" data-trace-play>
+                    <span class="trace-play-icon" aria-hidden="true"></span>
+                    <span data-trace-play-label>播放轨迹</span>
+                  </button>
+                  <span class="trace-progress" aria-hidden="true"><i></i></span>
+                  <span class="trace-status" data-trace-status></span>
+                </div>
               <ol class="trace">
                 <li class="trace-step">
                   <div class="trace-marker"><span>1</span></div>
@@ -634,7 +675,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
                 </div>
                 <figure class="phone phone-task">
                   <div class="phone-bezel">
-                    <img src="assets/stuffs-add-card-after.jpeg" alt="添加卡片任务执行后的 STUFFS_NEXT 界面，新增了名为“阅读”的卡片" width="1080" height="2406">
+                    <img data-lightbox src="assets/stuffs-add-card-after.jpeg" alt="添加卡片任务执行后的 STUFFS_NEXT 界面，新增了名为“阅读”的卡片" width="1080" height="2406">
                   </div>
                   <figcaption>执行后：卡片列表中新增“阅读”；隐藏汇总节点给出 value=1。</figcaption>
                 </figure>
@@ -659,6 +700,14 @@ await device.tap({ selector: { id: node.id } });</code></div>
 
             <div class="task-body">
               <div class="trace-column">
+                <div class="trace-toolbar">
+                  <button class="trace-play" type="button" data-trace-play>
+                    <span class="trace-play-icon" aria-hidden="true"></span>
+                    <span data-trace-play-label>播放轨迹</span>
+                  </button>
+                  <span class="trace-progress" aria-hidden="true"><i></i></span>
+                  <span class="trace-status" data-trace-status></span>
+                </div>
               <ol class="trace">
                 <li class="trace-step">
                   <div class="trace-marker"><span>1</span></div>
@@ -708,7 +757,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
                 </div>
                 <figure class="phone phone-task">
                   <div class="phone-bezel">
-                    <img src="assets/rental-tab-after.jpeg" alt="切换到服务页后的 Rental 界面，底部“服务”标签处于选中状态" width="1080" height="2406">
+                    <img data-lightbox src="assets/rental-tab-after.jpeg" alt="切换到服务页后的 Rental 界面，底部“服务”标签处于选中状态" width="1080" height="2406">
                   </div>
                   <figcaption>执行后：服务页渲染；tab.2.selected=true。</figcaption>
                 </figure>
@@ -734,7 +783,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
           </header>
 
           <div class="change-list">
-            <article class="change-row">
+            <article class="change-row reveal">
               <div class="change-meta"><span class="change-index">A</span><p>应用侧</p></div>
               <div class="change-body">
                 <h3>把语义写进组件</h3>
@@ -753,7 +802,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
               </div>
             </article>
 
-            <article class="change-row">
+            <article class="change-row reveal">
               <div class="change-meta"><span class="change-index">B</span><p>宿主</p></div>
               <div class="change-body">
                 <h3>增加文本 Agent 的宿主语义层</h3>
@@ -768,7 +817,7 @@ await execute(decision, node, observation);</code></div>
               </div>
             </article>
 
-            <article class="change-row">
+            <article class="change-row reveal">
               <div class="change-meta"><span class="change-index">C</span><p>观察与输入</p></div>
               <div class="change-body">
                 <h3>让实时树只选择应用窗口</h3>
@@ -784,7 +833,7 @@ await device.pressKey('BACK');</code></div>
               </div>
             </article>
 
-            <article class="change-row">
+            <article class="change-row reveal">
               <div class="change-meta"><span class="change-index">D</span><p>工具与评测</p></div>
               <div class="change-body">
                 <h3>AST 扫描、提案和独立判分</h3>
@@ -798,7 +847,7 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
             </article>
           </div>
 
-          <div class="milestones" aria-label="开发里程碑">
+          <div class="milestones reveal" aria-label="开发里程碑">
             <span class="milestone"><i aria-hidden="true"></i>语义桥探针</span>
             <span class="milestone"><i aria-hidden="true"></i>SemanticSpec + customProperty</span>
             <span class="milestone"><i aria-hidden="true"></i>HapTest 语义层</span>
@@ -824,16 +873,16 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
             <p class="section-lede">13 项任务，13 项独立验证通过。12 项 Agent 自行结束；STUFFS 的毛玻璃任务由重复动作保护停止。所有任务都没有把截图送进模型上下文。</p>
           </header>
 
-          <dl class="results-metrics">
-            <div><dt>任务</dt><dd>13</dd></div>
-            <div><dt>独立验证通过</dt><dd>13<small>/13</small></dd></div>
-            <div><dt>Agent 自行结束</dt><dd>12<small>/13</small></dd></div>
-            <div><dt>总步数</dt><dd>35<small>· 2.69 平均</small></dd></div>
-            <div><dt>模型输入截图</dt><dd>0</dd></div>
-            <div><dt>Prompt / completion</dt><dd>105,144<small> / 1,434</small></dd></div>
+          <dl class="results-metrics reveal">
+            <div><dt>任务</dt><dd><span class="count" data-count="13">13</span></dd></div>
+            <div><dt>独立验证通过</dt><dd><span class="count" data-count="13">13</span><small>/13</small></dd></div>
+            <div><dt>Agent 自行结束</dt><dd><span class="count" data-count="12">12</span><small>/13</small></dd></div>
+            <div><dt>总步数</dt><dd><span class="count" data-count="35">35</span><small>· 2.69 平均</small></dd></div>
+            <div><dt>模型输入截图</dt><dd><span class="count" data-count="0">0</span></dd></div>
+            <div><dt>Prompt / completion</dt><dd><span class="count" data-count="105144" data-format="comma">105,144</span><small> / 1,434</small></dd></div>
           </dl>
 
-          <div class="table-wrap results-table-wrap">
+          <div class="table-wrap results-table-wrap reveal">
             <table class="results-table">
               <caption class="visually-hidden">三个应用的验收结果</caption>
               <thead>
@@ -858,7 +907,7 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
             </table>
           </div>
 
-          <figure class="chart-panel">
+          <figure class="chart-panel reveal">
             <div class="chart-head">
               <div>
                 <p class="card-kicker">PROMPT TOKENS BY TASK</p>
@@ -912,13 +961,13 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
             </details>
           </figure>
 
-          <div class="annotator-grid">
+          <div class="annotator-grid reveal">
             <div class="annotator-card"><p class="card-kicker">SEMANTICTASKS</p><p class="annotator-number">7<span> / 30 / 4</span></p><p>文件 / AST 候选 / LLM 提案</p></div>
             <div class="annotator-card"><p class="card-kicker">STUFFS_NEXT</p><p class="annotator-number">7<span> / 165 / 3</span></p><p>文件 / AST 候选 / LLM 提案</p></div>
             <div class="annotator-card"><p class="card-kicker">SELFTEST</p><p class="annotator-number">6<span> 组件</span></p><p><code>ANNOTATOR_SELFTEST_OK</code></p></div>
           </div>
 
-          <div class="verification-note">
+          <div class="verification-note reveal">
             <p class="card-kicker">HOW IT WAS VERIFIED</p>
             <p><strong>SemanticTasks</strong> 的应用自己写入 <code>SEM_EVAL</code>；评测器在 Agent 通道之外读取日志，检查目标字段与非目标字段。<strong>STUFFS_NEXT</strong> 使用应用侧桥快照与前后截图，没有独立数据库 oracle。<strong>Rental</strong> 使用标签 <code>selected</code> 状态与截图。Agent 的自述不是验收依据。</p>
           </div>
@@ -939,16 +988,16 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
           </header>
 
           <div class="evidence-grid">
-            <figure class="evidence-card">
-              <div class="phone-bezel"><img src="assets/self-annotated.jpeg" alt="SemanticTasks 的语义标注截图" width="1080" height="2406"></div>
+            <figure class="evidence-card reveal">
+              <div class="phone-bezel"><img data-lightbox src="assets/self-annotated.jpeg" alt="SemanticTasks 的语义标注截图" width="1080" height="2406"></div>
               <figcaption><strong>SemanticTasks</strong><span>搜索、筛选、列表、收藏、完成、优先级、详情与截止日期输入都有稳定 id 和语义节点。</span></figcaption>
             </figure>
-            <figure class="evidence-card">
-              <div class="phone-bezel"><img src="assets/stuffs-annotated.jpeg" alt="STUFFS_NEXT 设置面板的语义标注截图" width="1080" height="2406"></div>
+            <figure class="evidence-card reveal">
+              <div class="phone-bezel"><img data-lightbox src="assets/stuffs-annotated.jpeg" alt="STUFFS_NEXT 设置面板的语义标注截图" width="1080" height="2406"></div>
               <figcaption><strong>STUFFS_NEXT</strong><span>添加/设置入口、毛玻璃滑块与滚动区域；毛玻璃任务的验证值是 51 &gt; 25。</span></figcaption>
             </figure>
-            <figure class="evidence-card">
-              <div class="phone-bezel"><img src="assets/rental-annotated.jpeg" alt="Rental 服务页与底部标签的语义标注截图" width="1080" height="2406"></div>
+            <figure class="evidence-card reveal">
+              <div class="phone-bezel"><img data-lightbox src="assets/rental-annotated.jpeg" alt="Rental 服务页与底部标签的语义标注截图" width="1080" height="2406"></div>
               <figcaption><strong>Rental</strong><span>底部五个标签各有 id 与 selected 状态；切换服务页后 tab.2.selected=true。</span></figcaption>
             </figure>
           </div>
@@ -975,7 +1024,7 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
             <p class="section-lede">这些限制决定结果能说明什么，也决定下一轮该补什么。</p>
           </header>
 
-          <ol class="limits-list">
+          <ol class="limits-list reveal">
             <li>
               <span class="limit-number">01</span>
               <div><strong>Rental 只完成了本地标签切换。</strong><p>首页房源依赖远端接口，离线时为空；搜索、预订等业务流没有验证。</p></div>
@@ -1036,6 +1085,12 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
           <a href="https://x-plug.github.io/MobileAgent/" target="_blank" rel="noreferrer">Mobile-Agent</a>
           <a href="https://github.com/HKUDS/PhoneCLI" target="_blank" rel="noreferrer">PhoneCLI</a>
         </div>
+        <div>
+          <p class="footer-label">动效参考</p>
+          <a href="https://linear.app/" target="_blank" rel="noreferrer">Linear</a>
+          <a href="https://www.raycast.com/" target="_blank" rel="noreferrer">Raycast</a>
+          <a href="https://vercel.com/" target="_blank" rel="noreferrer">Vercel</a>
+        </div>
       </div>
     </div>
     <div class="wrap footer-bottom">
@@ -1043,6 +1098,14 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
       <a href="#top">回到顶部 ↑</a>
     </div>
   </footer>
+
+  <div class="lightbox" data-lightbox-modal aria-hidden="true">
+    <button class="lightbox-close" type="button" data-lightbox-close aria-label="关闭大图">关闭 <span aria-hidden="true">✕</span></button>
+    <figure class="lightbox-figure">
+      <img data-lightbox-image alt="">
+      <figcaption data-lightbox-caption></figcaption>
+    </figure>
+  </div>
 
   <script src="main.js"></script>
 </body>

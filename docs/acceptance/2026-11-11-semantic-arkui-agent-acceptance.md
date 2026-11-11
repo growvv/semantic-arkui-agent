@@ -191,9 +191,11 @@ SemanticTasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和�
 
 | # | 任务 | 步骤 | prompt / completion | 验证 |
 |---|---|---:|---|---|
-| 1 | 切换到服务页 | 2 | 2,247 / 51 | 通过，`sem.rental.tab.2.selected=true`；服务页同时渲染 |
+| 1 | 切换到服务页 | 2 | 2,247 / 51 | 通过†，`sem.rental.tab.2.selected=true`；服务页同时渲染 |
 
 ![Rental 标签栏与服务页语义节点](../../evaluation/evidence/rental-annotated.jpeg)
+
+† Rental 的验证版本给底部标签 `Column` 增加了 `onClick`；在严格零逻辑改动边界下，该任务标记为待重测，见 2.5。
 
 ### 3.4 其他候选
 

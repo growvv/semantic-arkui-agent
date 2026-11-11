@@ -45,6 +45,7 @@
         <a href="#results">结果</a>
         <a href="#evidence">证据</a>
         <a href="#limits">限制</a>
+        <a href="#next">下一步</a>
       </nav>
       <div class="header-tools">
         <a class="github-link" href="https://github.com/growvv/semantic-arkui-agent" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
@@ -1054,6 +1055,49 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
               <div><strong>模型摘要可能与实际动作不一致。</strong><p>个别摘要把动作后的最终状态说成“无需操作”；实际动作和状态变化以轨迹、快照和日志为准。</p></div>
             </li>
           </ol>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="next">
+      <div class="wrap section-grid">
+        <div class="section-rail">
+          <p class="section-label">下一步</p>
+          <p class="rail-note">10 个应用，40 个任务</p>
+        </div>
+        <div class="section-main">
+          <header class="section-head reveal">
+            <h2>从 3 个应用走向可复现的基准</h2>
+            <p class="section-lede">当前 3 个应用、13 个任务是机制 pilot。下一阶段建议做 10 个应用 × 4 个任务的 ArkUI-AgentBench：先以 5 个应用/20 个任务验证管线，再扩到 10 个/40 个。</p>
+          </header>
+
+          <div class="next-grid">
+            <article class="next-card reveal">
+              <p class="card-kicker">SCALE</p>
+              <p class="next-number">10<span>apps · 40 tasks</span></p>
+              <p>自建 Tasks、当前 2 个开源应用，再加 7 个新应用；本地数据、无登录、可构建。</p>
+            </article>
+            <article class="next-card reveal">
+              <p class="card-kicker">BASELINES</p>
+              <p class="next-number">3<span>条基线</span></p>
+              <p>截图 + 多模态、原始树 + 文本、语义树 + 文本；再补 state / actions / prepare 消融。</p>
+            </article>
+            <article class="next-card reveal">
+              <p class="card-kicker">STATE</p>
+              <p class="next-number">2<span>种状态结论</span></p>
+              <p>同一会话内更新已确认；重启后的 session-only / persisted / reset 逐 app 记录。</p>
+            </article>
+            <article class="next-card reveal">
+              <p class="card-kicker">DISCIPLINE</p>
+              <p class="next-number">0<span>UI diff</span></p>
+              <p>只加隐藏属性；逐 app 截图 / 控件树 diff；不接受为任务新增 onClick。</p>
+            </article>
+          </div>
+
+          <p class="next-datasets">同类基准集中在 Android：AndroidWorld（116 tasks / 20 apps）、AndroidLab（138 / 9）、Android in the Wild（715k episodes / 30k instructions）；鸿蒙暂时没有同等公开任务基准，这正是需要自建 10 应用任务集的原因。</p>
+          <div class="next-links">
+            <a href="https://github.com/growvv/semantic-arkui-agent/blob/main/docs/acceptance/2026-11-11-semantic-arkui-agent-acceptance.md" target="_blank" rel="noreferrer">报告第八节：扩展实验 <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/growvv/semantic-arkui-agent/tree/main/evaluation/state-persistence" target="_blank" rel="noreferrer">状态续存证据 <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </div>
     </section>

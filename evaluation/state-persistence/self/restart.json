@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "viewport": {
+    "width": 1080,
+    "height": 2406
+  },
+  "nodes": [
+    {
+      "ref": "sem.search",
+      "id": "sem.search",
+      "type": "TextInput",
+      "role": "input",
+      "meaning": "搜索任务或项目（当前：）",
+      "state": {
+        "value": ""
+      },
+      "actions": [
+        {
+          "name": "set_query",
+          "input": "set_text",
+          "label": "输入搜索词"
+        }
+      ],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.filter.open",
+      "id": "sem.filter.open",
+      "type": "Toggle",
+      "role": "toggle",
+      "meaning": "只看未完成（当前关）",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "toggle_open_filter",
+          "input": "tap",
+          "label": "切换只看未完成"
+        }
+      ],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.filter.favorite",
+      "id": "sem.filter.favorite",
+      "type": "Toggle",
+      "role": "toggle",
+      "meaning": "只看收藏（当前关）",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "toggle_favorite_filter",
+          "input": "tap",
+          "label": "切换只看收藏"
+        }
+      ],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.filter.clear",
+      "id": "sem.filter.clear",
+      "type": "Button",
+      "role": "action",
+      "meaning": "清除搜索和筛选",
+      "state": {
+        "value": ""
+      },
+      "actions": [
+        {
+          "name": "clear_filters",
+          "input": "tap",
+          "label": "清除搜索和筛选"
+        }
+      ],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.list",
+      "id": "sem.task.list",
+      "type": "List",
+      "role": "list",
+      "meaning": "任务列表（当前显示 5 项）",
+      "state": {
+        "value": 5
+      },
+      "actions": [
+        {
+          "name": "scroll_tasks",
+          "input": "scroll",
+          "label": "滚动任务列表",
+          "directions": [
+            "forward",
+            "backward"
+          ]
+        }
+      ],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.title.t1",
+      "id": "sem.task.title.t1",
+      "type": "Text",
+      "role": "content",
+      "meaning": "任务：整理季度材料；项目：北区门店；到期：2026-10-15；优先级：普通；状态：进行中；收藏：否",
+      "entityKind": "task",
+      "entityKey": "t1",
+      "state": {
+        "completed": false,
+        "favorite": false,
+        "priority": "普通"
+      },
+      "actions": [],
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.favorite.t1",
+      "id": "sem.task.favorite.t1",
+      "type": "Button",
+      "role": "action",
+      "meaning": "收藏：整理季度材料（项目：北区门店，到期：2026-10-15）",
+      "entityKind": "task",
+      "entityKey": "t1",
+      "state": {
+        "favorite": false,
+        "completed": false
+      },
+      "actions": [
+        {
+          "name": "toggle_favorite",
+          "input": "tap",
+          "label": "收藏"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.complete.t1",
+      "id": "sem.task.complete.t1",
+      "type": "Button",
+      "role": "action",
+      "meaning": "标记完成：整理季度材料（项目：北区门店）",
+      "entityKind": "task",
+      "entityKey": "t1",
+      "state": {
+        "completed": false
+      },
+      "actions": [
+        {
+          "name": "toggle_completion",
+          "input": "tap",
+          "label": "标记完成"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.priority.t1",
+      "id": "sem.task.priority.t1",
+      "type": "Button",
+      "role": "action",
+      "meaning": "调整优先级：整理季度材料（当前普通）",
+      "entityKind": "task",
+      "entityKey": "t1",
+      "state": {
+        "priority": "普通"
+      },
+      "actions": [
+        {
+          "name": "cycle_priority",
+          "input": "tap",
+          "label": "按低、普通、高循环调整"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.detail.t1",
+      "id": "sem.task.detail.t1",
+      "type": "Button",
+      "role": "action",
+      "meaning": "编辑截止日期：整理季度材料（当前2026-10-15）",
+      "entityKind": "task",
+      "entityKey": "t1",
+      "state": {
+        "value": "2026-10-15"
+      },
+      "actions": [
+        {
+          "name": "open_due_date_editor",
+          "input": "tap",
+          "label": "打开截止日期编辑"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.title.t2",
+      "id": "sem.task.title.t2",
+      "type": "Text",
+      "role": "content",
+      "meaning": "任务：整理季度材料；项目：线上商城；到期：2026-10-20；优先级：普通；状态：进行中；收藏：否",
+      "entityKind": "task",
+      "entityKey": "t2",
+      "state": {
+        "completed": false,
+        "favorite": false,
+        "priority": "普通"
+      },
+      "actions": [],
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.favorite.t2",
+      "id": "sem.task.favorite.t2",
+      "type": "Button",
+      "role": "action",
+      "meaning": "收藏：整理季度材料（项目：线上商城，到期：2026-10-20）",
+      "entityKind": "task",
+      "entityKey": "t2",
+      "state": {
+        "favorite": false,
+        "completed": false
+      },
+      "actions": [
+        {
+          "name": "toggle_favorite",
+          "input": "tap",
+          "label": "收藏"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.complete.t2",
+      "id": "sem.task.complete.t2",
+      "type": "Button",
+      "role": "action",
+      "meaning": "标记完成：整理季度材料（项目：线上商城）",
+      "entityKind": "task",
+      "entityKey": "t2",
+      "state": {
+        "completed": false
+      },
+      "actions": [
+        {
+          "name": "toggle_completion",
+          "input": "tap",
+          "label": "标记完成"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.priority.t2",
+      "id": "sem.task.priority.t2",
+      "type": "Button",
+      "role": "action",
+      "meaning": "调整优先级：整理季度材料（当前普通）",
+      "entityKind": "task",
+      "entityKey": "t2",
+      "state": {
+        "priority": "普通"
+      },
+      "actions": [
+        {
+          "name": "cycle_priority",
+          "input": "tap",
+          "label": "按低、普通、高循环调整"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.detail.t2",
+      "id": "sem.task.detail.t2",
+      "type": "Button",
+      "role": "action",
+      "meaning": "编辑截止日期：整理季度材料（当前2026-10-20）",
+      "entityKind": "task",
+      "entityKey": "t2",
+      "state": {
+        "value": "2026-10-20"
+      },
+      "actions": [
+        {
+          "name": "open_due_date_editor",
+          "input": "tap",
+          "label": "打开截止日期编辑"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.title.t3",
+      "id": "sem.task.title.t3",
+      "type": "Text",
+      "role": "content",
+      "meaning": "任务：更新采购台账；项目：北区门店；到期：2026-10-18；优先级：低；状态：进行中；收藏：是",
+      "entityKind": "task",
+      "entityKey": "t3",
+      "state": {
+        "completed": false,
+        "favorite": true,
+        "priority": "低"
+      },
+      "actions": [],
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.favorite.t3",
+      "id": "sem.task.favorite.t3",
+      "type": "Button",
+      "role": "action",
+      "meaning": "取消收藏：更新采购台账（项目：北区门店，到期：2026-10-18）",
+      "entityKind": "task",
+      "entityKey": "t3",
+      "state": {
+        "favorite": true,
+        "completed": false
+      },
+      "actions": [
+        {
+          "name": "toggle_favorite",
+          "input": "tap",
+          "label": "取消收藏"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.complete.t3",
+      "id": "sem.task.complete.t3",
+      "type": "Button",
+      "role": "action",
+      "meaning": "标记完成：更新采购台账（项目：北区门店）",
+      "entityKind": "task",
+      "entityKey": "t3",
+      "state": {
+        "completed": false
+      },
+      "actions": [
+        {
+          "name": "toggle_completion",
+          "input": "tap",
+          "label": "标记完成"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.priority.t3",
+      "id": "sem.task.priority.t3",
+      "type": "Button",
+      "role": "action",
+      "meaning": "调整优先级：更新采购台账（当前低）",
+      "entityKind": "task",
+      "entityKey": "t3",
+      "state": {
+        "priority": "低"
+      },
+      "actions": [
+        {
+          "name": "cycle_priority",
+          "input": "tap",
+          "label": "按低、普通、高循环调整"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.detail.t3",
+      "id": "sem.task.detail.t3",
+      "type": "Button",
+      "role": "action",
+      "meaning": "编辑截止日期：更新采购台账（当前2026-10-18）",
+      "entityKind": "task",
+      "entityKey": "t3",
+      "state": {
+        "value": "2026-10-18"
+      },
+      "actions": [
+        {
+          "name": "open_due_date_editor",
+          "input": "tap",
+          "label": "打开截止日期编辑"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.title.t4",
+      "id": "sem.task.title.t4",
+      "type": "Text",
+      "role": "content",
+      "meaning": "任务：核对活动预算；项目：线上商城；到期：2026-10-22；优先级：高；状态：已完成；收藏：否",
+      "entityKind": "task",
+      "entityKey": "t4",
+      "state": {
+        "completed": true,
+        "favorite": false,
+        "priority": "高"
+      },
+      "actions": [],
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.favorite.t4",
+      "id": "sem.task.favorite.t4",
+      "type": "Button",
+      "role": "action",
+      "meaning": "收藏：核对活动预算（项目：线上商城，到期：2026-10-22）",
+      "entityKind": "task",
+      "entityKey": "t4",
+      "state": {
+        "favorite": false,
+        "completed": true
+      },
+      "actions": [
+        {
+          "name": "toggle_favorite",
+          "input": "tap",
+          "label": "收藏"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.complete.t4",
+      "id": "sem.task.complete.t4",
+      "type": "Button",
+      "role": "action",
+      "meaning": "重新打开：核对活动预算（项目：线上商城）",
+      "entityKind": "task",
+      "entityKey": "t4",
+      "state": {
+        "completed": true
+      },
+      "actions": [
+        {
+          "name": "toggle_completion",
+          "input": "tap",
+          "label": "重新打开"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.priority.t4",
+      "id": "sem.task.priority.t4",
+      "type": "Button",
+      "role": "action",
+      "meaning": "调整优先级：核对活动预算（当前高）",
+      "entityKind": "task",
+      "entityKey": "t4",
+      "state": {
+        "priority": "高"
+      },
+      "actions": [
+        {
+          "name": "cycle_priority",
+          "input": "tap",
+          "label": "按低、普通、高循环调整"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.detail.t4",
+      "id": "sem.task.detail.t4",
+      "type": "Button",
+      "role": "action",
+      "meaning": "编辑截止日期：核对活动预算（当前2026-10-22）",
+      "entityKind": "task",
+      "entityKey": "t4",
+      "state": {
+        "value": "2026-10-22"
+      },
+      "actions": [
+        {
+          "name": "open_due_date_editor",
+          "input": "tap",
+          "label": "打开截止日期编辑"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.title.t5",
+      "id": "sem.task.title.t5",
+      "type": "Text",
+      "role": "content",
+      "meaning": "任务：预订客户出差；项目：市场；到期：2026-11-03；优先级：普通；状态：进行中；收藏：否",
+      "entityKind": "task",
+      "entityKey": "t5",
+      "state": {
+        "completed": false,
+        "favorite": false,
+        "priority": "普通"
+      },
+      "actions": [],
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.favorite.t5",
+      "id": "sem.task.favorite.t5",
+      "type": "Button",
+      "role": "action",
+      "meaning": "收藏：预订客户出差（项目：市场，到期：2026-11-03）",
+      "entityKind": "task",
+      "entityKey": "t5",
+      "state": {
+        "favorite": false,
+        "completed": false
+      },
+      "actions": [
+        {
+          "name": "toggle_favorite",
+          "input": "tap",
+          "label": "收藏"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.complete.t5",
+      "id": "sem.task.complete.t5",
+      "type": "Button",
+      "role": "action",
+      "meaning": "标记完成：预订客户出差（项目：市场）",
+      "entityKind": "task",
+      "entityKey": "t5",
+      "state": {
+        "completed": false
+      },
+      "actions": [
+        {
+          "name": "toggle_completion",
+          "input": "tap",
+          "label": "标记完成"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.priority.t5",
+      "id": "sem.task.priority.t5",
+      "type": "Button",
+      "role": "action",
+      "meaning": "调整优先级：预订客户出差（当前普通）",
+      "entityKind": "task",
+      "entityKey": "t5",
+      "state": {
+        "priority": "普通"
+      },
+      "actions": [
+        {
+          "name": "cycle_priority",
+          "input": "tap",
+          "label": "按低、普通、高循环调整"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    },
+    {
+      "ref": "sem.task.detail.t5",
+      "id": "sem.task.detail.t5",
+      "type": "Button",
+      "role": "action",
+      "meaning": "编辑截止日期：预订客户出差（当前2026-11-03）",
+      "entityKind": "task",
+      "entityKey": "t5",
+      "state": {
+        "value": "2026-11-03"
+      },
+      "actions": [
+        {
+          "name": "open_due_date_editor",
+          "input": "tap",
+          "label": "打开截止日期编辑"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.task.list",
+      "visible": true
+    }
+  ]
+}

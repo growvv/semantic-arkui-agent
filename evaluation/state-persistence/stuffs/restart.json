@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "viewport": {
+    "width": 1080,
+    "height": 2406
+  },
+  "nodes": [
+    {
+      "ref": "sem.stuffs.scroll",
+      "id": "sem.stuffs.scroll",
+      "type": "WaterFlow",
+      "role": "list",
+      "meaning": "主页可滚动区域",
+      "actions": [
+        {
+          "name": "scroll_page",
+          "input": "scroll",
+          "label": "上下滚动页面",
+          "directions": [
+            "forward",
+            "backward"
+          ]
+        }
+      ],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.stuffs.cards.summary",
+      "id": "sem.stuffs.cards.summary",
+      "type": "Text",
+      "role": "content",
+      "meaning": "目标卡片数量：1",
+      "state": {
+        "value": 1,
+        "extra": "阅读"
+      },
+      "actions": [],
+      "risk": "read_only",
+      "parentRef": "sem.stuffs.scroll",
+      "visible": false
+    },
+    {
+      "ref": "sem.stuffs.add",
+      "id": "sem.stuffs.add",
+      "type": "__Common__",
+      "role": "action",
+      "meaning": "打开添加面板",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "toggle_add",
+          "input": "tap",
+          "label": "打开或关闭添加面板"
+        }
+      ],
+      "risk": "read_only",
+      "parentRef": "sem.stuffs.scroll",
+      "visible": true
+    },
+    {
+      "ref": "sem.stuffs.settings",
+      "id": "sem.stuffs.settings",
+      "type": "__Common__",
+      "role": "action",
+      "meaning": "打开设置面板",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "toggle_settings",
+          "input": "tap",
+          "label": "打开或关闭设置面板"
+        }
+      ],
+      "risk": "read_only",
+      "parentRef": "sem.stuffs.scroll",
+      "visible": true
+    },
+    {
+      "ref": "sem.stuffs.settings.blur",
+      "id": "sem.stuffs.settings.blur",
+      "type": "Slider",
+      "role": "control",
+      "meaning": "毛玻璃半径滑块（当前 25）",
+      "state": {
+        "value": 25
+      },
+      "actions": [
+        {
+          "name": "set_blur",
+          "input": "tap",
+          "label": "调整毛玻璃半径"
+        }
+      ],
+      "risk": "read_only",
+      "parentRef": "sem.stuffs.scroll",
+      "visible": false
+    },
+    {
+      "ref": "sem.stuffs.settings.ok",
+      "id": "sem.stuffs.settings.ok",
+      "type": "Button",
+      "role": "action",
+      "meaning": "保存并应用设置",
+      "state": {
+        "value": 25
+      },
+      "actions": [
+        {
+          "name": "apply_settings",
+          "input": "tap",
+          "label": "保存并应用设置"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.stuffs.scroll",
+      "visible": false
+    },
+    {
+      "ref": "sem.stuffs.add.name",
+      "id": "sem.stuffs.add.name",
+      "type": "__Common__",
+      "role": "input",
+      "meaning": "目标名称输入框（当前：）",
+      "state": {
+        "value": ""
+      },
+      "actions": [
+        {
+          "name": "set_card_name",
+          "input": "set_text",
+          "label": "输入目标名称"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.stuffs.scroll",
+      "visible": false
+    },
+    {
+      "ref": "sem.stuffs.add.description",
+      "id": "sem.stuffs.add.description",
+      "type": "__Common__",
+      "role": "input",
+      "meaning": "目标描述输入框（当前：）",
+      "state": {
+        "value": ""
+      },
+      "actions": [
+        {
+          "name": "set_card_description",
+          "input": "set_text",
+          "label": "输入目标描述"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.stuffs.scroll",
+      "visible": false
+    },
+    {
+      "ref": "sem.stuffs.add.ok",
+      "id": "sem.stuffs.add.ok",
+      "type": "Button",
+      "role": "action",
+      "meaning": "添加目标卡片",
+      "state": {
+        "value": ""
+      },
+      "actions": [
+        {
+          "name": "add_card",
+          "input": "tap",
+          "label": "使用当前输入添加目标卡片"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.stuffs.scroll",
+      "visible": false
+    }
+  ]
+}

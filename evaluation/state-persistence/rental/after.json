@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "revision": 2,
+  "viewport": {
+    "width": 1080,
+    "height": 2406
+  },
+  "nodes": [
+    {
+      "ref": "sem.rental.tab.0",
+      "id": "sem.rental.tab.0",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：首页",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到首页"
+        }
+      ],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.rental.tab.1",
+      "id": "sem.rental.tab.1",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：想看",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到想看"
+        }
+      ],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.rental.tab.2",
+      "id": "sem.rental.tab.2",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：服务",
+      "state": {
+        "selected": true
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到服务"
+        }
+      ],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.rental.tab.3",
+      "id": "sem.rental.tab.3",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：发现",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到发现"
+        }
+      ],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.rental.tab.4",
+      "id": "sem.rental.tab.4",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：我的",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到我的"
+        }
+      ],
+      "risk": "read_only",
+      "visible": true
+    }
+  ]
+}

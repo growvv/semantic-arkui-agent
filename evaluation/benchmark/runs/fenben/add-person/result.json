@@ -1,0 +1,15 @@
+{
+  "app": "fenben",
+  "task": "add-person",
+  "goal": "添加一个参与人，名字叫小刘",
+  "verified": true,
+  "steps": 3,
+  "elapsedSeconds": 81.1,
+  "promptTokens": 4277,
+  "completionTokens": 118,
+  "agentFinished": true,
+  "reason": "已添加参与人“小刘”。",
+  "beforeCheck": "value=1",
+  "afterCheck": "value=2",
+  "preconditionOk": true
+}

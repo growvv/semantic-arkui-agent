@@ -254,19 +254,20 @@ Rental 的 2 步轨迹干净：一次 tap 后 `revision` 推进到 2，`selected
 - 标注截图：`evidence/self-annotated.jpeg`、`evidence/stuffs-annotated.jpeg`、`evidence/rental-annotated.jpeg`。
 - 汇总：`evidence/self-summary.json`、`evidence/stuffs-summary.json`、`evidence/rental-summary.json`。
 - 任务前后截图：`evidence/self-favorite-after.jpeg`、`evidence/self-search-after.jpeg`、`evidence/self-due-date-after.jpeg`、`evidence/stuffs-settings-after.jpeg`、`evidence/stuffs-blur-after.jpeg`、`evidence/stuffs-add-card-after.jpeg`、`evidence/rental-tab-after.jpeg`。
-- 轨迹：`evidence/self-favorite-trajectory.jsonl`、`evidence/stuffs-add-card-trajectory.jsonl`、`evidence/rental-tab-trajectory.jsonl`；关键轨迹已复制到 `evidence/`，完整运行目录在本地 `evaluation/runs/`，未随公开仓库分发。
+- 轨迹：`evidence/self-favorite-trajectory.jsonl`、`evidence/stuffs-add-card-trajectory.jsonl`、`evidence/rental-tab-trajectory.jsonl`；完整轨迹和逐次记录在 `runs/self/`、`runs/stuffs/`、`runs/rental/`。
 - 桥快照：`evidence/self-snapshot.json`、`evidence/stuffs-snapshot.json`、`evidence/rental-snapshot.json`。
 - 标注扫描/提案：`annotations/semantic-tasks/proposals.json`、`annotations/stuffs/scan.json`、`annotations/stuffs/proposals.json`。
 - 标注工具自测：`evidence/annotator-selftest.txt`。
+- 多应用 pilot：`evaluation/benchmark/summary.json`、`evaluation/benchmark/tasks.json`、`evaluation/benchmark/runs/`。
 - 标注合规审计：`annotations/rental/audit.json`、`annotations/stuffs/audit.json`、`evidence/annotation-audit-selftest.txt`。
 - 状态续存测试：`evaluation/state-persistence/` 下的 `before.json`、`after.json`、`restart.json` 与复现说明。
-- HapTest 提交记录：`evidence/haptest-commits.txt`。公开仓库从清理后的快照开始，该文件记录本地开发分支的提交信息。
+- HapTest 提交记录：`evidence/haptest-commits.txt`。
 
 源码位置：
 
 - 自建应用：`examples/semantic-tasks-app`
-- STUFFS 改造：第三方源码，未随仓库分发；上游链接与验证基线见 `THIRD-PARTY.md`。
-- Rental 改造：第三方源码，未随仓库分发；上游链接与验证基线见 `THIRD-PARTY.md`。
+- STUFFS 改造：工作区 `semantic-apps/stuffs-next`
+- Rental 改造：工作区 `semantic-apps/rental`
 - HapTest 宿主与语义层：`src/semantic/`
 - 语义桥模板：`examples/semantic-tasks-app/entry/src/main/ets/semantics/`
 
@@ -284,8 +285,6 @@ Rental 的 2 步轨迹干净：一次 tap 后 `revision` 推进到 2，`selected
 
 环境：
 
-把 `<device-serial>` 替换为 `$HDC list targets` 显示的设备序列号。
-
 ```sh
 export HDC=/Applications/DevEco-Studio.app/Contents/sdk/default/openharmony/toolchains/hdc
 export DEVECO_SDK_HOME=/Applications/DevEco-Studio.app/Contents/sdk
@@ -296,7 +295,7 @@ $HDC list targets   # <device-serial>
 HapTest：
 
 ```sh
-cd <repo>
+cd 
 NODE_ENV=development npm install --include=dev
 npm run build
 npm test -- --run
@@ -311,31 +310,29 @@ cd examples/semantic-tasks-app
 $HDC uninstall org.anapp.research.prototype || true
 $HDC install entry/build/default/outputs/default/entry-default-signed.hap
 cd ../..
-python3 evaluation/run_self_eval.py --serial <device-serial>
+python3 evaluation/run_self_eval.py
 ```
-
-STUFFS_NEXT 与 Rental 的源码不随仓库分发；将 `<third-party-apps>` 替换为本地源码树。
 
 STUFFS：
 
 ```sh
-cd <third-party-apps>/stuffs-next
+cd /stuffs-next
 /Applications/DevEco-Studio.app/Contents/tools/hvigor/bin/hvigorw assembleHap --mode module -p product=default
 $HDC uninstall org.anapp.research.prototype || true
 $HDC install entry/build/default/outputs/default/entry-default-signed.hap
-cd <repo>
-python3 evaluation/run_stuffs_eval.py --serial <device-serial>
+cd 
+python3 evaluation/run_stuffs_eval.py
 ```
 
 Rental：
 
 ```sh
-cd <third-party-apps>/rental
+cd /rental
 /Applications/DevEco-Studio.app/Contents/tools/hvigor/bin/hvigorw assembleHap --mode module -p product=default
 $HDC uninstall org.anapp.research.prototype || true
 $HDC install entry/build/default/outputs/default/entry-default-signed.hap
-cd <repo>
-python3 evaluation/run_rental_eval.py --serial <device-serial>
+cd 
+python3 evaluation/run_rental_eval.py
 ```
 
 语义树与单任务：
@@ -384,6 +381,30 @@ node tools/annotator/cli.js propose --project ../semantic-apps/stuffs-next --out
 - **发布**：任务 JSON、标注补丁、reset 脚本、运行日志、before/after 截图、独立 oracle 和报告；第三方应用不整包分发，保留上游链接、提交基线和许可证。
 
 10 个应用是合理的下一步规模，但不是论文级规模。先完成 5 个应用/20 个任务的 pilot，验证零 UI diff、状态 oracle 和标注成本，再扩到 10 个/40 个；若结果支持，再增加到 20+ 应用、100+ 任务。
+
+### 8.3 四应用 pilot 结果
+
+在 8.1 和 8.2 的基础上，先做了 4 个开源应用、11 个有效任务的 pilot，用来验证标注边界、构建安装、桥读取和独立判分整条链路。所有应用只增加 `.id`、无障碍文本和 `customProperty`，`tools/annotation-audit` 对各自上游基线审计均为 0 findings。
+
+| 应用 | 上游 | 许可 | 任务 | 验证通过 | 步数 | prompt / completion |
+|---|---|---|---:|---:|---:|---:|
+| fenben（碰一碰分账） | `37249d58` | MIT | 3 | 3/3 | 16 | 23,376 / 754 |
+| jijian（计件通） | `d4aff1c3` | MIT | 3 | 3/3 | 7 | 9,086 / 194 |
+| STUFFS_NEXT | `e35b7584` | MIT | 3 | 3/3 | 9 | 12,276 / 395 |
+| Rental | `8c6eb31b` | MIT | 2 | 2/2 | 4 | 4,494 / 111 |
+| 合计 |  |  | 11 | 11/11 | 36 | 49,232 / 1,465 |
+
+运行方式为 `haptest semantic bench`，直接复用 HapTest 的 `Hdc`、`HarmonyDevice`、`SemanticBridgeClient` 和 `SemanticAgent`。每个任务前卸载重装并清理应用数据，判分只读应用侧语义快照，且要求任务开始前目标状态不成立，避免假阳性。
+
+**20 步硬上限**：超过即判 `EXCEEDED_MAX_STEPS`。pilot 中单任务最多 9 步（fenben 连加两道菜），没有任务触顶。
+
+**墙钟上限**：单任务 10 分钟。最初设 3 分钟时多步任务频繁超时，放宽后未再出现。
+
+**两个被排除的任务**：`jijian/back-to-home` 和 `rental/back-home` 的目标状态（回到默认标签）在任务开始时已成立，被判为 `PRECONDITION_ALREADY_MET`，不计入通过率。这不是 Agent 失败，而是任务定义无效，已从任务集移除。
+
+**已知限制**：njuschedule 的底部标签是 `HdsTabs` 的 `BottomTabBarStyle`，无法挂 `customProperty`，且其 `@Trace` 状态不会触发桥的 revision 更新，因此没有纳入 pilot。acthub 首次启动要求登录，不符合“无登录”筛选标准，也已排除。
+
+pilot 证明整条链路在 4 个应用上可复现，但规模仍小于 8.2 建议的 10 应用/40 任务。下一轮按 8.2 的指标补齐到 10 个应用，并加入截图基线和消融。
 
 ## 九、提交
 

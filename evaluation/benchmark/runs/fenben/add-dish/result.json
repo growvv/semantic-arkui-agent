@@ -1,0 +1,15 @@
+{
+  "app": "fenben",
+  "task": "add-dish",
+  "goal": "添加一道菜：菜名“宫保鸡丁”，价格 38",
+  "verified": true,
+  "steps": 4,
+  "elapsedSeconds": 127.9,
+  "promptTokens": 5767,
+  "completionTokens": 183,
+  "agentFinished": true,
+  "reason": "已添加菜品“宫保鸡丁”，价格 38 元。",
+  "beforeCheck": "value=0",
+  "afterCheck": "value=1",
+  "preconditionOk": true
+}

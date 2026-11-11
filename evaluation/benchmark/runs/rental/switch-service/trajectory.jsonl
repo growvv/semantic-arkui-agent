@@ -1,0 +1,2 @@
+{"step":1,"snapshotRevision":1,"observationId":"mwcbnxsk-0zufxnzx","action":{"action":"tap","ref":"sem.rental.tab.2"},"result":"tapped sem.rental.tab.2","promptTokens":1117,"completionTokens":21,"elapsedMs":39017}
+{"step":2,"snapshotRevision":2,"observationId":"mwcbosi4-h2x6j8ts","action":{"action":"finish","summary":"已切换到服务页"},"result":"已切换到服务页","promptTokens":1130,"completionTokens":37,"elapsedMs":61069}

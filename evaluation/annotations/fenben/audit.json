@@ -1,0 +1,14 @@
+{
+  "baselineRoot": "/tmp/cand/fenben/fenben-37249d580dfd7ed4c22a5188df57c9418c442356/entry/src/main/ets",
+  "annotatedRoot": "semantic-apps/fenben/entry/src/main/ets",
+  "baselineFiles": 12,
+  "annotatedFiles": 14,
+  "changedFiles": 2,
+  "addedFiles": [
+    "semantics/Sem.ets",
+    "semantics/SemanticBridge.ets"
+  ],
+  "removedFiles": [],
+  "findings": [],
+  "ok": true
+}

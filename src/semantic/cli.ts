@@ -5,6 +5,7 @@ import { Hdc } from '../device/hdc';
 import { SemanticBridgeClient } from './bridge_client';
 import { SemanticAgent } from './agent';
 import { LlmClient } from './llm';
+import { SemanticBenchmark } from './benchmark';
 import { SemanticError } from './types';
 
 interface ParsedArgs {
@@ -15,7 +16,8 @@ interface ParsedArgs {
 
 const USAGE = `Usage:
   haptest semantic tree --serial <serial> [--bundle <bundle>] [--out <file>] [--port <port>]
-  haptest semantic run  --serial <serial> --task <text> [--bundle <bundle>] [--out <dir>] [--port <port>] [--max-steps <n>]
+  haptest semantic run  --serial <serial> --task <text> [--bundle <bundle>] [--out <dir>] [--port <port>] [--max-steps <n>] [--max-duration-ms <n>]
+  haptest semantic bench --serial <serial> --tasks <file> --apps-root <dir> [--apps a,b] [--out <dir>] [--max-steps <n>] [--max-duration-ms <n>]
 
 The target app must contain the debug-only SemanticBridge and must be debug-signed.`;
 
@@ -30,7 +32,7 @@ export async function runSemanticCli(args: string[]): Promise<{ stdout: string; 
     if (parsed.options.has('help') || parsed.command === 'help' || parsed.command === '') {
         return { stdout: USAGE + '\n', stderr: '', exitCode: 0 };
     }
-    if (parsed.command !== 'tree' && parsed.command !== 'run') {
+    if (parsed.command !== 'tree' && parsed.command !== 'run' && parsed.command !== 'bench') {
         return finish({ ok: false, error: `Unknown semantic command: ${parsed.command}` }, USAGE, 2);
     }
     if (parsed.command === 'run' && !parsed.options.get('task')) {
@@ -39,8 +41,30 @@ export async function runSemanticCli(args: string[]): Promise<{ stdout: string; 
 
     const serial = parsed.options.get('serial');
     const bundle = parsed.options.get('bundle');
+
+    if (parsed.command === 'bench') {
+        const tasks = parsed.options.get('tasks');
+        const appsRoot = parsed.options.get('apps-root');
+        if (!serial || !tasks || !appsRoot) {
+            return finish({ ok: false, error: 'bench requires --serial, --tasks and --apps-root.' }, USAGE, 2);
+        }
+        const apps = parsed.options.get('apps');
+        const benchmark = new SemanticBenchmark({
+            serial,
+            tasksPath: path.resolve(tasks),
+            appsRoot: path.resolve(appsRoot),
+            outDir: path.resolve(parsed.options.get('out') ?? 'evaluation/benchmark/runs'),
+            apps: apps ? apps.split(',').map((item) => item.trim()).filter(Boolean) : undefined,
+            maxSteps: numberOption(parsed.options.get('max-steps'), 20, 'max-steps'),
+            maxDurationMs: numberOption(parsed.options.get('max-duration-ms'), 600000, 'max-duration-ms'),
+            bundle,
+        });
+        const summary = await benchmark.run();
+        return finish({ ok: true, summary }, '', summary.verified === summary.total ? 0 : 1);
+    }
     const port = numberOption(parsed.options.get('port'), 18765, 'port');
-    const maxSteps = numberOption(parsed.options.get('max-steps'), 12, 'max-steps');
+    const maxSteps = numberOption(parsed.options.get('max-steps'), 20, 'max-steps');
+    const maxDurationMs = numberOption(parsed.options.get('max-duration-ms'), 180000, 'max-duration-ms');
     const out = parsed.options.get('out');
     let device: HarmonyDevice | undefined;
     let bridge: SemanticBridgeClient | undefined;
@@ -75,6 +99,7 @@ export async function runSemanticCli(args: string[]): Promise<{ stdout: string; 
             device,
             llm: new LlmClient(),
             maxSteps,
+            maxDurationMs,
             bundleName: bundle,
         });
         const result = await agent.run(task, { outDir: out ? path.resolve(out) : undefined });

@@ -1,0 +1,15 @@
+{
+  "app": "jijian",
+  "task": "switch-stats",
+  "goal": "切换到“统计”标签",
+  "verified": true,
+  "steps": 2,
+  "elapsedSeconds": 70.6,
+  "promptTokens": 2259,
+  "completionTokens": 45,
+  "agentFinished": true,
+  "reason": "已切换到“统计”标签",
+  "beforeCheck": "selected=false",
+  "afterCheck": "selected=true",
+  "preconditionOk": true
+}

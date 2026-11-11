@@ -1,0 +1,4 @@
+{"step":1,"snapshotRevision":1,"observationId":"mwcapvax-0428fh0q","action":{"action":"input","ref":"sem.fenben.dish.name","text":"宫保鸡丁"},"result":"entered \"宫保鸡丁\" into sem.fenben.dish.name","promptTokens":1426,"completionTokens":49,"elapsedMs":32271}
+{"step":2,"snapshotRevision":2,"observationId":"mwcaqltf-s5uptj6c","action":{"action":"input","ref":"sem.fenben.dish.price","text":"38"},"result":"entered \"38\" into sem.fenben.dish.price","promptTokens":1413,"completionTokens":44,"elapsedMs":50072}
+{"step":3,"snapshotRevision":3,"observationId":"mwcaqyrj-aqqv8yqh","action":{"action":"tap","ref":"sem.fenben.dish.add"},"result":"tapped sem.fenben.dish.add","promptTokens":1436,"completionTokens":34,"elapsedMs":78268}
+{"step":4,"snapshotRevision":4,"observationId":"mwcarjx7-xkzexgx3","action":{"action":"finish","summary":"已添加菜品“宫保鸡丁”，价格 38 元。"},"result":"已添加菜品“宫保鸡丁”，价格 38 元。","promptTokens":1492,"completionTokens":56,"elapsedMs":118546}

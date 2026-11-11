@@ -1,0 +1,14 @@
+{
+  "baselineRoot": "/tmp/cand/jijian-harmony/jijian-harmony-d4aff1c3533d1b57779a0341374805951f303c33/entry/src/main/ets",
+  "annotatedRoot": "semantic-apps/jijian/entry/src/main/ets",
+  "baselineFiles": 31,
+  "annotatedFiles": 33,
+  "changedFiles": 3,
+  "addedFiles": [
+    "semantics/Sem.ets",
+    "semantics/SemanticBridge.ets"
+  ],
+  "removedFiles": [],
+  "findings": [],
+  "ok": true
+}

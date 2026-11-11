@@ -1,0 +1,15 @@
+{
+  "app": "stuffs-next",
+  "task": "open-add-panel",
+  "goal": "打开添加面板",
+  "verified": true,
+  "steps": 2,
+  "elapsedSeconds": 65.6,
+  "promptTokens": 2711,
+  "completionTokens": 73,
+  "agentFinished": true,
+  "reason": "添加面板已打开",
+  "beforeCheck": "visible=false",
+  "afterCheck": "visible=true",
+  "preconditionOk": true
+}

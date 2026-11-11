@@ -1068,19 +1068,37 @@ STUFFS   baseline=e35b7584 files=5  changed=2 added=2 findings=0</code></div>
       <div class="wrap section-grid">
         <div class="section-rail">
           <p class="section-label">下一步</p>
-          <p class="rail-note">10 个应用，40 个任务</p>
+          <p class="rail-note">已跑 4 个应用，11 个任务</p>
         </div>
         <div class="section-main">
           <header class="section-head reveal">
-            <h2>从 3 个应用走向可复现的基准</h2>
-            <p class="section-lede">当前 3 个应用、13 个任务是机制 pilot。下一阶段建议做 10 个应用 × 4 个任务的 ArkUI-AgentBench：先以 5 个应用/20 个任务验证管线，再扩到 10 个/40 个。</p>
+            <h2>四应用 pilot 已完成</h2>
+            <p class="section-lede">4 个开源应用、11 个有效任务全部通过，共 36 步。每个任务前卸载重装并清理数据，判分只读应用侧语义快照，且要求起始状态不成立。下一阶段扩到 10 个应用。</p>
           </header>
+
+          <div class="table-wrap results-table-wrap reveal" style="margin-top:24px">
+            <table class="results-table">
+              <caption class="visually-hidden">四应用 pilot 结果</caption>
+              <thead>
+                <tr><th scope="col">应用</th><th scope="col">许可</th><th scope="col" class="num">任务</th><th scope="col" class="num">通过</th><th scope="col" class="num">步数</th><th scope="col" class="num">Prompt</th><th scope="col" class="num">Completion</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">fenben</th><td>MIT</td><td class="num">3</td><td class="num">3/3</td><td class="num">16</td><td class="num">23,376</td><td class="num">754</td></tr>
+                <tr><th scope="row">jijian</th><td>MIT</td><td class="num">3</td><td class="num">3/3</td><td class="num">7</td><td class="num">9,086</td><td class="num">194</td></tr>
+                <tr><th scope="row">STUFFS_NEXT</th><td>MIT</td><td class="num">3</td><td class="num">3/3</td><td class="num">9</td><td class="num">12,276</td><td class="num">395</td></tr>
+                <tr><th scope="row">Rental</th><td>MIT</td><td class="num">2</td><td class="num">2/2</td><td class="num">4</td><td class="num">4,494</td><td class="num">111</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><th scope="row">合计</th><td></td><td class="num">11</td><td class="num">11/11</td><td class="num">36</td><td class="num">49,232</td><td class="num">1,465</td></tr>
+              </tfoot>
+            </table>
+          </div>
 
           <div class="next-grid">
             <article class="next-card reveal">
               <p class="card-kicker">SCALE</p>
               <p class="next-number">10<span>apps · 40 tasks</span></p>
-              <p>自建 Tasks、当前 2 个开源应用，再加 7 个新应用；本地数据、无登录、可构建。</p>
+              <p>已完成 4 个开源应用、11 个任务；再补 6 个本地数据、无登录、可构建的应用。</p>
             </article>
             <article class="next-card reveal">
               <p class="card-kicker">BASELINES</p>
@@ -1095,7 +1113,7 @@ STUFFS   baseline=e35b7584 files=5  changed=2 added=2 findings=0</code></div>
             <article class="next-card reveal">
               <p class="card-kicker">DISCIPLINE</p>
               <p class="next-number">0<span>UI diff</span></p>
-              <p>只加隐藏属性；已用 AST 审计对上游基线逐文件比对，两个开源应用 0 findings；不接受为任务新增 onClick。</p>
+              <p>只加隐藏属性；AST 审计对 4 个上游基线逐文件比对均 0 findings；不接受为任务新增 onClick。</p>
             </article>
           </div>
 

@@ -1,0 +1,149 @@
+{
+  "apps": [
+    {
+      "key": "fenben",
+      "source": "https://github.com/wuyifenxiang/fenben",
+      "baseline": "37249d580dfd7ed4c22a5188df57c9418c442356",
+      "license": "MIT",
+      "tasks": [
+        {
+          "id": "add-person",
+          "goal": "添加一个参与人，名字叫小刘",
+          "check": {
+            "id": "sem.root",
+            "field": "value",
+            "op": ">=",
+            "value": 2
+          }
+        },
+        {
+          "id": "add-dish",
+          "goal": "添加一道菜：菜名“宫保鸡丁”，价格 38",
+          "check": {
+            "id": "sem.fenben.dishes.summary",
+            "field": "value",
+            "op": ">=",
+            "value": 1
+          }
+        },
+        {
+          "id": "add-two-dishes",
+          "goal": "依次添加两道菜：先“米饭”价格 3，再“可乐”价格 5",
+          "check": {
+            "id": "sem.fenben.dishes.summary",
+            "field": "value",
+            "op": ">=",
+            "value": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "jijian",
+      "source": "https://github.com/wdre9/jijian-harmony",
+      "baseline": "d4aff1c3533d1b57779a0341374805951f303c33",
+      "license": "MIT",
+      "tasks": [
+        {
+          "id": "switch-detail",
+          "goal": "切换到“明细”标签",
+          "check": {
+            "id": "sem.jijian.tab.1",
+            "field": "selected",
+            "value": true
+          }
+        },
+        {
+          "id": "switch-stats",
+          "goal": "切换到“统计”标签",
+          "check": {
+            "id": "sem.jijian.tab.2",
+            "field": "selected",
+            "value": true
+          }
+        },
+        {
+          "id": "switch-mine",
+          "goal": "切换到“我的”标签",
+          "check": {
+            "id": "sem.jijian.tab.3",
+            "field": "selected",
+            "value": true
+          }
+        }
+      ]
+    },
+    {
+      "key": "stuffs-next",
+      "source": "https://github.com/awaLiny2333/STUFFS_NEXT",
+      "baseline": "e35b7584aba160d9cae22509c0dae8184b5b5d86",
+      "license": "MIT",
+      "tasks": [
+        {
+          "id": "open-settings",
+          "goal": "打开设置面板",
+          "check": {
+            "id": "sem.stuffs.settings.blur",
+            "field": "visible",
+            "value": true
+          }
+        },
+        {
+          "id": "increase-blur",
+          "goal": "打开设置面板，把毛玻璃半径调大",
+          "check": {
+            "id": "sem.stuffs.settings.blur",
+            "field": "value",
+            "op": ">",
+            "value": 25
+          }
+        },
+        {
+          "id": "open-add-panel",
+          "goal": "打开添加面板",
+          "check": {
+            "id": "sem.stuffs.add.name",
+            "field": "visible",
+            "value": true
+          }
+        },
+        {
+          "id": "add-card",
+          "goal": "打开添加面板，在名称输入框输入“阅读”，向下滚动页面，点击添加目标卡片",
+          "check": {
+            "id": "sem.stuffs.cards.summary",
+            "field": "value",
+            "op": ">=",
+            "value": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "rental",
+      "source": "https://github.com/yongoe1024/Rental",
+      "baseline": "8c6eb31b4d04411b1247b762e33b806b1c61e675",
+      "license": "MIT",
+      "tasks": [
+        {
+          "id": "switch-service",
+          "goal": "切换到服务页",
+          "check": {
+            "id": "sem.rental.tab.2",
+            "field": "selected",
+            "value": true
+          }
+        },
+        {
+          "id": "switch-discover",
+          "goal": "切换到发现页",
+          "check": {
+            "id": "sem.rental.tab.3",
+            "field": "selected",
+            "value": true
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "baselineRoot": "/tmp/cand/njuschedule-hmos/njuschedule-hmos-e392d95db65b12ef3c0c7e9ee716be5298a3b892/entry/src/main/ets",
+  "annotatedRoot": "semantic-apps/njuschedule/entry/src/main/ets",
+  "baselineFiles": 81,
+  "annotatedFiles": 83,
+  "changedFiles": 3,
+  "addedFiles": [
+    "semantics/Sem.ets",
+    "semantics/SemanticBridge.ets"
+  ],
+  "removedFiles": [],
+  "findings": [],
+  "ok": true
+}

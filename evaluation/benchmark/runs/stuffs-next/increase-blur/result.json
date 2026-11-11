@@ -1,0 +1,15 @@
+{
+  "app": "stuffs-next",
+  "task": "increase-blur",
+  "goal": "打开设置面板，把毛玻璃半径调大",
+  "verified": true,
+  "steps": 5,
+  "elapsedSeconds": 125.5,
+  "promptTokens": 6889,
+  "completionTokens": 252,
+  "agentFinished": false,
+  "reason": "REPEATED_ACTION",
+  "beforeCheck": "value=25",
+  "afterCheck": "value=51",
+  "preconditionOk": true
+}

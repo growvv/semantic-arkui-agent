@@ -1,0 +1,14 @@
+{
+  "baselineRoot": "/tmp/cand/ZhiXing_ActHub/ZhiXing_ActHub-e4bf6a4487f286f7191d574007d1889966a830cd/entry/src/main/ets",
+  "annotatedRoot": "semantic-apps/acthub/entry/src/main/ets",
+  "baselineFiles": 131,
+  "annotatedFiles": 133,
+  "changedFiles": 3,
+  "addedFiles": [
+    "semantics/Sem.ets",
+    "semantics/SemanticBridge.ets"
+  ],
+  "removedFiles": [],
+  "findings": [],
+  "ok": true
+}

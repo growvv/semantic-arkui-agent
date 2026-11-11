@@ -71,32 +71,48 @@ export class LlmClient {
             })),
         };
 
-        const response = await this.client.chat.completions.create({
-            model: this.model,
-            temperature: 0,
-            response_format: { type: 'json_object' },
-            messages: [
-                { role: 'system', content: SYSTEM_PROMPT },
-                {
-                    role: 'user',
-                    content: [
-                        `Task: ${input.task}`,
-                        `History:\n${input.history.length > 0 ? input.history.join('\n') : '(none)'}`,
-                        `Current view:\n${JSON.stringify(promptView)}`,
-                    ].join('\n\n'),
-                },
-            ],
-        });
+        const messages: Array<{ role: 'system' | 'user'; content: string }> = [
+            { role: 'system', content: SYSTEM_PROMPT },
+            {
+                role: 'user',
+                content: [
+                    `Task: ${input.task}`,
+                    `History:\n${input.history.length > 0 ? input.history.join('\n') : '(none)'}`,
+                    `Current view:\n${JSON.stringify(promptView)}`,
+                ].join('\n\n'),
+            },
+        ];
 
-        const content = response.choices[0]?.message?.content;
-        if (!content) {
-            throw new SemanticError('INVALID_MODEL_DECISION', 'The model returned an empty decision.');
+        let promptTokens = 0;
+        let completionTokens = 0;
+        let lastError: unknown;
+        // The model occasionally emits malformed JSON. Retrying with the same
+        // context is cheap and recovers the step instead of failing the task.
+        for (let attempt = 0; attempt < 3; attempt++) {
+            const response = await this.client.chat.completions.create({
+                model: this.model,
+                temperature: 0,
+                response_format: { type: 'json_object' },
+                messages,
+            });
+            promptTokens += response.usage?.prompt_tokens ?? 0;
+            completionTokens += response.usage?.completion_tokens ?? 0;
+            const content = response.choices[0]?.message?.content;
+            if (!content) {
+                lastError = new SemanticError('INVALID_MODEL_DECISION', 'The model returned an empty decision.');
+                continue;
+            }
+            try {
+                return { decision: parseDecision(content), promptTokens, completionTokens };
+            } catch (error) {
+                lastError = error;
+                // Show the model what it produced, so the retry can correct it.
+                messages.push({ role: 'user', content: `Your previous reply was not valid JSON. Reply with one JSON object only.` });
+            }
         }
-        return {
-            decision: parseDecision(content),
-            promptTokens: response.usage?.prompt_tokens ?? 0,
-            completionTokens: response.usage?.completion_tokens ?? 0,
-        };
+        throw lastError instanceof Error
+            ? lastError
+            : new SemanticError('INVALID_MODEL_DECISION', 'The model did not return a usable decision.');
     }
 }
 

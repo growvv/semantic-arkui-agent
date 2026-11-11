@@ -1,0 +1,5 @@
+{"step":1,"snapshotRevision":1,"observationId":"mwcbgegl-tynrlbkx","action":{"action":"tap","ref":"sem.stuffs.settings"},"result":"tapped sem.stuffs.settings","promptTokens":1321,"completionTokens":32,"elapsedMs":32547}
+{"step":2,"snapshotRevision":2,"observationId":"mwcbh45x-1y77olsi","action":{"action":"tap","ref":"sem.stuffs.settings.blur"},"result":"tapped sem.stuffs.settings.blur","promptTokens":1371,"completionTokens":50,"elapsedMs":50092}
+{"step":3,"snapshotRevision":3,"observationId":"mwcbhhd9-9ilmnwff","action":{"action":"tap","ref":"sem.stuffs.settings.blur"},"result":"tapped sem.stuffs.settings.blur","promptTokens":1385,"completionTokens":59,"elapsedMs":93125}
+{"step":4,"snapshotRevision":3,"observationId":"mwcbigx3-lmp57dfl","action":{"action":"tap","ref":"sem.stuffs.settings.blur"},"result":"tapped sem.stuffs.settings.blur","promptTokens":1399,"completionTokens":55,"elapsedMs":105118}
+{"step":5,"snapshotRevision":3,"observationId":"mwcbiq6g-mn9snlla","action":{"action":"tap","ref":"sem.stuffs.settings.blur"},"result":"REPEATED_ACTION","promptTokens":1413,"completionTokens":56,"elapsedMs":116237}

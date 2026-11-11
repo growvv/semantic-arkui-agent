@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "revision": 3,
+  "viewport": {
+    "width": 1080,
+    "height": 2406
+  },
+  "nodes": [
+    {
+      "ref": "sem.root",
+      "id": "sem.root",
+      "type": "Tabs",
+      "role": "content",
+      "meaning": "计件应用主界面，底部有记账、明细、统计、我的四个标签",
+      "state": {
+        "value": 3
+      },
+      "actions": [],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.theme.auto",
+      "id": "sem.jijian.theme.auto",
+      "type": "Text",
+      "role": "action",
+      "meaning": "把主题设置为跟随系统",
+      "state": {
+        "selected": true
+      },
+      "actions": [
+        {
+          "name": "set_theme",
+          "input": "tap",
+          "label": "主题跟随系统"
+        }
+      ],
+      "risk": "read_only",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.theme.light",
+      "id": "sem.jijian.theme.light",
+      "type": "Text",
+      "role": "action",
+      "meaning": "把主题设置为浅色",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "set_theme",
+          "input": "tap",
+          "label": "主题浅色"
+        }
+      ],
+      "risk": "read_only",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.theme.dark",
+      "id": "sem.jijian.theme.dark",
+      "type": "Text",
+      "role": "action",
+      "meaning": "把主题设置为深色",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "set_theme",
+          "input": "tap",
+          "label": "主题深色"
+        }
+      ],
+      "risk": "read_only",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.range.today",
+      "id": "sem.jijian.range.today",
+      "type": "Text",
+      "role": "action",
+      "meaning": "把首页概览范围设置为今日",
+      "state": {
+        "selected": true
+      },
+      "actions": [
+        {
+          "name": "set_home_range",
+          "input": "tap",
+          "label": "范围今日"
+        }
+      ],
+      "risk": "read_only",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.range.week",
+      "id": "sem.jijian.range.week",
+      "type": "Text",
+      "role": "action",
+      "meaning": "把首页概览范围设置为本周",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "set_home_range",
+          "input": "tap",
+          "label": "范围本周"
+        }
+      ],
+      "risk": "read_only",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.range.month",
+      "id": "sem.jijian.range.month",
+      "type": "Text",
+      "role": "action",
+      "meaning": "把首页概览范围设置为本月",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "set_home_range",
+          "input": "tap",
+          "label": "范围本月"
+        }
+      ],
+      "risk": "read_only",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.tab.0",
+      "id": "sem.jijian.tab.0",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：记账",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到记账"
+        }
+      ],
+      "risk": "read_only",
+      "passthrough": true,
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.tab.1",
+      "id": "sem.jijian.tab.1",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：明细",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到明细"
+        }
+      ],
+      "risk": "read_only",
+      "passthrough": true,
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.tab.2",
+      "id": "sem.jijian.tab.2",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：统计",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到统计"
+        }
+      ],
+      "risk": "read_only",
+      "passthrough": true,
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.tab.3",
+      "id": "sem.jijian.tab.3",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：我的",
+      "state": {
+        "selected": true
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到我的"
+        }
+      ],
+      "risk": "read_only",
+      "passthrough": true,
+      "parentRef": "sem.root",
+      "visible": true
+    }
+  ]
+}

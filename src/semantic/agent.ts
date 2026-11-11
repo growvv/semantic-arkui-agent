@@ -16,6 +16,8 @@ import { findSemanticNode, projectSemanticSnapshot, validateSemanticAction } fro
 export interface SemanticAgentBridge {
     snapshot(): Promise<SemanticSnapshot>;
     prepare(ref: string): Promise<SemanticNode>;
+    /** Optional: reopen a dropped connection (e.g. after an app restart). */
+    reconnect?(): Promise<void>;
 }
 
 export interface SemanticAgentDevice {
@@ -43,6 +45,8 @@ export interface SemanticAgentDependencies {
     /** Snapshot reads allowed after an action before accepting the current content. */
     settleAttempts?: number;
     settleDelayMs?: number;
+    /** Wall-clock budget for one task; a single device must not be held by one run. */
+    maxDurationMs?: number;
 }
 
 interface TrajectoryRecord {
@@ -64,20 +68,59 @@ export class SemanticAgent {
     private readonly settleDelayMs: number;
 
     constructor(private readonly deps: SemanticAgentDependencies) {
-        this.maxSteps = deps.maxSteps ?? 12;
+        this.maxSteps = deps.maxSteps ?? 20;
         this.now = deps.now ?? (() => Date.now());
         this.sleep = deps.sleep ?? ((ms: number) => new Promise((resolve) => setTimeout(resolve, ms)));
-        this.settleAttempts = deps.settleAttempts ?? 5;
-        this.settleDelayMs = deps.settleDelayMs ?? 250;
+        this.settleAttempts = deps.settleAttempts ?? 8;
+        this.settleDelayMs = deps.settleDelayMs ?? 400;
+        this.maxDurationMs = deps.maxDurationMs ?? 180000;
     }
+
+    private readonly maxDurationMs: number;
 
     /**
      * Read a snapshot, letting ArkUI finish re-rendering after the previous action.
      * The bridge reads the mounted FrameNode tree, so an immediate read can still
      * return pre-action content; a decision made on that content looks like a no-op.
      */
+    /**
+     * Read a snapshot, reopening the bridge once if the socket has dropped.
+     * A restart or a forward that outlived its app shows up here first.
+     */
+    private async readSnapshot(): Promise<SemanticSnapshot> {
+        let lastError: unknown;
+        for (let attempt = 0; attempt < 3; attempt++) {
+            try {
+                return await this.deps.bridge.snapshot();
+            } catch (error) {
+                lastError = error;
+                if (!this.deps.bridge.reconnect) break;
+                try {
+                    await this.deps.bridge.reconnect();
+                } catch (reconnectError) {
+                    lastError = reconnectError;
+                }
+                // The forward needs a moment before the new socket can be read.
+                await this.sleep(600);
+            }
+        }
+        throw lastError instanceof Error ? lastError : new Error(String(lastError));
+    }
+
+    /** Confirm the target is still present, reopening the bridge if it dropped. */
+    private async prepareTarget(ref: string): Promise<SemanticNode> {
+        try {
+            return await this.deps.bridge.prepare(ref);
+        } catch (error) {
+            if (!this.deps.bridge.reconnect) throw error;
+            await this.deps.bridge.reconnect();
+            await this.sleep(600);
+            return this.deps.bridge.prepare(ref);
+        }
+    }
+
     private async settledSnapshot(previousRevision?: number): Promise<SemanticSnapshot> {
-        let snapshot = await this.deps.bridge.snapshot();
+        let snapshot = await this.readSnapshot();
         if (previousRevision === undefined || snapshot.error) {
             return snapshot;
         }
@@ -86,7 +129,7 @@ export class SemanticAgent {
                 return snapshot;
             }
             await this.sleep(this.settleDelayMs);
-            const next = await this.deps.bridge.snapshot();
+            const next = await this.readSnapshot();
             if (next.error) {
                 return next;
             }
@@ -108,6 +151,10 @@ export class SemanticAgent {
 
         for (let step = 1; step <= this.maxSteps; step++) {
             steps = step;
+            if (this.now() - started > this.maxDurationMs) {
+                this.writeTrajectory(options.outDir, trajectory);
+                return this.result(false, steps - 1, 'TASK_TIMEOUT', promptTokens, completionTokens, started);
+            }
             const snapshot = await this.settledSnapshot(actedRevision);
             actedRevision = undefined;
             if (snapshot.error) {
@@ -215,7 +262,7 @@ export class SemanticAgent {
         if (!validation.ok) {
             throw new SemanticError(validation.errorCode, validation.message);
         }
-        await this.deps.bridge.prepare(node.ref);
+        await this.prepareTarget(node.ref);
 
         switch (decision.action) {
             case 'tap': {

@@ -1,0 +1,15 @@
+{
+  "app": "stuffs-next",
+  "task": "open-settings",
+  "goal": "打开设置面板",
+  "verified": true,
+  "steps": 2,
+  "elapsedSeconds": 119.7,
+  "promptTokens": 2676,
+  "completionTokens": 81,
+  "agentFinished": true,
+  "reason": "设置面板已打开",
+  "beforeCheck": "visible=false",
+  "afterCheck": "visible=true",
+  "preconditionOk": true
+}

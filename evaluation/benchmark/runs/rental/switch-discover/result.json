@@ -1,0 +1,15 @@
+{
+  "app": "rental",
+  "task": "switch-discover",
+  "goal": "切换到发现页",
+  "verified": true,
+  "steps": 2,
+  "elapsedSeconds": 66.8,
+  "promptTokens": 2247,
+  "completionTokens": 53,
+  "agentFinished": true,
+  "reason": "已切换到发现页",
+  "beforeCheck": "selected=false",
+  "afterCheck": "selected=true",
+  "preconditionOk": true
+}

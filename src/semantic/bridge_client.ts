@@ -86,6 +86,22 @@ export class SemanticBridgeClient {
         return result;
     }
 
+    /**
+     * Drop the current socket and forward, then open a fresh one.
+     * Used after an app restart, which invalidates the forwarded port.
+     */
+    async reconnect(): Promise<void> {
+        this.failPending(new SemanticError('BRIDGE_CLOSED', 'The semantic bridge client reconnected.'));
+        const socket = this.socket;
+        this.socket = undefined;
+        if (socket) {
+            socket.destroy();
+        }
+        this.releaseForward();
+        this.buffer = '';
+        await this.connect();
+    }
+
     async close(): Promise<void> {
         if (this.closed) {
             return;
@@ -138,9 +154,15 @@ export class SemanticBridgeClient {
     private attach(socket: net.Socket): void {
         socket.on('data', (chunk) => this.onData(chunk));
         socket.on('error', (error) => {
+            // Only the current socket may clear state; a replaced socket's late
+            // event must not invalidate the live connection.
+            if (this.socket !== socket) return;
+            this.socket = undefined;
             this.failPending(new SemanticError('BRIDGE_CLOSED', error.message, error));
         });
         socket.on('close', () => {
+            if (this.socket !== socket) return;
+            this.socket = undefined;
             this.failPending(new SemanticError('BRIDGE_CLOSED', 'The semantic bridge socket closed.'));
         });
     }

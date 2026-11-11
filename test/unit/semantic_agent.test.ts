@@ -147,3 +147,61 @@ describe('SemanticAgent', () => {
         }
     });
 });
+
+describe('SemanticAgent budgets', () => {
+    function deps(overrides: Record<string, unknown> = {}) {
+        const device = {
+            observe: vi.fn(async () => observation()),
+            tap: vi.fn(async () => ({})),
+            swipe: vi.fn(async () => ({})),
+            typeText: vi.fn(async () => ({})),
+            pressKey: vi.fn(async () => ({})),
+            launchApp: vi.fn(async () => ({})),
+        } as unknown as SemanticAgentDevice;
+        const bridge = { snapshot: vi.fn(async () => snapshot), prepare: vi.fn(async () => node) };
+        // A model that never finishes and never repeats itself, so the repeat
+        // guard cannot mask the budget under test. Each step advances the
+        // snapshot revision and picks a different key.
+        let revision = 1;
+        bridge.snapshot = vi.fn(async () => ({ ...snapshot, revision: revision++ }));
+        let call = 0;
+        const llm = {
+            decide: vi.fn(async () => ({
+                decision: { action: 'press' as const, key: 'BACK', summary: `step ${call++}` },
+                promptTokens: 1,
+                completionTokens: 1,
+            })),
+        };
+        return { bridge, device, llm, ...overrides };
+    }
+
+    it('stops at the step cap and reports MAX_STEPS', async () => {
+        const agent = new SemanticAgent({ ...deps(), maxSteps: 3, sleep: async () => {} });
+        const result = await agent.run('never finishes');
+        expect(result).toMatchObject({ success: false, reason: 'MAX_STEPS', steps: 3 });
+    });
+
+    it('defaults to a 20-step cap', async () => {
+        const agent = new SemanticAgent({ ...deps(), sleep: async () => {} });
+        const result = await agent.run('never finishes');
+        expect(result).toMatchObject({ success: false, reason: 'MAX_STEPS', steps: 20 });
+    });
+
+    it('stops on the wall-clock budget so one task cannot hold the device', async () => {
+        let clock = 0;
+        const agent = new SemanticAgent({
+            ...deps(),
+            maxSteps: 20,
+            maxDurationMs: 1000,
+            sleep: async () => {},
+            now: () => {
+                clock += 600;
+                return clock;
+            },
+        });
+        const result = await agent.run('never finishes');
+        expect(result.success).toBe(false);
+        expect(result.reason).toBe('TASK_TIMEOUT');
+        expect(result.steps).toBeLessThan(20);
+    });
+});

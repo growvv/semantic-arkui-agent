@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "viewport": {
+    "width": 1080,
+    "height": 2406
+  },
+  "nodes": [
+    {
+      "ref": "sem.root",
+      "id": "sem.root",
+      "type": "Tabs",
+      "role": "content",
+      "meaning": "计件应用主界面，底部有记账、明细、统计、我的四个标签",
+      "state": {
+        "value": 0
+      },
+      "actions": [],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.tab.0",
+      "id": "sem.jijian.tab.0",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：记账",
+      "state": {
+        "selected": true
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到记账"
+        }
+      ],
+      "risk": "read_only",
+      "passthrough": true,
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.tab.1",
+      "id": "sem.jijian.tab.1",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：明细",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到明细"
+        }
+      ],
+      "risk": "read_only",
+      "passthrough": true,
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.tab.2",
+      "id": "sem.jijian.tab.2",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：统计",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到统计"
+        }
+      ],
+      "risk": "read_only",
+      "passthrough": true,
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.jijian.tab.3",
+      "id": "sem.jijian.tab.3",
+      "type": "Column",
+      "role": "action",
+      "meaning": "底部标签：我的",
+      "state": {
+        "selected": false
+      },
+      "actions": [
+        {
+          "name": "switch_tab",
+          "input": "tap",
+          "label": "切换到我的"
+        }
+      ],
+      "risk": "read_only",
+      "passthrough": true,
+      "parentRef": "sem.root",
+      "visible": true
+    }
+  ]
+}

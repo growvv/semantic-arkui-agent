@@ -27,6 +27,7 @@ export interface SemanticSpec {
   actions?: SemanticAction[];
   constraints?: string;
   risk?: string;
+  passthrough?: boolean;
 }
 
 export class Sem {

@@ -96,7 +96,7 @@
             </div>
             <div>
               <dt>Prompt tokens</dt>
-              <dd><span class="count" data-count="105144" data-format="comma">105,144</span><small>· 13 项</small></dd>
+              <dd><span class="count" data-count="207029" data-format="comma">207,029</span><small>· 13 项</small></dd>
             </div>
           </dl>
         </div>
@@ -104,9 +104,9 @@
         <div class="hero-visual">
           <figure class="phone phone-hero">
             <div class="phone-bezel">
-              <img data-lightbox src="assets/self-annotated.jpeg" alt="SemanticTasks 任务列表，红色标注框标出每个语义节点及其 id 和含义" width="1080" height="2406" fetchpriority="high">
+              <img data-lightbox src="assets/self-annotated.jpeg" alt="Tasks 任务列表，红色标注框标出每个语义节点及其 id 和含义" width="1080" height="2406" fetchpriority="high">
             </div>
-            <figcaption>SemanticTasks · 任务列表的语义节点覆盖</figcaption>
+            <figcaption>Tasks · 任务列表的语义节点覆盖</figcaption>
           </figure>
           <aside class="node-card" aria-label="语义节点示例">
             <div class="node-card-head">
@@ -375,7 +375,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
             <article class="mechanism-card reveal">
               <p class="card-kicker">DECIDE</p>
               <h3>文本决策</h3>
-              <p>模型每步只返回一个 JSON 动作，只使用当前视图里的 ref，不接收坐标、截图或原始树全文。动作后重新观察；同一 revision 的同一动作被重复保护。</p>
+              <p>模型每步只返回一个 JSON 动作，只使用当前视图里的 ref，不接收坐标、截图或原始树全文。动作后宿主等待快照收敛：若 revision 未推进就重新读取，避免把“界面还没重渲染”误判成“动作无效”。同一 revision 的同一动作被重复保护。</p>
               <div class="code-block"><code>{"action":"tap","ref":"sem.task.favorite.t1"}
 {"action":"input","ref":"sem.stuffs.add.name","text":"阅读"}
 {"action":"finish","summary":"已添加目标卡片“阅读”。"}</code></div>
@@ -429,6 +429,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
               <p>目标缺失、歧义或任务已完成时结束，并给出简短摘要。</p>
               <p>视图 revision 未变化时不重复同一动作；滑块类控件一次点击后检查新值。</p>
               <p>动作改变了视图且目标条件已满足时立即结束。</p>
+              <p>动作后先等快照收敛，再判断动作是否生效。</p>
             </div>
           </div>
         </div>
@@ -451,7 +452,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
             <button class="task-tab is-active" id="tab-favorite" role="tab" aria-selected="true" aria-controls="panel-favorite" tabindex="0">
               <span class="tab-index">01</span>
               <span class="tab-title">收藏任务</span>
-              <span class="tab-app">SemanticTasks</span>
+              <span class="tab-app">Tasks</span>
             </button>
             <button class="task-tab" id="tab-add-card" role="tab" aria-selected="false" aria-controls="panel-add-card" tabindex="-1">
               <span class="tab-index">02</span>
@@ -468,15 +469,15 @@ await device.tap({ selector: { id: node.id } });</code></div>
           <article class="task-panel is-active" id="panel-favorite" role="tabpanel" aria-labelledby="tab-favorite">
             <div class="task-head">
               <div class="task-title">
-                <p class="card-kicker">TASK 01 · SEMANTICTASKS</p>
+                <p class="card-kicker">TASK 01 · TASKS</p>
                 <h3>收藏“整理季度材料”（北区门店）</h3>
                 <p class="task-sub">自建应用 · 应用侧 SEM_EVAL 验证</p>
               </div>
               <div class="task-kpis">
                 <span class="pill pill-success">独立验证通过</span>
                 <span class="kpi"><b>2</b> 步</span>
-                <span class="kpi"><b>7,513</b> / 95 tok</span>
-                <span class="kpi"><b>13.66</b> s</span>
+                <span class="kpi"><b>14,239</b> / 50 tok</span>
+                <span class="kpi"><b>10.50</b> s</span>
               </div>
             </div>
 
@@ -497,7 +498,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
                     <div class="trace-top">
                       <span class="action-badge action-tap">tap</span>
                       <code>sem.task.favorite.t1</code>
-                      <span class="trace-meta">3,750 / 34 tok · t+7.6s</span>
+                      <span class="trace-meta">7,113 / 20 tok · t+4.8s</span>
                     </div>
                     <p>模型在 rev 1 看到 <code>state.favorite=false</code> 和 <code>actions[0].input=tap</code>，选择收藏按钮。HapTest 按 id 唯一命中实时 Button，执行原生点击。</p>
                     <p class="trace-result"><span>结果</span><code>tapped sem.task.favorite.t1</code></p>
@@ -509,7 +510,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
                     <div class="trace-top">
                       <span class="action-badge action-finish">finish</span>
                       <code>summary</code>
-                      <span class="trace-meta">3,763 / 61 tok · t+11.1s</span>
+                      <span class="trace-meta">7,126 / 30 tok · t+8.1s</span>
                     </div>
                     <p>rev 2 中 <code>state.favorite=true</code>。模型结束并给出摘要；应用写入 <code>SEM_EVAL</code>，宿主独立读取并核对目标字段与非目标字段。</p>
                     <p class="trace-result"><span>结果</span><code>“整理季度材料”（项目：北区门店）已收藏。</code></p>
@@ -539,7 +540,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
                 </div>
                 <figure class="phone phone-task">
                   <div class="phone-bezel">
-                    <img data-lightbox src="assets/self-favorite-after.jpeg" alt="收藏任务执行后的 SemanticTasks 界面，整理季度材料的星标已点亮" width="1080" height="2406">
+                    <img data-lightbox src="assets/self-favorite-after.jpeg" alt="收藏任务执行后的 Tasks 界面，整理季度材料的星标已点亮" width="1080" height="2406">
                   </div>
                   <figcaption>执行后：星标点亮；SEM_EVAL 记录 t1.favorite=true。</figcaption>
                 </figure>
@@ -557,8 +558,8 @@ await device.tap({ selector: { id: node.id } });</code></div>
               <div class="task-kpis">
                 <span class="pill pill-success">独立验证通过</span>
                 <span class="kpi"><b>6</b> 步</span>
-                <span class="kpi"><b>8,170</b> / 326 tok</span>
-                <span class="kpi"><b>27.67</b> s</span>
+                <span class="kpi"><b>27,016</b> / 231 tok</span>
+                <span class="kpi"><b>30.70</b> s</span>
               </div>
             </div>
 
@@ -579,7 +580,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
                     <div class="trace-top">
                       <span class="action-badge action-tap">tap</span>
                       <code>sem.stuffs.add</code>
-                      <span class="trace-meta">1,288 / 34 tok · t+3.0s</span>
+                      <span class="trace-meta">4,429 / 30 tok · t+4.2s</span>
                     </div>
                     <p>添加按钮是自定义组件，语义节点类型为 <code>__Common__</code>；宿主用实时树确认它可点击后执行点击，添加面板出现。</p>
                     <p class="trace-result"><span>结果</span><code>tapped sem.stuffs.add</code></p>
@@ -591,7 +592,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
                     <div class="trace-top">
                       <span class="action-badge action-input">input</span>
                       <code>sem.stuffs.add.name</code>
-                      <span class="trace-meta">1,373 / 53 tok · t+5.9s</span>
+                      <span class="trace-meta">4,514 / 38 tok · t+8.0s</span>
                     </div>
                     <p>目标名称输入框同样包在自定义组件里。宿主重新观察、点击输入框、确认焦点、输入中文，然后按 BACK 收起键盘。</p>
                     <p class="trace-result"><span>结果</span><code>entered "阅读" into sem.stuffs.add.name</code></p>
@@ -604,7 +605,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
                       <span class="action-badge action-scroll">scroll</span>
                       <span class="result-badge">拒绝</span>
                       <code>sem.stuffs.scroll</code>
-                      <span class="trace-meta">1,356 / 35 tok · t+10.0s</span>
+                      <span class="trace-meta">4,497 / 36 tok · t+13.0s</span>
                     </div>
                     <p>第一次滚动被宿主拒绝：键盘收起后前台页面已经变化，旧坐标不能再用于滑动。模型没有选错目标，这是观察保护在动作前生效。</p>
                     <p class="trace-result"><span>结果</span><code>ERROR The foreground page changed after the coordinate observation.</code></p>
@@ -616,7 +617,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
                     <div class="trace-top">
                       <span class="action-badge action-scroll">scroll</span>
                       <code>sem.stuffs.scroll</code>
-                      <span class="trace-meta">1,410 / 90 tok · t+15.8s</span>
+                      <span class="trace-meta">4,551 / 36 tok · t+16.3s</span>
                     </div>
                     <p>重新观察后第二次滚动成功，被键盘和折叠遮挡的“添加”按钮进入可见区域。</p>
                     <p class="trace-result"><span>结果</span><code>scrolled sem.stuffs.scroll forward</code></p>
@@ -628,7 +629,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
                     <div class="trace-top">
                       <span class="action-badge action-tap">tap</span>
                       <code>sem.stuffs.add.ok</code>
-                      <span class="trace-meta">1,383 / 48 tok · t+21.1s</span>
+                      <span class="trace-meta">4,524 / 58 tok · t+23.9s</span>
                     </div>
                     <p>宿主校验实时 Button 可见、可点击，执行原生点击；应用把卡片写入本地 KVStore。</p>
                     <p class="trace-result"><span>结果</span><code>tapped sem.stuffs.add.ok</code></p>
@@ -640,10 +641,10 @@ await device.tap({ selector: { id: node.id } });</code></div>
                     <div class="trace-top">
                       <span class="action-badge action-finish">finish</span>
                       <code>summary</code>
-                      <span class="trace-meta">1,360 / 66 tok · t+25.0s</span>
+                      <span class="trace-meta">4,501 / 33 tok · t+28.3s</span>
                     </div>
                     <p>新的快照里 <code>cards.summary</code> 显示数量为 1，<code>extra</code> 包含“阅读”。模型结束；宿主用快照而不是 Agent 摘要做最终判定。</p>
-                    <p class="trace-result"><span>结果</span><code>已添加目标卡片“阅读”。</code></p>
+                    <p class="trace-result"><span>结果</span><code>已添加“阅读”目标卡片，当前目标卡片数量为 1。</code></p>
                   </div>
                 </li>
               </ol>
@@ -694,8 +695,8 @@ await device.tap({ selector: { id: node.id } });</code></div>
               <div class="task-kpis">
                 <span class="pill pill-success">独立验证通过</span>
                 <span class="kpi"><b>2</b> 步</span>
-                <span class="kpi"><b>2,247</b> / 51 tok</span>
-                <span class="kpi"><b>8.15</b> s</span>
+                <span class="kpi"><b>8,529</b> / 50 tok</span>
+                <span class="kpi"><b>16.08</b> s</span>
               </div>
             </div>
 
@@ -716,9 +717,9 @@ await device.tap({ selector: { id: node.id } });</code></div>
                     <div class="trace-top">
                       <span class="action-badge action-tap">tap</span>
                       <code>sem.rental.tab.2</code>
-                      <span class="trace-meta">1,117 / 21 tok · t+2.9s</span>
+                      <span class="trace-meta">4,258 / 21 tok · t+9.2s</span>
                     </div>
-                    <p>底部五个标签各有稳定 id、meaning 与 selected 状态。模型选择“服务”，HapTest 按 id 命中标签 Column 并点击。</p>
+                    <p>标签节点声明 <code>passthrough: true</code>。宿主不要求实时节点自身 clickable，而是按节点 bounds 的中心执行原生 tap；切换仍由应用原有的 <code>Tabs.onChange</code> 完成。</p>
                     <p class="trace-result"><span>结果</span><code>tapped sem.rental.tab.2</code></p>
                   </div>
                 </li>
@@ -728,10 +729,10 @@ await device.tap({ selector: { id: node.id } });</code></div>
                     <div class="trace-top">
                       <span class="action-badge action-finish">finish</span>
                       <code>summary</code>
-                      <span class="trace-meta">1,130 / 30 tok · t+5.5s</span>
+                      <span class="trace-meta">4,271 / 29 tok · t+13.5s</span>
                     </div>
-                    <p>新的快照里 <code>sem.rental.tab.2.selected=true</code>，服务页同时渲染。模型结束；截图与快照一致。</p>
-                    <p class="trace-result"><span>结果</span><code>已切换到服务页，服务标签处于选中状态。</code></p>
+                    <p>宿主等待快照收敛后，<code>revision</code> 推进到 2，<code>sem.rental.tab.2.selected=true</code>，服务页同时渲染。模型据此结束；截图与快照一致。</p>
+                    <p class="trace-result"><span>结果</span><code>已切换到服务页，服务标签当前已选中。</code></p>
                   </div>
                 </li>
               </ol>
@@ -744,7 +745,8 @@ await device.tap({ selector: { id: node.id } });</code></div>
   "meaning": "底部标签：服务",
   "state": { "selected": true },
   "actions": [{ "name": "switch_tab", "input": "tap" }],
-  "live": { "clickable": true, "visible": true },
+  "passthrough": true,
+  "live": { "visible": true },
   "liveCount": 1
 }</code></pre>
               </details>
@@ -807,7 +809,7 @@ await device.tap({ selector: { id: node.id } });</code></div>
               <div class="change-meta"><span class="change-index">B</span><p>宿主</p></div>
               <div class="change-body">
                 <h3>增加文本 Agent 的宿主语义层</h3>
-                <p><code>src/semantic/</code> 包含类型、桥客户端、投影与动作校验、模型客户端、Agent 循环和 CLI。循环是“快照 → 实时观察 → 投影 → 决策 → 校验 → prepare → 执行 → 重观察”，每一步写入 JSONL 轨迹；同一 revision 的同一动作触发重复保护。CLI 提供 <code>haptest semantic tree</code> 与 <code>haptest semantic run</code>。</p>
+                <p><code>src/semantic/</code> 包含类型、桥客户端、投影与动作校验、模型客户端、Agent 循环和 CLI。循环是“快照 → 实时观察 → 投影 → 决策 → 校验 → prepare → 执行 → 重观察”，每一步写入 JSONL 轨迹；同一 revision 的同一动作触发重复保护。动作后若快照 revision 未推进，宿主会等待并重新读取（最多 5 次、间隔 250ms），避免读到重渲染前的旧内容。声明 <code>passthrough</code> 的节点按 bounds 执行原生 tap，用于原生手势容器。CLI 提供 <code>haptest semantic tree</code> 与 <code>haptest semantic run</code>。</p>
                 <div class="code-block"><code>const view = projectSemanticSnapshot(snapshot, observation.tree);
 const llmResult = await llm.decide({ task, view, history });
 const validation = validateSemanticAction(node, decision);
@@ -852,7 +854,7 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
             <span class="milestone"><i aria-hidden="true"></i>语义桥探针</span>
             <span class="milestone"><i aria-hidden="true"></i>SemanticSpec + customProperty</span>
             <span class="milestone"><i aria-hidden="true"></i>HapTest 语义层</span>
-            <span class="milestone"><i aria-hidden="true"></i>SemanticTasks 标注</span>
+            <span class="milestone"><i aria-hidden="true"></i>Tasks 标注</span>
             <span class="milestone"><i aria-hidden="true"></i>观察与输入修正</span>
             <span class="milestone"><i aria-hidden="true"></i>STUFFS + annotator</span>
             <span class="milestone"><i aria-hidden="true"></i>Rental + 验收</span>
@@ -878,9 +880,9 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
             <div><dt>任务</dt><dd><span class="count" data-count="13">13</span></dd></div>
             <div><dt>独立验证通过</dt><dd><span class="count" data-count="13">13</span><small>/13</small></dd></div>
             <div><dt>Agent 自行结束</dt><dd><span class="count" data-count="12">12</span><small>/13</small></dd></div>
-            <div><dt>总步数</dt><dd><span class="count" data-count="35">35</span><small>· 2.69 平均</small></dd></div>
+            <div><dt>总步数</dt><dd><span class="count" data-count="36">36</span><small>· 2.77 平均</small></dd></div>
             <div><dt>模型输入截图</dt><dd><span class="count" data-count="0">0</span></dd></div>
-            <div><dt>Prompt / completion</dt><dd><span class="count" data-count="105144" data-format="comma">105,144</span><small> / 1,434</small></dd></div>
+            <div><dt>Prompt / completion</dt><dd><span class="count" data-count="207029" data-format="comma">207,029</span><small> / 1,136</small></dd></div>
           </dl>
 
           <div class="table-wrap results-table-wrap reveal">
@@ -898,12 +900,12 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
                 </tr>
               </thead>
               <tbody>
-                <tr><th scope="row">SemanticTasks</th><td>自建 ArkTS 应用</td><td class="num">8</td><td class="num">8/8</td><td class="num">8/8</td><td class="num">82,847</td><td class="num">736</td></tr>
-                <tr><th scope="row">STUFFS_NEXT</th><td>开源应用 · MIT</td><td class="num">4</td><td class="num">4/4</td><td class="num">3/4</td><td class="num">20,050</td><td class="num">647</td></tr>
-                <tr><th scope="row">Rental</th><td>开源应用 · MIT</td><td class="num">1</td><td class="num">1/1</td><td class="num">1/1</td><td class="num">2,247</td><td class="num">51</td></tr>
+                <tr><th scope="row">Tasks</th><td>自建 ArkTS 应用</td><td class="num">8</td><td class="num">8/8</td><td class="num">8/8</td><td class="num">131,335</td><td class="num">564</td></tr>
+                <tr><th scope="row">STUFFS_NEXT</th><td>开源应用 · MIT</td><td class="num">4</td><td class="num">4/4</td><td class="num">3/4</td><td class="num">67,165</td><td class="num">522</td></tr>
+                <tr><th scope="row">Rental</th><td>开源应用 · MIT</td><td class="num">1</td><td class="num">1/1</td><td class="num">1/1</td><td class="num">8,529</td><td class="num">50</td></tr>
               </tbody>
               <tfoot>
-                <tr><th scope="row">合计</th><td></td><td class="num">13</td><td class="num">13/13</td><td class="num">12/13</td><td class="num">105,144</td><td class="num">1,434</td></tr>
+                <tr><th scope="row">合计</th><td></td><td class="num">13</td><td class="num">13/13</td><td class="num">12/13</td><td class="num">207,029</td><td class="num">1,136</td></tr>
               </tfoot>
             </table>
           </div>
@@ -918,23 +920,23 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
             </div>
             <div class="chart-axis" aria-hidden="true">
               <span></span>
-              <div class="axis-track"><span>0</span><span>10k</span><span>20k</span><span>30k</span></div>
+              <div class="axis-track"><span>0</span><span>12k</span><span>24k</span><span>36k</span></div>
               <span></span>
             </div>
             <div class="chart-rows">
-              <div class="chart-row"><div class="chart-label"><strong>截止日期</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 93.9%"></span></div><span class="chart-value">28,173</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>优先级</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 46.4%"></span></div><span class="chart-value">13,907</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>添加卡片</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 27.2%"></span></div><span class="chart-value">8,170</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>标记完成</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 25.1%"></span></div><span class="chart-value">7,518</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>收藏</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 25.0%"></span></div><span class="chart-value">7,513</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>重新打开</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 25.0%"></span></div><span class="chart-value">7,510</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>取消收藏</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 25.0%"></span></div><span class="chart-value">7,501</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>毛玻璃</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 22.2%"></span></div><span class="chart-value">6,669</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>只看收藏</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 17.9%"></span></div><span class="chart-value">5,363</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>搜索</strong><span>SemanticTasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 17.9%"></span></div><span class="chart-value">5,362</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>打开添加</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 8.7%"></span></div><span class="chart-value">2,623</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>打开设置</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 8.6%"></span></div><span class="chart-value">2,588</span></div>
-              <div class="chart-row"><div class="chart-label"><strong>切换标签</strong><span>Rental</span></div><div class="chart-track"><span class="chart-bar" style="width: 7.5%"></span></div><span class="chart-value">2,247</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>截止日期</strong><span>Tasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 100.0%"></span></div><span class="chart-value">36,123</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>添加卡片</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 74.8%"></span></div><span class="chart-value">27,016</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>毛玻璃</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 61.9%"></span></div><span class="chart-value">22,374</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>优先级</strong><span>Tasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 39.4%"></span></div><span class="chart-value">14,249</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>标记完成</strong><span>Tasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 39.4%"></span></div><span class="chart-value">14,244</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>收藏</strong><span>Tasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 39.4%"></span></div><span class="chart-value">14,239</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>重新打开</strong><span>Tasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 39.4%"></span></div><span class="chart-value">14,236</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>取消收藏</strong><span>Tasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 39.4%"></span></div><span class="chart-value">14,227</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>只看收藏</strong><span>Tasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 33.2%"></span></div><span class="chart-value">12,009</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>搜索</strong><span>Tasks</span></div><div class="chart-track"><span class="chart-bar" style="width: 33.2%"></span></div><span class="chart-value">12,008</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>打开添加</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 24.7%"></span></div><span class="chart-value">8,905</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>打开设置</strong><span>STUFFS_NEXT</span></div><div class="chart-track"><span class="chart-bar" style="width: 24.6%"></span></div><span class="chart-value">8,870</span></div>
+              <div class="chart-row"><div class="chart-label"><strong>切换标签</strong><span>Rental</span></div><div class="chart-track"><span class="chart-bar" style="width: 23.6%"></span></div><span class="chart-value">8,529</span></div>
             </div>
             <figcaption>截止日期与优先级任务包含重复尝试，prompt token 明显高于其余任务；这是整条任务的累计上下文，不是单步成本。</figcaption>
             <details class="chart-table">
@@ -943,19 +945,19 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
                 <table>
                   <thead><tr><th scope="col">任务</th><th scope="col">应用</th><th scope="col" class="num">Prompt tokens</th></tr></thead>
                   <tbody>
-                    <tr><td>截止日期</td><td>SemanticTasks</td><td class="num">28,173</td></tr>
-                    <tr><td>优先级</td><td>SemanticTasks</td><td class="num">13,907</td></tr>
-                    <tr><td>添加卡片</td><td>STUFFS_NEXT</td><td class="num">8,170</td></tr>
-                    <tr><td>标记完成</td><td>SemanticTasks</td><td class="num">7,518</td></tr>
-                    <tr><td>收藏</td><td>SemanticTasks</td><td class="num">7,513</td></tr>
-                    <tr><td>重新打开</td><td>SemanticTasks</td><td class="num">7,510</td></tr>
-                    <tr><td>取消收藏</td><td>SemanticTasks</td><td class="num">7,501</td></tr>
-                    <tr><td>毛玻璃</td><td>STUFFS_NEXT</td><td class="num">6,669</td></tr>
-                    <tr><td>只看收藏</td><td>SemanticTasks</td><td class="num">5,363</td></tr>
-                    <tr><td>搜索</td><td>SemanticTasks</td><td class="num">5,362</td></tr>
-                    <tr><td>打开添加</td><td>STUFFS_NEXT</td><td class="num">2,623</td></tr>
-                    <tr><td>打开设置</td><td>STUFFS_NEXT</td><td class="num">2,588</td></tr>
-                    <tr><td>切换标签</td><td>Rental</td><td class="num">2,247</td></tr>
+                    <tr><td>截止日期</td><td>Tasks</td><td class="num">36,123</td></tr>
+                    <tr><td>添加卡片</td><td>STUFFS_NEXT</td><td class="num">27,016</td></tr>
+                    <tr><td>毛玻璃</td><td>STUFFS_NEXT</td><td class="num">22,374</td></tr>
+                    <tr><td>优先级</td><td>Tasks</td><td class="num">14,249</td></tr>
+                    <tr><td>标记完成</td><td>Tasks</td><td class="num">14,244</td></tr>
+                    <tr><td>收藏</td><td>Tasks</td><td class="num">14,239</td></tr>
+                    <tr><td>重新打开</td><td>Tasks</td><td class="num">14,236</td></tr>
+                    <tr><td>取消收藏</td><td>Tasks</td><td class="num">14,227</td></tr>
+                    <tr><td>只看收藏</td><td>Tasks</td><td class="num">12,009</td></tr>
+                    <tr><td>搜索</td><td>Tasks</td><td class="num">12,008</td></tr>
+                    <tr><td>打开添加</td><td>STUFFS_NEXT</td><td class="num">8,905</td></tr>
+                    <tr><td>打开设置</td><td>STUFFS_NEXT</td><td class="num">8,870</td></tr>
+                    <tr><td>切换标签</td><td>Rental</td><td class="num">8,529</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -963,14 +965,14 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
           </figure>
 
           <div class="annotator-grid reveal">
-            <div class="annotator-card"><p class="card-kicker">SEMANTICTASKS</p><p class="annotator-number">7<span> / 30 / 4</span></p><p>文件 / AST 候选 / LLM 提案</p></div>
+            <div class="annotator-card"><p class="card-kicker">TASKS</p><p class="annotator-number">7<span> / 30 / 4</span></p><p>文件 / AST 候选 / LLM 提案</p></div>
             <div class="annotator-card"><p class="card-kicker">STUFFS_NEXT</p><p class="annotator-number">7<span> / 165 / 3</span></p><p>文件 / AST 候选 / LLM 提案</p></div>
             <div class="annotator-card"><p class="card-kicker">SELFTEST</p><p class="annotator-number">6<span> 组件</span></p><p><code>ANNOTATOR_SELFTEST_OK</code></p></div>
           </div>
 
           <div class="verification-note reveal">
             <p class="card-kicker">HOW IT WAS VERIFIED</p>
-            <p><strong>SemanticTasks</strong> 的应用自己写入 <code>SEM_EVAL</code>；评测器在 Agent 通道之外读取日志，检查目标字段与非目标字段。<strong>STUFFS_NEXT</strong> 使用应用侧桥快照与前后截图，没有独立数据库 oracle。<strong>Rental</strong> 使用标签 <code>selected</code> 状态与截图。Agent 的自述不是验收依据。</p>
+            <p><strong>Tasks</strong> 的应用自己写入 <code>SEM_EVAL</code>；评测器在 Agent 通道之外读取日志，检查目标字段与非目标字段。<strong>STUFFS_NEXT</strong> 使用应用侧桥快照与前后截图，没有独立数据库 oracle。<strong>Rental</strong> 使用标签 <code>selected</code> 状态与截图。Agent 的自述不是验收依据。</p>
           </div>
         </div>
       </div>
@@ -990,8 +992,8 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
 
           <div class="evidence-grid">
             <figure class="evidence-card reveal">
-              <div class="phone-bezel"><img data-lightbox src="assets/self-annotated.jpeg" alt="SemanticTasks 的语义标注截图" width="1080" height="2406"></div>
-              <figcaption><strong>SemanticTasks</strong><span>搜索、筛选、列表、收藏、完成、优先级、详情与截止日期输入都有稳定 id 和语义节点。</span></figcaption>
+              <div class="phone-bezel"><img data-lightbox src="assets/self-annotated.jpeg" alt="Tasks 的语义标注截图" width="1080" height="2406"></div>
+              <figcaption><strong>Tasks</strong><span>搜索、筛选、列表、收藏、完成、优先级、详情与截止日期输入都有稳定 id 和语义节点。</span></figcaption>
             </figure>
             <figure class="evidence-card reveal">
               <div class="phone-bezel"><img data-lightbox src="assets/stuffs-annotated.jpeg" alt="STUFFS_NEXT 设置面板的语义标注截图" width="1080" height="2406"></div>
@@ -1056,7 +1058,7 @@ Usage: cli.js scan|propose|apply --project &lt;dir&gt; [--out &lt;file&gt;]</cod
             </li>
             <li>
               <span class="limit-number">08</span>
-              <div><strong>Rental 的 1/1 来自带 tab onClick 的验证版本。</strong><p>严格“零逻辑改动”边界下，该任务标记为待重测；修正见报告 2.5 与下一步计划。</p></div>
+              <div><strong>Rental 通过 host passthrough 执行原生 tab tap。</strong><p>应用没有新增 onClick，2 步完成。passthrough 只适用于已声明原生 tab 手势的节点；严格零 UI/逻辑改动仍以截图/控件树 diff 为准。</p></div>
             </li>
           </ol>
         </div>

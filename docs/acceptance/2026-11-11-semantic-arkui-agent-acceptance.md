@@ -13,12 +13,12 @@
 
 | 应用 | 类型 | 任务数 | 独立验证通过 | Agent 正常结束 | prompt tokens | completion tokens |
 |---|---|---:|---:|---:|---:|---:|
-| SemanticTasks | 自建 ArkTS 应用 | 8 | 8/8 | 8/8 | 82,847 | 736 |
-| STUFFS_NEXT | 开源应用，MIT | 4 | 4/4 | 3/4 | 20,050 | 647 |
-| Rental | 开源应用，MIT | 1 | 1/1 | 1/1 | 2,247 | 51 |
-| 合计 |  | 13 | 13/13 | 12/13 | 105,144 | 1,434 |
+| Tasks | 自建 ArkTS 应用 | 8 | 8/8 | 8/8 | 131,335 | 564 |
+| STUFFS_NEXT | 开源应用，MIT | 4 | 4/4 | 3/4 | 67,165 | 522 |
+| Rental | 开源应用，MIT | 1 | 1/1 | 1/1 | 8,529 | 50 |
+| 合计 |  | 13 | 13/13 | 12/13 | 207,029 | 1,136 |
 
-SemanticTasks 的判分来自应用自己写入 `SEM_EVAL` hilog 的状态，宿主在 Agent 通道之外读取并比较目标任务字段与非目标字段；STUFFS_NEXT 的判分来自应用侧语义桥快照与前后截图；Rental 的判分来自标签节点的 selected 状态与截图。三类判分都不读取 Agent 的自述。
+Tasks 的判分来自应用自己写入 `SEM_EVAL` hilog 的状态，宿主在 Agent 通道之外读取并比较目标任务字段与非目标字段；STUFFS_NEXT 的判分来自应用侧语义桥快照与前后截图；Rental 的判分来自标签节点的 selected 状态与截图。三类判分都不读取 Agent 的自述。
 
 Rental（硅谷租房，MIT）完成了构建、安装和启动。它的首页房源数据依赖远端接口，离线时为空；本地底部标签栏可以正常渲染和切换。本次完成了 1 项标签切换任务，房源搜索、预订等业务流没有验证。
 
@@ -101,10 +101,10 @@ Button(task.completed ? '重新打开' : '标记完成')
 
 | 项目 | 文件数 | AST 候选 | LLM 提案 | 报告 |
 |---|---:|---:|---:|---|
-| SemanticTasks | 7 | 30 | 4 | `evaluation/annotations/semantic-tasks/proposals.json` |
+| Tasks | 7 | 30 | 4 | `evaluation/annotations/semantic-tasks/proposals.json` |
 | STUFFS_NEXT | 7 | 165 | 3 | `evaluation/annotations/stuffs/proposals.json` |
 
-SemanticTasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和完成切换；STUFFS_NEXT 的提案覆盖页面入口标题、副标题和主瀑布流。最终应用中的标注经过人工审查和补全；带尾随块的容器和自定义组件由人工确认，工具没有声称全自动覆盖。
+Tasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和完成切换；STUFFS_NEXT 的提案覆盖页面入口标题、副标题和主瀑布流。最终应用中的标注经过人工审查和补全；带尾随块的容器和自定义组件由人工确认，工具没有声称全自动覆盖。
 
 ### 2.5 标注边界与当前实现复核
 
@@ -114,13 +114,13 @@ SemanticTasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和�
 
 | 位置 | 当前情况 | 判定 | 下一版处理 |
 |---|---|---|---|
-| 自建应用可见标题 | `Text('Semantic Tasks')`，启动器名称为 `AN-App Research Prototype` | 自建应用，不是对第三方界面的改写；但前端出现 semantic 字样，不符合“前端不体现语义”的标准 | 可见标题改为 `Tasks`，启动器名称改为 `Tasks`；重新采集证据 |
-| Rental 底部标签 | 上游 `Tabs` 已有 `.onChange`；实现额外在 tab `Column` 上加了 `.onClick` | 逻辑改动，且与原有 `onChange` 冗余；不符合零逻辑改动 | 移除 `.onClick`，实测原有 `Tabs` 点击 + `onChange` 是否能完成切换；若 live 节点不可点击，则把该任务标为不满足约束，不再加 handler |
+| 自建应用可见标题 | 已改为 `Text('Tasks')`，启动器名称为 `Tasks` | 前端是普通任务应用标题，不出现 semantic 字样；已用新截图替换证据 | 已完成 |
+| Rental 底部标签 | 已移除额外的 `onClick`；tab 节点声明 `passthrough: true`，宿主按 bounds 执行原生 tap，切换仍由原 `Tabs.onChange` 完成 | 应用无新增 handler；已重测 1/1，2 步通过 | 已完成；`passthrough` 只适用于声明了原生 tab 手势的节点 |
 | STUFFS_NEXT 汇总节点 | 新增 `Text('')`，`.visibility(Visibility.None)` | 隐藏、零布局；但新增了一个隐藏节点 | 保留前做截图/树 diff；更严格时改为 host 侧从已有卡片节点聚合，不新增节点 |
 | 证据截图红框 | `render_annotated.py` 在截图上叠加 id 与红框 | 不是应用运行时 UI；应用本身不渲染这些标签 | 页面和报告明确标注“证据叠加层”；hero 使用无叠加截图 |
 | STUFFS_NEXT / Rental 其余 UI | 只增加 id、customProperty、无障碍文本；未发现可见文本或布局变化 | 需要通过逐 app 的 screenshot diff 作为发布门槛 | 在 10 应用基准中把零 UI diff 作为准入条件 |
 
-原 13 项验收是机制 pilot：Rental 的 1/1 结果来自带底部标签 `onClick` 的版本，在严格边界下应标为“待重测”，不能作为“零逻辑改动”的最终证据。下一版先完成自建应用标题、Rental `onClick` 和 STUFFS 隐藏节点的修正，再重新采集证据。
+严格修正已完成：自建应用标题改为 `Tasks`，Rental 移除了额外的 `onClick` 并通过 `passthrough` 重测 1/1；STUFFS 的隐藏汇总节点仍是 `Visibility.None`，需要在 10 应用基准中通过截图/控件树 diff 验证。13 项任务已在统一修复后的宿主上重跑，状态由应用侧日志或快照独立验证。
 
 ### 2.6 状态读取与续存
 
@@ -138,26 +138,34 @@ SemanticTasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和�
 
 结论分两层：同一会话内，点击后的下一次语义快照已经反映修改后的状态；跨重启是否保留，取决于应用自己的存储。自建应用使用内存状态，重启回种子；STUFFS_NEXT 使用 KVStore，卡片保留；Rental 使用 `@State` tab index，重启回首页。评测脚本在任务前 reset/clear，因此下一项任务从已知初始态开始，而不是继承上一项修改后的状态；这是可复现性要求，不是状态丢失。
 
+### 2.7 动作后的快照收敛
+
+桥读取的是当前挂载的 `FrameNode` 树，因此动作刚执行完就取快照，可能仍拿到动作前的内容。实测中 Rental 的标签点击已经生效，但下一次快照的 `revision` 没有推进，模型据此判断“切换失败”并提前结束。
+
+修复在宿主侧：`SemanticAgent` 记录动作发生时的 `revision`，下一步取快照时若 `revision` 未变，就等待并重新读取，最多 5 次、每次间隔 250ms，直到内容变化或次数用尽。等待只影响读取时机，不改变动作、不写应用状态。单测 `waits for the semantic snapshot to settle before the next decision` 固定了这条不变量：第二次决策必须看到动作后的 revision。
+
+修复后 Rental 从“3 步含一次重复 tap”变为干净的 2 步；13 项任务全部在同一宿主版本上重跑，本报告的数据来自这批统一运行。
+
 ## 三、验证应用与任务
 
-### 3.1 SemanticTasks（自建应用）
+### 3.1 Tasks（自建应用）
 
 应用位于 `semantic-arkui-haptest/examples/semantic-tasks-app`，包含任务列表、重复标题、项目、到期日期、优先级、收藏、完成、搜索、两个筛选开关、详情面板中的截止日期输入和保存。每次状态变化写入 `SEM_EVAL` hilog。
 
 | # | 任务 | 步骤 | prompt / completion | 验证 |
 |---|---|---:|---|---|
-| 1 | 收藏“整理季度材料”（北区门店） | 2 | 7,513 / 95 | 通过，t1.favorite=true |
-| 2 | 取消收藏“更新采购台账” | 2 | 7,501 / 149 | 通过，t3.favorite=false |
-| 3 | 标记“整理季度材料”（北区门店）已完成 | 2 | 7,518 / 76 | 通过，t1.completed=true |
-| 4 | 重新打开“核对活动预算” | 2 | 7,510 / 67 | 通过，t4.completed=false |
-| 5 | 在搜索框输入“采购” | 2 | 5,362 / 59 | 通过，query 包含“采购” |
-| 6 | 打开“只看收藏”筛选 | 2 | 5,363 / 43 | 通过，onlyFavorite=true |
-| 7 | 把“更新采购台账”的截止日期改为 2026-11-20 | 4 | 28,173 / 136 | 通过，t3.dueDate=2026-11-20 |
-| 8 | 把“整理季度材料”（北区门店）的优先级调整为高 | 2 | 13,907 / 111 | 通过，t1.priority=高 |
+| 1 | 收藏“整理季度材料”（北区门店） | 2 | 14,239 / 50 | 通过，t1.favorite=true |
+| 2 | 取消收藏“更新采购台账” | 2 | 14,227 / 48 | 通过，t3.favorite=false |
+| 3 | 标记“整理季度材料”（北区门店）已完成 | 2 | 14,244 / 62 | 通过，t1.completed=true |
+| 4 | 重新打开“核对活动预算” | 2 | 14,236 / 51 | 通过，t4.completed=false |
+| 5 | 在搜索框输入“采购” | 2 | 12,008 / 59 | 通过，query 包含“采购” |
+| 6 | 打开“只看收藏”筛选 | 2 | 12,009 / 60 | 通过，onlyFavorite=true |
+| 7 | 把“更新采购台账”的截止日期改为 2026-11-20 | 5 | 36,123 / 153 | 通过，t3.dueDate=2026-11-20 |
+| 8 | 把“整理季度材料”（北区门店）的优先级调整为高 | 2 | 14,249 / 81 | 通过，t1.priority=高 |
 
 8 项任务全部由 Agent 正常结束；判分读取应用侧 `SEM_EVAL`，并对非目标任务和未授权字段做变更检查。
 
-![SemanticTasks 语义节点截图](../../evaluation/evidence/self-annotated.jpeg)
+![Tasks 语义节点截图](../../evaluation/evidence/self-annotated.jpeg)
 
 ### 3.2 STUFFS_NEXT（开源，MIT）
 
@@ -172,10 +180,10 @@ SemanticTasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和�
 
 | # | 任务 | 步骤 | prompt / completion | 验证 |
 |---|---|---:|---|---|
-| 1 | 打开设置面板 | 2 | 2,588 / 40 | 通过，`sem.stuffs.settings.blur` visible=true |
-| 2 | 打开设置面板，把毛玻璃半径调大 | 5 | 6,669 / 213 | 通过，快照 `state.value=51 > 25`；Agent 被重复动作保护停止，未自行 finish |
-| 3 | 打开添加面板 | 2 | 2,623 / 68 | 通过，`sem.stuffs.add.name` visible=true |
-| 4 | 打开添加面板，输入“阅读”，向下滚动，点击添加 | 6 | 8,170 / 326 | 通过，`sem.stuffs.cards.summary` 的 value=1、extra 包含“阅读” |
+| 1 | 打开设置面板 | 2 | 8,870 / 39 | 通过，`sem.stuffs.settings.blur` visible=true |
+| 2 | 打开设置面板，把毛玻璃半径调大 | 5 | 22,374 / 194 | 通过，快照 `state.value=51 > 25`；Agent 被重复动作保护停止，未自行 finish |
+| 3 | 打开添加面板 | 2 | 8,905 / 58 | 通过，`sem.stuffs.add.name` visible=true |
+| 4 | 打开添加面板，输入“阅读”，向下滚动，点击添加 | 6 | 27,016 / 231 | 通过，`sem.stuffs.cards.summary` 的 value=1、extra 包含“阅读” |
 
 第 4 项是完整的多步任务：打开条件面板、在自定义组件包装的输入框中输入中文、收起键盘、滚动 `WaterFlow` 露出被遮挡的添加按钮、点击添加、应用把卡片写入本地存储。第 3 步滚动第一次因坐标观察过期被拒绝，Agent 重新观察后第二次成功。
 
@@ -187,15 +195,15 @@ SemanticTasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和�
 
 该应用使用 `@ohos/axios` 从远端加载首页和房源数据。构建、安装和启动通过，底部“首页/想看/服务/发现/我的”结构可见。当前测试环境的首页横幅和房源推荐为空；服务页渲染出会员、家庭服务、服务日历等内容。
 
-改造内容：在 `Tabs` 上设置 `sem.root`，给底部标签栏的五个 `Column` 添加 `id`、`customProperty` 和 `onClick`，用 `selected` 状态暴露当前标签；在 `EntryAbility` 中启动语义桥。房源业务逻辑、网络请求和页面路由没有改动。
+改造内容：在 `Tabs` 上设置 `sem.root`，给底部标签栏的五个 `Column` 添加 `id`、`customProperty` 和 `passthrough: true`，用 `selected` 状态暴露当前标签；在 `EntryAbility` 中启动语义桥。没有新增 `onClick`；切换仍由原 `Tabs.onChange` 完成。`passthrough` 只让宿主按节点 bounds 执行原生 tap，不改变应用行为。房源业务逻辑、网络请求和页面路由没有改动。
 
 | # | 任务 | 步骤 | prompt / completion | 验证 |
 |---|---|---:|---|---|
-| 1 | 切换到服务页 | 2 | 2,247 / 51 | 通过†，`sem.rental.tab.2.selected=true`；服务页同时渲染 |
+| 1 | 切换到服务页 | 2 | 8,529 / 50 | 通过，`sem.rental.tab.2.selected=true`；服务页同时渲染 |
 
 ![Rental 标签栏与服务页语义节点](../../evaluation/evidence/rental-annotated.jpeg)
 
-† Rental 的验证版本给底部标签 `Column` 增加了 `onClick`；在严格零逻辑改动边界下，该任务标记为待重测，见 2.5。
+Rental 的 2 步轨迹干净：一次 tap 后 `revision` 推进到 2，`selected=true`，模型随即结束。`passthrough` 只把已声明的 tab 节点交给宿主按 bounds 执行原生 tap，应用没有新增 `onClick`，见 2.5。
 
 ### 3.4 其他候选
 
@@ -208,13 +216,13 @@ SemanticTasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和�
 | 完成任务数 | 13 |
 | 独立验证通过 | 13 |
 | Agent 正常结束 | 12 |
-| 总步数 | 35（平均 2.69） |
-| 总 prompt tokens | 105,144 |
-| 总 completion tokens | 1,434 |
+| 总步数 | 36（平均 2.77） |
+| 总 prompt tokens | 207,029 |
+| 总 completion tokens | 1,136 |
 | 模型输入中的截图 | 0 |
 | 模型输入中的原始无障碍树全文 | 0（仅按节点合并少量运行时状态） |
 
-13 项任务只运行一次，不构成统计显著的效能实验。token 数来自模型响应的 usage 字段，包含系统提示、语义树和历史，不包含截图或原生树。单次运行中，SemanticTasks 的截止日期任务和优先级任务因重复尝试产生了较高 prompt token；STUFFS 的毛玻璃任务在目标状态已经达成后仍多点了一次，被重复动作保护停止，独立快照仍判定通过；Rental 的标签任务 2 步完成。
+13 项任务只运行一次，不构成统计显著的效能实验。token 数来自模型响应的 usage 字段，包含系统提示、语义树和历史，不包含截图或原生树。单次运行中，Tasks 的截止日期任务用了 5 步、prompt token 最高；STUFFS 的毛玻璃任务在目标状态已经达成后仍多点了一次，被重复动作保护停止，独立快照仍判定通过；Rental 的标签任务 2 步完成。
 
 ## 五、证据索引
 

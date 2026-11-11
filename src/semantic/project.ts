@@ -73,7 +73,7 @@ export function validateSemanticAction(node: SemanticViewNode, action: SemanticA
         return failure('ACTION_UNSUPPORTED', `The semantic declaration for ${node.id} does not allow ${action.action}.`);
     }
 
-    if (action.action === 'tap' && live.clickable !== true) {
+    if (action.action === 'tap' && live.clickable !== true && node.passthrough !== true) {
         return failure('TARGET_NOT_CLICKABLE', `The live node ${node.id} is not clickable.`);
     }
     if (action.action === 'long_press' && live.longClickable !== true) {

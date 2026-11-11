@@ -38,6 +38,11 @@ export interface SemanticAgentDependencies {
     now?: () => number;
     maxSteps?: number;
     bundleName?: string;
+    /** Pause between snapshot reads while waiting for ArkUI to re-render. */
+    sleep?: (ms: number) => Promise<void>;
+    /** Snapshot reads allowed after an action before accepting the current content. */
+    settleAttempts?: number;
+    settleDelayMs?: number;
 }
 
 interface TrajectoryRecord {
@@ -54,10 +59,40 @@ interface TrajectoryRecord {
 export class SemanticAgent {
     private readonly maxSteps: number;
     private readonly now: () => number;
+    private readonly sleep: (ms: number) => Promise<void>;
+    private readonly settleAttempts: number;
+    private readonly settleDelayMs: number;
 
     constructor(private readonly deps: SemanticAgentDependencies) {
         this.maxSteps = deps.maxSteps ?? 12;
         this.now = deps.now ?? (() => Date.now());
+        this.sleep = deps.sleep ?? ((ms: number) => new Promise((resolve) => setTimeout(resolve, ms)));
+        this.settleAttempts = deps.settleAttempts ?? 5;
+        this.settleDelayMs = deps.settleDelayMs ?? 250;
+    }
+
+    /**
+     * Read a snapshot, letting ArkUI finish re-rendering after the previous action.
+     * The bridge reads the mounted FrameNode tree, so an immediate read can still
+     * return pre-action content; a decision made on that content looks like a no-op.
+     */
+    private async settledSnapshot(previousRevision?: number): Promise<SemanticSnapshot> {
+        let snapshot = await this.deps.bridge.snapshot();
+        if (previousRevision === undefined || snapshot.error) {
+            return snapshot;
+        }
+        for (let attempt = 1; attempt < this.settleAttempts; attempt++) {
+            if (snapshot.revision !== previousRevision) {
+                return snapshot;
+            }
+            await this.sleep(this.settleDelayMs);
+            const next = await this.deps.bridge.snapshot();
+            if (next.error) {
+                return next;
+            }
+            snapshot = next;
+        }
+        return snapshot;
     }
 
     async run(task: string, options: { outDir?: string } = {}): Promise<AgentRunResult> {
@@ -69,10 +104,12 @@ export class SemanticAgent {
         let steps = 0;
         let lastKey = '';
         let repeats = 0;
+        let actedRevision: number | undefined;
 
         for (let step = 1; step <= this.maxSteps; step++) {
             steps = step;
-            const snapshot = await this.deps.bridge.snapshot();
+            const snapshot = await this.settledSnapshot(actedRevision);
+            actedRevision = undefined;
             if (snapshot.error) {
                 this.writeTrajectory(options.outDir, trajectory);
                 return this.result(false, steps, `BRIDGE_${snapshot.error}`, promptTokens, completionTokens, started);
@@ -128,6 +165,7 @@ export class SemanticAgent {
 
             try {
                 record.result = await this.execute(decision, view, observation);
+                actedRevision = snapshot.revision;
                 history.push(`${decision.action} ${decision.ref ?? ''}: ${record.result}`);
             } catch (error) {
                 const message = error instanceof Error ? error.message : String(error);
@@ -180,9 +218,23 @@ export class SemanticAgent {
         await this.deps.bridge.prepare(node.ref);
 
         switch (decision.action) {
-            case 'tap':
-                await this.deps.device.tap({ selector: { id: node.id } });
+            case 'tap': {
+                const bounds = node.live?.bounds;
+                if (node.passthrough === true && bounds && bounds.length >= 2) {
+                    const left = Math.min(bounds[0].x, bounds[1].x);
+                    const right = Math.max(bounds[0].x, bounds[1].x);
+                    const top = Math.min(bounds[0].y, bounds[1].y);
+                    const bottom = Math.max(bounds[0].y, bounds[1].y);
+                    await this.deps.device.tap({
+                        x: Math.round((left + right) / 2),
+                        y: Math.round((top + bottom) / 2),
+                        observationId: observation.observationId,
+                    });
+                } else {
+                    await this.deps.device.tap({ selector: { id: node.id } });
+                }
                 return `tapped ${node.id}`;
+            }
             case 'input':
                 await this.deps.device.tap({ selector: { id: node.id } });
                 await this.deps.device.observe(

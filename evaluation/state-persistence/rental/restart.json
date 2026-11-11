@@ -23,6 +23,7 @@
         }
       ],
       "risk": "read_only",
+      "passthrough": true,
       "visible": true
     },
     {
@@ -42,6 +43,7 @@
         }
       ],
       "risk": "read_only",
+      "passthrough": true,
       "visible": true
     },
     {
@@ -61,6 +63,7 @@
         }
       ],
       "risk": "read_only",
+      "passthrough": true,
       "visible": true
     },
     {
@@ -80,6 +83,7 @@
         }
       ],
       "risk": "read_only",
+      "passthrough": true,
       "visible": true
     },
     {
@@ -99,6 +103,7 @@
         }
       ],
       "risk": "read_only",
+      "passthrough": true,
       "visible": true
     }
   ]

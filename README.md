@@ -10,12 +10,12 @@
 
 | 应用 | 类型 | 任务 | 独立验证 | Agent 自行结束 | prompt tokens | completion tokens |
 |---|---|---:|---:|---:|---:|---:|
-| SemanticTasks | 自建 ArkTS 应用 | 8 | 8/8 | 8/8 | 82,847 | 736 |
-| STUFFS_NEXT | 开源应用，MIT | 4 | 4/4 | 3/4 | 20,050 | 647 |
-| Rental | 开源应用，MIT | 1 | 1/1 | 1/1 | 2,247 | 51 |
-| 合计 |  | 13 | 13/13 | 12/13 | 105,144 | 1,434 |
+| Tasks | 自建 ArkTS 应用 | 8 | 8/8 | 8/8 | 131,335 | 564 |
+| STUFFS_NEXT | 开源应用，MIT | 4 | 4/4 | 3/4 | 67,165 | 522 |
+| Rental | 开源应用，MIT | 1 | 1/1 | 1/1 | 8,529 | 50 |
+| 合计 |  | 13 | 13/13 | 12/13 | 207,029 | 1,136 |
 
-13 项任务共 35 步，平均 2.69 步；模型输入中的截图数量为 0。SemanticTasks 的判分来自应用自己写入的 `SEM_EVAL` 日志；STUFFS_NEXT 和 Rental 使用应用侧桥快照与截图。Agent 的自述不作为验收依据。
+13 项任务共 36 步，平均 2.77 步；模型输入中的截图数量为 0。Tasks 的判分来自应用自己写入的 `SEM_EVAL` 日志；STUFFS_NEXT 和 Rental 使用应用侧桥快照与截图。Agent 的自述不作为验收依据。
 
 ## 机制
 
@@ -28,7 +28,7 @@
 
 ## 任务轨迹
 
-- **SemanticTasks / 收藏**：2 步。模型看到 `sem.task.favorite.t1` 的 `state.favorite=false` 和 `toggle_favorite/tap`，点击后用 `SEM_EVAL t1.favorite=true` 验证。
+- **Tasks / 收藏**：2 步。模型看到 `sem.task.favorite.t1` 的 `state.favorite=false` 和 `toggle_favorite/tap`，点击后用 `SEM_EVAL t1.favorite=true` 验证。
 - **STUFFS_NEXT / 添加卡片**：6 步。打开添加面板、在自定义组件输入框中输入“阅读”、滚动 `WaterFlow`、点击添加。第一次滚动因坐标观察过期被宿主拒绝，重新观察后成功。
 - **Rental / 切换标签**：2 步。点击 `sem.rental.tab.2`，服务页渲染，`selected=true`。
 
@@ -43,7 +43,7 @@ examples/semantic-tasks-app/    自建 ArkTS 应用、语义桥与组件标注
 tools/annotator/                AST + LLM 标注原型
 evaluation/                     任务、评测脚本、证据、标注扫描与提案
 docs/                           设计、实现计划、验收报告
-docs/                           项目页与验收文档；GitHub Pages 源目录
+site/                           项目页，GitHub Pages 源目录
 ```
 
 ## 快速开始

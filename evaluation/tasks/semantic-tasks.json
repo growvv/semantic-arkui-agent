@@ -1,5 +1,5 @@
 {
-  "app": "SemanticTasks",
+  "app": "Tasks",
   "bundle": "org.anapp.research.prototype",
   "serial": "<device-serial>",
   "tasks": [

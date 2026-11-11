@@ -1,11 +1,11 @@
 {
-  "app": "SemanticTasks",
+  "app": "Tasks",
   "bundle": "org.anapp.research.prototype",
   "total": 8,
   "verified": 8,
   "agentFinished": 8,
-  "promptTokens": 82847,
-  "completionTokens": 736,
+  "promptTokens": 131335,
+  "completionTokens": 564,
   "results": [
     {
       "id": "favorite-t1",
@@ -16,13 +16,13 @@
           "success": true,
           "steps": 2,
           "reason": "“整理季度材料”（项目：北区门店）已收藏。",
-          "promptTokens": 7513,
-          "completionTokens": 95,
-          "elapsedMs": 11090
+          "promptTokens": 14239,
+          "completionTokens": 50,
+          "elapsedMs": 8141
         }
       },
       "agentExitCode": 0,
-      "elapsedSeconds": 13.66,
+      "elapsedSeconds": 10.5,
       "verified": true,
       "checkOk": true,
       "changes": [
@@ -153,14 +153,14 @@
         "result": {
           "success": true,
           "steps": 2,
-          "reason": "“更新采购台账”当前已取消收藏（收藏：否）。",
-          "promptTokens": 7501,
-          "completionTokens": 149,
-          "elapsedMs": 12984
+          "reason": "“更新采购台账”当前未收藏，无需取消。",
+          "promptTokens": 14227,
+          "completionTokens": 48,
+          "elapsedMs": 8394
         }
       },
       "agentExitCode": 0,
-      "elapsedSeconds": 15.23,
+      "elapsedSeconds": 10.42,
       "verified": true,
       "checkOk": true,
       "changes": [
@@ -291,14 +291,14 @@
         "result": {
           "success": true,
           "steps": 2,
-          "reason": "“整理季度材料”（北区门店）已标记为已完成。",
-          "promptTokens": 7518,
-          "completionTokens": 76,
-          "elapsedMs": 8732
+          "reason": "“整理季度材料”（北区门店）已标记为完成。",
+          "promptTokens": 14244,
+          "completionTokens": 62,
+          "elapsedMs": 13967
         }
       },
       "agentExitCode": 0,
-      "elapsedSeconds": 11.23,
+      "elapsedSeconds": 16.4,
       "verified": true,
       "checkOk": true,
       "changes": [
@@ -429,14 +429,14 @@
         "result": {
           "success": true,
           "steps": 2,
-          "reason": "“核对活动预算”当前状态为进行中（未完成），已重新打开。",
-          "promptTokens": 7510,
-          "completionTokens": 67,
-          "elapsedMs": 9844
+          "reason": "“核对活动预算”已重新打开，当前状态为进行中。",
+          "promptTokens": 14236,
+          "completionTokens": 51,
+          "elapsedMs": 8470
         }
       },
       "agentExitCode": 0,
-      "elapsedSeconds": 12.03,
+      "elapsedSeconds": 10.81,
       "verified": true,
       "checkOk": true,
       "changes": [
@@ -567,14 +567,14 @@
         "result": {
           "success": true,
           "steps": 2,
-          "reason": "已在搜索框输入“采购”。",
-          "promptTokens": 5362,
+          "reason": "搜索框已输入“采购”，并显示匹配任务。",
+          "promptTokens": 12008,
           "completionTokens": 59,
-          "elapsedMs": 15022
+          "elapsedMs": 16113
         }
       },
       "agentExitCode": 0,
-      "elapsedSeconds": 17.3,
+      "elapsedSeconds": 18.15,
       "verified": true,
       "checkOk": true,
       "changes": [
@@ -705,13 +705,13 @@
           "success": true,
           "steps": 2,
           "reason": "“只看收藏”筛选已开启。",
-          "promptTokens": 5363,
-          "completionTokens": 43,
-          "elapsedMs": 10265
+          "promptTokens": 12009,
+          "completionTokens": 60,
+          "elapsedMs": 11526
         }
       },
       "agentExitCode": 0,
-      "elapsedSeconds": 12.54,
+      "elapsedSeconds": 13.82,
       "verified": true,
       "checkOk": true,
       "changes": [
@@ -840,15 +840,15 @@
         "ok": true,
         "result": {
           "success": true,
-          "steps": 4,
-          "reason": "“更新采购台账”的截止日期已更新为 2026-11-20。",
-          "promptTokens": 28173,
-          "completionTokens": 136,
-          "elapsedMs": 33706
+          "steps": 5,
+          "reason": "“更新采购台账”的截止日期已是 2026-11-20。",
+          "promptTokens": 36123,
+          "completionTokens": 153,
+          "elapsedMs": 26818
         }
       },
       "agentExitCode": 0,
-      "elapsedSeconds": 35.88,
+      "elapsedSeconds": 29.13,
       "verified": true,
       "checkOk": true,
       "changes": [
@@ -979,14 +979,14 @@
         "result": {
           "success": true,
           "steps": 2,
-          "reason": "“整理季度材料”（北区门店）的优先级已是高，无需调整。",
-          "promptTokens": 13907,
-          "completionTokens": 111,
-          "elapsedMs": 18411
+          "reason": "“整理季度材料”（北区门店）的优先级已经是高，无需调整。",
+          "promptTokens": 14249,
+          "completionTokens": 81,
+          "elapsedMs": 10725
         }
       },
       "agentExitCode": 0,
-      "elapsedSeconds": 20.7,
+      "elapsedSeconds": 13.14,
       "verified": true,
       "checkOk": true,
       "changes": [

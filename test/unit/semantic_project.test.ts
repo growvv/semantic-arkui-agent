@@ -69,6 +69,13 @@ describe('semantic projection', () => {
         );
         expect(validateSemanticAction(disabled.byRef.get('sem.a')!, { action: 'tap', ref: 'sem.a' }))
             .toMatchObject({ ok: false, errorCode: 'TARGET_NOT_CLICKABLE' });
+
+        const passthrough = projectSemanticSnapshot(
+            snapshot([{ ...tapNode, passthrough: true }]),
+            page([component('sem.a', 'Column', { clickable: false })]),
+        );
+        expect(validateSemanticAction(passthrough.byRef.get('sem.a')!, { action: 'tap', ref: 'sem.a' }))
+            .toEqual({ ok: true });
     });
 
     it('accepts set_text only for a live input and scroll only for a live scroll container', () => {

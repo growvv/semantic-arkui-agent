@@ -19,6 +19,7 @@ export interface SemanticNode {
   state?: SemanticState;
   actions?: SemanticAction[];
   risk?: string;
+  passthrough?: boolean;
   parentRef?: string;
   visible: boolean;
 }
@@ -190,6 +191,7 @@ export class SemanticBridge {
         state: spec.state,
         actions: spec.actions,
         risk: spec.risk,
+        passthrough: spec.passthrough,
         parentRef: parentRef.length > 0 ? parentRef : undefined,
         visible: node.isVisible()
       });

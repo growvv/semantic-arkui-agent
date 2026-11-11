@@ -413,7 +413,7 @@ struct Index {
   build() {
     Stack({ alignContent: Alignment.Bottom }) {
       Column({ space: 10 }) {
-        Text('Semantic Tasks')
+        Text('Tasks')
           .fontSize(26)
           .fontWeight(FontWeight.Bold)
           .width('100%')

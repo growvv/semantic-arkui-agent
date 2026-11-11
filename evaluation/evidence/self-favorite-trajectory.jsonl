@@ -1,2 +1,2 @@
-{"step":1,"snapshotRevision":1,"observationId":"mwaykpoc-ouc47i5n","action":{"action":"tap","ref":"sem.task.favorite.t1"},"result":"tapped sem.task.favorite.t1","promptTokens":3750,"completionTokens":34,"elapsedMs":7648}
-{"step":2,"snapshotRevision":2,"observationId":"mwaykvty-2rr7jvpf","action":{"action":"finish","summary":"“整理季度材料”（项目：北区门店）已收藏。"},"result":"“整理季度材料”（项目：北区门店）已收藏。","promptTokens":3763,"completionTokens":61,"elapsedMs":11088}
+{"step":1,"snapshotRevision":1,"observationId":"mwbpim2h-qzydu2au","action":{"action":"tap","ref":"sem.task.favorite.t1"},"result":"tapped sem.task.favorite.t1","promptTokens":7113,"completionTokens":20,"elapsedMs":4762}
+{"step":2,"snapshotRevision":2,"observationId":"mwbpipyy-swj2666n","action":{"action":"finish","summary":"“整理季度材料”（项目：北区门店）已收藏。"},"result":"“整理季度材料”（项目：北区门店）已收藏。","promptTokens":7126,"completionTokens":30,"elapsedMs":8139}

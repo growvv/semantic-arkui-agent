@@ -20,6 +20,7 @@ export interface SemanticNode {
     state?: SemanticState;
     actions?: SemanticAction[];
     risk?: string;
+    passthrough?: boolean;
     parentRef?: string;
     visible?: boolean;
     bounds?: [number, number, number, number];

@@ -5,8 +5,8 @@
   "total": 1,
   "verified": 1,
   "agentFinished": 1,
-  "promptTokens": 2247,
-  "completionTokens": 51,
+  "promptTokens": 8529,
+  "completionTokens": 50,
   "results": [
     {
       "id": "switch-service-tab",
@@ -16,13 +16,13 @@
         "result": {
           "success": true,
           "steps": 2,
-          "reason": "已切换到服务页，服务标签处于选中状态。",
-          "promptTokens": 2247,
-          "completionTokens": 51,
-          "elapsedMs": 5485
+          "reason": "已切换到服务页，服务标签当前已选中。",
+          "promptTokens": 8529,
+          "completionTokens": 50,
+          "elapsedMs": 13534
         }
       },
-      "elapsedSeconds": 8.15,
+      "elapsedSeconds": 16.08,
       "verified": true,
       "checkDetail": "selected=True",
       "beforeSnapshot": "/evaluation/runs/rental/switch-service-tab/before.json",

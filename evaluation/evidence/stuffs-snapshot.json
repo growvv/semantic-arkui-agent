@@ -31,10 +31,10 @@
       "id": "sem.stuffs.cards.summary",
       "type": "Text",
       "role": "content",
-      "meaning": "目标卡片数量：0",
+      "meaning": "目标卡片数量：1",
       "state": {
-        "value": 0,
-        "extra": ""
+        "value": 1,
+        "extra": "阅读"
       },
       "actions": [],
       "risk": "read_only",
@@ -66,9 +66,9 @@
       "id": "sem.stuffs.settings",
       "type": "__Common__",
       "role": "action",
-      "meaning": "关闭设置面板",
+      "meaning": "打开设置面板",
       "state": {
-        "selected": true
+        "selected": false
       },
       "actions": [
         {
@@ -99,7 +99,7 @@
       ],
       "risk": "read_only",
       "parentRef": "sem.stuffs.scroll",
-      "visible": true
+      "visible": false
     },
     {
       "ref": "sem.stuffs.settings.ok",
@@ -119,7 +119,7 @@
       ],
       "risk": "changes_data",
       "parentRef": "sem.stuffs.scroll",
-      "visible": true
+      "visible": false
     },
     {
       "ref": "sem.stuffs.add.name",

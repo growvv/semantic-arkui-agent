@@ -31,7 +31,7 @@
       "id": "sem.stuffs.cards.summary",
       "type": "Text",
       "role": "content",
-      "meaning": "目标卡片数量：1",
+      "meaning": "主页标题；目标卡片数量：1",
       "state": {
         "value": 1,
         "extra": "阅读"
@@ -39,7 +39,7 @@
       "actions": [],
       "risk": "read_only",
       "parentRef": "sem.stuffs.scroll",
-      "visible": false
+      "visible": true
     },
     {
       "ref": "sem.stuffs.add",

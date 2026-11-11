@@ -1,0 +1,14 @@
+{
+  "baselineRoot": "/tmp/stuffs-upstream-src/STUFFS_NEXT-e35b7584aba160d9cae22509c0dae8184b5b5d86/entry/src/main/ets",
+  "annotatedRoot": "<third-party-apps>/stuffs-next/entry/src/main/ets",
+  "baselineFiles": 5,
+  "annotatedFiles": 7,
+  "changedFiles": 2,
+  "addedFiles": [
+    "semantics/Sem.ets",
+    "semantics/SemanticBridge.ets"
+  ],
+  "removedFiles": [],
+  "findings": [],
+  "ok": true
+}

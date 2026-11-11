@@ -5,8 +5,8 @@
   "total": 4,
   "verified": 4,
   "agentFinished": 3,
-  "promptTokens": 67165,
-  "completionTokens": 522,
+  "promptTokens": 63195,
+  "completionTokens": 495,
   "results": [
     {
       "id": "settings-open",
@@ -16,14 +16,14 @@
         "result": {
           "success": true,
           "steps": 2,
-          "reason": "设置面板已打开",
-          "promptTokens": 8870,
-          "completionTokens": 39,
-          "elapsedMs": 7516
+          "reason": "设置面板已打开。",
+          "promptTokens": 8958,
+          "completionTokens": 51,
+          "elapsedMs": 18723
         }
       },
       "agentExitCode": 0,
-      "elapsedSeconds": 9.98,
+      "elapsedSeconds": 21.35,
       "verified": true,
       "checkDetail": "visible=True",
       "beforeSnapshot": "/evaluation/runs/stuffs/settings-open/before.json",
@@ -41,13 +41,13 @@
           "success": false,
           "steps": 5,
           "reason": "REPEATED_ACTION",
-          "promptTokens": 22374,
-          "completionTokens": 194,
-          "elapsedMs": 26406
+          "promptTokens": 22594,
+          "completionTokens": 196,
+          "elapsedMs": 30811
         }
       },
       "agentExitCode": 1,
-      "elapsedSeconds": 28.84,
+      "elapsedSeconds": 33.42,
       "verified": true,
       "checkDetail": "value=51 > 25",
       "beforeSnapshot": "/evaluation/runs/stuffs/blur-increase/before.json",
@@ -65,13 +65,13 @@
           "success": true,
           "steps": 2,
           "reason": "添加面板已打开。",
-          "promptTokens": 8905,
-          "completionTokens": 58,
-          "elapsedMs": 6702
+          "promptTokens": 8993,
+          "completionTokens": 50,
+          "elapsedMs": 8474
         }
       },
       "agentExitCode": 0,
-      "elapsedSeconds": 9.14,
+      "elapsedSeconds": 11.11,
       "verified": true,
       "checkDetail": "visible=True",
       "beforeSnapshot": "/evaluation/runs/stuffs/add-open/before.json",
@@ -87,15 +87,15 @@
         "ok": true,
         "result": {
           "success": true,
-          "steps": 6,
-          "reason": "已添加“阅读”目标卡片，当前目标卡片数量为 1。",
-          "promptTokens": 27016,
-          "completionTokens": 231,
-          "elapsedMs": 28295
+          "steps": 5,
+          "reason": "已添加名称为“阅读”的目标卡片。",
+          "promptTokens": 22650,
+          "completionTokens": 198,
+          "elapsedMs": 30129
         }
       },
       "agentExitCode": 0,
-      "elapsedSeconds": 30.7,
+      "elapsedSeconds": 32.74,
       "verified": true,
       "checkDetail": "value=1 >= 1",
       "beforeSnapshot": "/evaluation/runs/stuffs/add-card-reading/before.json",

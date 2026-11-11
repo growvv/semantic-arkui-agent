@@ -12,7 +12,9 @@
     "test": "vitest",
     "e2e": "npm run build && node test/e2e/run.js",
     "haptest": "node -r ts-node/register src/cli/cli.ts --policy greedy_dfs -i com.huawei.hmos.files -o out",
-    "dump": "node -r ts-node/register src/cli/cli.ts --policy perf_start_hap -i com.usb.right --exclude com.huawei.* com.ohos.* -o out"
+    "dump": "node -r ts-node/register src/cli/cli.ts --policy perf_start_hap -i com.usb.right --exclude com.huawei.* com.ohos.* -o out",
+    "audit:selftest": "node tools/annotation-audit/selftest.js",
+    "annotator:selftest": "node tools/annotator/selftest.js"
   },
   "author": "",
   "license": "Apache License, Version 2.0",

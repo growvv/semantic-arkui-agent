@@ -11,11 +11,11 @@
 | 应用 | 类型 | 任务 | 独立验证 | Agent 自行结束 | prompt tokens | completion tokens |
 |---|---|---:|---:|---:|---:|---:|
 | Tasks | 自建 ArkTS 应用 | 8 | 8/8 | 8/8 | 131,335 | 564 |
-| STUFFS_NEXT | 开源应用，MIT | 4 | 4/4 | 3/4 | 67,165 | 522 |
+| STUFFS_NEXT | 开源应用，MIT | 4 | 4/4 | 3/4 | 63,195 | 495 |
 | Rental | 开源应用，MIT | 1 | 1/1 | 1/1 | 8,529 | 50 |
-| 合计 |  | 13 | 13/13 | 12/13 | 207,029 | 1,136 |
+| 合计 |  | 13 | 13/13 | 12/13 | 203,059 | 1,109 |
 
-13 项任务共 36 步，平均 2.77 步；模型输入中的截图数量为 0。Tasks 的判分来自应用自己写入的 `SEM_EVAL` 日志；STUFFS_NEXT 和 Rental 使用应用侧桥快照与截图。Agent 的自述不作为验收依据。
+13 项任务共 35 步，平均 2.69 步；模型输入中的截图数量为 0。Tasks 的判分来自应用自己写入的 `SEM_EVAL` 日志；STUFFS_NEXT 和 Rental 使用应用侧桥快照与截图。Agent 的自述不作为验收依据。
 
 ## 机制
 
@@ -41,10 +41,24 @@ src/semantic/                   桥客户端、投影、动作校验、模型客
 src/device/                     HapTest 观察与输入路径；按 bundle 过滤应用窗口
 examples/semantic-tasks-app/    自建 ArkTS 应用、语义桥与组件标注
 tools/annotator/                AST + LLM 标注原型
+tools/annotation-audit/         标注合规审计：只允许隐藏属性
 evaluation/                     任务、评测脚本、证据、标注扫描与提案
 docs/                           设计、实现计划、验收报告
 site/                           项目页，GitHub Pages 源目录
 ```
+
+## 标注边界与审计
+
+标注只允许增加隐藏信息：`.id`、`.accessibilityText`、`.accessibilityDescription`、`.customProperty('sem', ...)`。不得新增事件处理、布局修饰符、渲染文本或应用状态。
+
+`tools/annotation-audit/` 把这条边界变成可执行检查：解析上游源码与标注后源码，逐文件比对修饰符、文本、状态与文件增删。
+
+```sh
+npm run audit:selftest
+node tools/annotation-audit/cli.js --baseline <upstream-ets-dir> --annotated <annotated-ets-dir>
+```
+
+对真实上游基线的审计结果：Rental（82 个源文件）与 STUFFS_NEXT（5 个源文件）均 0 findings，改动文件各 2 个，新增文件各 2 个且都在 `semantics/` 下。报告在 `evaluation/annotations/*/audit.json`。
 
 ## 快速开始
 

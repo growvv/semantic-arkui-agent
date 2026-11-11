@@ -14,9 +14,9 @@
 | 应用 | 类型 | 任务数 | 独立验证通过 | Agent 正常结束 | prompt tokens | completion tokens |
 |---|---|---:|---:|---:|---:|---:|
 | Tasks | 自建 ArkTS 应用 | 8 | 8/8 | 8/8 | 131,335 | 564 |
-| STUFFS_NEXT | 开源应用，MIT | 4 | 4/4 | 3/4 | 67,165 | 522 |
+| STUFFS_NEXT | 开源应用，MIT | 4 | 4/4 | 3/4 | 63,195 | 495 |
 | Rental | 开源应用，MIT | 1 | 1/1 | 1/1 | 8,529 | 50 |
-| 合计 |  | 13 | 13/13 | 12/13 | 207,029 | 1,136 |
+| 合计 |  | 13 | 13/13 | 12/13 | 203,059 | 1,109 |
 
 Tasks 的判分来自应用自己写入 `SEM_EVAL` hilog 的状态，宿主在 Agent 通道之外读取并比较目标任务字段与非目标字段；STUFFS_NEXT 的判分来自应用侧语义桥快照与前后截图；Rental 的判分来自标签节点的 selected 状态与截图。三类判分都不读取 Agent 的自述。
 
@@ -116,11 +116,11 @@ Tasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和完成切
 |---|---|---|---|
 | 自建应用可见标题 | 已改为 `Text('Tasks')`，启动器名称为 `Tasks` | 前端是普通任务应用标题，不出现 semantic 字样；已用新截图替换证据 | 已完成 |
 | Rental 底部标签 | 已移除额外的 `onClick`；tab 节点声明 `passthrough: true`，宿主按 bounds 执行原生 tap，切换仍由原 `Tabs.onChange` 完成 | 应用无新增 handler；已重测 1/1，2 步通过 | 已完成；`passthrough` 只适用于声明了原生 tab 手势的节点 |
-| STUFFS_NEXT 汇总节点 | 新增 `Text('')`，`.visibility(Visibility.None)` | 隐藏、零布局；但新增了一个隐藏节点 | 保留前做截图/树 diff；更严格时改为 host 侧从已有卡片节点聚合，不新增节点 |
+| STUFFS_NEXT 汇总节点 | 已删除新增的隐藏 `Text`，把汇总语义挂到已有的主页标题 `Text` 上 | 不新增节点或布局修饰符；审计 0 findings，4 项任务重跑通过 | 已完成 |
 | 证据截图红框 | `render_annotated.py` 在截图上叠加 id 与红框 | 不是应用运行时 UI；应用本身不渲染这些标签 | 页面和报告明确标注“证据叠加层”；hero 使用无叠加截图 |
-| STUFFS_NEXT / Rental 其余 UI | 只增加 id、customProperty、无障碍文本；未发现可见文本或布局变化 | 需要通过逐 app 的 screenshot diff 作为发布门槛 | 在 10 应用基准中把零 UI diff 作为准入条件 |
+| STUFFS_NEXT / Rental 全部改动 | 已用 `tools/annotation-audit` 对真实上游基线逐文件审计 | 两个应用均 0 findings，见 2.8 | 已完成；审计作为 10 应用基准的准入条件 |
 
-严格修正已完成：自建应用标题改为 `Tasks`，Rental 移除了额外的 `onClick` 并通过 `passthrough` 重测 1/1；STUFFS 的隐藏汇总节点仍是 `Visibility.None`，需要在 10 应用基准中通过截图/控件树 diff 验证。13 项任务已在统一修复后的宿主上重跑，状态由应用侧日志或快照独立验证。
+严格修正已完成：自建应用标题改为 `Tasks`；Rental 移除了额外的 `onClick`，改用宿主 `passthrough`；STUFFS 删除了新增的隐藏节点，把汇总挂到已有节点上。两个开源应用都通过了针对真实上游基线的合规审计（2.8）。13 项任务已在统一修复后的宿主上重跑，状态由应用侧日志或快照独立验证。
 
 ### 2.6 状态读取与续存
 
@@ -145,6 +145,29 @@ Tasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和完成切
 修复在宿主侧：`SemanticAgent` 记录动作发生时的 `revision`，下一步取快照时若 `revision` 未变，就等待并重新读取，最多 5 次、每次间隔 250ms，直到内容变化或次数用尽。等待只影响读取时机，不改变动作、不写应用状态。单测 `waits for the semantic snapshot to settle before the next decision` 固定了这条不变量：第二次决策必须看到动作后的 revision。
 
 修复后 Rental 从“3 步含一次重复 tap”变为干净的 2 步；13 项任务全部在同一宿主版本上重跑，本报告的数据来自这批统一运行。
+
+### 2.8 标注合规审计
+
+`tools/annotation-audit/` 把“只加隐藏信息”变成可执行检查，而不是口头约定。它用 SDK 的 `ScriptKind.ETS` 解析上游源码与标注后源码，逐文件比对：
+
+- 只允许新增 `.id`、`.accessibilityText`、`.accessibilityDescription`、`.customProperty`；
+- 新增 `onClick` 等事件修饰符判为 behaviour，新增 `visibility`、`width` 等判为 layout；
+- 已有修饰符的参数被改动同样报错（比较 name+args 签名，不只看名字）；
+- 渲染文本、`@State` 声明、生命周期方法的新增或删除都会报错；
+- 新文件只允许出现在 `semantics/` 下，删除源文件一律报错。
+
+`selftest.js` 用 11 个用例固定这些判定，包含一个合规标注必须通过、以及每类违规必须被抓到。
+
+对真实上游基线的审计结果：
+
+| 应用 | 上游基线 | 源文件 | 改动文件 | 新增文件 | 结论 |
+|---|---|---:|---:|---:|---|
+| Rental | `8c6eb31b` | 82 | 2 | 2（均在 `semantics/`） | 通过，0 findings |
+| STUFFS_NEXT | `e35b7584` | 5 | 2 | 2（均在 `semantics/`） | 通过，0 findings |
+
+审计第一次运行时就抓到了真实问题：STUFFS_NEXT 的隐藏汇总节点用了新增的 `Text('')` 加 `.visibility(Visibility.None)`，被判为 layout 改动。修正方式不是放宽规则，而是把汇总语义挂到已有的主页标题 `Text` 上，删除新增节点。重新构建后 4 项任务仍全部通过，添加卡片任务从 6 步变为干净的 5 步，滚动一次成功。
+
+自建应用没有上游基线，它的合规性由“可见标题为 `Tasks`、语义只存在于 `customProperty`”这一事实保证；后续如果从模板派生，应同样接入该审计。
 
 ## 三、验证应用与任务
 
@@ -174,18 +197,18 @@ Tasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和完成切
 应用本身是单页目标管理工具，没有登录，使用本地 KVStore。接入内容：
 
 - 在 `LinysSymbolButton` 的添加/设置按钮、设置面板的毛玻璃 `Slider`、`Button`、添加面板的名称/描述 `LinysTextArea`、添加按钮和 `WaterFlow` 上添加 `customProperty('sem', ...)`；
-- 增加隐藏的 `sem.stuffs.cards.summary` 节点，暴露卡片数量和名称列表；
+- 把 `sem.stuffs.cards.summary` 挂在已有的主页标题 `Text` 上，暴露卡片数量和名称列表，不新增节点；
 - 在根 `RelativeContainer` 上设置 `sem.root`；
 - 在 `EntryAbility` 中启动语义桥，并申请 `ohos.permission.INTERNET`。
 
 | # | 任务 | 步骤 | prompt / completion | 验证 |
 |---|---|---:|---|---|
-| 1 | 打开设置面板 | 2 | 8,870 / 39 | 通过，`sem.stuffs.settings.blur` visible=true |
-| 2 | 打开设置面板，把毛玻璃半径调大 | 5 | 22,374 / 194 | 通过，快照 `state.value=51 > 25`；Agent 被重复动作保护停止，未自行 finish |
-| 3 | 打开添加面板 | 2 | 8,905 / 58 | 通过，`sem.stuffs.add.name` visible=true |
-| 4 | 打开添加面板，输入“阅读”，向下滚动，点击添加 | 6 | 27,016 / 231 | 通过，`sem.stuffs.cards.summary` 的 value=1、extra 包含“阅读” |
+| 1 | 打开设置面板 | 2 | 8,958 / 51 | 通过，`sem.stuffs.settings.blur` visible=true |
+| 2 | 打开设置面板，把毛玻璃半径调大 | 5 | 22,594 / 196 | 通过，快照 `state.value=51 > 25`；Agent 被重复动作保护停止，未自行 finish |
+| 3 | 打开添加面板 | 2 | 8,993 / 50 | 通过，`sem.stuffs.add.name` visible=true |
+| 4 | 打开添加面板，输入“阅读”，向下滚动，点击添加 | 5 | 22,650 / 198 | 通过，`sem.stuffs.cards.summary` 的 value=1、extra 包含“阅读” |
 
-第 4 项是完整的多步任务：打开条件面板、在自定义组件包装的输入框中输入中文、收起键盘、滚动 `WaterFlow` 露出被遮挡的添加按钮、点击添加、应用把卡片写入本地存储。第 3 步滚动第一次因坐标观察过期被拒绝，Agent 重新观察后第二次成功。
+第 4 项是完整的多步任务：打开添加面板、在自定义组件包装的输入框中输入中文、收起键盘、滚动 `WaterFlow` 露出被遮挡的添加按钮、点击添加、应用把卡片写入本地存储。本次 5 步完成，滚动一次成功。
 
 ![STUFFS_NEXT 设置面板语义节点](../../evaluation/evidence/stuffs-annotated.jpeg)
 
@@ -216,13 +239,13 @@ Rental 的 2 步轨迹干净：一次 tap 后 `revision` 推进到 2，`selected
 | 完成任务数 | 13 |
 | 独立验证通过 | 13 |
 | Agent 正常结束 | 12 |
-| 总步数 | 36（平均 2.77） |
-| 总 prompt tokens | 207,029 |
-| 总 completion tokens | 1,136 |
+| 总步数 | 35（平均 2.69） |
+| 总 prompt tokens | 203,059 |
+| 总 completion tokens | 1,109 |
 | 模型输入中的截图 | 0 |
 | 模型输入中的原始无障碍树全文 | 0（仅按节点合并少量运行时状态） |
 
-13 项任务只运行一次，不构成统计显著的效能实验。token 数来自模型响应的 usage 字段，包含系统提示、语义树和历史，不包含截图或原生树。单次运行中，Tasks 的截止日期任务用了 5 步、prompt token 最高；STUFFS 的毛玻璃任务在目标状态已经达成后仍多点了一次，被重复动作保护停止，独立快照仍判定通过；Rental 的标签任务 2 步完成。
+13 项任务只运行一次，不构成统计显著的效能实验。token 数来自模型响应的 usage 字段，包含系统提示、语义树和历史，不包含截图或原生树。单次运行中，Tasks 的截止日期任务用了 5 步、prompt token 最高；STUFFS 的毛玻璃任务在目标状态已经达成后仍多点了一次，被重复动作保护停止，独立快照仍判定通过；STUFFS 的添加卡片任务和 Rental 的标签任务分别为 5 步和 2 步。
 
 ## 五、证据索引
 
@@ -235,6 +258,7 @@ Rental 的 2 步轨迹干净：一次 tap 后 `revision` 推进到 2，`selected
 - 桥快照：`evidence/self-snapshot.json`、`evidence/stuffs-snapshot.json`、`evidence/rental-snapshot.json`。
 - 标注扫描/提案：`annotations/semantic-tasks/proposals.json`、`annotations/stuffs/scan.json`、`annotations/stuffs/proposals.json`。
 - 标注工具自测：`evidence/annotator-selftest.txt`。
+- 标注合规审计：`annotations/rental/audit.json`、`annotations/stuffs/audit.json`、`evidence/annotation-audit-selftest.txt`。
 - 状态续存测试：`evaluation/state-persistence/` 下的 `before.json`、`after.json`、`restart.json` 与复现说明。
 - HapTest 提交记录：`evidence/haptest-commits.txt`。公开仓库从清理后的快照开始，该文件记录本地开发分支的提交信息。
 

@@ -106,6 +106,38 @@ Button(task.completed ? '重新打开' : '标记完成')
 
 SemanticTasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和完成切换；STUFFS_NEXT 的提案覆盖页面入口标题、副标题和主瀑布流。最终应用中的标注经过人工审查和补全；带尾随块的容器和自定义组件由人工确认，工具没有声称全自动覆盖。
 
+### 2.5 标注边界与当前实现复核
+
+标注只允许增加隐藏信息，不改变应用原有 UI 与逻辑。允许的改动是 `.id`、`.accessibilityText`、`.accessibilityDescription` 和 `.customProperty('sem', ...)`；不允许新增 `onClick`、`@State`、可见性、尺寸、文本或新的可见节点。发布前应做前后截图 diff（排除状态栏时间）和控件树 diff：只增加属性，不增加可见节点或行为。
+
+当前实现的复核：
+
+| 位置 | 当前情况 | 判定 | 下一版处理 |
+|---|---|---|---|
+| 自建应用可见标题 | `Text('Semantic Tasks')`，启动器名称为 `AN-App Research Prototype` | 自建应用，不是对第三方界面的改写；但前端出现 semantic 字样，不符合“前端不体现语义”的标准 | 可见标题改为 `Tasks`，启动器名称改为 `Tasks`；重新采集证据 |
+| Rental 底部标签 | 上游 `Tabs` 已有 `.onChange`；实现额外在 tab `Column` 上加了 `.onClick` | 逻辑改动，且与原有 `onChange` 冗余；不符合零逻辑改动 | 移除 `.onClick`，实测原有 `Tabs` 点击 + `onChange` 是否能完成切换；若 live 节点不可点击，则把该任务标为不满足约束，不再加 handler |
+| STUFFS_NEXT 汇总节点 | 新增 `Text('')`，`.visibility(Visibility.None)` | 隐藏、零布局；但新增了一个隐藏节点 | 保留前做截图/树 diff；更严格时改为 host 侧从已有卡片节点聚合，不新增节点 |
+| 证据截图红框 | `render_annotated.py` 在截图上叠加 id 与红框 | 不是应用运行时 UI；应用本身不渲染这些标签 | 页面和报告明确标注“证据叠加层”；hero 使用无叠加截图 |
+| STUFFS_NEXT / Rental 其余 UI | 只增加 id、customProperty、无障碍文本；未发现可见文本或布局变化 | 需要通过逐 app 的 screenshot diff 作为发布门槛 | 在 10 应用基准中把零 UI diff 作为准入条件 |
+
+原 13 项验收是机制 pilot：Rental 的 1/1 结果来自带底部标签 `onClick` 的版本，在严格边界下应标为“待重测”，不能作为“零逻辑改动”的最终证据。下一版先完成自建应用标题、Rental `onClick` 和 STUFFS 隐藏节点的修正，再重新采集证据。
+
+### 2.6 状态读取与续存
+
+语义节点的 `state` 不是静态快照。`customProperty('sem', ...)` 在组件构建时读取当前 `@State`/数据；点击后由应用自己的回调修改状态，组件重渲染后自定义属性重新求值；桥每次 `snapshot` 遍历当前 `FrameNode`，`revision` 随内容变化推进，`prepare` 在动作前重新确认目标。Agent 不维护独立状态库，也不直接写应用状态；模型下一步只读取最新视图。权威状态在应用侧，评测读取 `SEM_EVAL`、桥快照或数据库，不读取 Agent 摘要。
+
+补充测试使用同一组“初始 → 任务后同会话 → 强制停止并重启”的流程，结果如下：
+
+| 应用 | 初始 | 任务后（同一会话） | 重启后 | 结论 |
+|---|---|---|---|---|
+| 自建应用 | `t1.favorite=false` | `t1.favorite=true` | `t1.favorite=false` | 会话内更新；内存 `@State`，重启回种子 |
+| STUFFS_NEXT | `cards.summary.value=0` | `value=1, extra=阅读` | `value=1, extra=阅读` | 会话内更新；KVStore 持久化 |
+| Rental | `tab.0.selected=true` | `tab.2.selected=true` | `tab.0.selected=true` | 会话内更新；`@State` tab index，重启回首页 |
+
+三次状态测试任务分别为 2、5、2 步，均成功；它们使用单独运行，不计入原 13 项任务，模型和 token 数也不并入原统计。证据在 `evaluation/state-persistence/`，包含每个应用的 `before.json`、`after.json`、`restart.json` 和复现说明。
+
+结论分两层：同一会话内，点击后的下一次语义快照已经反映修改后的状态；跨重启是否保留，取决于应用自己的存储。自建应用使用内存状态，重启回种子；STUFFS_NEXT 使用 KVStore，卡片保留；Rental 使用 `@State` tab index，重启回首页。评测脚本在任务前 reset/clear，因此下一项任务从已知初始态开始，而不是继承上一项修改后的状态；这是可复现性要求，不是状态丢失。
+
 ## 三、验证应用与任务
 
 ### 3.1 SemanticTasks（自建应用）
@@ -193,6 +225,7 @@ SemanticTasks 的 LLM 提案覆盖任务标题、收藏切换、任务详情和�
 - 桥快照：`evidence/self-snapshot.json`、`evidence/stuffs-snapshot.json`、`evidence/rental-snapshot.json`。
 - 标注扫描/提案：`annotations/semantic-tasks/proposals.json`、`annotations/stuffs/scan.json`、`annotations/stuffs/proposals.json`。
 - 标注工具自测：`evidence/annotator-selftest.txt`。
+- 状态续存测试：`evaluation/state-persistence/` 下的 `before.json`、`after.json`、`restart.json` 与复现说明。
 - HapTest 提交记录：`evidence/haptest-commits.txt`。公开仓库从清理后的快照开始，该文件记录本地开发分支的提交信息。
 
 源码位置：
@@ -289,7 +322,36 @@ node tools/annotator/cli.js scan --project ../semantic-apps/stuffs-next --out /t
 node tools/annotator/cli.js propose --project ../semantic-apps/stuffs-next --out /tmp/proposals.json --llm-limit 8
 ```
 
-## 八、提交
+## 八、下一阶段实验设计
+
+当前 3 个应用、13 个任务是机制 pilot。下一步建议做 **ArkUI-AgentBench（暂名）：10 个应用 × 4 个任务 = 40 个任务**，先以 5 个应用、20 个任务验证管线，再扩到 10 个应用。它足以覆盖列表、表单、标签、滑块、弹窗、滚动、自定义组件和重复标题等差异，但仍不足以做统计显著的论文结论；论文级通常需要 20+ 应用、100+ 任务、多模型和 3 个以上 seed。
+
+### 8.1 同类论文的基准与数据
+
+| 基准/数据 | 平台 | 规模 | 说明 |
+|---|---|---:|---|
+| AndroidWorld | Android | 116 tasks / 20 apps | 可复现交互环境，动态任务 |
+| AndroidLab | Android | 138 tasks / 9 apps | 训练与系统评测；PhoneCLI 使用 |
+| Android in the Wild | Android | 715k episodes / 30k instructions | 人类演示数据，不是交互环境 |
+| GUI-Odyssey | Android | 大规模跨应用轨迹 | 训练/评测数据 |
+| ScreenSpot | 跨平台 | 元素定位指令 | grounding，不是完整任务 |
+| Mind2Web / WebArena / OSWorld | Web / 桌面 | 非移动 | 对应领域基准，不可直接迁移 |
+
+鸿蒙目前没有一个像 AndroidWorld/AndroidLab 那样被广泛采用的 GUI-Agent 任务基准；现有鸿蒙资料更多是 UITest、兼容性或自动化测试。当前 3 个应用是 pilot，10 个应用的任务集需要自己收集、标注和固定重置协议。应用筛选标准：API 26 可构建、本地数据、无登录/支付/强网络依赖、许可证允许分发任务补丁、任务相关控件本身已有可点击/可输入行为；不接受为了任务而新增 `onClick` 的应用。
+
+### 8.2 任务、基线与指标
+
+- **应用组成**：自建 Tasks 1 个 + 当前 STUFFS_NEXT、Rental 2 个 + 新收集 7 个；每个应用 4 个任务，覆盖状态切换、表单输入、筛选/导航、多步操作各至少一项。
+- **标注边界**：只允许隐藏属性；零 UI diff；隐藏调试节点必须零布局；逐 app 的截图/控件树 diff 通过后才纳入。
+- **独立 oracle**：自建应用写 `SEM_EVAL`；第三方优先使用应用数据库、文件或日志；桥快照作为补充，不把 Agent 摘要当作判分。
+- **基线**：截图 + 多模态模型；原始 uitest/无障碍树 + 纯文本模型；语义树 + 纯文本模型。消融：去掉 state、去掉 actions、去掉 live 校验、去掉 `prepare`；手工标注 vs AST+LLM 提案 + 人工复核。
+- **指标**：独立验证成功率、Agent 自行结束率、步数、prompt/completion tokens、端到端时延、无效/过期动作率、恢复率、标注时间与覆盖率、零 UI diff 通过率、状态续存正确率。每个任务运行 2–3 次，固定设备与模型。
+- **状态子研究**：把“同一会话内更新”和“重启后持久化”分开统计；每个应用记录 `session-only / persisted / reset`，并在任务定义中写清 reset 语义。
+- **发布**：任务 JSON、标注补丁、reset 脚本、运行日志、before/after 截图、独立 oracle 和报告；第三方应用不整包分发，保留上游链接、提交基线和许可证。
+
+10 个应用是合理的下一步规模，但不是论文级规模。先完成 5 个应用/20 个任务的 pilot，验证零 UI diff、状态 oracle 和标注成本，再扩到 10 个/40 个；若结果支持，再增加到 20+ 应用、100+ 任务。
+
+## 九、提交
 
 HapTest 分支 `feat/semantic-arkui-agent`：
 
@@ -308,3 +370,4 @@ HapTest 分支 `feat/semantic-arkui-agent`：
 后续文档提交见分支末尾。
 
 上游基线：HapTest `bb3325e`；STUFFS_NEXT `e35b7584`；Rental `8c6eb31b`；account_app `b27fde23`。
+

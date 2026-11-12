@@ -57,6 +57,11 @@ interface TrajectoryRecord {
     result: string;
     promptTokens: number;
     completionTokens: number;
+    /** Where the step's wall clock went; the four parts plus overhead sum to the step delta. */
+    snapshotMs: number;
+    observeMs: number;
+    llmMs: number;
+    actionMs: number;
     elapsedMs: number;
 }
 
@@ -155,15 +160,19 @@ export class SemanticAgent {
                 this.writeTrajectory(options.outDir, trajectory);
                 return this.result(false, steps - 1, 'TASK_TIMEOUT', promptTokens, completionTokens, started);
             }
+            const stepStarted = this.now();
             const snapshot = await this.settledSnapshot(actedRevision);
             actedRevision = undefined;
             if (snapshot.error) {
                 this.writeTrajectory(options.outDir, trajectory);
                 return this.result(false, steps, `BRIDGE_${snapshot.error}`, promptTokens, completionTokens, started);
             }
+            const snapshotMs = this.now() - stepStarted;
+            const observeStarted = this.now();
             const observation = await this.deps.device.observe(
                 this.deps.bundleName === undefined ? {} : { bundleName: this.deps.bundleName },
             );
+            const observeMs = this.now() - observeStarted;
             if (observation.locked) {
                 this.writeTrajectory(options.outDir, trajectory);
                 return this.result(false, steps, 'DEVICE_LOCKED', promptTokens, completionTokens, started);
@@ -174,7 +183,9 @@ export class SemanticAgent {
                 return this.result(false, steps, 'EMPTY_SNAPSHOT', promptTokens, completionTokens, started);
             }
 
+            const llmStarted = this.now();
             const llmResult = await this.deps.llm.decide({ task, view, history });
+            const llmMs = this.now() - llmStarted;
             promptTokens += llmResult.promptTokens;
             completionTokens += llmResult.completionTokens;
             const decision = llmResult.decision;
@@ -186,6 +197,10 @@ export class SemanticAgent {
                 result: 'pending',
                 promptTokens: llmResult.promptTokens,
                 completionTokens: llmResult.completionTokens,
+                snapshotMs,
+                observeMs,
+                llmMs,
+                actionMs: 0,
                 elapsedMs: this.now() - started,
             };
 
@@ -211,7 +226,9 @@ export class SemanticAgent {
             }
 
             try {
+                const actionStarted = this.now();
                 record.result = await this.execute(decision, view, observation);
+                record.actionMs = this.now() - actionStarted;
                 actedRevision = snapshot.revision;
                 history.push(`${decision.action} ${decision.ref ?? ''}: ${record.result}`);
             } catch (error) {
@@ -283,18 +300,27 @@ export class SemanticAgent {
                 return `tapped ${node.id}`;
             }
             case 'input':
-                await this.deps.device.tap({ selector: { id: node.id } });
-                await this.deps.device.observe(
-                    this.deps.bundleName === undefined ? {} : { bundleName: this.deps.bundleName },
-                );
+                // `uiInput text` types into whatever holds focus, so tapping a
+                // field that already holds it would only add latency. The tap
+                // clears the cached observation by design (no replay), which
+                // is why one fresh observe follows it.
+                const needsFocus = node.live?.focused !== true;
+                if (needsFocus) {
+                    await this.deps.device.tap({ selector: { id: node.id } });
+                    await this.deps.device.observe(
+                        this.deps.bundleName === undefined ? {} : { bundleName: this.deps.bundleName },
+                    );
+                }
                 await this.deps.device.typeText(decision.text ?? '');
-                try {
+                if (needsFocus) {
+                    // The tap opened the keyboard; leaving it up shrinks the app
+                    // viewport and pushes later targets out of the live tree.
+                    // Typing clears the cached observation, so a fresh observe
+                    // has to precede the key press.
                     await this.deps.device.observe(
                         this.deps.bundleName === undefined ? {} : { bundleName: this.deps.bundleName },
                     );
                     await this.deps.device.pressKey('BACK');
-                } catch {
-                    // The text was entered; a failed keyboard dismissal is retried by the next observation.
                 }
                 return `entered ${JSON.stringify(decision.text ?? '')} into ${node.id}`;
             case 'scroll':

@@ -148,6 +148,65 @@ describe('SemanticAgent', () => {
     });
 });
 
+describe('SemanticAgent text entry', () => {
+    function inputDeps(focused: boolean) {
+        const order: string[] = [];
+        const device = {
+            observe: vi.fn(async () => { order.push('observe'); return observation(); }),
+            tap: vi.fn(async () => { order.push('tap'); return {}; }),
+            swipe: vi.fn(async () => ({})),
+            typeText: vi.fn(async () => { order.push('typeText'); return {}; }),
+            pressKey: vi.fn(async () => { order.push('pressKey'); return {}; }),
+            launchApp: vi.fn(async () => ({})),
+        } as unknown as SemanticAgentDevice;
+        const inputNode: SemanticNode = {
+            ...node,
+            role: 'input',
+            actions: [{ name: 'set_text', input: 'set_text', label: 'type' }],
+            live: { type: 'TextInput', inputable: true, enabled: true, visible: true, focused },
+        };
+        const viewSnapshot: SemanticSnapshot = { ...snapshot, nodes: [inputNode] };
+        const bridge = { snapshot: vi.fn(async () => viewSnapshot), prepare: vi.fn(async () => inputNode) };
+        let call = 0;
+        const llm = {
+            decide: vi.fn(async () => {
+                call += 1;
+                return call === 1
+                    ? { decision: { action: 'input' as const, ref: 'sem.a', text: '米饭' }, promptTokens: 1, completionTokens: 1 }
+                    : { decision: { action: 'finish' as const, summary: 'done' }, promptTokens: 1, completionTokens: 1 };
+            }),
+        };
+        return { order, device, bridge, llm };
+    }
+
+    it('focuses an unfocused field before typing and dismisses the keyboard afterwards', async () => {
+        const deps = inputDeps(false);
+        const page = livePage();
+        const component = page.getComponents()[0];
+        component.type = 'TextInput';
+        component.focused = false;
+        const device = deps.device as unknown as { observe: ReturnType<typeof vi.fn> };
+        device.observe = vi.fn(async () => { deps.order.push('observe'); return { ...observation(), tree: page }; });
+        const agent = new SemanticAgent({ bridge: deps.bridge, device: deps.device, llm: deps.llm, maxSteps: 3 });
+        await agent.run('add a dish');
+        // Typing before focus would land in whichever field held it, and the
+        // keyboard left up would push later targets out of the live tree.
+        expect(deps.order).toEqual(['observe', 'tap', 'observe', 'typeText', 'observe', 'pressKey', 'observe']);
+    });
+
+    it('types straight into a field that already holds focus', async () => {
+        const deps = inputDeps(true);
+        const page = livePage();
+        page.getComponents()[0].type = 'TextInput';
+        page.getComponents()[0].focused = true;
+        const device = deps.device as unknown as { observe: ReturnType<typeof vi.fn> };
+        device.observe = vi.fn(async () => { deps.order.push('observe'); return { ...observation(), tree: page }; });
+        const agent = new SemanticAgent({ bridge: deps.bridge, device: deps.device, llm: deps.llm, maxSteps: 3 });
+        await agent.run('add a dish');
+        expect(deps.order).toEqual(['observe', 'typeText', 'observe']);
+    });
+});
+
 describe('SemanticAgent budgets', () => {
     function deps(overrides: Record<string, unknown> = {}) {
         const device = {

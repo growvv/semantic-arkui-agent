@@ -1,6 +1,6 @@
 {
-  "baselineRoot": "/tmp/rental-upstream-src/Rental-8c6eb31b4d04411b1247b762e33b806b1c61e675/entry/src/main/ets",
-  "annotatedRoot": "<third-party-apps>/rental/entry/src/main/ets",
+  "baselineRoot": "/tmp/yongoe1024_Rental/entry/src/main/ets",
+  "annotatedRoot": "/rental/entry/src/main/ets",
   "baselineFiles": 82,
   "annotatedFiles": 84,
   "changedFiles": 2,

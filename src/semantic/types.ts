@@ -46,6 +46,8 @@ export interface LiveFacts {
     scrollable?: boolean;
     longClickable?: boolean;
     inputable?: boolean;
+    /** The device currently routes typed text here. */
+    focused?: boolean;
     visible?: boolean;
     bounds?: { x: number; y: number }[];
 }

@@ -1,6 +1,6 @@
 {
-  "baselineRoot": "/tmp/stuffs-upstream-src/STUFFS_NEXT-e35b7584aba160d9cae22509c0dae8184b5b5d86/entry/src/main/ets",
-  "annotatedRoot": "<third-party-apps>/stuffs-next/entry/src/main/ets",
+  "baselineRoot": "/tmp/awaLiny2333_STUFFS_NEXT/entry/src/main/ets",
+  "annotatedRoot": "/stuffs-next/entry/src/main/ets",
   "baselineFiles": 5,
   "annotatedFiles": 7,
   "changedFiles": 2,

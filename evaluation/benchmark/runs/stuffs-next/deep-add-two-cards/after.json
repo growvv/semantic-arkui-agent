@@ -126,9 +126,9 @@
       "id": "sem.stuffs.add.name",
       "type": "__Common__",
       "role": "input",
-      "meaning": "目标名称输入框（当前：阅读）",
+      "meaning": "目标名称输入框（当前：阅读阅读阅读阅读阅读阅读阅读阅读阅读阅读）",
       "state": {
-        "value": "阅读"
+        "value": "阅读阅读阅读阅读阅读阅读阅读阅读阅读阅读"
       },
       "actions": [
         {
@@ -168,7 +168,7 @@
       "role": "action",
       "meaning": "添加目标卡片",
       "state": {
-        "value": "阅读"
+        "value": "阅读阅读阅读阅读阅读阅读阅读阅读阅读阅读"
       },
       "actions": [
         {

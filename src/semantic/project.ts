@@ -114,6 +114,7 @@ function liveFacts(component: Component): LiveFacts {
         scrollable: component.scrollable,
         longClickable: component.longClickable,
         inputable: component.inputable,
+        focused: component.focused,
         visible: component.visible,
         bounds: component.bounds,
     };

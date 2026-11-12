@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 3,
+  "revision": 4,
   "viewport": {
     "width": 1080,
     "height": 2406
@@ -66,9 +66,9 @@
       "id": "sem.stuffs.settings",
       "type": "__Common__",
       "role": "action",
-      "meaning": "关闭设置面板",
+      "meaning": "打开设置面板",
       "state": {
-        "selected": true
+        "selected": false
       },
       "actions": [
         {
@@ -99,7 +99,7 @@
       ],
       "risk": "read_only",
       "parentRef": "sem.stuffs.scroll",
-      "visible": true
+      "visible": false
     },
     {
       "ref": "sem.stuffs.settings.ok",
@@ -119,7 +119,7 @@
       ],
       "risk": "changes_data",
       "parentRef": "sem.stuffs.scroll",
-      "visible": true
+      "visible": false
     },
     {
       "ref": "sem.stuffs.add.name",

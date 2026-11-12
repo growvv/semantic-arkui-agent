@@ -1,0 +1,4 @@
+{"step":1,"snapshotRevision":1,"observationId":"mwd87n6a-p9k5t8um","action":{"action":"tap","ref":"sem.jijian.tab.1"},"result":"tapped sem.jijian.tab.1","promptTokens":2285,"completionTokens":178,"elapsedMs":93133}
+{"step":2,"snapshotRevision":2,"observationId":"mwd89nkm-9vjjy8pg","action":{"action":"tap","ref":"sem.jijian.tab.2"},"result":"tapped sem.jijian.tab.2","promptTokens":1148,"completionTokens":60,"elapsedMs":167340}
+{"step":3,"snapshotRevision":3,"observationId":"mwd8b8u5-qwoyvjtj","action":{"action":"tap","ref":"sem.jijian.tab.3"},"result":"tapped sem.jijian.tab.3","promptTokens":1166,"completionTokens":113,"elapsedMs":185296}
+{"step":4,"snapshotRevision":4,"observationId":"mwd8bmmo-peh2th3u","action":{"action":"finish","summary":"已依次切换到“明细”“统计”“我的”，当前停留在“统计”。"},"result":"已依次切换到“明细”“统计”“我的”，当前停留在“统计”。","promptTokens":1760,"completionTokens":91,"elapsedMs":202879}

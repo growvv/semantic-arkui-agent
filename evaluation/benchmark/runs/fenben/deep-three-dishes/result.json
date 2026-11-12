@@ -1,0 +1,15 @@
+{
+  "app": "fenben",
+  "task": "deep-three-dishes",
+  "goal": "依次添加三道菜：“米饭”3元、“可乐”5元、“炒青菜”18元",
+  "verified": true,
+  "steps": 14,
+  "elapsedSeconds": 566.8,
+  "promptTokens": 24407,
+  "completionTokens": 1277,
+  "agentFinished": true,
+  "reason": "已依次添加米饭3元、可乐5元、炒青菜18元，共3道菜，合计26元。",
+  "beforeCheck": "value=0",
+  "afterCheck": "value=3",
+  "preconditionOk": true
+}

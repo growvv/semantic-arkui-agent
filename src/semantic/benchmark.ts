@@ -17,7 +17,7 @@ import { SemanticNode, SemanticSnapshot } from './types';
  * Two budgets apply to every task:
  * - `--max-steps` (default 20): exceeding it is a failure, reported as
  *   EXCEEDED_MAX_STEPS.
- * - `--max-duration-ms` (default 600000): a wall-clock guard so one slow model
+ * - `--max-duration-ms` (default 1800000): a wall-clock guard so one slow model
  *   call cannot hold the single test device. Hitting it is TASK_TIMEOUT.
  */
 
@@ -150,7 +150,7 @@ export class SemanticBenchmark {
     constructor(private readonly options: BenchmarkOptions) {
         this.bundle = options.bundle ?? 'org.anapp.research.prototype';
         this.maxSteps = options.maxSteps ?? 20;
-        this.maxDurationMs = options.maxDurationMs ?? 600000;
+        this.maxDurationMs = options.maxDurationMs ?? 1800000;
         this.log = options.log ?? ((line) => process.stdout.write(line + '\n'));
     }
 
@@ -460,11 +460,15 @@ export class SemanticBenchmark {
                 const [afterOk, afterDetail] = evaluateCheck(after, task.check);
 
                 const overBudget = result.steps > this.maxSteps;
+                // A run that hit the wall clock is a failure even if the state
+                // happens to be right: the agent did not finish the task itself.
+                const timedOut = result.reason === 'TASK_TIMEOUT';
                 // A pass only means something if the target was not already true.
                 const preconditionOk = !beforeOk;
-                const verified = afterOk && preconditionOk && !overBudget;
+                const verified = afterOk && preconditionOk && !overBudget && !timedOut;
                 let reason = result.reason;
                 if (overBudget) reason = `EXCEEDED_MAX_STEPS(${result.steps})`;
+                else if (timedOut) reason = `TASK_TIMEOUT(${result.steps} steps, state=${afterDetail})`;
                 else if (beforeOk) reason = `PRECONDITION_ALREADY_MET (${beforeDetail})`;
 
                 const record: TaskResult = {

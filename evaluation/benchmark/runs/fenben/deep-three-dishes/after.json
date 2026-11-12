@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "revision": 10,
+  "viewport": {
+    "width": 1080,
+    "height": 2406
+  },
+  "nodes": [
+    {
+      "ref": "sem.root",
+      "id": "sem.root",
+      "type": "Column",
+      "role": "content",
+      "meaning": "账单：今天的账单；参与人 1 人；菜品 3 道；合计 26.00 元",
+      "state": {
+        "value": 1,
+        "extra": "我（付款人）"
+      },
+      "actions": [],
+      "risk": "read_only",
+      "visible": true
+    },
+    {
+      "ref": "sem.fenben.person.input",
+      "id": "sem.fenben.person.input",
+      "type": "TextInput",
+      "role": "input",
+      "meaning": "输入要加入账单的参与人姓名",
+      "state": {
+        "value": ""
+      },
+      "actions": [
+        {
+          "name": "set_person_name",
+          "input": "set_text",
+          "label": "输入姓名"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.fenben.person.add",
+      "id": "sem.fenben.person.add",
+      "type": "Button",
+      "role": "action",
+      "meaning": "把输入框中的姓名加入参与人列表",
+      "actions": [
+        {
+          "name": "add_person",
+          "input": "tap",
+          "label": "加人"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.fenben.dishes.summary",
+      "id": "sem.fenben.dishes.summary",
+      "type": "Text",
+      "role": "content",
+      "meaning": "菜品列表，共 3 道",
+      "state": {
+        "value": 3,
+        "extra": "米饭,可乐,炒青菜"
+      },
+      "actions": [],
+      "risk": "read_only",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.fenben.dish.name",
+      "id": "sem.fenben.dish.name",
+      "type": "TextInput",
+      "role": "input",
+      "meaning": "输入菜名",
+      "state": {
+        "value": ""
+      },
+      "actions": [
+        {
+          "name": "set_dish_name",
+          "input": "set_text",
+          "label": "输入菜名"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.fenben.dish.price",
+      "id": "sem.fenben.dish.price",
+      "type": "TextInput",
+      "role": "input",
+      "meaning": "输入菜品单价，单位元",
+      "state": {
+        "value": ""
+      },
+      "actions": [
+        {
+          "name": "set_dish_price",
+          "input": "set_text",
+          "label": "输入价格"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.fenben.dish.add",
+      "id": "sem.fenben.dish.add",
+      "type": "Button",
+      "role": "action",
+      "meaning": "用当前菜名和价格添加一道菜",
+      "actions": [
+        {
+          "name": "add_dish",
+          "input": "tap",
+          "label": "加菜"
+        }
+      ],
+      "risk": "changes_data",
+      "parentRef": "sem.root",
+      "visible": true
+    },
+    {
+      "ref": "sem.fenben.claim.start",
+      "id": "sem.fenben.claim.start",
+      "type": "Button",
+      "role": "action",
+      "meaning": "进入认领页，让每个人认领自己吃的菜",
+      "state": {
+        "enabled": true
+      },
+      "actions": [
+        {
+          "name": "open_claim",
+          "input": "tap",
+          "label": "开始认领"
+        }
+      ],
+      "risk": "read_only",
+      "parentRef": "sem.root",
+      "visible": true
+    }
+  ]
+}

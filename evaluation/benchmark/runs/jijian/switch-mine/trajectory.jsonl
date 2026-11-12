@@ -1,3 +1,0 @@
-{"step":1,"snapshotRevision":1,"observationId":"mwcbzfq0-zl75z3zf","action":{"action":"tap","ref":"sem.jijian.tab.3"},"result":"tapped sem.jijian.tab.3","promptTokens":1122,"completionTokens":22,"elapsedMs":40529}
-{"step":2,"snapshotRevision":2,"observationId":"mwcc0bki-h67mx31f","action":{"action":"tap","ref":"sem.jijian.tab.3"},"result":"tapped sem.jijian.tab.3","promptTokens":1713,"completionTokens":58,"elapsedMs":77293}
-{"step":3,"snapshotRevision":3,"observationId":"mwcc13m6-ak8343gi","action":{"action":"finish","summary":"已切换到“我的”标签"},"result":"已切换到“我的”标签","promptTokens":1731,"completionTokens":23,"elapsedMs":104953}

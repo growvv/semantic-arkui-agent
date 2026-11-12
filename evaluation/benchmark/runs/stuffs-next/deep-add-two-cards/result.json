@@ -1,0 +1,15 @@
+{
+  "app": "stuffs-next",
+  "task": "deep-add-two-cards",
+  "goal": "打开添加面板，输入“阅读”并添加；再打开添加面板，输入“运动”并添加",
+  "verified": false,
+  "steps": 20,
+  "elapsedSeconds": 1185,
+  "promptTokens": 33239,
+  "completionTokens": 3435,
+  "agentFinished": false,
+  "reason": "MAX_STEPS",
+  "beforeCheck": "value=0",
+  "afterCheck": "value=0",
+  "preconditionOk": true
+}

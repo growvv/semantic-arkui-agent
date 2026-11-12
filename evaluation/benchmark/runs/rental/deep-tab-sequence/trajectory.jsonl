@@ -1,0 +1,5 @@
+{"step":1,"snapshotRevision":1,"observationId":"mwd9764f-l63wr3jo","action":{"action":"tap","ref":"sem.rental.tab.2"},"result":"tapped sem.rental.tab.2","promptTokens":2277,"completionTokens":316,"elapsedMs":23771}
+{"step":2,"snapshotRevision":2,"observationId":"mwd97p4d-5q27iiox","action":{"action":"tap","ref":"sem.rental.tab.3"},"result":"tapped sem.rental.tab.3","promptTokens":1142,"completionTokens":65,"elapsedMs":55615}
+{"step":3,"snapshotRevision":3,"observationId":"mwd98dnj-uo49ujxz","action":{"action":"tap","ref":"sem.rental.tab.4"},"result":"tapped sem.rental.tab.4","promptTokens":1158,"completionTokens":71,"elapsedMs":74356}
+{"step":4,"snapshotRevision":4,"observationId":"mwd98s3t-0m26arhx","action":{"action":"tap","ref":"sem.rental.tab.3"},"result":"tapped sem.rental.tab.3","promptTokens":1174,"completionTokens":213,"elapsedMs":149161}
+{"step":5,"snapshotRevision":5,"observationId":"mwd9advr-gg71fjt9","action":{"action":"finish","summary":"已依次切换到“服务”、“发现”、“我的”，最后停在“发现”。"},"result":"已依次切换到“服务”、“发现”、“我的”，最后停在“发现”。","promptTokens":1190,"completionTokens":89,"elapsedMs":178196}

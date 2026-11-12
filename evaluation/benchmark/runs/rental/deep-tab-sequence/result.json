@@ -1,0 +1,15 @@
+{
+  "app": "rental",
+  "task": "deep-tab-sequence",
+  "goal": "依次切换到“服务”、“发现”、“我的”，最后停在“发现”",
+  "verified": true,
+  "steps": 5,
+  "elapsedSeconds": 188.9,
+  "promptTokens": 6941,
+  "completionTokens": 754,
+  "agentFinished": true,
+  "reason": "已依次切换到“服务”、“发现”、“我的”，最后停在“发现”。",
+  "beforeCheck": "selected=false",
+  "afterCheck": "selected=true",
+  "preconditionOk": true
+}

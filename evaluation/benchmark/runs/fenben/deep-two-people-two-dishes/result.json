@@ -1,0 +1,15 @@
+{
+  "app": "fenben",
+  "task": "deep-two-people-two-dishes",
+  "goal": "添加两个参与人：先“小刘”，再“小王”；然后添加两道菜：“米饭”3元、“可乐”5元",
+  "verified": true,
+  "steps": 11,
+  "elapsedSeconds": 572.2,
+  "promptTokens": 22955,
+  "completionTokens": 1819,
+  "agentFinished": true,
+  "reason": "已添加参与人“小刘”“小王”，以及菜品“米饭”3元、“可乐”5元。",
+  "beforeCheck": "value=0",
+  "afterCheck": "value=2",
+  "preconditionOk": true
+}

@@ -1,2 +1,0 @@
-{"step":1,"snapshotRevision":1,"observationId":"mwcbwbbi-mhlkg45p","action":{"action":"tap","ref":"sem.jijian.tab.1"},"result":"tapped sem.jijian.tab.1","promptTokens":1123,"completionTokens":22,"elapsedMs":33850}
-{"step":2,"snapshotRevision":2,"observationId":"mwcbx1z9-8w5hvqfz","action":{"action":"finish","summary":"已切换到“明细”标签"},"result":"已切换到“明细”标签","promptTokens":1138,"completionTokens":24,"elapsedMs":62937}

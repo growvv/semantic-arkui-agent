@@ -1,2 +1,0 @@
-{"step":1,"snapshotRevision":1,"observationId":"mwcbj3hl-c0usrjnz","action":{"action":"tap","ref":"sem.stuffs.add"},"result":"tapped sem.stuffs.add","promptTokens":1313,"completionTokens":19,"elapsedMs":13249}
-{"step":2,"snapshotRevision":2,"observationId":"mwcbje83-yudv3no1","action":{"action":"finish","summary":"添加面板已打开"},"result":"添加面板已打开","promptTokens":1398,"completionTokens":54,"elapsedMs":56195}

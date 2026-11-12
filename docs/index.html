@@ -1068,28 +1068,31 @@ STUFFS   baseline=e35b7584 files=5  changed=2 added=2 findings=0</code></div>
       <div class="wrap section-grid">
         <div class="section-rail">
           <p class="section-label">下一步</p>
-          <p class="rail-note">已跑 4 个应用，11 个任务</p>
+          <p class="rail-note">7 项多步任务，5 项通过</p>
         </div>
         <div class="section-main">
           <header class="section-head reveal">
-            <h2>四应用 pilot 已完成</h2>
-            <p class="section-lede">4 个开源应用、11 个有效任务全部通过，共 36 步。每个任务前卸载重装并清理数据，判分只读应用侧语义快照，且要求起始状态不成立。下一阶段扩到 10 个应用。</p>
+            <h2>多步任务 pilot 已完成</h2>
+            <p class="section-lede">4 个开源应用、7 项 5–20 步的任务，5 项通过。判分只读应用侧语义快照，要求起始状态不成立；超过 20 步或撞墙钟都算失败，即使最终状态正确。</p>
           </header>
 
           <div class="table-wrap results-table-wrap reveal" style="margin-top:24px">
             <table class="results-table">
-              <caption class="visually-hidden">四应用 pilot 结果</caption>
+              <caption class="visually-hidden">多步任务 pilot 结果</caption>
               <thead>
-                <tr><th scope="col">应用</th><th scope="col">许可</th><th scope="col" class="num">任务</th><th scope="col" class="num">通过</th><th scope="col" class="num">步数</th><th scope="col" class="num">Prompt</th><th scope="col" class="num">Completion</th></tr>
+                <tr><th scope="col">应用</th><th scope="col">任务</th><th scope="col" class="num">步数</th><th scope="col">结果</th><th scope="col" class="num">耗时</th></tr>
               </thead>
               <tbody>
-                <tr><th scope="row">fenben</th><td>MIT</td><td class="num">3</td><td class="num">3/3</td><td class="num">16</td><td class="num">23,376</td><td class="num">754</td></tr>
-                <tr><th scope="row">jijian</th><td>MIT</td><td class="num">3</td><td class="num">3/3</td><td class="num">7</td><td class="num">9,086</td><td class="num">194</td></tr>
-                <tr><th scope="row">STUFFS_NEXT</th><td>MIT</td><td class="num">3</td><td class="num">3/3</td><td class="num">9</td><td class="num">12,276</td><td class="num">395</td></tr>
-                <tr><th scope="row">Rental</th><td>MIT</td><td class="num">2</td><td class="num">2/2</td><td class="num">4</td><td class="num">4,494</td><td class="num">111</td></tr>
+                <tr><th scope="row">fenben</th><td>加两个参与人 + 两道菜</td><td class="num">11</td><td>通过</td><td class="num">572s</td></tr>
+                <tr><th scope="row">fenben</th><td>依次加三道菜</td><td class="num">14</td><td>通过</td><td class="num">567s</td></tr>
+                <tr><th scope="row">fenben</th><td>加两人一菜后进入认领页</td><td class="num">9</td><td>通过</td><td class="num">421s</td></tr>
+                <tr><th scope="row">STUFFS_NEXT</th><td>开设置、调毛玻璃、关面板</td><td class="num">5</td><td>通过</td><td class="num">259s</td></tr>
+                <tr><th scope="row">Rental</th><td>依次切三个标签后停在“发现”</td><td class="num">5</td><td>通过</td><td class="num">189s</td></tr>
+                <tr><th scope="row">STUFFS_NEXT</th><td>连续添加两张卡片</td><td class="num">20</td><td>失败（MAX_STEPS）</td><td class="num">1185s</td></tr>
+                <tr><th scope="row">jijian</th><td>依次切三个标签后停在“统计”</td><td class="num">4</td><td>失败（状态不符）</td><td class="num">216s</td></tr>
               </tbody>
               <tfoot>
-                <tr><th scope="row">合计</th><td></td><td class="num">11</td><td class="num">11/11</td><td class="num">36</td><td class="num">49,232</td><td class="num">1,465</td></tr>
+                <tr><th scope="row">合计</th><td>7 项</td><td class="num">68</td><td>5 通过</td><td class="num">3,411s</td></tr>
               </tfoot>
             </table>
           </div>
@@ -1097,8 +1100,8 @@ STUFFS   baseline=e35b7584 files=5  changed=2 added=2 findings=0</code></div>
           <div class="next-grid">
             <article class="next-card reveal">
               <p class="card-kicker">SCALE</p>
-              <p class="next-number">10<span>apps · 40 tasks</span></p>
-              <p>已完成 4 个开源应用、11 个任务；再补 6 个本地数据、无登录、可构建的应用。</p>
+              <p class="next-number">7<span>项 · 5–20 步</span></p>
+              <p>4 个应用完成 7 项多步任务，最长 20 步。单步 38–76 秒，墙钟上限放宽到 30 分钟。</p>
             </article>
             <article class="next-card reveal">
               <p class="card-kicker">BASELINES</p>

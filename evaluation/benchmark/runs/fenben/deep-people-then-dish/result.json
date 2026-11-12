@@ -1,0 +1,15 @@
+{
+  "app": "fenben",
+  "task": "deep-people-then-dish",
+  "goal": "添加参与人“小刘”和“小王”，再添加一道菜“宫保鸡丁”38元，最后点击“开始认领”",
+  "verified": true,
+  "steps": 9,
+  "elapsedSeconds": 421.2,
+  "promptTokens": 14720,
+  "completionTokens": 985,
+  "agentFinished": true,
+  "reason": "已添加参与人“小刘”和“小王”、菜品“宫保鸡丁”（38元），并点击“开始认领”。",
+  "beforeCheck": "enabled=false",
+  "afterCheck": "enabled=true",
+  "preconditionOk": true
+}

@@ -7,33 +7,32 @@
       "license": "MIT",
       "tasks": [
         {
-          "id": "add-person",
-          "goal": "添加一个参与人，名字叫小刘",
+          "id": "deep-two-people-two-dishes",
+          "goal": "添加两个参与人：先“小刘”，再“小王”；然后添加两道菜：“米饭”3元、“可乐”5元",
           "check": {
-            "id": "sem.root",
+            "id": "sem.fenben.dishes.summary",
             "field": "value",
             "op": ">=",
             "value": 2
           }
         },
         {
-          "id": "add-dish",
-          "goal": "添加一道菜：菜名“宫保鸡丁”，价格 38",
+          "id": "deep-three-dishes",
+          "goal": "依次添加三道菜：“米饭”3元、“可乐”5元、“炒青菜”18元",
           "check": {
             "id": "sem.fenben.dishes.summary",
             "field": "value",
             "op": ">=",
-            "value": 1
+            "value": 3
           }
         },
         {
-          "id": "add-two-dishes",
-          "goal": "依次添加两道菜：先“米饭”价格 3，再“可乐”价格 5",
+          "id": "deep-people-then-dish",
+          "goal": "添加参与人“小刘”和“小王”，再添加一道菜“宫保鸡丁”38元，最后点击“开始认领”",
           "check": {
-            "id": "sem.fenben.dishes.summary",
-            "field": "value",
-            "op": ">=",
-            "value": 2
+            "id": "sem.fenben.claim.start",
+            "field": "enabled",
+            "value": true
           }
         }
       ]
@@ -45,28 +44,10 @@
       "license": "MIT",
       "tasks": [
         {
-          "id": "switch-detail",
-          "goal": "切换到“明细”标签",
-          "check": {
-            "id": "sem.jijian.tab.1",
-            "field": "selected",
-            "value": true
-          }
-        },
-        {
-          "id": "switch-stats",
-          "goal": "切换到“统计”标签",
+          "id": "deep-tab-sequence",
+          "goal": "依次切换到“明细”、“统计”、“我的”，最后停在“统计”",
           "check": {
             "id": "sem.jijian.tab.2",
-            "field": "selected",
-            "value": true
-          }
-        },
-        {
-          "id": "switch-mine",
-          "goal": "切换到“我的”标签",
-          "check": {
-            "id": "sem.jijian.tab.3",
             "field": "selected",
             "value": true
           }
@@ -80,17 +61,8 @@
       "license": "MIT",
       "tasks": [
         {
-          "id": "open-settings",
-          "goal": "打开设置面板",
-          "check": {
-            "id": "sem.stuffs.settings.blur",
-            "field": "visible",
-            "value": true
-          }
-        },
-        {
-          "id": "increase-blur",
-          "goal": "打开设置面板，把毛玻璃半径调大",
+          "id": "deep-open-settings-blur",
+          "goal": "打开设置面板，把毛玻璃半径调大，然后关闭设置面板",
           "check": {
             "id": "sem.stuffs.settings.blur",
             "field": "value",
@@ -99,22 +71,13 @@
           }
         },
         {
-          "id": "open-add-panel",
-          "goal": "打开添加面板",
-          "check": {
-            "id": "sem.stuffs.add.name",
-            "field": "visible",
-            "value": true
-          }
-        },
-        {
-          "id": "add-card",
-          "goal": "打开添加面板，在名称输入框输入“阅读”，向下滚动页面，点击添加目标卡片",
+          "id": "deep-add-two-cards",
+          "goal": "打开添加面板，输入“阅读”并添加；再打开添加面板，输入“运动”并添加",
           "check": {
             "id": "sem.stuffs.cards.summary",
             "field": "value",
             "op": ">=",
-            "value": 1
+            "value": 2
           }
         }
       ]
@@ -126,17 +89,8 @@
       "license": "MIT",
       "tasks": [
         {
-          "id": "switch-service",
-          "goal": "切换到服务页",
-          "check": {
-            "id": "sem.rental.tab.2",
-            "field": "selected",
-            "value": true
-          }
-        },
-        {
-          "id": "switch-discover",
-          "goal": "切换到发现页",
+          "id": "deep-tab-sequence",
+          "goal": "依次切换到“服务”、“发现”、“我的”，最后停在“发现”",
           "check": {
             "id": "sem.rental.tab.3",
             "field": "selected",

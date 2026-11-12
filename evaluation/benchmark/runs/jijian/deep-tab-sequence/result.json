@@ -1,0 +1,15 @@
+{
+  "app": "jijian",
+  "task": "deep-tab-sequence",
+  "goal": "依次切换到“明细”、“统计”、“我的”，最后停在“统计”",
+  "verified": false,
+  "steps": 4,
+  "elapsedSeconds": 216.4,
+  "promptTokens": 6359,
+  "completionTokens": 442,
+  "agentFinished": true,
+  "reason": "已依次切换到“明细”“统计”“我的”，当前停留在“统计”。",
+  "beforeCheck": "selected=false",
+  "afterCheck": "selected=false",
+  "preconditionOk": true
+}

@@ -382,29 +382,29 @@ node tools/annotator/cli.js propose --project ../semantic-apps/stuffs-next --out
 
 10 个应用是合理的下一步规模，但不是论文级规模。先完成 5 个应用/20 个任务的 pilot，验证零 UI diff、状态 oracle 和标注成本，再扩到 10 个/40 个；若结果支持，再增加到 20+ 应用、100+ 任务。
 
-### 8.3 四应用 pilot 结果
+### 8.3 多步任务 pilot 结果
 
-在 8.1 和 8.2 的基础上，先做了 4 个开源应用、11 个有效任务的 pilot，用来验证标注边界、构建安装、桥读取和独立判分整条链路。所有应用只增加 `.id`、无障碍文本和 `customProperty`，`tools/annotation-audit` 对各自上游基线审计均为 0 findings。
+按“用任务深度补规模”的思路，在 4 个可稳定标注的开源应用上设计了 5 到 20 步的多步任务，共 7 项。所有应用只增加 `.id`、无障碍文本和 `customProperty`，AST 审计对各自上游基线均为 0 findings。
 
-| 应用 | 上游 | 许可 | 任务 | 验证通过 | 步数 | prompt / completion |
-|---|---|---|---:|---:|---:|---:|
-| fenben（碰一碰分账） | `37249d58` | MIT | 3 | 3/3 | 16 | 23,376 / 754 |
-| jijian（计件通） | `d4aff1c3` | MIT | 3 | 3/3 | 7 | 9,086 / 194 |
-| STUFFS_NEXT | `e35b7584` | MIT | 3 | 3/3 | 9 | 12,276 / 395 |
-| Rental | `8c6eb31b` | MIT | 2 | 2/2 | 4 | 4,494 / 111 |
-| 合计 |  |  | 11 | 11/11 | 36 | 49,232 / 1,465 |
+| 应用 | 任务 | 步数 | 结果 | 耗时 | prompt / completion |
+|---|---|---:|---|---:|---:|
+| fenben | 加两个参与人 + 两道菜 | 11 | 通过 | 572s | 22,955 / 1,819 |
+| fenben | 依次加三道菜 | 14 | 通过 | 567s | 24,407 / 1,277 |
+| fenben | 加两人一菜后进入认领页 | 9 | 通过 | 421s | 14,720 / 985 |
+| STUFFS_NEXT | 开设置、调毛玻璃、关面板 | 5 | 通过 | 259s | 9,746 / 478 |
+| Rental | 依次切三个标签后停在“发现” | 5 | 通过 | 189s | 6,941 / 754 |
+| STUFFS_NEXT | 连续添加两张卡片 | 20 | 失败（MAX_STEPS） | 1185s | 33,239 / 3,435 |
+| jijian | 依次切三个标签后停在“统计” | 4 | 失败（状态不符） | 216s | 6,359 / 442 |
 
-运行方式为 `haptest semantic bench`，直接复用 HapTest 的 `Hdc`、`HarmonyDevice`、`SemanticBridgeClient` 和 `SemanticAgent`。每个任务前卸载重装并清理应用数据，判分只读应用侧语义快照，且要求任务开始前目标状态不成立，避免假阳性。
+合计 7 项、5 项通过、68 步、118,367 / 9,190 tokens。
 
-**20 步硬上限**：超过即判 `EXCEEDED_MAX_STEPS`。pilot 中单任务最多 9 步（fenben 连加两道菜），没有任务触顶。
+**判分规则。** 每个任务开始前要求目标状态不成立，否则记 `PRECONDITION_ALREADY_MET`；步数超过 20 记 `EXCEEDED_MAX_STEPS`；撞墙钟记 `TASK_TIMEOUT`。后两者都算失败，即使最终状态恰好正确——因为 Agent 没有自己完成。
 
-**墙钟上限**：单任务 10 分钟。最初设 3 分钟时多步任务频繁超时，放宽后未再出现。
+**两项失败的实际情况。** `deep-add-two-cards` 跑满 20 步仍未添加完第二张卡片，是能力不足而非预算不足；`deep-tab-sequence` 在第 3 步点了“我的”却声称停在“统计”，随即结束，是模型的推理错误。两者都保留为失败记录。
 
-**两个被排除的任务**：`jijian/back-to-home` 和 `rental/back-home` 的目标状态（回到默认标签）在任务开始时已成立，被判为 `PRECONDITION_ALREADY_MET`，不计入通过率。这不是 Agent 失败，而是任务定义无效，已从任务集移除。
+**单步延迟。** 实测每步 38 到 76 秒，20 步任务需要 13 到 25 分钟。因此墙钟上限从 10 分钟放宽到 30 分钟，让 20 步任务有机会跑完；步数仍是唯一的硬失败线。
 
-**已知限制**：njuschedule 的底部标签是 `HdsTabs` 的 `BottomTabBarStyle`，无法挂 `customProperty`，且其 `@Trace` 状态不会触发桥的 revision 更新，因此没有纳入 pilot。acthub 首次启动要求登录，不符合“无登录”筛选标准，也已排除。
-
-pilot 证明整条链路在 4 个应用上可复现，但规模仍小于 8.2 建议的 10 应用/40 任务。下一轮按 8.2 的指标补齐到 10 个应用，并加入截图基线和消融。
+**规模说明。** 原计划 10 个应用，实际只有 4 个能稳定做出可验证任务。其余 6 个中，medremind 和 canteen 启动即要求登录，allclear 与 nightwindow 的底部栏是 `BottomTabBarStyle` 无法挂 `customProperty`，synccalc 的视图切换按钮 `onClick` 实测不触发，pinmony、flower 等候选在 ArkTS 严格模式下无法编译。这些都是应用侧的约束，没有为凑数去改业务逻辑。
 
 ## 九、提交
 

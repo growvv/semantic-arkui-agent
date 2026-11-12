@@ -56,7 +56,7 @@ export async function runSemanticCli(args: string[]): Promise<{ stdout: string; 
             outDir: path.resolve(parsed.options.get('out') ?? 'evaluation/benchmark/runs'),
             apps: apps ? apps.split(',').map((item) => item.trim()).filter(Boolean) : undefined,
             maxSteps: numberOption(parsed.options.get('max-steps'), 20, 'max-steps'),
-            maxDurationMs: numberOption(parsed.options.get('max-duration-ms'), 600000, 'max-duration-ms'),
+            maxDurationMs: numberOption(parsed.options.get('max-duration-ms'), 1800000, 'max-duration-ms'),
             bundle,
         });
         const summary = await benchmark.run();
@@ -64,7 +64,7 @@ export async function runSemanticCli(args: string[]): Promise<{ stdout: string; 
     }
     const port = numberOption(parsed.options.get('port'), 18765, 'port');
     const maxSteps = numberOption(parsed.options.get('max-steps'), 20, 'max-steps');
-    const maxDurationMs = numberOption(parsed.options.get('max-duration-ms'), 180000, 'max-duration-ms');
+    const maxDurationMs = numberOption(parsed.options.get('max-duration-ms'), 1800000, 'max-duration-ms');
     const out = parsed.options.get('out');
     let device: HarmonyDevice | undefined;
     let bridge: SemanticBridgeClient | undefined;

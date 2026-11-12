@@ -1,0 +1,15 @@
+{
+  "app": "stuffs-next",
+  "task": "deep-open-settings-blur",
+  "goal": "打开设置面板，把毛玻璃半径调大，然后关闭设置面板",
+  "verified": true,
+  "steps": 5,
+  "elapsedSeconds": 258.8,
+  "promptTokens": 9746,
+  "completionTokens": 478,
+  "agentFinished": false,
+  "reason": "REPEATED_ACTION",
+  "beforeCheck": "value=25",
+  "afterCheck": "value=51",
+  "preconditionOk": true
+}

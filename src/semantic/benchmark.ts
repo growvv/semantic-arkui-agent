@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { Hdc } from '../device/hdc';
+import { unlockDevice } from './device_unlock';
 import { HarmonyDevice } from '../device/harmony/session';
 import { SemanticBridgeClient } from './bridge_client';
 import { SemanticAgent } from './agent';
@@ -334,27 +335,7 @@ export class SemanticBenchmark {
      * must not be guessed at, so the run stops with a clear instruction instead.
      */
     private async ensureUnlocked(hdc: Hdc): Promise<void> {
-        try {
-            await hdc.excuteShellCommand('power-shell', 'wakeup');
-        } catch {}
-        await new Promise((resolve) => setTimeout(resolve, 800));
-        if (await this.lockScreenVisible(hdc)) {
-            throw new Error('DEVICE_LOCKED: unlock the test device (passcode required) and rerun.');
-        }
-    }
-
-    private async lockScreenVisible(hdc: Hdc): Promise<boolean> {
-        try {
-            const output = await hdc.excuteShellCommand('uitest', 'dumpLayout');
-            const match = /DumpLayout saved to:(\S+)/.exec(output);
-            if (!match) return false;
-            const local = path.join(this.options.outDir, '.lockcheck.json');
-            fs.mkdirSync(this.options.outDir, { recursive: true });
-            hdc.recvFile(match[1], local);
-            return fs.readFileSync(local, 'utf8').includes('ScreenLockRootComponent');
-        } catch {
-            return false;
-        }
+        await unlockDevice(hdc);
     }
 
     /** Install, clear data and launch before any device session or port forward exists. */

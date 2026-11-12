@@ -7,6 +7,7 @@ import { SemanticAgent } from './agent';
 import { LlmClient } from './llm';
 import { SemanticBenchmark } from './benchmark';
 import { SemanticError } from './types';
+import { unlockDevice } from './device_unlock';
 
 interface ParsedArgs {
     command: string;
@@ -73,7 +74,14 @@ export async function runSemanticCli(args: string[]): Promise<{ stdout: string; 
         device = await HarmonyDevice.connect(serial ? { serial } : {});
         const initial = await device.observe();
         if (initial.locked) {
-            throw new SemanticError('DEVICE_LOCKED', 'The device is locked; unlock it before running the semantic agent.');
+            // A passcode-free device unlocks on a wake plus swipe; a passcode
+            // one stays locked and the caller reports DEVICE_LOCKED.
+            try {
+                await unlockDevice(new Hdc(serial));
+            } catch (error) {
+                throw new SemanticError('DEVICE_LOCKED', messageOf(error));
+            }
+            await device.observe();
         }
         if (bundle) {
             await device.launchApp(bundle);
